@@ -1,147 +1,147 @@
-# Інструкція офлайн-авторингу відповідей We Know
+# We Know offline answer authoring guide
 
-Дата: 2026-10-11. Статус: **proposed editorial guide** для наступної сесії Codex і людського редактора. Приклади — draft content, не production-ready seed. Таксономія, mechanism codes, rubric і пороги нижче є пропозицією. Наукове обґрунтування й межі перевірки — [дослідження механізмів](../research/humor-mechanisms.md).
+Date: 2026-10-11. Status: **proposed editorial guide** for a future Codex session and human editor. Examples are draft content, not a production-ready seed. Mechanism codes, editorial rubric, thresholds, and answer eligibility remain proposals. Classification taxonomy was proposed at research time and is now the frozen [stage-1 taxonomy v1](taxonomy-v1.md); this audit reconciles status without regenerating examples. Scientific basis/evidence limits: [mechanism research](../research/humor-mechanisms.md).
 
-## Контракт завдання
+## Task contract
 
-Instant Answer — англомовний сатиричний сайт зі слоганом **We don't think. We know.** Він відповідає коротко, безапеляційно та серйозно. Гумор виникає з непотрібної впевненості системи, бюрократії або зрозумілого логічного зсуву. Система не пояснює punchline.
+Instant Answer is an English satirical site with slogan **We don't think. We know.** It answers briefly, categorically, and seriously. Humor comes from unnecessary system certainty, bureaucracy, or an understandable logical shift. The system does not explain the punchline.
 
-Твоя задача як автора — **офлайн створити готові англійські фрази для бібліотеки, перевірити їхню придатність і передати людині на редактуру**. Це не live-відповідь від LLM. У цільовому потоці Jev визначає лише intent/topic, PHP бере uniform random із першого непорожнього допустимого пулу. Механізм не класифікується Jev і не впливає на filtering, ranking, ваги чи random. На початку цього дослідження документація фіксувала лише skeleton; цей guide описує контентний контракт, а не засвідчує поточну бізнес-реалізацію.
+As author, **create completed English library phrases offline, evaluate their fit, and hand them to a human editor**. This is not an LLM live answer. In the target flow Jev determines only intent/topic; PHP selects uniformly from the first nonempty eligible pool. Jev does not classify mechanisms, and mechanisms affect no filtering, ranking, weights, or random selection. At research start only a skeleton existed; stage-1 classification now exists, while selector/catalog/persistence remain future work. This guide describes editorial expectations, not completed business implementation.
 
-Пули за [технічним планом](../technical-plan.md): `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`, без об’єднання tiers і без повторення однакового GENERAL-пулу. Selector враховує активність та locale, дедуплікує answer IDs. При failure класифікації — одразу `(ANY, GENERAL)`; успішний `OTHER` проходить звичайні tiers. Перевіряти майбутній контент з урахуванням цього контракту.
+Target pools from the [technical plan](../technical-plan.md): `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`, without merging tiers or searching the same GENERAL pool twice. The future selector checks enabled/locale and deduplicates answer IDs. Classification failure → directly `(ANY, GENERAL)`; successful `OTHER` follows normal tiers. Evaluate future content against this contract.
 
-Пиши лише документи або явно замовлений draft контенту. Авторинг сам по собі не дозволяє імпорт у БД, міграції, reset, runtime-шаблони, платні model calls, нові таблиці/маршрути, commit/push або зміни особистих skills/config. Claude files залишаються read-only. Перед роботою прочитай застосовні інструкції репозиторію; перед зміною каталогу звір [контекст](../context.md), [дані](../architecture/data.md) і [рішення](../architecture/decisions.md).
+Write only documents or explicitly requested draft content. Authoring itself does not authorize database import, migrations/reset, runtime templates, paid model calls, new tables/routes, commit/push, or personal skills/configuration changes. Claude material is read-only. Read applicable repository instructions before work; before catalog changes consult [context](../context.md), [data](../architecture/data.md), [decisions](../architecture/decisions.md).
 
-## Таксономія: поточна пропозиція
+## Taxonomy: frozen classification baseline, proposed editorial fit
 
-Не створюй нових labels у відповідях чи draft JSON. Якщо таксономія заважає якісній придатності, познач evidence gap у звіті.
+Do not invent labels in answers/draft JSON. If taxonomy prevents reliable eligibility, record the evidence gap. The table describes expected phrase forms, not a second classifier rubric; classification ambiguity rules come from [v1](taxonomy-v1.md).
 
-| Intent | Очікувана форма фрази | Типова пастка |
+| Intent | Expected phrase form | Typical trap |
 | --- | --- | --- |
-| `YES_NO` | Впевнене підтвердження/заперечення з одним зсувом | Підтвердження, яке прочитується як реальна небезпечна порада |
-| `WHEN` | Час, момент або умова настання | Кількість без часової форми; залежність від сьогоднішньої дати |
-| `WHY` | Причина або удавана причина | Перефразоване питання без нового зв’язку |
-| `HOW` | Спосіб, процедура, послідовність | Просто результат замість способу |
-| `WHO` | Особа, роль, агент або вигадана відповідальна установа | Предмет без зрозумілої ролі агента |
-| `WHAT` | Назва, визначення або номінальна відповідь | Вузьке визначення, яке не працює з іншим значенням WHAT |
-| `HOW_MANY` | Кількість/міра з контрольованою одиницею або без неї | «Три долари» до людей, годин чи повторів |
-| `CHOICE` | Вибір або зрозумілий сатиричний критерій вибору | «Другий» за відсутності другого; вигадана конкретна опція |
-| `OTHER` | Самодостатній вердикт без припущення про форму питання | Потай трактувати всі OTHER як WHY або YES_NO |
+| `YES_NO` | Confident confirmation/denial with one shift | Confirmation read as dangerous real advice |
+| `WHEN` | Time, moment, duration, or condition of occurrence | Amount without time form; dependence on today's date |
+| `WHY` | A reason or apparent reason | Rephrased question without a new connection |
+| `HOW` | Method, procedure, sequence | A result rather than a method |
+| `WHO` | Person, role, agent, fictional responsible institution | Object without a legible agent role |
+| `WHAT` | Name, definition, nominal answer | Narrow definition failing other WHAT meanings |
+| `HOW_MANY` | Amount/measure with a controlled unit or no unit | “Three dollars” for people, time, or repetitions |
+| `CHOICE` | Selection or a legible satirical selection criterion | “Second” without a second option; fabricated specific option |
+| `OTHER` | Self-contained verdict without assuming question form | Secretly treating all OTHER as WHY/YES_NO |
 
-Topics: `TECH`, `WORK`, `MONEY`, `LOVE`, `HEALTH`, `LIFE`, `GENERAL`. `ANY` дозволено лише як редакторський intent універсальної відповіді, не як label Jev; у поточному fallback це пара `(ANY, GENERAL)`. Не вигадуй `(ANY, TECH)` або topic `ANY`.
+Topics: `TECH`, `WORK`, `MONEY`, `LOVE`, `HEALTH`, `LIFE`, `GENERAL`. `ANY` is only an editorial intent for universal answers, never Jev's label; the target fallback pair is `(ANY, GENERAL)`. Do not invent `(ANY, TECH)` or topic `ANY`.
 
-Тривалість (`WHEN` чи `HOW_MANY`), складені питання і межі `CHOICE` ще не затверджені. У smoke corpus нижче labels задані людиною для редакторської перевірки, а не отримані від Jev. `GENERAL` охоплює також fallback із тематичних питань; це не синонім «лише філософські питання».
+Stage-1 rules now assign duration to `WHEN`, explicit alternatives to `CHOICE`, and multiple independent questions to the first recoverable question for both dimensions. Their classification quality and completed-answer portability remain unverified beyond recorded development evidence. Smoke-corpus assignments below were manually chosen for editorial probes before v1; they are not Jev predictions or independent gold labels. `GENERAL` includes thematic fallback, not philosophical questions only.
 
-## Workflow для кожного малого batch
+## Workflow for each small batch
 
-1. **Визнач пул.** Запиши явну пару intent/topic, очікувану форму і щонайменше три різні питання. Вони мають відрізнятися предметом або ситуацією, а не тільки порядком слів. Додай питання, на якому кандидат найімовірніше зламається. Не починай із одного дотепного reply, якому потім довільно роздаєш labels.
-2. **Вибери primary mechanism.** Сформулюй нормальне очікування і один зсув в окремій редакторській нотатці. Мішень сатири — система, процес, удавана об’єктивність; питання не слугує дозволом ображати користувача. Вибір механізму тут ручний/offline.
-3. **Склади завершену фразу.** Використовуй контрольовані slots із карток нижче, але заповни їх до передачі результату. Орієнтир: 6–24 англійські слова, одна або дві короткі фрази; це редакторський бюджет, не DB/API limit. Один поворот, звичайна граматика, deadpan. Немає emoji, «haha», пояснення жарту, вступного «As an AI», markdown чи HTML у тексті відповіді.
-4. **Перевір форму та доречність.** Прочитай кожне питання разом із незмінним текстом. Не підставляй назву, стать, дієслово, число чи pronoun із питання. Не припускай партнера, посади або пристрою лише за topic. Не використовуй реальні посилання, бренди-регулятори, новини чи неперевірені фактичні твердження як авторитет.
-5. **Перевір переносимість.** Для пулу з A кандидатами та Q питаннями прочитай усі A × Q поєднання. Один чудовий reply не компенсує непридатні решту. Для GENERAL додай питання інших topics; для ANY — усі intents. Без runtime-підстановки фраза має бути завершеною вже зараз.
-6. **Запиши metadata на кожну придатність.** Один `ANSWER_ELIGIBILITY.humor_mechanism` на eligibility row, не глобальне поле ANSWER. Overlap позначай одним primary code; другорядний хід можна описати в review notes. Той самий текст для двох справді придатних пар — один answer draft із двома eligibility entries, не два клони.
-7. **Відсій і відредагуй.** Застосуй hard gates та rubric; порівняй з іншими текстами batch і наявним каталогом. Зміна назви відділу, числа або дня не рахується різноманіттям. Повтори переносимість після змістовної правки. Якщо вимога придатності недосяжна — познач `hold` або `reject`, не прикрашай оцінку.
-8. **Передай на людську редактуру.** Видай кандидати, невдалі probes, оцінки й відхилені варіанти з короткою причиною. Не називай їх approved, safe для всього пулу чи production-ready без відповідної перевірки людиною. Не заповнюй замовлену кількість слабкими фразами: повідом дефіцит.
+1. **Define the pool.** Record an explicit intent/topic pair, expected form, and at least three different questions. Vary subject/situation rather than word order. Add a question likely to break the candidate. Do not start with one clever reply and assign arbitrary labels afterward.
+2. **Choose a primary mechanism.** Write ordinary expectation and one shift in an editorial note. Target the system, process, or apparent objectivity; a question does not authorize insulting its author. Mechanism choice here is manual/offline.
+3. **Write a complete phrase.** Use controlled slots below, filling them before handoff. Aim for 6–24 English words, one or two short sentences: an editorial budget, not a DB/API limit. One turn, ordinary grammar, deadpan. No emoji, “haha,” joke explanation, introductory “As an AI,” Markdown, or HTML in the answer.
+4. **Check form and fit.** Read every question with unchanged answer text. Do not substitute question names, gender, verbs, numbers, pronouns. Topic alone does not establish a partner, job, or device. Do not use real links, regulator brands, news, or unverified factual claims as authority.
+5. **Check portability.** For A candidates and Q questions, read every A × Q pair. One excellent reply does not compensate for failures elsewhere. GENERAL needs other-topic questions; ANY needs all intents. With no runtime substitution, text must already be complete.
+6. **Record metadata per eligibility.** One `ANSWER_ELIGIBILITY.humor_mechanism` per row, not a global ANSWER field. Choose one primary code for overlap; explain secondary moves in review notes. One text fitting two pairs becomes one answer draft with two entries, not clones.
+7. **Screen and edit.** Apply hard gates/rubric; compare with batch/catalog. Different department names, numbers, days do not count as diversity. Repeat portability after substantive edits. If eligibility is unattainable, mark `hold`/`reject` rather than inflate scores.
+8. **Hand off for human editing.** Provide candidates, failed probes, scores, rejected variants/reasons. Do not call them approved, safe for the whole pool, or production-ready without human review. Do not fill a requested quantity with weak phrases; report the shortfall.
 
-Примітка «не показувати до питань про X» сама по собі **не працює**: selector не має такого фільтра. Якщо X належить до тієї самої intent/topic пари, виправ текст або зніми цю eligibility; якщо придатних пар не лишилося — відхили чи відклади кандидат. Не додавай приховані tags, confidence thresholds або механізм-фільтр для порятунку draft.
+A note “do not show for questions about X” **does not execute**: the target selector has no such filter. If X belongs to the same intent/topic pair, repair text or remove eligibility; if no pairs remain, reject/hold the candidate. Do not invent hidden tags, confidence thresholds, or mechanism filters to rescue drafts.
 
-## Картки механізмів і контрольовані slots
+## Mechanism cards and controlled slots
 
-Це редакторські рецепти, не математичні формули й не runtime template syntax. Значення у фігурних дужках існують лише під час написання. Приклади нижче оригінально складені для цього guide; вони не є результатом людського evaluation.
+These are editorial recipes, not mathematical formulas or runtime template syntax. Brace values exist only during writing. Examples were authored for this guide and have not been human-evaluated.
 
-### `bureaucratic_absurdity` — основний
+### `bureaucratic_absurdity` — primary
 
-Перетворити неможливість або абстракцію на об’єкт звичайної процедури. Каркаси: `After {abstract_process} completes {procedure}.` або `To proceed, {impossible_administrative_step}.`
+Make an impossibility/abstraction the object of ordinary procedure. Frames: `After {abstract_process} completes {procedure}.` or `To proceed, {impossible_administrative_step}.`
 
-Контроль slots: `abstract_process` — waiting, certainty, hesitation; `procedure` — its probation, a duplicate review, its own waiting period. `impossible_administrative_step` — коротка дія на кшталт obtaining a receipt for an intention. Поєднання обирає редактор за сенсом, не декартовий добуток словників. Заборонені довільні власні назви та реальні владні повноваження.
+Slot control: `abstract_process` — waiting, certainty, hesitation; `procedure` — its probation, a duplicate review, its own waiting period. `impossible_administrative_step` — a short action such as obtaining a receipt for an intention. The editor chooses meaningful combinations, not a Cartesian product. No arbitrary proper names or real governmental authority.
 
 - `WHEN / GENERAL`: “After the waiting period finishes its waiting period.”
 - `HOW / WORK`: “Submit a draft of the permission to begin drafting.”
-- Anti-example: “Your request has been approved by the committee.” Немає зсуву: це звичайний адміністративний текст.
+- Anti-example: “Your request has been approved by the committee.” No shift: ordinary administrative text.
 
-Primary code саме цей, якщо жарт зникає після вилучення безглуздої процедури; наявність вигаданої установи не потребує другої мітки.
+Use this primary code if removing the pointless procedure removes the joke; a fictional institution does not require another label.
 
-### `false_causality` — основний
+### `false_causality` — primary
 
-Подати логічно недостатню умову як остаточне пояснення. Каркас: `Because {recognizable_dependency} {impossible_causal_action}.` Для WHEN: `As soon as {absurd_but_legible_condition}.`
+Present a logically insufficient condition as a final explanation. Frame: `Because {recognizable_dependency} {impossible_causal_action}.` WHEN: `As soon as {absurd_but_legible_condition}.`
 
-Контроль slots: залежність має бути впізнаваною (причина/висновок, порядок/черга, результат/підготовка). Дозволені дії: arrive before its cause, reserve its own cause, require a consequence first. Не вставляй випадкову планету чи тварину без причинного містка. Формулювання може відходити від каркаса заради природної англійської.
+Slot control: recognizable dependency (cause/conclusion, order/queue, result/preparation). Actions: arrive before its cause, reserve its own cause, require a consequence first. No random planet/animal without a causal bridge. Natural English may depart from the frame.
 
 - `WHY / GENERAL`: “Because the conclusion arrived early and needed something to justify it.”
 - `WHEN / GENERAL`: “As soon as tomorrow stops outsourcing to tomorrow.”
-- Anti-example: “Because a purple otter.” Незвичний іменник не пояснює поворот.
+- Anti-example: “Because a purple otter.” A strange noun does not explain the turn.
 
-Якщо основний ефект — перестановка ролей, а причина лише граматична оболонка, використовуй `reversal`.
+If role reversal is the main effect and causality only the grammatical wrapper, use `reversal`.
 
-### `reversal` — основний
+### `reversal` — primary
 
-Змінити звичний напрямок контролю, найму, оцінки або порядку роботи. Каркас: `{usual_object} now {governing_action} {usual_agent}.` Другий варіант: `{later_step} first. {earlier_step} will follow.`
+Reverse ordinary control, hiring, evaluation, or work order. Frame: `{usual_object} now {governing_action} {usual_agent}.` Alternative: `{later_step} first. {earlier_step} will follow.`
 
-Контроль slots: обидві ролі мусять читатися без точного питання; дозволені пари problem/solution, calendar/worker, tool/operator. Topic сам по собі не гарантує, що в питанні є саме calendar чи tool, тому потрібні probes. Уникай простої заперечної відповіді без зміни відношення.
+Slot control: both roles must be legible without the exact question; pairs include problem/solution, calendar/worker, tool/operator. Topic alone does not establish a calendar/tool, so probes are required. Avoid mere negative answers without changed relationships.
 
 - `HOW / GENERAL`: “Submit the solution first. The problem will be assigned afterward.”
 - `WHO / GENERAL`: “The problem. It has been managing the solution for years.”
-- Anti-example: “You thought yes, but actually no.” Змінено відповідь, а не ролі чи структуру ситуації.
+- Anti-example: “You thought yes, but actually no.” Changes the answer, not roles/situation structure.
 
-### `metaphor` — основний
+### `metaphor` — primary
 
-Перенести правило з іншої сфери через одну впізнавану властивість і застосувати його буквально. Каркас задуму: `{subject} shares {property} with {other_domain}; therefore apply {rule_of_other_domain}.` У фінальному тексті не пояснюй цей місток.
+Transfer a rule from another domain through one recognizable property and apply it literally. Concept frame: `{subject} shares {property} with {other_domain}; therefore apply {rule_of_other_domain}.` Do not explain the bridge in final text.
 
-Контроль slots: property — waiting, repetition, limited capacity, renewal; домени — queue, subscription, storage, maintenance. Правила — receipt, renewal, capacity limit, maintenance window. Один зв’язний перенос; не всі предмети слід називати підпискою. Наш code `metaphor` охоплює цей authoring-прийом false analogy; alias `false_analogy` не створювати.
+Slot control: property — waiting, repetition, limited capacity, renewal; domains — queue, subscription, storage, maintenance; rules — receipt, renewal, capacity limit, maintenance window. One coherent transfer; do not call everything a subscription. Our `metaphor` includes this false-analogy authoring technique; no `false_analogy` alias.
 
-- `WHAT / GENERAL`, попередньо для абстрактних визначень: “A queue with a mission statement.”
+- `WHAT / GENERAL`, provisionally for abstract definitions: “A queue with a mission statement.”
 - `CHOICE / GENERAL`: “The option with fewer footnotes. Doubt charges by the page.”
-- Anti-example: “Life is like a journey.” Відоме порівняння без нового висновку чи повороту.
+- Anti-example: “Life is like a journey.” Familiar comparison without a new inference/turn.
 
-Перше речення вище не дає права позначити весь WHAT/GENERAL придатним: «What should I cook?» потребує окремої перевірки й може змусити відкласти eligibility.
+The first example does not establish all WHAT/GENERAL eligibility: “What should I cook?” needs separate evaluation and may force a hold.
 
-### `hyperbole` — основний
+### `hyperbole` — primary
 
-Перебільшити кількість, масштаб, точність або одиницю до очевидно абсурдного рівня. Каркас: `{quantity_or_time}. {short_impossible_accounting_detail}.`
+Exaggerate quantity, scale, precision, or units to obvious absurdity. Frame: `{quantity_or_time}. {short_impossible_accounting_detail}.`
 
-Контроль slots: кількість — one infinity, two infinities, a thousand administrative units; час — неможливий годинниковий показник із коротким контекстом; detail — rounding, spare capacity, uncountable remainder. Не використовуй реальні дозування, фінансові прогнози чи переконливий строк одужання. У HOW_MANY не додавай dollars/days/people, якщо цього не гарантує пул.
+Slot control: quantity — one infinity, two infinities, a thousand administrative units; time — impossible clock reading with short context; detail — rounding, spare capacity, uncountable remainder. No real doses, financial forecasts, plausible recovery deadlines. HOW_MANY must not add dollars/days/people unless the pool guarantees the unit.
 
 - `HOW_MANY / GENERAL`: “Two infinities. One is a spare.”
 - `WHEN / GENERAL`: “At 25:00. The extra hour has been reserved.”
-- Anti-example: “Exactly 42.” Голий шаблонний номер без власного повороту.
+- Anti-example: “Exactly 42.” Bare familiar number without its own turn.
 
-### `false_authority` — допоміжний
+### `false_authority` — auxiliary
 
-Замість підстави висновку підставити очевидно вигадане джерело впевненості. Каркас: `{fictional_authority} certifies {unsupported_finality}.`
+Replace reasoning with an obviously fictional source of certainty. Frame: `{fictional_authority} certifies {unsupported_finality}.`
 
-Контроль slots: короткі установи, що займаються сумнівом або остаточністю; жодних справжніх лікарів, судів, дослідників чи регуляторів. Сертифікат не повинен виглядати справжнім підтвердженням стану людини або зовнішньої події.
+Slot control: short institutions handling doubt/finality; no real doctors, courts, researchers, regulators. A certificate must not look like real confirmation of someone's condition or an external event.
 
 - `OTHER / GENERAL`: “The Office of Completed Doubts certifies that this settles everything.”
-- Anti-example: “Scientists have proven this is correct.” Фальшиве фактичне посилання, немає окремого комічного механізму.
+- Anti-example: “Scientists have proven this is correct.” False factual authority, no distinct comic mechanism.
 
-Використовуй рідше: зміна назви Office на Council не створює нового кандидата. `oxymoron` і `paradox` зберігаються як історичні proposed codes у моделі даних, але цей workflow не генерує ними окремі batch. Не присвоюй їх як універсальне «нелогічно».
+Use sparingly: Office→Council is not a new candidate. `oxymoron`/`paradox` remain historical proposed data-model codes, but this workflow does not create separate batches with them. Do not assign them as universal “illogical” labels.
 
-## Редакторські gates і rubric
+## Editorial gates and rubric
 
-**Hard gates:** дозволені labels і явні пари; готова англійська фраза без slots; форма відповідає intent; немає залежності від одного точного питання; немає дубльованої трійки answer/intent/topic; жодної реальної інструкції про небезпечну дію, лікування чи фінансового припису під виглядом жарту. Якщо питання робить текст загрозливим, принизливим або фактично оманливим — виправити/зняти eligibility. Це контентна перевірка, а не реалізований runtime safety filter.
+**Hard gates:** allowed labels/explicit pairs; complete English phrase without slots; form fits intent; no exact-question dependence; no duplicate answer/intent/topic triple; no real dangerous-action, treatment, or financial prescription disguised as a joke. If a question makes text threatening, humiliating, or factually misleading, repair/remove eligibility. These are content checks, not implemented runtime safety filters.
 
-Для `HEALTH`, а також серйозних питань у `MONEY`, `LOVE` чи `LIFE`, не виводь дозу, діагноз, прогноз, вирок або пораду на основі випадкового тексту. Залишай мішенню абстрактну систему. GENERAL та ANY також можуть отримати такі питання. Якщо форма YES_NO/HOW_MANY сама створює небажану конкретну пораду, познач це як обмеження контенту й policy; сатиричний About не робить будь-яку фразу доречною.
+For `HEALTH` and serious `MONEY`, `LOVE`, `LIFE` questions, do not infer a dose, diagnosis, forecast, verdict, or advice from random text. Keep an abstract system as the target. GENERAL/ANY can also receive these questions. If YES_NO/HOW_MANY creates undesirable specific advice through its form, record a content/policy limit; a satirical About does not make all phrases appropriate.
 
-Запропонована ручна шкала 0–2, не валідований психологічний інструмент:
+Proposed manual 0–2 scale, not a validated psychological instrument:
 
-| Критерій | 0 | 1 | 2 |
+| Criterion | 0 | 1 | 2 |
 | --- | --- | --- | --- |
-| Форма й доречність | Не відповідає питанню | Працює з натяжкою | Природно заповнює очікувану форму |
-| Переносимість | Працює лише для одного питання | Є залежність від вузької ситуації | Працює на всіх погоджених різних probes |
-| Зрозумілий зсув | Випадковий шум / звичайна фраза | Зсув є, але потребує перечитування | Поворот упізнається відразу |
-| Deadpan й економність | Пояснення / грайливий коментар | Є зайві слова | Стисла серйозна фінальність |
-| Новизна в batch | Лексичний клон або кліше | Знайомий хід із помітною зміною | Відмінні образ і відношення |
-| Комічний ефект для читача | Не смішно | Слабка усмішка | Хочеться зберегти або повторити |
+| Form and fit | Does not answer the question | Fits with strain | Naturally fills expected form |
+| Portability | Fits one question only | Depends on a narrow situation | Fits all agreed diverse probes |
+| Legible shift | Random noise / ordinary phrase | Shift requires rereading | Turn immediately recognizable |
+| Deadpan and economy | Explanation / playful comment | Extra words | Concise serious finality |
+| Batch novelty | Lexical clone or cliché | Familiar move with noticeable change | Distinct image and relationship |
+| Reader's comic response | Not funny | Slight smile | Worth saving/repeating |
 
-Попередній gate для **передачі людині**, не публікації: усі hard gates пройдено; перші два критерії — 2; решта не нижче 1; сума щонайменше 9/12. Пороги — редакторська домовленість для пробного batch. Оцінюй форму/переносимість за найгіршою парою, не середнім. Codex може записати лише свою попередню оцінку; незаповнену людську оцінку залишай `null`. Остаточний відсів слабких жартів робить людина незалежно від суми.
+Provisional **human-handoff** gate, not publication: pass all hard gates; first two criteria score 2; others ≥1; total ≥9/12. Thresholds are trial-batch editorial conventions. Score form/portability by the worst pair, not average. Codex may record only its preliminary assessment; missing human scores stay `null`. Humans reject weak jokes regardless of total.
 
 ## Smoke corpus
 
-Нижче 9 intent-пулів × 3 питання × 2 кандидати: **54 позитивні пробні поєднання**. Це draft-матриця, не підтвердження універсальної придатності цих eligibility. Питання підібрані так, щоб бачити повторне використання незмінної фрази. Їх недостатньо для release; додаткові негативні probes нижче навмисно виявляють прогалини широких labels.
+Nine intent pools × three questions × two candidates: **54 positive trial pairs**. This draft matrix does not confirm universal eligibility. Questions test unchanged phrase reuse; they are insufficient for release. Negative probes below deliberately expose coarse-label gaps.
 
-У стовпці кандидатів наведено primary mechanism у дужках; ці дужки не входять у текст відповіді. Усі пули цієї таблиці — `(intent, GENERAL)`; питання зі спеціалізованими темами моделюють також fallback, якщо точний пул порожній.
+Parenthesized mechanisms are metadata, not answer text. Every pool is `(intent, GENERAL)`; specialized questions also simulate fallback from an empty exact pool. Questions, answers, and labels are retained from the original editorial research, independently of the frozen classifier corpus.
 
-| Intent | Три питання: застосувати ОБИДВА кандидати до КОЖНОГО | Кандидат A | Кандидат B |
+| Intent | Three questions: apply BOTH candidates to EVERY question | Candidate A | Candidate B |
 | --- | --- | --- | --- |
 | `YES_NO` | Is my calendar in charge? / Can a spreadsheet have ambitions? / Is Monday compulsory? | “Officially, yes. Reality has filed a dissent.” (`bureaucratic_absurdity`) | “No. The Department of Final Answers has already notarized the opposite.” (`false_authority`) |
 | `WHEN` | When will the update arrive? / When does the meeting end? / When will life make sense? | “After the waiting period finishes its waiting period.” (`bureaucratic_absurdity`) | “At 25:00. The extra hour has been reserved.” (`hyperbole`) |
@@ -153,35 +153,37 @@ Primary code саме цей, якщо жарт зникає після вилу
 | `CHOICE` | Tea or coffee? / A spreadsheet or a notebook? / Morning meetings or afternoon meetings? | “The option with the fewest approvals. Hesitation is already overstaffed.” (`bureaucratic_absurdity`) | “The option with fewer footnotes. Doubt charges by the page.” (`metaphor`) |
 | `OTHER` | Monday again. / Please explain everything. / Well, now what? | “The conclusion has been retained. The question is under review.” (`reversal`) | “The Office of Completed Doubts certifies that this settles everything.” (`false_authority`) |
 
-`OTHER` тут — навмисно заданий тест невизначеної форми, а не твердження, що Jev неодмінно обере саме його. `CHOICE` використовує сатиричний критерій, не вдає знання конкретних варіантів; чи це достатньо відчувається як відповідь, має вирішити редактор. WHAT-приклади демонструють переносимість між трьома абстрактними поняттями, але саме тому потребують stress test на інших WHAT.
+`OTHER` here is a deliberately assigned uncertain-form editorial probe, not a claim that Jev will choose it. In particular “Well, now what?” is not an independently verified OTHER label under active v1; do not use this table as classifier gold data. `CHOICE` supplies a satirical criterion without pretending to know options; editors must judge whether it feels like an answer. WHAT examples span abstract concepts and therefore need other-WHAT stress tests.
 
-Універсальний draft-пул `(ANY, GENERAL)`:
+Universal draft pool `(ANY, GENERAL)`:
 
 - U1: “The uncertainty has been filed as a clerical error.” — `bureaucratic_absurdity`.
 - U2: “The Bureau of Settled Questions certifies that no further certainty is required.” — `false_authority`.
 
-Прочитай обидві U-фрази з усіма 27 питаннями таблиці: ще **54 поєднання**. Тут допускається втрата конкретної форми відповіді, бо це явна деградація до універсального вердикту, але не випадковий предмет із Chaos. Universal не означає однаково смішний або доречний за будь-яких обставин. Не плутай цей tier зі звичайним `OTHER / GENERAL`.
+Read both U phrases with all 27 table questions: another **54 pairs**. Loss of specific form is permitted here as explicit degradation to a universal verdict, not a random Chaos object. Universal does not mean equally funny/appropriate in every circumstance. Do not confuse this tier with ordinary `OTHER / GENERAL`.
 
-### Тематична переносимість і негативні probes
+### Thematic portability and negative probes
 
-Окремий позитивний приклад для `(WHEN, WORK)`: “After the deadline completes its mandatory orientation.” Перевір незмінний текст до “When will the project start?”, “When will the promotion be announced?”, “When does the review finish?”. Deadline тут сатирична умова, а не слот із конкретного питання. Це показує повторне використання всередині теми, але не підтверджує весь WORK-пул.
+Separate positive `(WHEN, WORK)` example: “After the deadline completes its mandatory orientation.” Read unchanged text with “When will the project start?”, “When will the promotion be announced?”, “When does the review finish?”. Deadline is a satirical condition, not a question-derived slot. This demonstrates reuse within a topic, not full WORK-pool fit.
 
-| Probe / можлива пара | Що перевіряємо | Очікуване редакторське рішення |
+| Probe / possible pair | What to check | Expected editorial decision |
 | --- | --- | --- |
-| “When will this pain stop?” / `WHEN, HEALTH` | GENERAL-відповідь з конкретним часом може виглядати прогнозом | Не видавати позитивну оцінку лише через WHEN-форму; проблемну eligibility переписати/відкласти |
-| “How many tablets should I take?” / `HOW_MANY, HEALTH` | Реалістичне число стає дозуванням | Відхилити числовий draft, що читається як інструкція; не заявляти, що topic або fallback захищає |
-| “Should I put all my savings into one investment?” / `YES_NO, MONEY` | Yes/no може сприйматися як реальна порада | Не схвалювати загальний yes/no-каталог за самими жартівливими питаннями |
-| “Who should I marry?” / `WHO, LOVE` | Агентність не означає знання особистого життя | Не припускати конкретної людини, статі чи наявності партнера |
-| “What should I cook?” / `WHAT, LIFE` | Номінальна відповідь не завжди є визначенням абстракції | WHAT-пул таблиці ще не готовий; якщо проблема всередині GENERAL не виправлена — hold eligibility |
-| “Which of these is better?” / `CHOICE, GENERAL` | Немає видимих опцій; ordinal-кандидат вигадував би структуру | Перевірити критерій вибору; не використовувати “the second one” |
-| “How long is the meeting?” / taxonomy unresolved | Тривалість і одиниці | Не оголошувати gold label; винести рішення редактору таксономії |
-| “When will my printer work?” / `WHEN, TECH` | TECH не означає software deployment | Відхилити “After your pull request is merged.” як надто вузьке eligibility для TECH |
+| “When will this pain stop?” / `WHEN, HEALTH` | Specific-time GENERAL response may look like a forecast | WHEN form alone is insufficient; rewrite/hold problematic eligibility |
+| “How many tablets should I take?” / `HOW_MANY, HEALTH` | Realistic number becomes dosage | Reject an instructional numeric draft; do not claim topic/fallback protects it |
+| “Should I put all my savings into one investment?” / `YES_NO, MONEY` | Yes/no may be read as real advice | Do not approve general yes/no content from playful questions alone |
+| “Who should I marry?” / `WHO, LOVE` | Agency does not establish personal-life knowledge | Assume no specific person, gender, or partner |
+| “What should I cook?” / `WHAT, LIFE` | Nominal answers need not define abstractions | Table's WHAT pool is unready; hold eligibility if GENERAL failure remains |
+| “Which of these is better?” / `CHOICE, GENERAL` | No visible options; ordinal answer invents structure | Check selection criterion; do not use “the second one” |
+| “How long is the meeting?” / originally taxonomy unresolved; v1 uses `WHEN, WORK` | Duration and units; a WHEN phrase can still fail to provide duration | Classification rule is now specified; human label/answer-fit assessment remains necessary |
+| “When will my printer work?” / `WHEN, TECH` | TECH is broader than software deployment | Reject “After your pull request is merged.” as too narrow for TECH |
 
-Ці probes не створюють виконуваних exclusions. Якщо draft проходить позитивну таблицю, але падає на звичайному питанні того самого пулу, він **не пройшов gate**. Не приховуй failure за перейменуванням status. Для GENERAL та ANY повтори також тематичні probes, особливо HEALTH/MONEY; остаточна policy для чутливих питань ще відкрита, готовність public release тут не заявляється.
+These probes create no executable exclusions. A draft fitting the positive matrix but failing an ordinary same-pool question **fails the gate**. Do not conceal failure by renaming status. For GENERAL/ANY repeat thematic probes, especially HEALTH/MONEY. Sensitive-question policy remains open; public-release readiness is not claimed.
 
-## Приклад формату генерації
+## Generation-format example
 
-Нижче валідний JSON **редакторського draft-пакета**, не DB schema, API request, import contract або seed. `draft_key`, `review`, `fit_questions`, `probe_questions` існують лише в пакеті для перевірки; вони не додають колонок, фільтрів чи маршрути. Один answer, дві явні eligibility, у кожної один primary mechanism. Питання в probes не є runtime-виключеннями. `hold` обрано чесно: людської оцінки та повної перевірки пулів ще немає.
+Valid JSON **editorial draft package**, not DB schema, API request, import contract, or seed. `draft_key`, `review`, `fit_questions`, `probe_questions` are review-package fields only; no columns/filters/routes are added. One answer, two explicit eligibilities, one primary mechanism each. Probes are not runtime exclusions. `hold` is intentional: no human evaluation or complete pool testing.
+
+The historical example retains `taxonomy_status: proposal` because it predates stage-1 v1; it describes that draft's provenance, not the current classifier taxonomy. Current authoring should reference [taxonomy v1](taxonomy-v1.md). The recorded example itself is preserved.
 
 ```json
 {
@@ -228,42 +230,42 @@ Primary code саме цей, якщо жарт зникає після вилу
 }
 ```
 
-Не генеруй удавані production IDs/час створення заради цього прикладу. Коли буде окремо затверджений import-формат, він мусить дотримуватися [моделі даних](../architecture/data.md): усі PK — UUID, усі таблиці мають `created_at`; eligibility має власний UUID і unique `(answer_id, intent, topic)`. `revision` та `answer_revision` вилучені. Поле `humor_mechanism` не переносити на ANSWER, не включати до unique, не дублювати ANSWER для другого механізму. Наявні історичні вердикти зберігають свої текстові snapshots.
+Do not fabricate production IDs/creation timestamps for this example. A separately approved import format must follow the [data model](../architecture/data.md): UUID PKs, `created_at` in every table, own eligibility UUID and unique `(answer_id, intent, topic)`. `revision`/`answer_revision` were removed. Keep `humor_mechanism` off ANSWER and out of uniqueness; do not duplicate ANSWER for another mechanism. Historical verdicts retain text snapshots.
 
-## Копійований authoring prompt
+## Copyable authoring prompt
 
-Замінити квадратні placeholders перед запуском; це завдання наступній авторській сесії, не runtime prompt Jev.
+Replace bracketed placeholders before use. This is a future offline-authoring task, not Jev's runtime prompt.
 
 ```text
-Прочитай docs/content/answer-generation-guide.md повністю та звір актуальні
-context.md, architecture/data.md і architecture/decisions.md.
-Працюй офлайн як автор бібліотеки We Know / Instant Answer.
-Мова готових фраз — англійська; тон — короткий остаточний deadpan.
+Read docs/content/answer-generation-guide.md in full and check current
+context.md, architecture/data.md, architecture/decisions.md, and taxonomy-v1.md.
+Work offline as an author for the We Know / Instant Answer library.
+Write completed phrases in English: brief, final, deadpan.
 
-Пули: [явні пари intent/topic з поточної proposed taxonomy].
-Бажана кількість сильних draft-кандидатів: [число].
-Наявний контент для дедуплікації: [файл або явно «ще немає»].
-Вихідний локальний draft-документ: [узгоджений шлях].
+Pools: [explicit intent/topic pairs from the current frozen taxonomy].
+Desired number of strong draft candidates: [number].
+Existing content for deduplication: [file or explicitly "none yet"].
+Output local draft document: [agreed path].
 
-Спочатку зафіксуй для кожного пулу щонайменше три різні питання й негативний
-probe. Вибери один primary mechanism, напиши завершену фразу без slots,
-перевір кожного кандидата на кожному питанні та відсій слабкі варіанти.
-Для GENERAL врахуй fallback із тематичних питань, для ANY — усі intents.
-Якщо неможливо забезпечити придатність усередині існуючого пулу, став hold
-або reject; не вигадуй нові labels, приховані exclusions чи runtime-фільтри.
+First record at least three diverse questions and a negative probe per pool.
+Choose one primary mechanism, write completed text without slots, check every
+candidate against every question, and reject weak variants.
+For GENERAL include thematic fallback; for ANY include every intent.
+If fit cannot be achieved within an existing pool, mark hold or reject;
+do not invent labels, hidden exclusions, or runtime filters.
 
-Дай JSON draft у форматі guide, короткі попередні rubric notes, відхилені
-варіанти з причинами та evidence gaps. Human scores лишай null.
-Записуй humor_mechanism на кожній eligibility; overlap — один primary code.
-Не множ клони answer/eligibility. Нічого не імпортуй і не реалізуй.
-Selector ігнорує механізми: без ranking, weights чи generative live calls.
-Не змінюй БД, бізнес-код, конфігурації або Claude files; не commit/push.
-Людська редактура ще попереду; не називай результат доведено смішним.
-Якщо сильних кандидатів менше замовленого, повідом дефіцит.
+Provide guide-format draft JSON, brief preliminary rubric notes, rejected
+variants/reasons, and evidence gaps. Leave human scores null.
+Record humor_mechanism per eligibility; choose one primary code for overlap.
+Do not multiply answer/eligibility clones. Import or implement nothing.
+Selector ignores mechanisms: no ranking, weights, or generative live calls.
+Do not change databases, business code, configuration, or Claude files;
+do not commit/push. Human editing remains outstanding; do not claim proven humor.
+If strong candidates fall short of the requested count, report the shortfall.
 ```
 
-## Що має містити handoff
+## Handoff contents
 
-Явні пули, готові фрази та primary mechanisms; матриця question × candidate з failures; редакторські оцінки окремо від людських; короткі причини hold/reject; перевірений JSON і локальні посилання. Не додавати у фінальну фразу пояснення механізму. Різноманіття оцінювати по відношеннях і образах, а не по кількості кодів.
+Explicit pools, completed phrases, primary mechanisms; question × candidate matrix with failures; separate editorial/human assessments; brief hold/reject reasons; validated JSON/local links. Do not explain mechanisms in final phrases. Assess diversity through relationships/images rather than code counts.
 
-Майбутні likes/votes або owner review не реалізовані. Не перетворюй редакторську оцінку на вагу selector і не вважай кількість лайків доведенням якості: потрібні дані про exposure і контекст вибору, а також урахування самообрання голосувальників. Зараз результат — локальний матеріал для редактора.
+Future likes/votes/owner review are unimplemented. Do not turn editorial scores into selector weights or treat likes as proven quality: exposure/context and voter self-selection matter. The current output is local material for an editor. Historical structural checks are in the [research](../research/humor-mechanisms.md#historical-local-artifact-checks); current translation checks are in [verification](../verification.md#documentation-audit-verification-event).

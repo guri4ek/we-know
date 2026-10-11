@@ -1,10 +1,10 @@
-# Дані: пропозиція перед реалізацією
+# Data: proposal before implementation
 
-Поки БД не створена й Doctrine не встановлено. Користувач припускає SQLite локально й PostgreSQL (або іншу реляційну БД) у production. Плановий production target — PostgreSQL; остаточний вибір перед етапом міграцій.
+No database exists and Doctrine is not installed. **SQLite locally and PostgreSQL in production are definite user choices**, clarified during the documentation audit. Database versions and hosting remain open.
 
-UUID PK та `created_at` у кожній таблиці, `humor_mechanism` у eligibility і відсутність полів revision — прийняті уточнення користувача. Спрощений склад `VERDICT` та `decision_context` нижче — **пропозиція для погодження**, не затверджена чи реалізована схема.
+UUID PK and `created_at` in every table, `humor_mechanism` on eligibility, and removal of revision fields are accepted requirements. The simplified `VERDICT` and `decision_context` below are **proposals for agreement**, not an approved or implemented schema.
 
-## Модель
+## Model
 
 ```mermaid
 erDiagram
@@ -35,27 +35,27 @@ erDiagram
     }
 ```
 
-Імена полів/таблиць концептуальні, не згенерована schema. **Кожна таблиця має власний UUID primary key і `created_at` у UTC.** `ANSWER_ELIGIBILITY` додатково має unique constraint `(answer_id, intent, topic)` та індекс `(intent, topic, answer_id)`; це не складений PK. Перевірку enabled/locale виконує join до ANSWER. Для малого каталогу цього досить; інші індекси — за query plans. `ANSWER.revision` та `VERDICT.answer_revision` вилучено з моделі за рішенням користувача.
+Names are conceptual, not a generated schema. **Every table has its own UUID primary key and UTC `created_at`.** `ANSWER_ELIGIBILITY` also has unique `(answer_id, intent, topic)` and index `(intent, topic, answer_id)`; these are not a composite PK. Enabled/locale checks join ANSWER. This is sufficient for a small catalog; add other indexes based on query plans. `ANSWER.revision` and `VERDICT.answer_revision` were removed by user decision.
 
-## Чому зберігаємо пари
+## Why pairs are stored
 
-Окремі множини intent і topic створили б небажаний декартів добуток. Відповідь, дозволена для `(WHY, WORK)` та `(WHEN, TECH)`, не повинна автоматично ставати кандидатом для `(WHY, TECH)`. Кожен рядок eligibility — явна редакторська придатність. Категорії поки контрольовані string-backed enum з версією таксономії; окремий CRUD-довідник не потрібен до адмінки.
+Independent intent and topic sets would create an unwanted Cartesian product. An answer allowed for `(WHY, WORK)` and `(WHEN, TECH)` must not automatically be eligible for `(WHY, TECH)`. Each eligibility row is explicit editorial approval. Classification categories are controlled string-backed enums with taxonomy versions; a separate CRUD dictionary is unnecessary before administration.
 
-`ANY` означає універсальну форму відповіді; `OTHER` — класифіковане питання невідомої форми. Це різні поняття. `GENERAL` — загальна тема. Категорії не зберігати comma-separated полем; JSON не використовувати як основний індекс підбору.
+`ANY` means universal answer form; `OTHER` means a successfully classified question of unknown form. They differ. `GENERAL` is the general topic. Do not use comma-separated categories or JSON as the primary selection index.
 
-`humor_mechanism` заповнюється під час підготовки чи генерації каталогу відповідей. Це властивість придатності фрази для конкретної пари, не категорія питання, яку має повертати Jev. Поточний selector поле ігнорує: воно не фільтрує пул і не змінює ваги. Поле зберігається для майбутньої статистики; лайки, голосування чи оцінка власником залишаються можливостями, без таблиць, маршрутів або реалізації зараз.
+`humor_mechanism` is populated during catalog preparation/generation. It describes phrase eligibility for a particular pair, not a question category returned by Jev. The **future** selector ignores it: no pool filtering or weighting. It is retained for possible statistics; likes, votes, or owner evaluation remain possibilities, with no corresponding tables/routes/implementation.
 
-Пропозиція: один механізм на рядок eligibility, контрольований string-backed перелік. Початкові кандидати: `metaphor`, `hyperbole`, `oxymoron`, `paradox`, `false_causality`, `false_authority`, `reversal`, `bureaucratic_absurdity`; перелік потребує редакторського рішення. Не додавати механізм до unique constraint: кілька рядків для тієї самої трійки `(answer_id, intent, topic)` створили б ризик зміщення random. Кілька механізмів для однієї придатності — окреме майбутнє рішення. Шаблони й ваги не додавати зараз.
+Proposal: one controlled string-backed mechanism per eligibility. Initial candidates: `metaphor`, `hyperbole`, `oxymoron`, `paradox`, `false_causality`, `false_authority`, `reversal`, `bureaucratic_absurdity`; final codes need editorial agreement. Do not add the mechanism to uniqueness: multiple rows for the same `(answer_id, intent, topic)` risk biasing random selection. Multiple mechanisms for one eligibility are a separate future decision. Do not add runtime templates or weights now.
 
-## Незмінний вердикт
+## Immutable verdict
 
-`VERDICT.id` — непередбачуваний UUIDv4 primary key. Публічний URL не містить питання. Зберігати остаточний текст, а не тільки FK: редагування чи вимкнення ANSWER не змінює вже виданий permalink. Запропонований nullable `answer_eligibility_id` посилається на конкретний вибраний рядок, через який доступна вихідна ANSWER. Пропонована політика FK — `ON DELETE SET NULL`: видалення eligibility не видаляє вердикт чи його знімки. Сам fallback не робить FK порожнім: якщо вибрано `(ANY, GENERAL)`, посилання веде саме на цей рядок.
+`VERDICT.id` is an unpredictable UUIDv4 primary key. The public URL contains no question. Store final text rather than just a FK: editing/disabling ANSWER must not change an issued permalink. Proposed nullable `answer_eligibility_id` points to the actual selected row, through which the original ANSWER is available. Proposed FK policy: `ON DELETE SET NULL`; deleting eligibility must not delete the verdict or snapshots. Fallback alone does not make the FK null: selection from `(ANY, GENERAL)` points to that row.
 
-### Пропозиція: короткий `decision_context`
+### Proposal: short `decision_context`
 
-Користувач поставив під сумнів окремі `intent`, `topic`, `classification_status`, `fallback_reason`, `model_version`, `taxonomy_version`, `rubric_version`, `selection_version`, `locale` у VERDICT. Вони більше не подаються як прийнятий набір колонок. Потреба — пояснити, чому обрано відповідь і що брало участь у виборі. Пропонується один невеликий JSON-знімок події разом із FK на eligibility.
+The user questioned separate VERDICT columns for `intent`, `topic`, `classification_status`, `fallback_reason`, `model_version`, `taxonomy_version`, `rubric_version`, `selection_version`, and `locale`. They are no longer an accepted column set. The requirement is to explain why an answer was chosen and what participated in selection. One small event JSON snapshot plus an eligibility FK is proposed.
 
-FK показує поточний каталог, але не історичну причину: категорії чи механізм можуть бути відредаговані, а рядок — видалений. JSON навмисно фіксує факти на момент вибору. Категорії класифікатора і фактично вибраний пул можуть різнитися через fallback. Синтетичний приклад успішної класифікації з порожнім точним пулом:
+The FK shows the current catalog, not the historical reason: categories/mechanisms can be edited and rows deleted. JSON deliberately records selection-time facts. Classifier categories and the actual selected pool may differ due to fallback. Synthetic example of successful classification with an empty exact pool:
 
 ```json
 {
@@ -76,39 +76,39 @@ FK показує поточний каталог, але не історичн�
 }
 ```
 
-Пропонований мінімум:
+Proposed minimum:
 
-- `classifier`: provider і модель лише за фактичного виклику; зберігати валідовані intent/topic, якщо отримані. Фактичний model із відповіді має перевагу; якщо відповіді немає, окремий `requested_model` може зафіксувати лише запитану модель. При failure — нормалізований `failure_reason` (наприклад `timeout`), без вигаданих успішних labels. Якщо виклик пропущено, зафіксувати причину пропуску, а не вигадувати provider/model call.
-- `selection`: фактично використаний tier (`exact`, `intent_general`, `universal`), snapshot intent/topic пулу, кількість унікальних кандидатів до random, `algorithm: uniform_random`. `reason` — лише коли треба пояснити fallback; наприклад `exact_pool_empty`, `intent_pools_empty` або `classification_failed`.
-- `humor_mechanism` у selection — знімок механізму вибраної eligibility для майбутньої статистики. Він не брав участі у виборі. Перейменування механізму в каталозі не переписує стару подію.
+- `classifier`: provider/model only when actually called; retain validated intent/topic if received. Prefer the resolved response model; if there is no response, a separate `requested_model` may record only what was requested. On failure record normalized `failure_reason` (e.g. `timeout`), without fabricated successful labels. If a call is skipped, record the skip reason rather than inventing a provider/model call.
+- `selection`: actual tier (`exact`, `intent_general`, `universal`), pool intent/topic snapshot, unique candidate count before random selection, `algorithm: uniform_random`. Include `reason` only to explain fallback, e.g. `exact_pool_empty`, `intent_pools_empty`, `classification_failed`.
+- Selection `humor_mechanism`: a snapshot of the selected eligibility's mechanism for future statistics. It did not participate in selection. Renaming the catalog mechanism does not rewrite the event.
 
-При помилці Jev selector одразу бере `(ANY, GENERAL)`; технічний fallback-контекст `OTHER/GENERAL`, якщо використаний усередині application, не записується як відповідь Jev. Успішна класифікація `OTHER/GENERAL` натомість є справжнім результатом і проходить звичайні tiers.
+Under the future policy, a Jev failure sends the selector directly to `(ANY, GENERAL)`; an internal application fallback context `OTHER/GENERAL`, if used, is not recorded as Jev's response. Successful `OTHER/GENERAL` is a genuine result and follows normal tiers. The implemented adapter does not implement either selection policy.
 
-Це діагностичне пояснення, а не гарантія точного відтворення random. Не зберігати повний список кандидатів, raw provider response, секрети, IP або вигадані revision-поля. Confidence додавати лише якщо від нього залежить рішення; повні rubric/taxonomy/request versions не є обов'язковими полями MVP-вердикту. Їх можна вести у дослідницьких evaluation reports. Окрема locale у VERDICT зараз не потрібна для англомовного snapshot. JSON не замінює нормалізовані eligibility-запити і не віддається публічним API за замовчуванням. Остаточну структуру та назви ключів погодити перед реалізацією.
+This is a diagnostic explanation, not exact random replay. Do not store the full candidate list, raw provider response, secrets, IP, or invented revision fields. Add confidence only if it affects a decision; full rubric/taxonomy/request versions are not mandatory MVP verdict fields and may remain in evaluation reports. A separate VERDICT locale is unnecessary for an English snapshot. JSON does not replace normalized eligibility queries and is not public API output by default. Agree final structure/key names before implementation.
 
-Транзакція починається після зовнішньої класифікації: читання придатного пулу, вибір eligibility й insert текстових та діагностичного snapshot узгоджуються в одному сценарії. Catalog import атомарний. Відповідь HTTP 201 — після commit. Failure на записі → 503, без непрацюючого URL.
+A transaction starts after external classification: eligible-pool reading, eligibility selection, and text/diagnostic snapshot insertion must be consistent within one flow. Catalog import is atomic. HTTP 201 follows commit. Write failure → 503 without a broken URL.
 
-Незмінність не дорівнює безстроковому зберіганню. Retention, видалення на запит і політика індексації потребують рішення перед public release. Видалений результат не має перевикористовувати ID.
+Immutability does not mean indefinite retention. Retention, requested deletion, and indexing policy need decisions before public release. Deleted IDs must not be reused.
 
-## SQLite і PostgreSQL
+## SQLite and PostgreSQL
 
-Пропонується Doctrine DBAL + Migrations. [DBAL має платформи SQLite/PostgreSQL](https://www.doctrine-project.org/projects/doctrine-dbal/en/current/reference/platforms.html), але не робить їхні типи, блокування й DDL тотожними.
+Doctrine DBAL + Migrations is proposed. [DBAL supports SQLite/PostgreSQL platforms](https://www.doctrine-project.org/projects/doctrine-dbal/en/current/reference/platforms.html), but does not make types, locking, or DDL identical.
 
-- UUID зберігати переносним рядком, час — UTC із узгодженою точністю; не покладатися на native enum/JSONB/array у базових запитах.
-- Foreign keys у SQLite повинні бути ввімкнені на кожному connection. Випробувати це тестом, а не лише налаштуванням.
-- SQLite файл у `var/`, за межами `public/`, без мережевої файлової системи. Busy timeout/WAL розглядати для dev після перевірки режиму тестів. SQLite не є доказом production-конкурентності.
-- Міграції проганяти на порожній SQLite і на реальному PostgreSQL; SQL за потреби розгалужується за платформою. Не переносити автоматично SQLite-generated SQL на PostgreSQL.
-- Для production прогнати query plans, Unicode/length constraints, unique/FK behavior, транзакційні помилки та конкурентні inserts.
-- Локальна dev БД не мусить мігрувати у production як файл. Каталог переноситься контрольованим ідемпотентним import із стабільними IDs; вердикти за потреби — окремою перевіреною процедурою.
+- Store UUIDs as portable strings and time as UTC with consistent precision; avoid native enum/JSONB/array dependence in base queries.
+- Enable SQLite foreign keys for each connection. Prove enforcement with a test, not configuration alone.
+- Keep SQLite under `var/`, outside `public/`, without a network filesystem. Consider busy timeout/WAL for development after checking test modes. SQLite is not evidence of production concurrency.
+- Run migrations on empty SQLite and real PostgreSQL; branch SQL by platform where necessary. Do not automatically transfer SQLite-generated SQL to PostgreSQL.
+- For production verify query plans, Unicode/length constraints, uniqueness/FKs, transaction errors, and concurrent inserts.
+- The local development database need not migrate to production as a file. Transfer the catalog through controlled idempotent import with stable IDs; verdict transfer, if needed, requires a separate verified procedure.
 
-### Життєвий цикл міграцій
+### Migration lifecycle
 
-Прийнято користувачем: **до production**, поки дані локальні/тестові й одноразові, development migration files можна редагувати на місці та перебудовувати disposable БД. Не потрібно створювати нову міграцію для кожного уточнення ще не випущеної схеми. Це правило подальшої розробки: зараз міграцій немає, жодної БД не створюємо й не скидаємо.
+Accepted by user: **before production**, while data is local/test and disposable, development migrations may be edited in place and databases rebuilt. Every refinement to an unreleased schema need not create another migration. This governs future development: there are currently no migrations, and this task creates/resets no database.
 
-Коли з'являються спільні чи постійні дані, що потребують збереження, зокрема production, застосовані міграції стають незмінними: кожна зміна — нова incremental migration із перевіркою upgrade та збереження даних. До production deployment зараз не переходимо.
+Once shared/persistent data needs preservation, including production, applied migrations become immutable: every change is a new incremental migration with upgrade/data-preservation checks. This documentation does not authorize deployment.
 
-## Редакторський import
+## Editorial import
 
-Початкова пропозиція — версійований файл контенту та console command import, без web admin. Формат визначається разом із каталогом, не нав'язується зараз. Перевіряти UUID та стабільність IDs відповідей і eligibility, наявність `created_at` (повторний import не переписує час створення), непорожній текст, locale `en`, дозволені intent/topic і `humor_mechanism`, відсутність дублікатів трійок і щонайменше одну активну `(ANY, GENERAL)` відповідь. Помилка в одному записі не повинна залишати напівоновлений каталог.
+Initial proposal: a versioned content file and console import command, no web admin. Define the format alongside the catalog, not in advance. Validate UUIDs and stable answer/eligibility IDs, `created_at` (reimport does not rewrite creation time), nonempty text, locale `en`, allowed intent/topic and `humor_mechanism`, no duplicate triples, and at least one active `(ANY, GENERAL)` answer. One invalid entry must not leave a partially updated catalog.
 
-Для MVP бажано покрити кожен підтримуваний intent щонайменше кількома різними GENERAL-відповідями. Кількість, редакторська якість і повторюваність — критерії контентного етапу, не обіцянка вже готової бібліотеки.
+The MVP should cover each supported intent with several different GENERAL answers. Quantity, editorial quality, and repetition are content-stage criteria, not a claim that a library exists.

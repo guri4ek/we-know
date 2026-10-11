@@ -1,169 +1,171 @@
-# Стратегія тестування
+# Testing strategy
 
-Стан: 2026-10-11. Skeleton та scoped етап 1 мають executable Unit/Integration/Application suites. Інші розділи нижче лишаються планом цільового MVP. Фактично виконані перевірки, встановлені інструменти та їхні результати фіксуються у [verification.md](verification.md). Майбутні тести нижче не означають, що відповідні функції вже реалізовані.
+As of 2026-10-11. The skeleton and stage 1 have executable **Application, Unit, and Integration** PHPUnit suites. Other MVP checks below are plans. Actual runs, installed tools, and results are recorded in [verification](verification.md); planned tests do not imply implemented features.
 
-Jev — зовнішній класифікатор, а не тестовий фреймворк і не генератор відповідей. PHP-тести плануються на PHPUnit. Інтеграцію з Jev перевіряємо окремо через локальні HTTP-підміни та явно запущені контрактні звернення до сервісу.
+Jev is an external classifier, not a test framework or answer generator. PHPUnit tests our PHP components. Local HTTP mocks and separately authorized real-service calls provide different integration evidence; human editorial evaluation is separate again.
 
-## Межі та інваріанти
+## Boundaries and invariants
 
-1. Класифікатор повертає лише дозволені intent/topic; готову відповідь обирає сервер із редакторської бібліотеки.
-2. Вибір відбувається в першому непорожньому придатному пулі. Відсутність точного збігу не дозволяє довільно брати відповідь із чужого intent.
-3. Один успішний запит створює збережений результат. Його permalink читає snapshot і не викликає ні Jev, ні random повторно.
-4. Редагування чи деактивація фрази в бібліотеці не змінює вже виданий результат.
-5. Помилка Jev приводить до визначеної деградації; помилка запису в БД не видає удавано успішний permalink.
-6. Серверна валідація працює незалежно від JavaScript. Жоден секрет провайдера не потрапляє у HTML, JSON для браузера, exceptions чи тестові артефакти.
-7. У всіх таблицях UUID PK і `created_at`; eligibility має окрему unique трійку answer/intent/topic. Механізм гумору не змінює доступність чи ймовірність вибору відповіді.
+These combine implemented classification boundaries with requirements for future product behavior:
 
-Наступні перевірки `decision_context` і nullable eligibility FK умовні: цей спрощений контракт збереження ще є пропозицією. Після погодження перевіряти historical snapshot окремо від поточного стану каталогу, за [моделлю даних](architecture/data.md).
+1. The classifier returns only allowed intent/topic or typed failure; the future server selects a prepared answer from the editorial library.
+2. Future selection uses the first nonempty eligible pool. An empty exact pool does not permit a random answer from another intent.
+3. A successful future answer request creates a stored result; permalink reads its snapshot without Jev or rerandomization.
+4. Editing/deactivating library text must not change issued results.
+5. Future application policy handles Jev degradation; failed DB writes never return a false successful permalink.
+6. Future server validation is independent of JS. Provider secrets must not enter HTML, browser JSON, exceptions, or test artifacts.
+7. Every future table has UUID PK/`created_at`; eligibility retains separate unique answer/intent/topic. Humor metadata changes neither eligibility nor selection probability.
 
-Очікувані URL, поля та статуси звіряти з [технічним планом](technical-plan.md); його затверджений HTTP-контракт має перевагу над прикладами тут. Назви майбутніх інтерфейсів у цьому документі — пропозиції.
+`decision_context` and nullable eligibility FK tests are conditional: the simplified persistence contract is proposed, not approved. If accepted, test historical snapshots separately from the current catalog, following the [data model](architecture/data.md).
 
-## Рівні перевірок
+Use the [technical plan](technical-plan.md) for proposed URLs/fields/statuses. Its HTTP contract is **not yet approved or implemented**; reconcile examples before implementation. Future interface names here are proposals.
 
-| Рівень | Що реально виконується | Зовнішні залежності | Коли запускати |
+## Test levels and actual status
+
+| Level | Current status / objective | External dependencies | When relevant |
 | --- | --- | --- | --- |
-| Skeleton smoke | Boot kernel, маршрути, Twig, відповіді існуючого GET | Немає | Зараз та при змінах bootstrap |
-| Unit | Валідація, fallback, selector, оркестрація зі spies/fakes | Немає | При кожній зміні відповідної логіки |
-| Jev adapter integration | Справжній адаптер + `MockHttpClient` + JSON fixtures | Немає | При змінах адаптера, prompts, taxonomy |
-| Kernel integration | DI, конфігурація, мапінг помилок | Немає мережі | При змінах wiring |
-| Persistence integration | Справжні міграції, repository, транзакції | Ізольовані SQLite і PostgreSQL | При змінах схеми/запитів; перед релізом |
-| HTTP application | Контролер → application service → тестова БД; fake classifier | Лише тестова БД | При змінах сценарію створення/читання |
-| Browser E2E | Окремий тестовий браузер, DOM, fetch, навігація | Локальний сервер, fake classifier | Коли з'явиться JavaScript |
-| Live Jev contract | Справжній адаптер та мала синтетична вибірка | Jev, тестовий ключ, мережа | Явно перед прийняттям інтеграції/зміною моделі |
-| Quality/performance eval | Розмічений корпус і вимірювання | Залежить від експерименту | Окремий дослідницький запуск |
+| Skeleton smoke | Existing: kernel, routes, Twig, GET/HEAD/404/405 | None | Bootstrap changes |
+| Unit | Existing: taxonomy/rubric/normalizer, runner/metrics. Input validation, fallback, selector, answer orchestration planned | None | Relevant logic changes |
+| Jev adapter integration | Existing: real adapter + `MockHttpClient` + JSON fixtures | None | Adapter/prompt/taxonomy changes |
+| Kernel integration | Existing: classification DI/test client; broader application wiring planned | No network | Wiring changes |
+| Persistence integration | Planned: migrations, repositories, transactions | Isolated SQLite and PostgreSQL | Schema/query changes; release |
+| HTTP answer application | Planned: controller→service→test database, fake classifier | Test database | Creation/read flow changes |
+| Browser E2E | Planned: isolated browser, DOM, fetch, navigation | Local server, fake classifier | When JS exists |
+| Live Jev contract | CLI exists; two historical development batches recorded; no live PHPUnit suite | Jev, production key, network | Separately authorized model/contract evaluation |
+| Quality/performance | Classification metrics implemented; development measured live. Human humor, holdout, production load unverified | Experiment-specific | Separate research runs |
 
-У Symfony для інтеграційного рівня є `KernelTestCase`, для HTTP application — `WebTestCase`. Тестовий kernel потребує явної конфігурації `test` environment. У цьому проєкті Flex відсутній, тому bootstrap/config не можна вважати автоматично створеними. [Symfony 7.4: testing](https://symfony.com/doc/7.4/testing.html).
+Symfony provides `KernelTestCase` for integration and `WebTestCase` for HTTP application checks. Test kernel/environment configuration is explicit here because Flex is absent. [Symfony 7.4 testing](https://symfony.com/doc/7.4/testing.html).
 
-## Що перевірити на skeleton зараз
+## Existing skeleton checks
 
-Поточна корисна перевірка — реальна загрузка застосунку та rendering, а не unit test, який повторює один виклик `render()` у контролері:
+Useful tests boot/render the application rather than repeat a controller `render()` call:
 
-- `GET /`: `200`, HTML content type, `lang="en"`, назва продукту, основний заголовок, рівно один `main`.
-- HTML містить зрозумілий стан заглушки; robots `noindex, nofollow` відповідає поточному неопублікованому стану. При запуску продукту цю вимогу свідомо змінити.
-- `HEAD /`: `200` з headers сторінки та без body. Невідомий URL: `404`; `POST /`: `405`, без запуску бізнес-сценарію.
-- Kernel завантажується в `test`, а production smoke з `APP_DEBUG=0` не розкриває debug stack trace.
-- Поточний smoke не потребує Jev, БД, API key або browser automation.
+- `GET /`: 200, HTML content type, `lang="en"`, product name, primary heading, exactly one `main`.
+- Clear placeholder state and current `noindex, nofollow` robots copy; deliberately revisit at launch.
+- `HEAD /`: 200 with page headers and no body; unknown URL→404; `POST /`→405 without business flow.
+- Test kernel boots. Bootstrap regression verifies process `APP_ENV=prod` / `APP_DEBUG=0` precedence. A historical debug-off production HTTP smoke checked absence of traces; this audit did not repeat a server/browser smoke.
+- No Jev/database/key/browser automation needed.
 
-Пакети PHPUnit/BrowserKit/CssSelector та конфігурацію додавати явно, з урахуванням PHP baseline 8.2. Не копіювати номер найновішого PHPUnit без перевірки його PHP-вимог. Фактичний lock file та [verification.md](verification.md) визначають встановлені версії.
+PHPUnit/BrowserKit/CssSelector/configuration are explicitly installed. Use the inspected lock and [verification](verification.md) for versions. Development/minimum is PHP **8.4**, planned **8.5**; existing Composer 8.2 requirements/platform are an [error pending separate correction](verification.md#documentation-audit-findings). Do not select tooling versions without checking runtime requirements.
 
-## Unit: детермінована бізнес-логіка
+## Planned unit tests: deterministic business logic
 
-Залежності, які варто інжектувати за потребою: `QuestionClassifier`, `AnswerRepository`, `RandomIndexSource`, `VerdictRepository`, clock та генератор public ID. Не додавати абстракцію виключно заради тесту, якщо існуючий простий контракт вже дозволяє підміну.
+Inject boundaries only as needed: `QuestionClassifier`, `AnswerRepository`, `RandomIndexSource`, `VerdictRepository`, clock, public-ID generator. Do not add abstraction solely for tests when a simple existing contract supports substitution.
 
-| Об'єкт перевірки | Приклади та очікування |
+Except the existing classification taxonomy checks, the following answer-flow tests are **not implemented**:
+
+| Subject | Scenarios and expected behavior |
 | --- | --- |
-| Question validation | Порожній рядок, лише пробіли, `null`, масив замість рядка, 1/500/501 Unicode code points, NUL, malformed UTF-8, невідомі поля, багатобайтний текст. Ліміт 8 KiB тіла та ліміт символів питання перевіряються окремо |
-| Нормалізація | Поведінка пробілів/newlines узгоджена з контрактом; punctuation та зміст не зникають. Якщо зберігаються original і normalized, тестувати обидва поля |
-| Taxonomy | Усі дозволені значення; невідомий intent/topic чи `ANY` у відповіді Jev відхиляється адаптером як invalid_response. Application переводить typed failure у OTHER/GENERAL fallback-контекст, зберігаючи failure status |
-| Fallback | Точний intent/topic → intent/GENERAL → ANY/GENERAL; на кожному кроці непорожній пул завершує пошук; GENERAL не шукається двічі; неактивні та іншомовні фрази виключаються; IDs дедуплікуються |
-| Selector | Пули з 1 і кількох елементів; fake random обирає перший/останній доступний індекс. Помилковий індекс не маскується переходом до сторонньої категорії |
-| Humor mechanism | Зміна механізму на eligibility не змінює candidate IDs, порядок правил fallback або ваги; import відхиляє дубль answer/intent/topic навіть з іншим механізмом |
-| Decision context, якщо прийнято | Успіх із точним пулом та fallback: категорії Jev не підміняються категоріями вибраного пулу; tier, candidate_count та механізм відповідають фактичному вибору. Timeout не створює вигаданих classifier labels; повний response/кандидати/секрети не зберігаються |
-| Порожня бібліотека | Повертається окрема доменна помилка та контрольована HTTP-помилка; не зберігається порожній вердикт |
-| Application service | Успіх викликає класифікацію, вибір і запис у визначеному порядку; invalid input не викликає жодного з них |
-| Jev unavailable | Використано універсальний погоджений fallback, причина деградації доступна телеметрії; текст не генерується моделлю |
-| Persistence failure | Відсутній success response; повторна спроба не використовує неіснуючий permalink |
-| Read permalink | Повертається збережений snapshot; spies на classifier/random мають нуль викликів |
+| Question validation | Empty/whitespace, `null`, array, 1/500/501 Unicode code points, NUL, malformed UTF-8, unknown fields, multibyte text; 8 KiB body limit separate from character limit |
+| Normalization | Contract-defined spaces/newlines, preserve punctuation/meaning; if original/normalized fields exist, test both |
+| Taxonomy boundary / future application policy | Existing adapter rejects unknown intent/topic and ANY as invalid_response. Future application may use explicit OTHER/GENERAL failure context without turning failure into success; force universal pool |
+| Fallback | Exact intent/topic→intent/GENERAL→ANY/GENERAL; first nonempty stops search; GENERAL not searched twice; exclude inactive/wrong-locale text; deduplicate IDs |
+| Selector | One/multiple candidates; fake random chooses first/last allowed index; invalid index is not concealed by selecting an unrelated category |
+| Humor mechanism | Changing metadata does not change candidate IDs, fallback order, or weights; import rejects duplicate triple even with another mechanism |
+| Decision context, if accepted | Exact/fallback success keeps Jev categories distinct from selected pool; tier/count/mechanism reflect actual selection. Timeout fabricates no classifier labels; omit raw response/candidate list/secrets |
+| Empty library | Distinct domain and controlled HTTP error; no empty verdict |
+| Application service | Success classifies/selects/writes in order; invalid input calls none |
+| Jev unavailable | Agreed universal fallback; degradation reason observable; model generates no final text |
+| Persistence failure | No success response or nonexistent permalink reused on retry |
+| Read permalink | Stored snapshot; classifier/random spies have zero calls |
 
-Не перевіряти випадковість умовою «два запити обов'язково дадуть різні відповіді»: повтор є законним результатом random. Не робити flaky gate з гістограми частот. У unit перевіряємо допустимість кандидата та використання random boundary; статистичний розподіл за потреби досліджуємо окремо.
+Do not assert two requests must produce different answers: repeats are valid random outcomes. Do not gate on flaky frequency histograms. Unit tests check candidate eligibility/random boundary; statistical distribution is a separate experiment if needed.
 
-## Jev adapter: без мережі
+## Existing Jev adapter tests: no network
 
-Адаптер використовує Symfony `HttpClientInterface`; у тестах передаємо `MockHttpClient` і `MockResponse`. Callback перевіряє request, response fixtures перевіряють parsing. Symfony підтримує підміни status та transport failures, зокрема timeout. Це перевірка нашої інтеграції, а не доказ доступності живого API. [Symfony 7.4: HTTP Client testing](https://symfony.com/doc/7.4/http_client.html#testing).
+The adapter uses Symfony `HttpClientInterface`; tests pass `MockHttpClient`/`MockResponse`. Callbacks inspect requests; fixtures exercise parsing and status/transport failures including deterministic timeout. This tests our integration, not live availability. [Symfony HTTP Client testing](https://symfony.com/doc/7.4/http_client.html#testing).
 
-Стан офіційного quickstart на 2026-10-11: POST `https://api.typesafe.ai/v1/systemone`, Bearer credential, body з `state`, `model`, `questions`; `choice` підтримує перелік `criteria`. Ця структура придатна для окремих intent/topic у одному зверненні. Точний parser fixture потрібно звірити з актуальним response schema перед реалізацією. [TypeSafe quickstart](https://docs.typesafe.ai/introduction/quickstart).
+Historical quickstart check, 2026-10-11: POST `https://api.typesafe.ai/v1/systemone`, Bearer credential, `state`, `model`, `questions`, Choice criteria. Fixtures implement that schema; strict parsing subsequently accepted 95 live responses across two batches. [TypeSafe quickstart](https://docs.typesafe.ai/introduction/quickstart). No external contract refresh was performed during the documentation audit.
 
-Обов'язкова матриця adapter tests:
+Existing matrix:
 
-- Метод, фіксований конфігурований origin/path, JSON content type, фіктивний Bearer token, model і версія taxonomy/prompt. Поле питання не може змінювати URL або headers.
-- У `state` передається лише погоджений текст питання; бібліотека відповідей, cookies, IP і внутрішні налаштування не відправляються.
-- Обидві категорії запитуються одним зверненням; невідомий enum, відсутня категорія чи неправильна форма відповіді — invalid_response. Перехід до OTHER/GENERAL відбувається в application fallback policy, не маскує помилку провайдера під success. Рядок із готовим жартом чи інструкціями не стає відповіддю продукту.
-- Валідна відповідь; порожній body; malformed JSON; wrong type; відсутня одна категорія; невідоме значення; зайві поля; невідповідна структура; надмірний response body.
-- `401/403/422`, `429`, `500/502/503/529`, redirect, transport exception, timeout до headers і під час читання body.
-- Кожна невдала відповідь потрапляє у визначений тип помилки, а не випадково у `200` зі `null`. Auth failure відрізняється в diagnostics від timeout, але секрет не розкривається.
-- Для першої версії пропонується одна спроба Jev у foreground без автоматичного retry. Тест перевіряє точну кількість calls, `max_duration` 400 ms та idle timeout не більший за цей бюджет; retry policy не повинна непомітно множити latency/вартість. Ці стартові значення переглядаються разом із технічним планом після вимірювань.
-- Redirect не переносить credential на сторонній host. Помилки та логи не містять токена, повного raw request чи персональних питань.
+- Method, fixed endpoint, JSON media type, fake Bearer token, configured model, rubric/taxonomy criteria. Question text does not change URL/headers.
+- `state` contains only the question; no answer library, cookies, IP, humor metadata, or internal configuration.
+- One request with two Choice questions. Unknown enums, missing category, invalid shape→invalid_response. Application fallback is future work; ready-joke/instruction text never becomes a product answer.
+- Valid body, empty/malformed/oversized JSON, wrong types, missing fields/category, unknown values, extra metadata, invalid distributions/model/usage, finite numeric ranges; low confidence accepted without threshold; valid OTHER/GENERAL is success.
+- 401/403/422/429/500/502/503/529, redirect, and non-200 2xx; adapter accepts exactly 200. Transport/timeout at request/body; documented empty mock chunk simulates idle timeout without sleep.
+- Typed failures, with auth distinct from timeout and no raw provider body/secret disclosure.
+- Exact attempt counts, retries=0, max_redirects=0; current constructor/CLI defaults **600 ms idle / 800 ms total**. Tests also explicitly pass historical 300/400 ms, proving configurable budgets rather than current defaults. Invalid budgets make no request.
+- Test container wiring and deny-network default; no credential forwarding on redirects, no real token/personal question in test output.
 
-Fixtures — синтетичні, невеликі, з коментарем про джерело схеми/дату. Не зберігати HAR із реальними Authorization headers. Відповідь, вигадана вручну за неперевіреною схемою, позначається як чернетка, а не як запис реального контракту.
+Fixtures are small, synthetic, dated with schema provenance; [fixture README](../tests/Fixtures/Jev/README.md). No live Authorization HAR. Hand-authored fixtures are not recorded traffic or independent live-schema evidence.
 
-## Live Jev contract та якість
+## Live contract and classification quality
 
-**Реалізація етапу 1:** console command `app:jev:evaluate`, без live tests у default PHPUnit discovery. Offline replay використовує справжній adapter + MockHttpClient; deterministic metric fixtures й preflight тестуються. Live вимагає --live, явний --limit та JEV_API_KEY; без retry/sleep. За уточненням Serhii — один project key у `.env.local`, без окремого test account/key. Test services примусово мають dummy/empty credentials і deny-network client. Timeout/max duration configurable, поточні defaults 0.60/0.80 s за рішенням Serhii; початковий 0.30/0.40 baseline також покрито request assertions. [Формат і команди](evaluation/README.md), [дві live development серії](evaluation/stage-1-results.md). Абзаци нижче з окремим live PHPUnit profile й test key — історичні пропозиції, не поточний runner.
+**Implemented stage 1:** `app:jev:evaluate`; no live tests in default PHPUnit discovery. Offline replay exercises the real adapter with mocks. Deterministic metrics and CLI preflight are tested. Live requires `--live`, explicit `--limit`, configured model and production key, and separate run authorization; no retries/sleep/parallel requests. Test services force dummy/empty credentials and deny-network client. Defaults 0.60/0.80 s; historical 0.30/0.40 remains comparison evidence. [Format/commands](evaluation/README.md), [two recorded batches](evaluation/stage-1-results.md).
 
-Live suite відділений від default runner: наприклад, окремий `phpunit.live.xml` і `tests/Contract/Live/`. Пропонований запуск — лише за `RUN_LIVE_JEV_TESTS=1` плюс наявним server-side credential. Без явного прапорця мережа не викликається; якщо прапорець встановлено, але ключа немає, preflight завершується зрозумілою помилкою, а не показує зелений результат після всіх skipped tests.
+The initial plan suggested `phpunit.live.xml`, `tests/Contract/Live/`, and `RUN_LIVE_JEV_TESTS=1`. **Those files/profile/flag were not implemented**; the CLI is the current opt-in path. The earlier separate-test-account/key proposal was superseded: this personal project uses its production key and no sandbox workflow. Explicit preflight failure is preferable to apparently green skipped checks; current CLI rejects missing live preconditions before network.
 
-Перед першим live запуском потрібні реалізований adapter, тестовий акаунт/ключ, підтверджені endpoint/model та доступний бюджет. Під час початкового scaffold зовнішні платні виклики не виконуються. Ключ передається через середовище/локальний секрет, не через CLI argument, fixture чи committed `.env`.
+Future live preconditions: working adapter, configured production key, confirmed endpoint/model, explicit request budget. Bootstrap made no paid calls; stage 1 later used 108 authorized requests. Never pass the key as a CLI argument/fixture/committed `.env`; use local secret/environment. Prior budgets do not carry forward.
 
-Малий live smoke: 3–5 синтетичних питань, один виклик на питання, послідовне виконання, обмежений загальний deadline, без повторів при `429`. Перевіряємо HTTP-доступність, сумісність схеми, наявність обох категорій та їх належність allowlist. Вибір конкретного intent для природної мови не робимо жорстким контрактним assertion. Фіксуємо дату, requested/resolved model (якщо API повертає), prompt/taxonomy version, status і durations без raw secrets.
+A **proposed** 3–5-question smoke checks availability/schema/both allowlisted dimensions with sequential one-call-per-question execution, bounded budget, no retry on 429. Do not make exact natural-language intent a hard live-contract assertion. Record date, requested/resolved model, rubric/taxonomy, status, timings without secrets. No separate 3–5-question smoke is claimed here; historical evidence is the two development batches.
 
-Окремий quality eval, запропонований стартовий обсяг — 180–300 синтетичних англомовних питань:
+The original broader quality proposal was **180–300 synthetic English questions**, not the implemented 81-question corpus. Possible future evaluation:
 
-- Кожен intent, кожна тема, неоднозначні/короткі питання, punctuation, typo, injection-подібний текст, out-of-scope та неанглійські приклади.
-- Редакторські labels допускають кілька прийнятних категорій для неоднозначного питання; окремий frozen holdout не використовується для налаштування prompt.
-- Звіт: per-intent recall, confusion matrix, macro F1 на однозначній частині, прийнятність на неоднозначній, частка invalid schema, fallback rate, latency P50/P95/P99, кількість/вартість calls за фактичним тарифом.
-- Форма відповіді та якість гумору оцінюються окремо: відповідність intent, доречність абсурду, різноманітність, deadpan tone. «Смішно» не замінюється автоматичним unit assertion.
-- Початкові пороги якості затверджуються після baseline. Дані й довірчі інтервали мають бути в звіті; випадковий провал одного прикладу не є автоматично regression.
+- Every intent/topic, ambiguity/short inputs, punctuation/typos, instruction attacks, out-of-scope and other languages.
+- Multiple acceptable labels for ambiguous questions if a future version defines them; current corpus has one author-written intent/topic pair per sample. Freeze holdout and do not tune prompts on it.
+- Future per-intent recall, macro F1 on unambiguous samples, acceptability on ambiguity, invalid-schema rate, P99, confidence coverage, and billing. Current runner implements intent/topic/joint accuracy with denominators, matrices, typed failure rate, nearest-rank P50/P95, known tokens. Application empty-catalog fallback rate cannot be measured before selector/catalog exist.
+- Separate answer form/fit/diversity/deadpan/humor judgments. “Funny” is not a unit assertion; Codex scores do not replace humans.
+- Use baseline to propose quality thresholds, then freeze them **before** the next acceptance evaluation. Do not retroactively claim a passed gate; report data/uncertainty. One stochastic mismatch is not automatically a regression.
 
-Зміна плаваючої model alias може змінити результат без зміни коду. Повторний eval потрібен після зміни моделі, provider schema, prompt, taxonomy чи бібліотеки; саме порівняння corpus versions повинно бути відтворюваним.
+Floating model aliases can change results without code changes. Reevaluate classification after model/schema/prompt/taxonomy changes with reproducible corpus comparisons; library changes need separate content evaluation, since the classifier never receives it.
 
-## Persistence: SQLite та PostgreSQL
+## Planned persistence tests: SQLite and PostgreSQL
 
-Перевіряти однаковий repository contract на обох рушіях. SQLite не є доказом сумісності з production PostgreSQL. Для PostgreSQL зафіксувати major version після вибору hosting; до цього результат позначається як перевірка кандидата.
+Run the same repository contract on both accepted engines. SQLite does not prove production PostgreSQL compatibility. Fix PostgreSQL major version after hosting choice; before that version-level acceptance remains open. No DB implementation/tests/migrations exist yet.
 
-| Сценарій | Перевірка |
+| Scenario | Future verification |
 | --- | --- |
-| Міграції | До production після редагування development migrations перебудована disposable test БД проходить поточний chain на обох рушіях. Коли є спільні/постійні дані — застосовані міграції незмінні; нові проходять upgrade з попередньої версії зі збереженням даних. `schema:create` не замінює перевірку міграцій |
-| Цілісність | UUID PK і created_at у всіх таблицях, окремий UUID PK eligibility і UNIQUE (answer_id, intent, topic), foreign keys, NOT NULL та погоджені enum/check constraints реально діють; для SQLite явно перевірити foreign key enforcement |
-| Fixtures | У кожного intent є достатній доступний fallback; inactive та duplicate join rows не спотворюють eligible pool |
-| Точний вибір | Queries повертають погоджені пари: `(WHY, WORK)` та `(WHEN, TECH)` не дозволяють `(WHY, TECH)`; case sensitivity/collation не змінюють enum lookup; службові IDs не залежать від випадкового порядку DB rows |
-| Snapshot | Після створення змінити/деактивувати бібліотечну фразу; старий permalink лишається незмінним без revision-полів. Якщо decision_context/FK прийнято: змінити categories/mechanism eligibility — JSON не змінюється; видалити eligibility — FK стає null, вердикт та snapshots залишаються |
-| Catalog import | UUID відповідей/eligibility і created_at стабільні при повторному import; дозволені mechanism strings перевіряються; помилка не залишає частково оновлений каталог |
-| Unicode/час | Emoji, лапки, HTML-подібний текст і UTC timestamp проходять round trip; довжина не непомітно обрізається |
-| Atomic write | Штучна помилка DBAL insert/commit не лишає частково створеного результату; success відправляється лише після commit; зовнішній HTTP-виклик не утримує DB transaction |
-| Public ID collision | Fake generator повертає існуючий ID; контрольований retry має обмеження, не перезаписує результат |
-| Concurrency | Два окремих connections/processes створюють записи без втрати даних. SQLite busy/lock і PostgreSQL conflict мають контрольовану обробку |
-| Недоступність БД | Контрольована `503` або інший затверджений status; не повертається успішний JSON із недоступним permalink |
+| Migrations | Edited unreleased migrations run on rebuilt disposable test databases on both engines. Shared/persistent data makes applied migrations immutable; new migrations upgrade prior schema preserving data. `schema:create` is not migration verification |
+| Integrity | UUID PK/created_at everywhere, own eligibility UUID and UNIQUE triple, FKs, NOT NULL, agreed enum/check constraints enforced; explicitly verify SQLite FK enforcement |
+| Fixtures | Enough available intent fallback; inactive/duplicate join rows do not bias pool |
+| Exact selection | `(WHY, WORK)` and `(WHEN, TECH)` do not imply `(WHY, TECH)`; collation/case does not alter enums; IDs independent of incidental row order |
+| Snapshot | Editing/disabling library text leaves old permalink unchanged without revisions. If context/FK accepted, changing categories/mechanism leaves JSON unchanged; deleting eligibility nulls FK but preserves verdict/snapshots |
+| Catalog import | Answer/eligibility UUIDs and creation times stable across reimport; allowed mechanism strings checked; invalid entries leave no partial update |
+| Unicode/time | Emoji, quotes, HTML-like text, UTC timestamps round-trip without silent truncation |
+| Atomic write | Insert/commit failure leaves no partial result; success after commit; external HTTP holds no DB transaction |
+| Public-ID collision | Fake generator returns existing ID; bounded controlled retry, never overwrite |
+| Concurrency | Separate connections/processes create without lost data; controlled SQLite busy/lock and PostgreSQL conflicts |
+| Unavailable database | Controlled 503/agreed error, no successful JSON with inaccessible permalink |
 
-За замовчуванням кожен тест використовує ізольовані fixtures і відновлює стан. Migration/concurrency тести запускаються окремо від suite із transaction rollback: один зовнішній rollback не імітує незалежних клієнтів. SQLite in-memory прив'язаний до connection; для kernel reboot і кількох процесів використовувати окремий тимчасовий файл. PostgreSQL — окрема тестова БД/схема на worker. Перед destructive reset перевіряти test environment і allowlisted test DSN; production DSN тестам не доступний.
+Isolate fixtures and restore state per test. Migration/concurrency tests are separate from transaction-rollback suites: one outer rollback does not simulate independent clients. SQLite in-memory is connection-bound; use a temporary file for kernel reboot/multiple processes. PostgreSQL gets a separate test DB/schema per worker. Destructive resets require verified test environment/allowlisted DSN; tests have no production DSN. This documentation task creates/resets no database.
 
-Це план майбутніх DB-тестів. Під час уточнення документації reset не виконується, БД та міграції ще не створені.
+## Planned HTTP and browser acceptance
 
-## HTTP та browser acceptance
+Once POST exists, test fake classifier plus real test DB end-to-end: valid request→201 JSON stored result, correct Location/no-store→GET permalink→same question/answer after kernel reboot. Two new requests may have different UUIDv4 and identical answer text; both valid. Canonical/OG derive from snapshots/trusted origin; hostile Host must not replace share URL.
 
-Після реалізації `POST /answer` перевірити весь ланцюг із fake classifier та реальною тестовою БД: валідний запит → `201`, JSON зі збереженим результатом, правильні `Location` та `Cache-Control: no-store` → `GET /a/{publicId}` → та сама пара питання/відповідь після перезавантаження kernel. Два нові запити можуть мати різні UUIDv4 і однаковий текст відповіді; обидва варіанти коректні. Canonical/OG формуються зі snapshot і довіреного origin, сторонній Host не підміняє share URL.
+Proposed negative matrix: malformed JSON 400; disallowed Origin/cross-site 403; unsupported media 415; oversized body 413; invalid question 422; limit 429 + Retry-After; unknown permalink 404; unavailable DB/content 503. Invalid requests create no record/call. GET spends no provider quota. Provider failure with universal content creates persisted fallback→201, not 503. These are future policy/HTTP tests, not current routes.
 
-Негативна HTTP-матриця: некоректний JSON (`400`), неприпустимий Origin/cross-site (`403`), непідтримуваний media type (`415`), завеликий body (`413`), domain validation (`422`), rate limit (`429` із `Retry-After`), невідомий permalink (`404`), тимчасова недоступність БД/контенту (`503`). Статуси відповідають поточній пропозиції HTTP-контракту. Invalid request не створює запис і не викликає Jev. GET permalink не витрачає provider quota. Provider failure з доступним universal pool завершується `201` зі збереженим fallback, а не `503`.
+Security scenarios: Twig escaping/DOM text insertion for HTML/script; instruction strings as data; same-origin/media/rate checks before paid calls. If CSRF tokens are adopted, test missing/invalid/valid; CSRF does not replace automated-abuse controls. Production errors omit traces, DSNs, keys, raw provider errors. `100% confidence` is satirical copy only.
 
-Окремі security cases: HTML/script у питанні екранується Twig та безпечно вставляється в DOM через текст; injection-рядок зберігається як дані; same-origin policy, прийнятні content types та rate limiting діють до платного виклику. Якщо обрано CSRF-token захист, тестувати відсутній/невалідний/дійсний токен; CSRF не замінює захист від автоматизованого abuse. У prod error response відсутні trace, DSN, ключі й raw provider errors. `100% confidence` перевіряється лише як сатиричний copy, не як метрика класифікатора.
+Browser E2E requires an isolated test profile, never personal tabs. Choose a runner (e.g. Playwright) when JS exists; this does not require a SPA/framework. No browser automation was used by this audit.
 
-Browser E2E запускається в окремому тестовому профілі, без керування особистими вкладками користувача. Вибір runner (наприклад, Playwright) зробити при появі JS; production сайт від цього не стає SPA і не потребує JS framework.
+- Enter/click produces one POST; clear pending state; controls usable after success/error.
+- Network error/timeout/429/503/HTML instead of JSON/malformed JSON: truthful error and preserved input.
+- Double-click does not duplicate client submits. If another submit is allowed while pending, reordered responses must not let stale output overwrite the latest result. AbortController does not guarantee cancellation of a started server write.
+- Reload/back/direct permalink remain server pages; share URL matches displayed result.
+- Real DOM checks for keyboard focus, labels, accessible live-region messages, narrow viewport, stable critical controls.
+- With JS disabled, home/permalink readable and form explains JS requirement; initial HTTP proposal has no form-encoded fallback.
 
-- Enter і click запускають один POST; кнопка та input мають зрозумілий pending state, після success/error доступні знову.
-- Network error, timeout, `429`, `503`, HTML замість JSON, malformed JSON: користувач бачить правдиве повідомлення, введений текст збережений.
-- Double-click не створює два клієнтські submits. Якщо дозволено новий submit до завершення попереднього, відповіді навмисно переставляються в часі: stale response не перекриває останній результат. `AbortController` не вважається гарантією скасування вже початого server-side запису.
-- Reload/back/direct permalink працюють як серверні сторінки; share URL відповідає показаному результату, не останньому довільному response.
-- Keyboard focus, label, повідомлення через доступний live region, narrow viewport та відсутність зміщення критичних controls перевіряються на реальному DOM.
-- Вимкнений JS: головна сторінка та permalink читаються, форма явно пояснює необхідність JS. Поточний HTTP-план не передбачає form-encoded fallback.
+## Planned performance and observability checks
 
-## Продуктивність та спостережуваність
+Unit/integration assertions should not require arbitrary-machine wall time below 20 ms. Test budget configuration through controlled transport/fakes; measure real latency separately. Initial [context](context.md) hypotheses: backend excluding provider≤20 ms, POST P50≤300/P95≤700 ms, permalink≤100 ms. These are not accepted/achieved SLAs.
 
-Unit/integration assertions не повинні залежати від wall-clock «менше 20 ms» на довільній машині. Timeout policy перевіряється через контрольований transport/fake clock; реальна latency вимірюється окремо.
+For future performance runs record supplied revision evidence, PHP/DB/model versions, machine/region, cold/warm state, dataset size, concurrency/count, errors/fallbacks, percentiles. Measure validation/provider/pool lookup/write/rendering separately; distinguish end-to-end from classifier latency. Compare normal/fallback and cold/warm DB; realistic catalog/index sizes. Do not automatically load-test Jev alongside local load tests; synthetic delay adapters cover many scenarios without provider traffic.
 
-Початкові гіпотези зі [збереженого контексту](context.md): backend без провайдера до 20 ms, POST P50 до 300 ms / P95 до 700 ms, permalink server response до 100 ms. Це не прийняті SLA і не підтверджені результати.
+Future telemetry tests check useful counters/timings and low-cardinality labels. Questions, credentials, permalink IDs must not be metric labels. Distinguish invalid schema, timeout, fallback, DB failure without raw input logs by default.
 
-Для кожного performance run записувати commit/revision evidence, PHP/DB/model versions, machine/region, warm/cold стан, dataset size, concurrency, count, error/fallback rate та percentiles. Вимірювати окремо validation, provider, pool lookup, write і rendering; відрізняти повний end-to-end час від provider latency. Порівняти normal/fallback та warm/cold DB, перевірити індекси на реалістичному обсязі. Навантаження на Jev не запускати автоматично разом із локальним load test; synthetic delay adapter покриває більшість сценаріїв без provider traffic.
+## Implementation order and acceptance
 
-Telemetry tests перевіряють корисні counters/timings і низьку cardinality labels. Питання, токени й permalink IDs не стають metric labels. Логи дозволяють відрізнити invalid provider schema, timeout, fallback та DB failure без зберігання raw input за замовчуванням.
+Before any authorized behavior change, follow the root [test-first rule](../AGENTS.md): a focused failing test, smallest implementation, then verification. Documentation-only work uses verifiable artifact evidence.
 
-## Порядок впровадження та критерії готовності
+1. **Skeleton:** existing bootstrap/HTTP smoke/config; retain verification history.
+2. **Classification:** existing taxonomy/adapter/metrics, offline matrix/DI; separately authorized live baseline recorded. Holdout/human quality remains open.
+3. **Domain/catalog:** future agreed fallback, fixture pools, validator/selector/application unit tests, deterministic random boundary; follows the [technical plan](technical-plan.md) rather than silently expanding stage 1.
+4. **Data + POST/permalink:** future two-engine migrations, snapshots/rollback/concurrency, HTTP acceptance.
+5. **Vanilla JS:** future isolated browser success/error/race/accessibility scenarios.
+6. **Release:** future production configuration, PostgreSQL/security/performance acceptance and current live-contract evidence. Separately restore backups into an isolated DB and verify snapshots/permalinks/counts. After retention/deletion decisions, verify deletion without UUID reuse. Blocked/unperformed checks are gaps, not passes.
 
-1. **Skeleton:** bootstrap/HTTP smoke та явна test config. Результати внести у verification.
-2. **Taxonomy + domain:** погоджений fallback, fixture pools, validator/selector/application unit tests; deterministic random boundary.
-3. **Jev adapter:** offline request/response/error matrix, DI tests; далі окремий live contract та baseline quality report за наявності preconditions.
-4. **Дані + POST/permalink:** міграції на обох рушіях, snapshot/rollback/concurrency, HTTP acceptance.
-5. **Vanilla JS:** browser scenarios success/errors/races/accessibility в ізольованому браузері.
-6. **Перед релізом:** production config smoke, PostgreSQL acceptance, security cases, performance baseline і актуальний live contract report. Окремо перевірити restore backup в ізольовану БД: snapshot/permalink/кількості записів зберігаються. Після визначення retention/deletion policy перевірити видалення без повторного використання UUID. Заблокований/не виконаний рівень явно зазначається, а не рахується пройденим.
+Existing directories are `tests/Application`, `tests/Unit`, `tests/Integration`, `tests/Fixtures`; discovery includes the first three. Historical proposed `tests/Integration/Jev`, `tests/Integration/Persistence`, `tests/Functional`, `tests/Contract/Live` are not all present. Any future live tests must remain outside default discovery. Current default HTTP dependency is mock/deny-network; unplanned outbound calls fail. Future PostgreSQL/live profiles must expose omitted checks explicitly so a green local suite cannot imply they ran.
 
-Рекомендована майбутня структура: `tests/Unit`, `tests/Integration/Jev`, `tests/Integration/Persistence`, `tests/Functional`, `tests/Contract/Live`, `tests/Fixtures`; browser tests окремо за правилами обраного runner. Default PHPUnit discovery виключає live directory на рівні конфігурації. Default HTTP dependency — mock/deny-network; невідомий outbound call завершує тест помилкою. Окремий PostgreSQL profile і live config називаються явно, щоб локальний зелений SQLite suite не приховував пропущену перевірку.
-
-Критерій завершення задачі — всі сценарії її рівня пройдено, а винятки й відсутні preconditions перелічено у verification. Відсоток coverage допомагає знайти неперевірені гілки, але не замінює доказу незмінності permalink, коректного fallback чи реального контракту Jev.
+Completion requires the task's relevant scenarios and listed exceptions/preconditions in verification. Coverage can expose gaps but does not replace immutable-permalink, fallback, or real-contract evidence. Human humor judgments, billing, and production measurements remain distinct from test-suite results.

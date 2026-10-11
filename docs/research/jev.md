@@ -1,18 +1,18 @@
-# Jev: дослідження інтеграції та перевірки якості
+# Jev: integration research and quality checks
 
-Дата перевірки першоджерел: **2026-10-11**. Official API/Choice/Models повторно звірено під час етапу 1. Adapter/DI, normalizer, offline suite й runner реалізовані; виконано дві дозволені live development серії по 54 calls. [Фактичний результат](../evaluation/stage-1-results.md). Holdout, незалежна human quality, billing/баланс та production-регіон не перевірені. Пошук виконувався через web-інструменти, без керування браузером.
+Historical primary-source check: **2026-10-11**. Official API/Choice/Models were rechecked during stage 1. Adapter/DI, normalizer, offline suite, and runner are implemented; two authorized live development batches of 54 calls were performed. [Actual results](../evaluation/stage-1-results.md). Holdout, independent human quality, billing/balance, and production region remain unverified. Source research used web tools without browser control; the documentation audit did not refresh external contracts/prices.
 
-## Рішення для проєкту
+## Project decision
 
-Використати прямий TypeSafe HTTP API із Symfony backend. Один виклик класифікує англійське питання за двома незалежними вимірами: формою відповіді `intent` та темою `topic`. PHP вибирає готову фразу після класифікації. Бібліотеку фраз до провайдера не передавати. Це відповідає прийнятому [контексту продукту](../context.md).
+Use the direct TypeSafe HTTP API from Symfony backend. One call classifies an English question along two dimensions: expected answer form `intent` and subject `topic`. In the future application PHP selects a prepared phrase afterward. Do not send the phrase library to the provider. This follows the accepted [product context](../context.md).
 
-Для закритого переліку категорій підходить `choice`. Ключі `questions` лише зіставляють відповіді: модель їх не бачить, тому зміст класифікації треба явно написати в `instructions` і описах `criteria`. Обидва питання можна передати разом; кожне обчислюється щодо спільного `state`. Джерело: [Choice](https://docs.typesafe.ai/primitives/choice).
+`choice` fits a closed category list. `questions` keys only match responses; the model does not see them, so instructions/criteria descriptions must state the task explicitly. Both questions can be sent together and are evaluated against shared `state`. Source: [Choice](https://docs.typesafe.ai/primitives/choice).
 
-## Підтверджений зовнішній контракт
+## Historically confirmed external contract
 
-`POST https://api.typesafe.ai/v1/systemone`, заголовки `Authorization: Bearer <server-side key>` та `Content-Type: application/json`. Обов'язкові поля: `model`, `state`, `questions`. Для `choice` потрібні `type`, `instructions`, карта `criteria`; максимум 255 варіантів. Результат містить `model`, `answers` із тими самими ключами питань та `usage.input_tokens` / `usage.output_tokens`. Кожна Choice-відповідь має `type`, `choice`, `probabilities`, `confidence`. Джерело: [API reference](https://docs.typesafe.ai/api).
+`POST https://api.typesafe.ai/v1/systemone`, headers `Authorization: Bearer <server-side key>` and `Content-Type: application/json`. Required fields: `model`, `state`, `questions`. Choice needs `type`, `instructions`, a `criteria` map; maximum 255 alternatives. Response includes `model`, `answers` keyed like questions, `usage.input_tokens` / `usage.output_tokens`. Each Choice answer has `type`, `choice`, `probabilities`, `confidence`. Source: [API reference](https://docs.typesafe.ai/api).
 
-Нижче **історичний авторський draft до етапу 1**, а не активний rubric v1 чи запис справжнього виклику. Активні правила — [taxonomy v1](../content/taxonomy-v1.md); точний payload будує `JevRubric`:
+Below is a **historical author draft before stage 1**, not active rubric v1 or recorded traffic. Active rules: [taxonomy v1](../content/taxonomy-v1.md); exact payload is built by [JevRubric](../../src/Infrastructure/Classification/JevRubric.php).
 
 ```json
 {
@@ -51,55 +51,57 @@
 }
 ```
 
-Межі (`How long…`, `What should I choose…`, salary versus career, technology at work) зафіксовано в taxonomy v1 з авторськими corpus labels; незалежна людська перевірка ще потрібна. `ANY` не входить до `criteria`: це придатність редакторської фрази, а не категорія запиту. Зазначення «content as data» зменшує неоднозначність інструкцій, але не гарантує стійкості до prompt injection.
+Boundaries (`How long…`, `What should I choose…`, salary/career, technology at work) are defined in v1 using author corpus labels; independent human review is still required. `ANY` is absent from criteria: editorial phrase eligibility, not question classification. “Content as data” reduces instruction ambiguity without guaranteeing prompt-injection resistance.
 
-## Модель, ціна та доступ
+## Model, price, and access
 
-Офіційна сторінка на дату дослідження вказувала `jev-1.13.0`; aliases `jev-latest` і `jev-preview` вели до неї, але можуть змінюватися. Пропозиція: pin версії в конфігурації; фактичний `model` відповіді включати в короткий діагностичний контекст реального виклику. Версію rubric фіксувати у live/evaluation reports, не вимагати окремої колонки чи обов'язкового поля кожного VERDICT. `GET /v1/models` показує доступні назви акаунта, але versioned ID може прийматися навіть за відсутності в цьому списку. Джерело: [Models](https://docs.typesafe.ai/models).
+At the research date, the official page named `jev-1.13.0`; `jev-latest`/`jev-preview` pointed to it and may change. Stage 1 pins the configurable model; future diagnostics should retain the actual response model. Rubric version belongs in evaluation/live reports, not a required separate column/field on every VERDICT. `GET /v1/models` lists account model names, but a versioned ID may be accepted even if absent from that list. Source: [Models](https://docs.typesafe.ai/models).
 
-Опубліковані умови: **$0.042 / 1M input tokens**, output без оплати; **100K tokens/s і 80 requests/s**. Межі можуть змінюватися без попередження. Контекст: 64k tokens загалом, 32k для state плюс найдовше питання. Це довідкові умови, не наш SLA, баланс чи підтвердження безкоштовного тарифу. Джерело: [Models](https://docs.typesafe.ai/models).
+Historically published terms: **$0.042 / 1M input tokens**, free output; **100K tokens/s and 80 requests/s**. Limits may change without notice. Context: 64k tokens total, 32k for state plus longest question. These are dated reference terms, not our SLA, balance, or free-tier confirmation. Source: [Models](https://docs.typesafe.ai/models).
 
-Для планування: `вартість = кількість викликів × середні input_tokens × 0.042 / 1_000_000`. За припущення 500 tokens та 100 000 викликів арифметичний результат — $2.10; реальну довжину rubric і billing перевірити через `usage`. Ключ отримують через [TypeSafe dashboard](https://console.typesafe.ai), згідно з [Quick start](https://docs.typesafe.ai/introduction/quickstart). Логін або наявність кредиту тут не перевірялися.
+Planning arithmetic at that published rate: `cost = call_count × average_input_tokens × 0.042 / 1_000_000`. Assuming 500 tokens and 100,000 calls gives $2.10. Actual rubric length/usage and billing must be checked rather than inferred from this example. Keys come from the [TypeSafe dashboard](https://console.typesafe.ai), per [Quick start](https://docs.typesafe.ai/introduction/quickstart). Dashboard login/credit were not inspected during research; stage-1 live calls confirmed key/model access, not billing.
 
-## Confidence та доменний результат
+**User clarification:** this is a personal project/account using one **production key** for application and authorized evaluation, no separate test key/account or sandbox workflow. Low published price does not replace expense evidence. The two reports sum to 96,454 known input tokens; at the historical rate this is approximately **$0.00405 estimated input cost**, not a measured charge. Usage for 13 timeout attempts is unknown; balance/billing/actual tariff were not read. New cost experiments need a defined, authorized request budget; no new live calls were made during this audit.
 
-`confidence` для Choice — функція розподілу: `(p_max - 1/n) / (1 - 1/n)`, де `n` — кількість варіантів. Це не емпірична точність класифікації і не гарантія правильності. Наприклад, значення 0.8 не означає «80% правильних відповідей нашому користувачу». Поріг обирають на власних даних, окремо для кожного рішення. Джерело: [Confidence](https://docs.typesafe.ai/confidence).
+## Confidence and domain result
 
-Реалізований внутрішній контракт: `QuestionClassifier` повертає валідовані intent/topic, фактичну модель або типізовану причину недоступності. Confidence може бути доступним для evaluation; зберігати його у VERDICT лише якщо він впливає на рішення. Транспортний JSON не має виходити за адаптер. Можлива майбутня threshold policy: невпевнена тема → `GENERAL`; невпевнена форма → універсальний пул. Вона ще не прийнята; конкретних production-порогів дослідження не встановлює. Сатиричні `100% confidence` в інтерфейсі не використовувати як метрику моделі.
+Choice confidence is a distribution function: `(p_max - 1/n) / (1 - 1/n)`, with `n` alternatives. It is not empirical classification accuracy or a correctness guarantee; 0.8 does not mean 80% correct for our users. Choose any future thresholds on domain data per decision. Source: [Confidence](https://docs.typesafe.ai/confidence).
 
-Пропонований [decision_context](../architecture/data.md) розділяє фактичні labels Jev і вибраний eligibility-пул: fallback може їх змінити. При failure не записувати OTHER/GENERAL як успішну відповідь Jev. `humor_mechanism` задається під час підготовки каталогу, не цим класифікатором; у контексті це лише історична ознака вибраної відповіді, не вхід selector.
+Implemented internal contract: `QuestionClassifier` returns validated intent/topic and resolved model, or a typed failure reason. Success also contains confidence/distributions, integer token counts, and latency. Confidence can support evaluation; store it in a future VERDICT only if it affects decisions. Transport JSON stays inside the adapter. Possible future threshold policy: uncertain topic→GENERAL, uncertain form→universal pool. This is unaccepted/unimplemented; research defines no production threshold. Satirical UI `100% confidence` is not a model metric.
 
-Перевіряти типи, обов'язкові відповіді, `choice` за allowlist, числові confidence/probabilities у [0,1], модель і невід'ємні token counters. Реалізований sum tolerance — **0.001** як явна локальна schema policy; перевіряємо повний allowlist distribution, finite numbers, choice як maximum (ties дозволені), nonnegative integer tokens. Confidence threshold та перерахунок confidence відсутні. Body cap 64 KiB перевіряється після читання й не є streaming memory limit. Strict schema прийняла 95 реальних responses у двох live runs; точна float рівність не потрібна. Невідомі додаткові metadata дозволити, невідому категорію не приводити мовчки до валідної. Provider JSON із HTTP 200 теж може бути непридатним.
+Proposed [decision_context](../architecture/data.md) separates actual Jev labels from the selected eligibility pool, which fallback may change. Do not record OTHER/GENERAL as successful Jev output on failure. `humor_mechanism` is catalog metadata, not classifier output; diagnostics retain it only as a historical selected-answer property, not selector input.
 
-## Помилки, часовий бюджет і retry
+Validate types, required answers, allowlisted choice, confidence/probabilities in [0,1], model, and nonnegative token counters. Implemented sum tolerance **0.001** is explicit local schema policy: full allowlist distribution, finite numbers, choice as maximum (ties allowed), nonnegative integer tokens. No threshold or confidence recomputation. The 64 KiB body cap applies after reading and is not a streaming memory limit. Strict schema accepted 95 real responses across two live batches; exact float equality is unnecessary. Extra metadata is allowed; unknown categories are never silently coerced. HTTP 200 JSON may still be invalid; the adapter accepts exactly HTTP 200, not every 2xx.
 
-Документовані статуси: `401` — ключ; `422` — невалідний запит; `429` — ліміт; `529` — перевантаження. Для двох останніх провайдер рекомендує exponential backoff. Джерело: [API reference](https://docs.typesafe.ai/api). Його SDK підтримує jitter, retry headers і загальний бюджет повторів; це не автоматична поведінка нашого PHP HTTP-клієнта. Джерело: [RetryPolicy](https://docs.typesafe.ai/sdk/python/api/retries).
+## Errors, time budget, retries
 
-**Пропозиція для швидкого foreground POST:** один запит, retries = 0; початковий загальний бюджет зовнішнього виклику 400 ms (`max_duration = 0.40`), idle timeout 300 ms (`timeout = 0.30`). Ці числа — експериментальна конфігурація під гіпотезу POST P95 ≤700 ms, яку треба виміряти з production-регіону. Timeout, transport error, некоректна відповідь або non-2xx ведуть до контрольованого fallback. Не включати автоматичний retry-декоратор без перегляду бюджету.
+Documented statuses: `401` key; `422` invalid request; `429` rate limit; `529` overload. The provider recommends exponential backoff for the latter two. Source: [API reference](https://docs.typesafe.ai/api). Its SDK supports jitter, retry headers, total retry budget; this is not automatic PHP client behavior. Source: [RetryPolicy](https://docs.typesafe.ai/sdk/python/api/retries).
 
-`401`/`422` повинні давати операційну помилку конфігурації/контракту в метриках, хоча користувач може отримати готовий fallback. На `429`/`529` foreground-виклик завершується fallback без повтору. Міжзапитний cooldown і circuit breaker — подальше покращення за підтвердженої потреби, не обов'язковий shared state першого MVP. Ніколи не спати довше за budget HTTP-відповіді.
+**Current implemented classification policy:** one request, retries=0, redirects=0, **600 ms idle timeout / 800 ms max_duration**, configurable. Historical initial foreground proposal was 300/400 ms under a POST P95 ≤700 ms hypothesis. The user chose 600/800 ms after comparing two local development runs. This is not production acceptance. Timeout, transport error, invalid response, or non-200 produce typed failures; the future application policy will handle universal fallback. Do not add a retry decorator without reconsidering the budget.
 
-Фактичний evaluation runner також має **нуль retries**: --live, configured JEV_API_KEY і явний --limit=1..1000, sequential one call per sample. За уточненням Serhii окремий test key не потрібний для малого проєкту. `JEV_TIMEOUT`/`JEV_MAX_DURATION` configurable; початкові defaults 0.30/0.40, друга дозволена серія — 0.60/0.80 без зміни rubric. Після порівняння Serhii прямо обрав **0.60/0.80 як поточні defaults**. Technical failures не є empty-catalog fallback rate. Повтор може мати окрему вартість: timeout не доводить, що провайдер не обробив першу спробу. Невалідний ключ або payload не повторювати.
+401/422 should surface as configuration/contract problems in future operations metrics even if the user receives prepared fallback content. 429/529 also terminate without retries. Cross-request cooldown/circuit breakers are deferred until demonstrated need. Never sleep beyond the foreground HTTP budget.
 
-## Перевірки інтеграції
+The evaluation runner also has **zero retries**: `--live`, configured JEV_API_KEY, explicit `--limit=1..1000`, sequential one call per sample. Timeout/max_duration must be finite; timeout positive, max_duration ≥ timeout. Initial 0.30/0.40 remains historical; 0.60/0.80 is current. Technical failure rate is not empty-catalog fallback. Retries may cost separately: a timeout does not establish that the provider did not process/bill the attempt. Invalid key/payload is not retried.
 
-Unit/offline adapter integration із цієї таблиці виконано; application/selector/БД лишаються наступними етапами. Live development facts — у [звіті](../evaluation/stage-1-results.md), exact verification — у [verification](../verification.md):
+## Integration checks
 
-| Рівень | Що довести |
+Unit/offline adapter integration below exists; application/selector/database remain future stages. Historical live facts: [results](../evaluation/stage-1-results.md); performed checks: [verification](../verification.md).
+
+| Level / status | Evidence or future objective |
 | --- | --- |
-| Unit | Payload містить рівно потрібні intent/topic criteria; `ANY`, humor_mechanism та бібліотеки фраз немає; model pin і дослідницька редакція rubric явні |
-| Unit | Перетворення валідного JSON; усі невалідні типи/enum/числа/відсутні поля; confidence policy тестувати лише після її прийняття |
-| Integration без мережі | Symfony HTTP mock повертає success, 401, 422, 429, 529, інший 5xx, malformed JSON, timeout і transport exception; перевірити URL, headers, body, кількість спроб і typed failure (application fallback — наступний етап) |
-| Integration застосунку | POST + fake classifier → фраза з придатного пулу → збереження; permalink читає ту саму фразу без нового виклику Jev |
-| Live contract, opt-in | Окремий наданий test key, синтетичні питання, ліміт викликів; перевірити реальну схему, pin, usage та latency; не вимагати точних probabilities |
-| Якість, opt-in | Фіксований labeled corpus, confusion matrix, intent/topic accuracy, accepted accuracy після threshold, coverage і fallback rate; окремий holdout для оцінки |
+| Unit, existing | Exactly intent/topic criteria, no ANY/mechanism/library; explicit model pin/rubric version |
+| Unit, existing | Valid JSON normalization; invalid types/enums/numbers/missing fields; confidence policy tests only if policy is adopted |
+| Offline integration, existing | Real adapter + HTTP mocks: success, 401/403/422/429/529/500/502/503, redirect/non-200, malformed JSON, timeout/transport; URL, headers, body, attempt count, typed failure |
+| Application integration, planned | POST + fake classifier → eligible phrase → persistence; permalink reads same phrase without Jev |
+| Live contract, opt-in, historical runs recorded | Production key, synthetic questions, explicit limit; real schema/pin/usage/latency, no exact probability assertions |
+| Quality, opt-in; development baseline recorded | Frozen labeled corpus, confusion matrices, intent/topic/joint accuracy. Holdout outstanding; threshold acceptance/coverage and application fallback metrics are future work |
 
-Обов'язкові групи корпусу: усі форми відповіді, близькі теми, заперечення, риторичні/множинні питання, emoji/помилки/змішані мови, несподівані інструкції в state та перестановки порядку criteria. Провайдер прямо документує literal reading, adversarial input та залежність окремих відповідей від порядку Choice options. Це особливо релевантно абсурдним питанням нашого продукту. Джерело: [Jev 1.13 jaggedness](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
+Desired extended corpus scenarios include all forms/topics, nearby topics, negation, rhetorical/multiple questions, emoji/typos/mixed languages, adversarial state instructions, and criteria-order changes. Existing v1 has the [documented coverage](../evaluation/README.md), not proof every proposed extension was tested. The provider documents literal reading, adversarial input, and some Choice-option order dependence. Source: [Jev 1.13 jaggedness](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
 
-Результати live-тестів фіксувати з датою, моделлю, rubric/corpus revision, кількістю викликів, витратою tokens і регіоном. Unit/integration тести мають залишатися відтворюваними без мережі та ключа. Live success не підміняє перевірку семантичної якості, а mock success — фактичної сумісності API.
+Record live date, requested/resolved model, rubric/corpus revision, calls, known tokens, and measurement context. Production region has not been measured in our reports. Unit/integration tests must be reproducible without network/key. Live success does not replace semantic evaluation; mock success does not prove actual API compatibility.
 
-## Дані та невизначеності перед запуском
+## Data and pre-launch uncertainties
 
-Privacy Policy заявляє відсутність навчання/fine-tuning на Input, але описує зберігання персональних даних стільки, скільки обґрунтовано потрібно; сервіс розміщено у США. Числовий строк зберігання API payload у прочитаній політиці не наведено. Джерело: [Privacy Policy](https://typesafe.ai/legal/privacy-policy). DPA також визначає тривалість через необхідність обробки, а не конкретну кількість днів. Джерело: [DPA, Schedule I §8](https://typesafe.ai/legal/data-processing). ZDR пропонується enterprise-клієнтам, тому його не можна вважати стандартом нашого акаунта. Джерело: [Legal](https://docs.typesafe.ai/legal).
+Historically checked Privacy Policy states no training/fine-tuning on Input, but retention of personal data as reasonably needed; service hosted in the US. It gave no numeric API-payload retention period. Source: [Privacy Policy](https://typesafe.ai/legal/privacy-policy). DPA similarly defines duration by processing need rather than fixed days. Source: [DPA, Schedule I §8](https://typesafe.ai/legal/data-processing). ZDR is offered to enterprise customers and cannot be assumed for our account. Source: [Legal](https://docs.typesafe.ai/legal). These source summaries are dated research, not verification of current account terms.
 
-Пропозиція: передавати тільки текст питання, без IP, session ID, permalink та бібліотеки; не логувати raw question, Bearer header або повний provider response у звичайні логи. У production-метриках достатні duration, outcome, model, tokens і агреговані категорії; rubric/corpus revisions належать до evaluation reports і не є обов'язковими полями VERDICT. Live evaluation використовує синтетичний корпус. Перед публічним запуском уточнити фактичні умови акаунта, строк/регіон обробки та власну політику збереження публічних permalink. Це відкриті параметри запуску, які не блокують локальне проєктування чи offline-тести.
+Proposed production handling: transmit only question text, not IP/session ID/permalink/library; omit raw questions, Bearer headers, full responses from ordinary logs. Durations, outcome, model, tokens, aggregated categories suffice for metrics; rubric/corpus versions belong in evaluation reports, not mandatory VERDICT fields. Live evaluation uses synthetic questions. Before public launch confirm actual account terms, processing duration/region, and our shared-permalink retention/deletion policy. These are open launch parameters, not blockers to local design/offline tests.

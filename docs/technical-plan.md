@@ -1,59 +1,59 @@
-# Технічний план MVP
+# MVP technical plan
 
-Статус: цільова MVP-архітектура залишається пропозицією. Реалізовано bootstrap та scoped етап 1: taxonomy/corpus, Jev adapter, тести й evaluation runner. Фактичний live baseline та обмеження — [результат етапу 1](evaluation/stage-1-results.md), перевірки — [verification.md](verification.md). Вихідні рішення — [context.md](context.md).
+Status: the target MVP architecture remains proposed. Bootstrap and scoped stage 1 are implemented: taxonomy/corpus, Jev adapter, tests, evaluation runner. Historical live baseline/limits: [stage-1 results](evaluation/stage-1-results.md); checks: [verification](verification.md). Original decisions: [context](context.md). Accepted requirements below do not imply implemented features or authorize the next stage.
 
-## 1. Межі
+## 1. Scope
 
-MVP: англійська головна сторінка, одне питання, один contextual результат із готової бібліотеки, permalink, базовий About/FAQ. SSR через Symfony/Twig; vanilla JavaScript покращує форму через POST fetch. Немає SPA, клієнтського роутера, стримінгу тексту, історії діалогу чи генеративних відповідей.
+Target MVP: English home page, one question, one contextual result from a prepared library, permalink, basic About/FAQ. SSR through Symfony/Twig; vanilla JavaScript enhances the form with POST fetch. No SPA, client router, text streaming, conversation history, or generated runtime answers.
 
-Першим зовнішнім класифікатором буде Jev. Chaos, lexical/NLP, конструктор шаблонів, A/B-тести, аккаунти, адмінка, черги, Redis і мікросервіси — поза першим MVP. Не додавати їх заради абстрактної масштабованості.
+Jev is the first external classifier; its stage-1 adapter exists. Chaos, lexical/NLP, template builder, A/B tests, accounts, admin, queues, Redis, and microservices are outside the first MVP. Do not add them for abstract scalability.
 
-## 2. Структура застосунку
+## 2. Application structure
 
-Один Symfony deployable. Відповідальності розділені всередині застосунку:
+One Symfony deployable, with internal responsibilities:
 
-| Частина | Обов'язок |
+| Part | Responsibility |
 | --- | --- |
-| `Controller` | HTTP-валідація, status codes, виклик use case, JSON/Twig |
-| `Application/AnswerQuestion` | Класифікація, fallback, вибір, збереження результату |
-| `Domain/Classification` | Intent, Topic, результат класифікації та її статус |
-| `Domain/Answer` | Правила придатності, вибір у пулі, незмінний результат |
-| `Infrastructure/Classification/JevClassifier` | HTTP-контракт TypeSafe, перевірка enum, таймаути, нормалізація помилок |
-| `Infrastructure/Persistence` | Doctrine DBAL repositories і міграції |
-| `templates/`, `public/` | SSR та маленький JS-модуль для форми |
+| `Controller` | HTTP validation, status codes, use-case invocation, JSON/Twig |
+| `Application/AnswerQuestion` | Classification, fallback, selection, result persistence |
+| `Domain/Classification` | Intent, Topic, classification result/status |
+| `Domain/Answer` | Eligibility rules, pool selection, immutable result |
+| `Infrastructure/Classification/JevClassifier` | TypeSafe HTTP contract, enum checks, timeouts, error normalization |
+| `Infrastructure/Persistence` | Doctrine DBAL repositories/migrations |
+| `templates/`, `public/` | SSR and a small form JS module |
 
-Це орієнтир структури, не вимога створити всі каталоги/інтерфейси наперед. Інтерфейси потрібні на зовнішніх межах (`QuestionClassifier`, repositories, randomness/clock для відтворюваних тестів). Внутрішні класи не потребують interface за замовчуванням.
+This is a structural guide, not a requirement to create every directory/interface in advance. Interfaces belong at external boundaries (`QuestionClassifier`, repositories, randomness/clock for reproducible tests). Internal classes do not need interfaces by default. Only classification, evaluation, and the home skeleton exist today.
 
-Для старту обрано Symfony 7.4 LTS із PHP baseline 8.2; локально PHP 8.4.10. [Офіційний lifecycle](https://symfony.com/releases/7.4) пояснює вибір LTS. Composer platform обмежує транзитивні вимоги базовою PHP-версією. Реальна перевірка на мінімальній PHP — окремий пункт тестової матриці.
+Symfony 7.4 LTS was chosen at bootstrap; the [official lifecycle](https://symfony.com/releases/7.4) explains the LTS choice. Development uses locally installed **PHP 8.4**, last/current verified runtime **8.4.10**, with a planned move to **8.5**. The intended minimum is **8.4**. Composer still permits PHP 8.2 and resolves against platform 8.2.0: the user identified this as an error for separate correction, documented in [audit findings](verification.md#documentation-audit-findings). Neither a real PHP 8.2 run nor the PHP 8.5 transition has been verified.
 
-Подальші пакети додавати за етапом: HttpClient для Jev; Validator для input; DBAL + Migrations для БД; RateLimiter для публічного POST. ORM не потрібен для початкових трьох таблиць; повернутися до рішення при появі складної моделі.
+Add packages by stage: HttpClient for Jev is already installed; Validator for input, DBAL + Migrations for databases, RateLimiter for public POST remain future work. ORM is unnecessary for the initial three-table proposal; reconsider if the model becomes complex.
 
-## 3. Потік запиту
+## 3. Target request flow
 
-1. `GET /` повертає повний HTML; JS підключається як звичайний module, без збирача на старті.
-2. Форма приймає питання. Під час submit JS робить один `POST /answer`, блокує повторний submit і позначає форму `aria-busy`.
-3. Сервер перевіряє тіло, походження запиту й ліміти **до** зовнішнього API.
-4. Jev одним викликом класифікує intent/topic. Питання є даними; воно не може змінити інструкції, enum чи endpoint.
-5. Перевірений результат передається у selector. Він знаходить перший непорожній допустимий пул і рівномірно вибирає одну фразу.
-6. Коротка транзакція узгоджує вибір із пулу та збереження знімків питання/відповіді. Для пояснення вибору пропонуються nullable eligibility FK і короткий `decision_context` JSON; склад ще потребує погодження за [моделлю даних](architecture/data.md). HTTP-виклик Jev не входить у DB transaction.
-7. JSON повертається лише після успішного commit. JS показує текст через `textContent` і посилання на серверну сторінку.
-8. `GET /a/{publicId}` читає тільки збережений результат і віддає HTML/OG; жодного Jev і random.
+1. `GET /` returns full HTML; JS loads as a regular module without an initial bundler.
+2. The form accepts a question. Submit triggers one `POST /answer`, blocks duplicate submits, and sets `aria-busy`.
+3. The server validates body, origin, and limits **before** the external API.
+4. Jev classifies intent/topic in one call. The question is data and cannot change application endpoint/enums; rubric instructions tell the model to ignore injected commands, without guaranteeing semantic resistance.
+5. A validated result reaches the selector, which finds the first nonempty allowed pool and selects one phrase uniformly.
+6. A short transaction keeps pool selection and question/answer snapshot persistence consistent. Nullable eligibility FK and short `decision_context` JSON are proposed for explanation; agree structure through the [data model](architecture/data.md). The Jev HTTP call is outside the DB transaction.
+7. Return JSON only after successful commit. JS displays text with `textContent` and links to a server page.
+8. `GET /a/{publicId}` reads only the stored result and returns HTML/OG; no Jev or random selection.
 
-Поточний UI не має submit: функціональна форма з'явиться разом із робочим backend. Не створювати кнопку, що імітує готовий сервіс.
+The current UI has no submit. Add a functional form alongside working backend behavior; do not present a simulated completed service.
 
-## 4. Пропонований HTTP-контракт
+## 4. Proposed HTTP contract
 
 ### `POST /answer`
 
-`Content-Type: application/json`, same-origin. Перша версія без form-encoded fallback; без JS серверна головна й permalink працюють, форма пояснює необхідність JS. Звичайний POST/redirect можна додати окремо, якщо потрібна повна підтримка без JS.
+`Content-Type: application/json`, same-origin. The initial proposal has no form-encoded fallback; without JS the server home/permalink remain readable and the form explains that JS is required. A normal POST/redirect may be added separately for full non-JS support.
 
 ```json
 {"question":"When will AI replace programmers?"}
 ```
 
-Пропоновані межі: JSON object із одним рядком; trim; 1–500 Unicode code points; максимум 8 KiB request body; відхиляти NUL/недопустимий UTF-8, масиви й невідомі поля. Ліміт повторюється в reverse proxy та застосунку. Мова результату `en`, без автоматичного вибору локалі. Питання іншою мовою може бути класифіковане, але якість не обіцяється до evaluation.
+Proposed limits: JSON object with one string; trim; 1–500 Unicode code points; maximum 8 KiB request body; reject NUL/invalid UTF-8, arrays, unknown fields. Repeat the size limit in reverse proxy and application. Result language `en`, without automatic locale selection. Other-language questions may classify, but quality is not promised before evaluation.
 
-Успіх: `201 Created`, `Location: /a/{publicId}`, `Cache-Control: no-store`.
+Success: `201 Created`, `Location: /a/{publicId}`, `Cache-Control: no-store`.
 
 ```json
 {
@@ -64,67 +64,67 @@ MVP: англійська головна сторінка, одне питанн
 }
 ```
 
-Приклад синтетичний, не реальний збережений результат. Реалізація використовує UUIDv4 і валідує маршрут. `url` будує сервер, не користувач/провайдер. Не включати classifier confidence у сатиричний `100% confidence`.
+This is synthetic, not a stored result. The future implementation uses UUIDv4 and validates the route. The server builds `url`, not the user/provider. Do not incorporate classifier confidence into satirical `100% confidence`.
 
-Помилка — стабільний об'єкт `{"error":{"code":"invalid_question","message":"Enter a question between 1 and 500 characters."}}` без exception traces.
+Errors have stable shape `{"error":{"code":"invalid_question","message":"Enter a question between 1 and 500 characters."}}` without exception traces.
 
-| Status | Випадок |
+| Status | Case |
 | --- | --- |
-| 400 | Невалідний JSON |
-| 403 | Неприпустимий Origin / cross-site запит |
-| 413 | Завелике тіло |
-| 415 | Не JSON media type |
-| 422 | Невалідне питання |
-| 429 | Ліміт застосунку; `Retry-After` |
-| 503 | Немає доступного контенту або не можна зберегти результат |
+| 400 | Invalid JSON |
+| 403 | Disallowed Origin / cross-site request |
+| 413 | Oversized body |
+| 415 | Non-JSON media type |
+| 422 | Invalid question |
+| 429 | Application limit; `Retry-After` |
+| 503 | No available content or result cannot be persisted |
 
-Timeout/помилка Jev за наявності універсального пулу не є HTTP failure для користувача: створюється збережений fallback-результат. Якщо БД недоступна, не повертати фальшивий permalink. При втраті відповіді після commit можливе повторне створення при ручному submit; автоматичний retry POST у клієнті вимкнений. Idempotency key — наступне покращення, якщо потрібні прозорі повтори.
+Under the future policy, a Jev timeout/failure with an available universal pool is not a user HTTP failure: persist a fallback result. If the database is unavailable, return no false permalink. A lost response after commit can create another result on manual resubmission; automatic client POST retry is disabled. Idempotency keys are a later improvement if transparent retries are needed.
 
-### Серверні сторінки
+### Server pages
 
-`GET /a/{publicId}` → `200 text/html` зі збереженим результатом, canonical URL і метаданими. Невідомий ID → 404. Стартова пропозиція: permalink доступний усім, хто має URL, але `noindex` і без публічної стрічки; це не приватне сховище. Перед submit пояснити, що питання буде збережене для поширення. Динамічні картинки OG відкласти; спочатку текстові OG та загальне зображення.
+`GET /a/{publicId}` → `200 text/html` with saved result, canonical URL, metadata. Unknown ID → 404. Initial proposal: anyone with the URL may access it, but `noindex` and no public feed; this is not private storage. Explain question storage/sharing before submit. Defer dynamic OG images; begin with textual OG and a generic image.
 
-`GET /about` → коротке пояснення сатири й даних. Не маскувати помилки інфраструктури вигаданими успішними вердиктами.
+`GET /about` → short satire/data explanation. Do not disguise infrastructure errors as fabricated successful verdicts. Neither page exists yet.
 
-## 5. Jev і вибір відповіді
+## 5. Jev and answer selection
 
-Адаптер ховається за `QuestionClassifier`. Передає лише питання і короткі описи категорій. API key залишається на backend. В офіційному [Quick start](https://docs.typesafe.ai/introduction/quickstart) описано `POST https://api.typesafe.ai/v1/systemone`; фактичний контракт та обмеження — у [дослідженні Jev](research/jev.md).
+The implemented adapter sits behind `QuestionClassifier`. It sends only the question and short category descriptions. API key stays on the backend. The historically checked [Quick start](https://docs.typesafe.ai/introduction/quickstart) documents `POST https://api.typesafe.ai/v1/systemone`; contract/limits: [Jev research](research/jev.md).
 
-Строго перевіряти форму відповіді, дозволені значення та числові діапазони. Не трактувати `confidence` як доказ правильності. Порогові значення обирати на розміченому наборі, не довільно. Невідомий enum або неповний/невалідний результат адаптер повертає як `invalid_response`, не як успішну класифікацію. Application policy для такої помилки чи transport error створює fallback-контекст `OTHER / GENERAL` з явним failure status; selector у цьому статусі **одразу** використовує `(ANY, GENERAL)`, пропускаючи звичайні tiers. Валідна класифікація `OTHER / GENERAL` натомість проходить звичайний ланцюг. Валідний, але недостатньо впевнений результат — окрема майбутня policy, яку слід відкалібрувати на корпусі.
+Strictly validate response shape, allowed values, numeric ranges. Confidence does not prove correctness; choose thresholds from labeled data rather than arbitrarily. Unknown enum/incomplete/invalid results become `invalid_response`, not successful classification. The **future** application policy may use an explicit failure context `OTHER / GENERAL`; with failure status the selector goes **directly** to `(ANY, GENERAL)`, skipping normal tiers. Valid `OTHER / GENERAL` follows normal tiers. Low-confidence policy is future work requiring calibration; the adapter has no threshold.
 
-Вибір пулу: `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`. Для `GENERAL` не виконувати однаковий пошук двічі. Дедуплікувати answer IDs, щоб кілька прив'язок не підвищували ймовірність відповіді. Перший непорожній пул, не об'єднання всіх рівнів. Для MVP всі ваги однакові, без прихованого рейтингу.
+Pool selection: `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`. For `GENERAL`, avoid repeated identical searches. Deduplicate answer IDs so multiple associations do not increase an answer's probability. Use the first nonempty pool rather than merging tiers. Equal weights for MVP, without hidden rankings.
 
-Прийняте `ANSWER_ELIGIBILITY.humor_mechanism` готується разом із контентом, але selector його ігнорує. Запропонований diagnostic snapshot розрізняє категорії Jev і фактично вибраний пул, фіксує tier, кількість унікальних кандидатів та механізм вибраної eligibility. Механізм збережений для майбутньої статистики, а не як критерій вибору. Лайки/голосування й аналітика власника не реалізуються зараз.
+Accepted `ANSWER_ELIGIBILITY.humor_mechanism` is prepared alongside content and ignored by the future selector. Proposed diagnostics distinguish Jev categories from the selected pool, recording tier, unique candidate count, and selected eligibility mechanism. The mechanism supports future statistics, not selection. Likes/votes and owner analytics are unimplemented/deferred.
 
-Початковий каталог малий: вибрати список активних кандидатів із БД та індекс через `random_int`. Не використовувати DB-specific `ORDER BY RANDOM()` у всій таблиці й не вибирати випадкове число між min/max ID з дірами. Кеш індексу пулів — після профілювання; версіонувати його за каталогом.
+For a small catalog, read active candidates from the database and select an index with `random_int`. Avoid DB-specific `ORDER BY RANDOM()` across the entire table and random min/max IDs with gaps. Cache pool indexes only after profiling, versioned with the catalog.
 
-## 6. Бюджет часу та відмовостійкість
+## 6. Timing budget and resilience
 
-Цілі, не гарантії: власна backend-обробка без Jev до 20 ms, повний POST P50 ≤300 ms / P95 ≤700 ms, GET permalink server response ≤100 ms. Вимірювати cold/warm окремо; Xdebug off, `APP_ENV=prod`, `APP_DEBUG=0`, OPcache on. Порівнювати production-регіон і браузер у Варшаві.
+Targets, not guarantees: backend work excluding Jev ≤20 ms; full POST P50 ≤300 ms / P95 ≤700 ms; permalink server response ≤100 ms. Measure cold/warm separately; Xdebug off, `APP_ENV=prod`, `APP_DEBUG=0`, OPcache on. Compare production region and a browser in Warsaw.
 
-Початковий spike Jev використовував `timeout=0.30 s`, `max_duration=0.40 s`. Після двох development live серій Serhii обрав **0.60/0.80 s як поточні configurable defaults**; retries=0. [Symfony HttpClient](https://symfony.com/doc/7.4/http_client.html) розрізняє idle timeout і повну тривалість; одного `timeout` недостатньо. [Порівняння](evaluation/stage-1-results.md) показує technical failures, а не empty-catalog fallback rate. Це не прийняття production SLA: майбутні validation, DB read/write й мережа також входитимуть у загальний бюджет.
+The initial Jev spike used `timeout=0.30 s`, `max_duration=0.40 s`. After two development live batches Serhii chose **0.60/0.80 s current configurable defaults**, retries=0. [Symfony HttpClient](https://symfony.com/doc/7.4/http_client.html) distinguishes idle timeout from full duration; `timeout` alone is insufficient. The [comparison](evaluation/stage-1-results.md) measures technical failures, not empty-catalog fallback. It does not establish a production SLA: future validation, DB read/write, and network also consume the total budget.
 
-Розрізняти provider timeout, auth/config failure, throttling, invalid response та порожній каталог у метриках. Не логувати raw питання/ключ. Логи: request ID, durations, фактично викликана модель, pool tier, причина fallback за наявності. Це не вимога окремих version/status колонок у VERDICT; мінімальний історичний контекст описано в моделі даних. Provider 401/422 — сигнал конфігураційної помилки, а не причина нескінченного retry. Circuit breaker/спільний cache додавати лише при підтвердженій потребі.
+Distinguish timeout, auth/configuration failure, throttling, invalid response, empty catalog in future metrics. Do not log raw questions/keys. Proposed logs: request ID, durations, actual model, pool tier, fallback reason if present. This does not require separate version/status VERDICT columns; the data model proposes minimal historical context. Provider 401/422 indicate configuration/contract errors, not infinite retry. Add circuit breakers/shared cache only for demonstrated need.
 
-## 7. Публічний endpoint і дані
+## 7. Public endpoint and data
 
-Сервер приймає JSON лише з дозволеним Origin; cross-site browser requests блокуються, CORS не відкривається. Це захист від cross-site браузерних запитів, не від ботів: rate limiting і загальний бюджет зовнішніх API потрібні окремо. Якщо пізніше з'являться cookie-сесії, авторизація або form POST — переглянути CSRF-модель.
+The proposed server accepts JSON only from allowed Origin; block cross-site browser requests and keep CORS closed. This addresses cross-site browsers rather than bots; separate rate limiting and total API budgets are needed. Revisit CSRF if cookie sessions, authentication, or form POST are added.
 
-Визначити trusted proxy до використання IP для лімітів. Для одного інстансу можливий файловий limiter; для кількох потрібен спільний backend. Значення лімітів — конфігурація за результатами навантаження, не довільна бізнес-константа.
+Define trusted proxies before IP-based limits. A single instance may use a file limiter; multiple instances need shared storage. Set limits from load evidence, not arbitrary business constants.
 
-Twig autoescape, JS `textContent`, параметризований SQL, відсутність raw HTML у бібліотеці. Питання потенційно містять персональні дані; зберігати лише необхідне, описати передачу Jev та політику видалення до публічного запуску. Незмінність відповіді означає відсутність повторного random, але не забороняє видалити сторінку за правилами продукту.
+Twig autoescape, JS `textContent`, parameterized SQL, no raw HTML in the library. Questions may contain personal data; store only what is necessary and document transmission to Jev/deletion policy before public launch. Answer immutability prevents rerandomization but does not prohibit product-policy deletion.
 
-## 8. Етапи та exit criteria
+## 8. Stages and exit criteria
 
-| Етап | Результат | Критерій завершення |
+| Stage | Output | Exit criterion / current evidence |
 | --- | --- | --- |
-| 0. Старт | Мінімальний Symfony/Twig, локальна документація | Kernel boot, GET/HEAD працюють, POST на заглушку відхиляється, документи пов'язані |
-| 1. Контент і Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline виконано, development live baseline отримано | Один call з обома choice підтверджено mock і 95 live successes у двох серіях; model pin, accuracy, latency й technical failure rate відомі. Holdout/human quality та production latency ще не перевірені; empty-catalog fallback rate тут не існує |
-| 2. Домен і каталог | Selector, прив'язки, DB migrations/import | Unit-тести fallback/random, інтеграційні тести SQLite/PostgreSQL, непорожній universal pool |
-| 3. Вертикальний сценарій | POST, Jev adapter, збереження, JSON | Помилки провайдера й БД покрито тестами; permalink видається тільки після commit |
-| 4. UI та поширення | Vanilla fetch, результат, permalink, About, OG | XSS/duplicate-submit/error/retry UX перевірені; GET не викликає Jev |
-| 5. Готовність до запуску | Deployment конфігурація, telemetry, backups, політика даних | Нагрузочні цілі виміряні, backup restore перевірено, production PostgreSQL пройшов ту саму інтеграційну матрицю |
+| 0. Bootstrap | Minimal Symfony/Twig and local docs | Kernel boots, GET/HEAD work, placeholder rejects POST, documents link correctly; verified historically and by current functional tests |
+| 1. Content and Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline implementation and historical development live baseline | One call with both Choice questions confirmed by mocks and 95 live successes in two batches. Model pin, accuracy, latency, technical failure rate recorded. Holdout/human quality and production latency unverified; empty-catalog fallback does not exist here |
+| 2. Domain and catalog | Selector, associations, DB migrations/import | Future unit fallback/random and SQLite/PostgreSQL integration tests; nonempty universal pool |
+| 3. Vertical flow | POST, existing Jev adapter, persistence, JSON | Future provider/DB error tests; permalink issued only after commit |
+| 4. UI and sharing | Vanilla fetch, result, permalink, About, OG | Future XSS/duplicate-submit/error/retry UX checks; GET never calls Jev |
+| 5. Launch readiness | Deployment config, telemetry, backups, data policy | Future measured load targets, backup restore, production PostgreSQL integration matrix |
 
-Для етапу даних прийнято UUID PK і `created_at` у кожній таблиці, окремий UUID у eligibility зі збереженням unique трійки, без ANSWER.revision/VERDICT.answer_revision. До production можна редагувати development migrations на місці та перебудовувати disposable dev/test БД. Коли дані стають спільними/постійними — лише нові incremental migrations із перевіркою upgrade. Це майбутній порядок роботи; зараз БД не скидається, міграції не створюються, deployment не виконується.
+Data-stage requirements: UUID PK and `created_at` everywhere; separate eligibility UUID with unique triple; no ANSWER.revision/VERDICT.answer_revision. Before production, edit development migrations in place/rebuild disposable dev/test databases. Shared/persistent data requires new incremental migrations and upgrade checks. This is future practice; no database reset, migrations, or deployment are performed here.
 
-Не переходити до реалізації наступних етапів на підставі цього плану. Поточне доручення дозволило scoped етап 1, Composer/локальні docs/tests та окремо дві серії максимум 54 development live calls кожна. Git delivery/deployment не входять; selector, БД, import, VERDICT, POST/fetch і permalink не реалізовані. [Стратегія тестів](testing.md) описує наступні перевірки.
+Do not implement later stages based on this plan alone. Stage-1 authorization covered scoped implementation and separately two batches of at most 54 development live calls. Those historical budgets are exhausted; new live runs need a new bounded authorization using the same production key. The documentation audit authorizes documentation/project-instruction work and offline validation only. Selector, database/import, VERDICT, POST/fetch, and permalink remain unimplemented. [Testing strategy](testing.md) separates existing suites from planned checks.

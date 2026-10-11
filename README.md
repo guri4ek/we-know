@@ -2,23 +2,25 @@
 
 **We don't think. We know.**
 
-Сатиричний англомовний сервіс: питання → класифікація → випадкова готова абсурдна відповідь відповідної категорії → постійне посилання.
+An English satirical service: question → classification → a randomly selected prepared absurd answer from an eligible category → a permanent link. This is Serhii's personal project and personal account.
 
-Репозиторій: https://github.com/guri4ek/we-know
+Repository: https://github.com/guri4ek/we-know
 
-## Поточний стан
+## Current status
 
-Стан на 2026-10-11: Symfony 7.4 LTS / PHP baseline 8.2, Twig та `GET /` зі статичною заглушкою. Етап 1 має taxonomy/rubric v1, 81 синтетичне питання, типізований Jev adapter, offline тести й CLI evaluation runner. Виконані live development runs та обмеження — у [результатах етапу 1](docs/evaluation/stage-1-results.md). Selector, БД, POST fetch та permalink ще не реалізовані.
+As of 2026-10-11: Symfony 7.4 LTS, Twig, and `GET /` with a static placeholder. Stage 1 includes taxonomy/rubric v1, 81 synthetic questions, a typed Jev adapter, offline tests, and a CLI evaluation runner. Historical live development runs and their limitations are in the [stage-1 results](docs/evaluation/stage-1-results.md). The selector, database, POST fetch, and permalink are not implemented.
 
-Почніть із [карти документації](docs/README.md), [контексту вихідної сесії](docs/context.md), [технічного плану](docs/technical-plan.md) та [C4-моделі](docs/architecture/c4.md).
+Start with the root [AGENTS.md](AGENTS.md), [documentation map](docs/README.md), [source-session context](docs/context.md), [technical plan](docs/technical-plan.md), and [C4 model](docs/architecture/c4.md).
 
-Перед створенням або редагуванням відповідей прочитайте [інструкцію офлайн-авторингу](docs/content/answer-generation-guide.md). Її приклади — редакторські drafts, не готовий seed; [дослідження гумору](docs/research/humor-mechanisms.md) відокремлює першоджерела від практичних гіпотез.
+Before creating or editing answers, read the [offline authoring guide](docs/content/answer-generation-guide.md). Its examples are editorial drafts, not a ready seed; the [humor research](docs/research/humor-mechanisms.md) separates primary sources from practical hypotheses.
 
-[Модель даних](docs/architecture/data.md) враховує UUID PK/created_at у всіх таблицях і `humor_mechanism` на eligibility без впливу на random. Спрощений VERDICT із діагностичним JSON поки є пропозицією. Development migrations до production можна редагувати для disposable БД; постійні дані потребуватимуть incremental migrations. БД/міграції ще не створені.
+The [data model](docs/architecture/data.md) incorporates UUID PK/created_at in every table and `humor_mechanism` on eligibility without affecting random selection. A simplified VERDICT with diagnostic JSON remains a proposal. Development migrations may be edited for disposable databases before production; persistent data will require incremental migrations. No database or migrations exist yet.
 
-## Локальний запуск
+## Local setup
 
-PHP 8.2+ і Composer 2. PHP baseline для розв'язання залежностей зафіксований у `composer.json`; фактичне встановлення перевірено на PHP 8.4.10. Розширення: ctype, iconv; повні вимоги залежностей перевіряє Composer. Для майбутньої БД потрібні `pdo_sqlite` локально та `pdo_pgsql` для PostgreSQL.
+Development uses **locally installed PHP 8.4**, with a planned transition to **PHP 8.5**, and Composer 2. The verified runtime is PHP 8.4.10. The current manifest still allows PHP 8.2+ and pins dependency resolution to 8.2.0; these settings are an error: the intended minimum is PHP 8.4. Correction is recorded in the [audit findings](docs/verification.md#documentation-audit-findings) for a separate prompt. The PHP 8.5 transition has not been performed or tested.
+
+Direct extension requirements: ctype and iconv; Composer checks the complete dependency requirements. **SQLite locally and PostgreSQL in production are definite choices**; persistence is still future work. It will require `pdo_sqlite` locally and `pdo_pgsql` for PostgreSQL.
 
 ```sh
 rtk proxy composer install --prefer-dist --no-plugins --no-scripts
@@ -28,12 +30,12 @@ rtk proxy php bin/console app:jev:evaluate
 rtk proxy php -S 127.0.0.1:8000 -t public public/index.php
 ```
 
-Відкрити http://127.0.0.1:8000. Вбудований PHP server призначений лише для розробки. Коли з'являться статичні assets, додати окремий dev router або перейти на Symfony CLI, щоб assets не потрапляли у front controller.
+Open http://127.0.0.1:8000. The built-in PHP server is for development only. When static assets are added, use a separate development router or Symfony CLI so asset requests do not reach the front controller.
 
-`.env` містить лише локальні defaults. Секрети — у `.env.local` або змінних середовища; `APP_SECRET` поки порожній, оскільки сесії/CSRF/підписані URL не підключено. Перед їх додаванням задати випадковий секрет. Для production потрібні `APP_ENV=prod`, `APP_DEBUG=0`, налаштований web server із document root `public/` і окремий етап підготовки деплою.
+`.env` contains local defaults only. Secrets belong in `.env.local` or environment variables; `APP_SECRET` is currently empty because sessions, CSRF, and signed URLs are not wired. Set a random secret before adding those features. Production requires `APP_ENV=prod`, `APP_DEBUG=0`, a web server with document root `public/`, and a separate deployment preparation stage.
 
-Runtime-склад: FrameworkBundle, Console, Dotenv, YAML, TwigBundle та HttpClient 7.4. Для dev додано PHPUnit 11.5, BrowserKit і CssSelector. Bootstrap/config створено явно; Flex, Runtime, автоматичні рецепти та Composer scripts не підключені. Нові пакети потребуватимуть явної конфігурації.
+Runtime packages: FrameworkBundle, Console, Dotenv, YAML, TwigBundle, and HttpClient 7.4. Development packages include PHPUnit 11.5, BrowserKit, and CssSelector. Bootstrap/configuration is explicit; Flex, Runtime, automatic recipes, and Composer scripts are not enabled. New packages will need explicit configuration.
 
-Jev: `JEV_MODEL` у `.env` (default pin `jev-1.13.0`), `JEV_API_KEY` тільки у `.env.local`/environment. `JEV_TIMEOUT=0.60` і `JEV_MAX_DURATION=0.80` configurable у секундах. Один POST із intent/topic; без retry, redirect та confidence threshold. Default evaluation replay й tests працюють без ключа/мережі. Live вимагає `--live` і явний `--limit`; [формат звіту й команди](docs/evaluation/README.md).
+Jev: `JEV_MODEL` in `.env` (default pin `jev-1.13.0`); one **production `JEV_API_KEY`** in `.env.local`/environment for application calls and authorized live evaluation. No separate test key or sandbox workflow is required. `JEV_TIMEOUT=0.60` and `JEV_MAX_DURATION=0.80` are configurable in seconds. One POST carries intent/topic; no retries, redirects, or confidence threshold. Default replay and tests need no key/network. Live requires `--live`, an explicit `--limit`, and authorization for that run; [report format and commands](docs/evaluation/README.md) also explain usage and billing limits.
 
-Перевірки й межі поточного результату: [verification.md](docs/verification.md).
+Checks and limitations: [verification.md](docs/verification.md), including a separate documentation-audit event.
