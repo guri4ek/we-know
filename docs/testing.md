@@ -1,6 +1,6 @@
 # Стратегія тестування
 
-Стан: 2026-10-11. Це план перевірок цільового MVP. Фактично виконані перевірки, встановлені інструменти та їхні результати фіксуються у [verification.md](verification.md). Майбутні тести нижче не означають, що відповідні функції вже реалізовані.
+Стан: 2026-10-11. Skeleton та scoped етап 1 мають executable Unit/Integration/Application suites. Інші розділи нижче лишаються планом цільового MVP. Фактично виконані перевірки, встановлені інструменти та їхні результати фіксуються у [verification.md](verification.md). Майбутні тести нижче не означають, що відповідні функції вже реалізовані.
 
 Jev — зовнішній класифікатор, а не тестовий фреймворк і не генератор відповідей. PHP-тести плануються на PHPUnit. Інтеграцію з Jev перевіряємо окремо через локальні HTTP-підміни та явно запущені контрактні звернення до сервісу.
 
@@ -87,6 +87,8 @@ Jev — зовнішній класифікатор, а не тестовий ф
 Fixtures — синтетичні, невеликі, з коментарем про джерело схеми/дату. Не зберігати HAR із реальними Authorization headers. Відповідь, вигадана вручну за неперевіреною схемою, позначається як чернетка, а не як запис реального контракту.
 
 ## Live Jev contract та якість
+
+**Реалізація етапу 1:** console command `app:jev:evaluate`, без live tests у default PHPUnit discovery. Offline replay використовує справжній adapter + MockHttpClient; deterministic metric fixtures й preflight тестуються. Live вимагає --live, явний --limit та JEV_API_KEY; без retry/sleep. За уточненням Serhii — один project key у `.env.local`, без окремого test account/key. Test services примусово мають dummy/empty credentials і deny-network client. Timeout/max duration configurable, поточні defaults 0.60/0.80 s за рішенням Serhii; початковий 0.30/0.40 baseline також покрито request assertions. [Формат і команди](evaluation/README.md), [дві live development серії](evaluation/stage-1-results.md). Абзаци нижче з окремим live PHPUnit profile й test key — історичні пропозиції, не поточний runner.
 
 Live suite відділений від default runner: наприклад, окремий `phpunit.live.xml` і `tests/Contract/Live/`. Пропонований запуск — лише за `RUN_LIVE_JEV_TESTS=1` плюс наявним server-side credential. Без явного прапорця мережа не викликається; якщо прапорець встановлено, але ключа немає, preflight завершується зрозумілою помилкою, а не показує зелений результат після всіх skipped tests.
 

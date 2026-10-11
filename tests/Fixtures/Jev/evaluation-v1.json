@@ -1,0 +1,31 @@
+{
+  "corpus_version": "1.0.0",
+  "split": "development",
+  "provenance": "Synthetic offline responses based on official TypeSafe API reference checked 2026-10-11. Not recorded live traffic.",
+  "responses": {
+    "dev-001": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"YES_NO\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 1, \"WHEN\": 0, \"WHY\": 0, \"HOW\": 0, \"WHO\": 0, \"WHAT\": 0, \"HOW_MANY\": 0, \"CHOICE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"TECH\", \"confidence\": 1, \"probabilities\": {\"TECH\": 1, \"WORK\": 0, \"MONEY\": 0, \"LOVE\": 0, \"HEALTH\": 0, \"LIFE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "dev-002": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"WHEN\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 1, \"WHY\": 0, \"HOW\": 0, \"WHO\": 0, \"WHAT\": 0, \"HOW_MANY\": 0, \"CHOICE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"WORK\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK\": 1, \"MONEY\": 0, \"LOVE\": 0, \"HEALTH\": 0, \"LIFE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "dev-003": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"WHAT\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"WHY\": 0, \"HOW\": 0, \"WHO\": 0, \"WHAT\": 1, \"HOW_MANY\": 0, \"CHOICE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"MONEY\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK\": 0, \"MONEY\": 1, \"LOVE\": 0, \"HEALTH\": 0, \"LIFE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "dev-004": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"HOW\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"WHY\": 0, \"HOW\": 1, \"WHO\": 0, \"WHAT\": 0, \"HOW_MANY\": 0, \"CHOICE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"WORK\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK\": 1, \"MONEY\": 0, \"LOVE\": 0, \"HEALTH\": 0, \"LIFE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "dev-005": {
+      "status": 429,
+      "body": "{\"error\":\"synthetic rate limit\"}"
+    },
+    "dev-006": {
+      "status": 200,
+      "body": "{invalid"
+    }
+  }
+}

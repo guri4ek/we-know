@@ -5,4 +5,30 @@ services:
 
     App\:
         resource: '../src/'
-        exclude: '../src/Kernel.php'
+        exclude:
+            - '../src/Kernel.php'
+            - '../src/Domain/Classification/'
+
+    # A plain dedicated client: no retry or profiling decorator retaining credentials.
+    jev.http_client:
+        class: Symfony\Component\HttpClient\HttpClient
+        factory: ['Symfony\Component\HttpClient\HttpClient', 'create']
+
+    App\Infrastructure\Classification\JevClassifier:
+        arguments:
+            $client: '@jev.http_client'
+            $model: '%env(JEV_MODEL)%'
+            $apiKey: '%env(JEV_API_KEY)%'
+            $timeout: '%env(float:JEV_TIMEOUT)%'
+            $maxDuration: '%env(float:JEV_MAX_DURATION)%'
+
+    App\Domain\Classification\QuestionClassifier:
+        alias: App\Infrastructure\Classification\JevClassifier
+
+    App\Command\EvaluateJevCommand:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+            $model: '%env(JEV_MODEL)%'
+            $apiKey: '%env(JEV_API_KEY)%'
+            $timeout: '%env(float:JEV_TIMEOUT)%'
+            $maxDuration: '%env(float:JEV_MAX_DURATION)%'

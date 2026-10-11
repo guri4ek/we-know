@@ -1,6 +1,6 @@
 # Jev: дослідження інтеграції та перевірки якості
 
-Дата перевірки першоджерел: **2026-10-11**. Це контракт і пропозиція для майбутньої реалізації; адаптер та live-виклики ще не реалізовані. Акаунт, ключ, кредит і фактична доступність моделі не перевірялися. Пошук виконувався через web-інструменти, без керування браузером.
+Дата перевірки першоджерел: **2026-10-11**. Official API/Choice/Models повторно звірено під час етапу 1. Adapter/DI, normalizer, offline suite й runner реалізовані; виконано дві дозволені live development серії по 54 calls. [Фактичний результат](../evaluation/stage-1-results.md). Holdout, незалежна human quality, billing/баланс та production-регіон не перевірені. Пошук виконувався через web-інструменти, без керування браузером.
 
 ## Рішення для проєкту
 
@@ -12,7 +12,7 @@
 
 `POST https://api.typesafe.ai/v1/systemone`, заголовки `Authorization: Bearer <server-side key>` та `Content-Type: application/json`. Обов'язкові поля: `model`, `state`, `questions`. Для `choice` потрібні `type`, `instructions`, карта `criteria`; максимум 255 варіантів. Результат містить `model`, `answers` із тими самими ключами питань та `usage.input_tokens` / `usage.output_tokens`. Кожна Choice-відповідь має `type`, `choice`, `probabilities`, `confidence`. Джерело: [API reference](https://docs.typesafe.ai/api).
 
-Нижче **авторський кандидат rubric v1**, а не перевірений prompt чи запис справжнього виклику:
+Нижче **історичний авторський draft до етапу 1**, а не активний rubric v1 чи запис справжнього виклику. Активні правила — [taxonomy v1](../content/taxonomy-v1.md); точний payload будує `JevRubric`:
 
 ```json
 {
@@ -51,7 +51,7 @@
 }
 ```
 
-Спірні межі (`How long…`, `What should I choose…`, salary versus career, technology at work) мають отримати узгоджені приклади й очікувані категорії перед фіксацією rubric. `ANY` не входить до `criteria`: це придатність редакторської фрази, а не категорія запиту. Зазначення «content as data» зменшує неоднозначність інструкцій, але не гарантує стійкості до prompt injection.
+Межі (`How long…`, `What should I choose…`, salary versus career, technology at work) зафіксовано в taxonomy v1 з авторськими corpus labels; незалежна людська перевірка ще потрібна. `ANY` не входить до `criteria`: це придатність редакторської фрази, а не категорія запиту. Зазначення «content as data» зменшує неоднозначність інструкцій, але не гарантує стійкості до prompt injection.
 
 ## Модель, ціна та доступ
 
@@ -65,11 +65,11 @@
 
 `confidence` для Choice — функція розподілу: `(p_max - 1/n) / (1 - 1/n)`, де `n` — кількість варіантів. Це не емпірична точність класифікації і не гарантія правильності. Наприклад, значення 0.8 не означає «80% правильних відповідей нашому користувачу». Поріг обирають на власних даних, окремо для кожного рішення. Джерело: [Confidence](https://docs.typesafe.ai/confidence).
 
-Пропозиція для внутрішнього контракту: `QuestionClassifier` повертає валідовані intent/topic, фактичну модель або типізовану причину недоступності. Confidence може бути доступним для evaluation; зберігати його у VERDICT лише якщо він впливає на рішення. Транспортний JSON не має виходити за адаптер. Можлива майбутня threshold policy: невпевнена тема → `GENERAL`; невпевнена форма → універсальний пул. Вона ще не прийнята; конкретних production-порогів дослідження не встановлює. Сатиричні `100% confidence` в інтерфейсі не використовувати як метрику моделі.
+Реалізований внутрішній контракт: `QuestionClassifier` повертає валідовані intent/topic, фактичну модель або типізовану причину недоступності. Confidence може бути доступним для evaluation; зберігати його у VERDICT лише якщо він впливає на рішення. Транспортний JSON не має виходити за адаптер. Можлива майбутня threshold policy: невпевнена тема → `GENERAL`; невпевнена форма → універсальний пул. Вона ще не прийнята; конкретних production-порогів дослідження не встановлює. Сатиричні `100% confidence` в інтерфейсі не використовувати як метрику моделі.
 
 Пропонований [decision_context](../architecture/data.md) розділяє фактичні labels Jev і вибраний eligibility-пул: fallback може їх змінити. При failure не записувати OTHER/GENERAL як успішну відповідь Jev. `humor_mechanism` задається під час підготовки каталогу, не цим класифікатором; у контексті це лише історична ознака вибраної відповіді, не вхід selector.
 
-Перевіряти типи, обов'язкові відповіді, `choice` за allowlist, числові confidence/probabilities у [0,1], модель і невід'ємні token counters. Для суми probabilities визначити явний допуск після контрактної перевірки; не покладатися на точну рівність float. Невідомі додаткові metadata дозволити, невідому категорію не приводити мовчки до валідної. Provider JSON із HTTP 200 теж може бути непридатним.
+Перевіряти типи, обов'язкові відповіді, `choice` за allowlist, числові confidence/probabilities у [0,1], модель і невід'ємні token counters. Реалізований sum tolerance — **0.001** як явна локальна schema policy; перевіряємо повний allowlist distribution, finite numbers, choice як maximum (ties дозволені), nonnegative integer tokens. Confidence threshold та перерахунок confidence відсутні. Body cap 64 KiB перевіряється після читання й не є streaming memory limit. Strict schema прийняла 95 реальних responses у двох live runs; точна float рівність не потрібна. Невідомі додаткові metadata дозволити, невідому категорію не приводити мовчки до валідної. Provider JSON із HTTP 200 теж може бути непридатним.
 
 ## Помилки, часовий бюджет і retry
 
@@ -79,17 +79,17 @@
 
 `401`/`422` повинні давати операційну помилку конфігурації/контракту в метриках, хоча користувач може отримати готовий fallback. На `429`/`529` foreground-виклик завершується fallback без повтору. Міжзапитний cooldown і circuit breaker — подальше покращення за підтвердженої потреби, не обов'язковий shared state першого MVP. Ніколи не спати довше за budget HTTP-відповіді.
 
-Для окремого evaluation runner можна дозволити максимум два повтори після першої спроби, exponential backoff із jitter, врахування `Retry-After` та загальний deadline. Затримка, яка не вміщується в deadline, означає припинення. Повтор може мати окрему вартість: timeout не доводить, що провайдер не обробив першу спробу. Невалідний ключ або payload не повторювати.
+Фактичний evaluation runner також має **нуль retries**: --live, configured JEV_API_KEY і явний --limit=1..1000, sequential one call per sample. За уточненням Serhii окремий test key не потрібний для малого проєкту. `JEV_TIMEOUT`/`JEV_MAX_DURATION` configurable; початкові defaults 0.30/0.40, друга дозволена серія — 0.60/0.80 без зміни rubric. Після порівняння Serhii прямо обрав **0.60/0.80 як поточні defaults**. Technical failures не є empty-catalog fallback rate. Повтор може мати окрему вартість: timeout не доводить, що провайдер не обробив першу спробу. Невалідний ключ або payload не повторювати.
 
 ## Перевірки інтеграції
 
-Це заплановані перевірки майбутнього адаптера, не заява про виконані тести:
+Unit/offline adapter integration із цієї таблиці виконано; application/selector/БД лишаються наступними етапами. Live development facts — у [звіті](../evaluation/stage-1-results.md), exact verification — у [verification](../verification.md):
 
 | Рівень | Що довести |
 | --- | --- |
 | Unit | Payload містить рівно потрібні intent/topic criteria; `ANY`, humor_mechanism та бібліотеки фраз немає; model pin і дослідницька редакція rubric явні |
 | Unit | Перетворення валідного JSON; усі невалідні типи/enum/числа/відсутні поля; confidence policy тестувати лише після її прийняття |
-| Integration без мережі | Symfony HTTP mock повертає success, 401, 422, 429, 529, інший 5xx, malformed JSON, timeout і transport exception; перевірити URL, headers, body, кількість спроб і fallback |
+| Integration без мережі | Symfony HTTP mock повертає success, 401, 422, 429, 529, інший 5xx, malformed JSON, timeout і transport exception; перевірити URL, headers, body, кількість спроб і typed failure (application fallback — наступний етап) |
 | Integration застосунку | POST + fake classifier → фраза з придатного пулу → збереження; permalink читає ту саму фразу без нового виклику Jev |
 | Live contract, opt-in | Окремий наданий test key, синтетичні питання, ліміт викликів; перевірити реальну схему, pin, usage та latency; не вимагати точних probabilities |
 | Якість, opt-in | Фіксований labeled corpus, confusion matrix, intent/topic accuracy, accepted accuracy після threshold, coverage і fallback rate; окремий holdout для оцінки |

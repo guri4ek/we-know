@@ -12,7 +12,7 @@
 | ADR-006 | Пропозиція | SQLite dev, PostgreSQL prod, DBAL + Migrations без ORM. Перевіряти обидві платформи |
 | ADR-007 | Пропозиція, відповідає вимозі share URL | Immutable snapshot у VERDICT, UUIDv4, GET без Jev/random |
 | ADR-008 | Пропозиція | Eligibility як явні пари intent/topic; не дві незалежні множини |
-| ADR-009 | Пропозиція | Один server-side Jev call із timeout/fallback; no retry на foreground path; model version pinned |
+| ADR-009 | Реалізовано classification частину етапу 1 | Один Jev call, початкові timeout 0.30 s / max_duration 0.40 s; після двох live серій Serhii обрав **0.60/0.80 s як defaults**, без retry/redirect; model configurable/pinned. Adapter повертає typed failure; application fallback лишається наступним етапом |
 | ADR-010 | Пропозиція | Каталог через перевірений CLI import; без web admin і шаблонної генерації на старті |
 | ADR-011 | Пропозиція | Публічний за URL, noindex, без стрічки; перед submit повідомити про зберігання/передачу питання |
 | ADR-012 | Прийнято користувачем | Спочатку мінімальна основа, дослідження, архітектура і план тестів; не реалізовувати весь продукт зараз |
@@ -21,11 +21,14 @@
 | ADR-015 | Прийнято користувачем | У всіх таблицях власний UUID PK і `created_at`; eligibility зберігає окремий unique `(answer_id, intent, topic)`. Поля ANSWER.revision і VERDICT.answer_revision вилучено |
 | ADR-016 | Прийнято напрям; форма — пропозиція | `ANSWER_ELIGIBILITY.humor_mechanism` заповнюється при підготовці/генерації контенту, не впливає на selector, лишається для статистики. Пропонується один контрольований string на рядок; кілька механізмів, лайки/голосування та оцінка власником — майбутні рішення |
 | ADR-017 | Пропозиція, не затверджено | VERDICT: UUID id, question_snapshot, answer_snapshot, nullable answer_eligibility_id, decision_context JSON, created_at. JSON фіксує класифікацію, фактично вибраний пул/механізм і причину fallback на момент події; попередній перелік окремих діагностичних колонок більше не вважається прийнятим |
+| ADR-018 | Зафіксовано scoped baseline етапу 1 | [Taxonomy/rubric 1.0.0](../content/taxonomy-v1.md): duration→WHEN, explicit selection→CHOICE, pay→MONEY, career/team organization→WORK, technical operation→TECH; multiple questions→first recoverable; Where→WHAT. Авторські labels, без незалежної human validation |
+| ADR-019 | Реалізовано етап 1 | Unknown enum/неповна схема/невалідні числа→invalid_response; probabilities повні й sum tolerance 0.001, choice має бути maximum (tie allowed). Confidence threshold відсутній; допуск є локальною schema policy, не calibration |
+| ADR-020 | Уточнення Serhii, реалізовано | Один JEV_API_KEY для малого проєкту й evaluation, тільки `.env.local`/environment. Live runner вимагає --live і явний limit; no retries. Development/holdout окремі; метрики failures не називаються empty-catalog fallback |
 
 ## Наступні рішення, які не потребують очікування для поточного дослідження
 
-1. **Taxonomy/content**: затвердити intent/topic на розмічених прикладах, визначити `HOW_MANY` vs `WHEN` для тривалості, складені питання та `CHOICE`.
-2. **Jev access**: акаунт, ключ, ліміти, фактичний тариф, модель і політика даних. Ключі не шукати в сторонніх конфігураціях; налаштувати на етапі live spike.
+1. **Taxonomy/content**: baseline v1 зафіксовано; незалежно перевірити labels, holdout quality й придатність контентних пулів. Уточнення v1 пояснені в taxonomy, humor codes лишаються редакторським proposal.
+2. **Jev access**: project key налаштовано, доступ до pinned моделі підтверджено двома development live серіями. Фактичний billing/баланс, довготривалі ліміти та account privacy policy ще не перевірено. Ключі не шукати в сторонніх конфігураціях.
 3. **Quality gate**: мінімальна точність intent/topic, частка fallback та редакторська оцінка гумору; числа встановити до evaluation, не після результатів.
 4. **Brand/domain**: `we-know` — репозиторій; `Instant Answer` / `instant-answer.net` — вихідний концепт. Власність домену не підтверджена.
 5. **Production**: хостинг, PostgreSQL version, region, concurrency, API budget і backups.

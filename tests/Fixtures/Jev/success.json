@@ -1,0 +1,39 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "intent": {
+      "type": "choice",
+      "choice": "WHEN",
+      "confidence": 1,
+      "probabilities": {
+        "YES_NO": 0,
+        "WHEN": 1,
+        "WHY": 0,
+        "HOW": 0,
+        "WHO": 0,
+        "WHAT": 0,
+        "HOW_MANY": 0,
+        "CHOICE": 0,
+        "OTHER": 0
+      }
+    },
+    "topic": {
+      "type": "choice",
+      "choice": "TECH",
+      "confidence": 1,
+      "probabilities": {
+        "TECH": 1,
+        "WORK": 0,
+        "MONEY": 0,
+        "LOVE": 0,
+        "HEALTH": 0,
+        "LIFE": 0,
+        "GENERAL": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 100,
+    "output_tokens": 20
+  }
+}

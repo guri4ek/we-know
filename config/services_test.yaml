@@ -1,0 +1,25 @@
+services:
+    jev.http_client:
+        class: Symfony\Component\HttpClient\MockHttpClient
+        factory: ['App\Tests\Fixtures\Jev\DenyNetworkClient', 'create']
+        public: true
+
+    App\Infrastructure\Classification\JevClassifier:
+        arguments:
+            $client: '@jev.http_client'
+            $rubric: '@App\Infrastructure\Classification\JevRubric'
+            $normalizer: '@App\Infrastructure\Classification\JevResponseNormalizer'
+            $model: 'jev-1.13.0'
+            $apiKey: 'test-only-key'
+
+    App\Domain\Classification\QuestionClassifier:
+        alias: App\Infrastructure\Classification\JevClassifier
+        public: true
+
+    App\Command\EvaluateJevCommand:
+        autowire: true
+        autoconfigure: true
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+            $model: 'jev-1.13.0'
+            $apiKey: ''

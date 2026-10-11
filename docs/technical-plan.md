@@ -1,6 +1,6 @@
 # Технічний план MVP
 
-Статус: архітектурна пропозиція для наступних задач. Реалізований лише bootstrap, описаний у [verification.md](verification.md). Вихідні рішення — [context.md](context.md).
+Статус: цільова MVP-архітектура залишається пропозицією. Реалізовано bootstrap та scoped етап 1: taxonomy/corpus, Jev adapter, тести й evaluation runner. Фактичний live baseline та обмеження — [результат етапу 1](evaluation/stage-1-results.md), перевірки — [verification.md](verification.md). Вихідні рішення — [context.md](context.md).
 
 ## 1. Межі
 
@@ -102,7 +102,7 @@ Timeout/помилка Jev за наявності універсального 
 
 Цілі, не гарантії: власна backend-обробка без Jev до 20 ms, повний POST P50 ≤300 ms / P95 ≤700 ms, GET permalink server response ≤100 ms. Вимірювати cold/warm окремо; Xdebug off, `APP_ENV=prod`, `APP_DEBUG=0`, OPcache on. Порівнювати production-регіон і браузер у Варшаві.
 
-Початкова пропозиція Jev: 400 ms `max_duration`, idle `timeout` не більший за цей бюджет; без автоматичних retry на критичному шляху. [Symfony HttpClient](https://symfony.com/doc/7.4/http_client.html) розрізняє idle timeout і повну тривалість; одного `timeout` недостатньо. Налаштування коригуються після вимірювання частоти fallback. Валідація, DB read/write й мережа також входять у загальний бюджет.
+Початковий spike Jev використовував `timeout=0.30 s`, `max_duration=0.40 s`. Після двох development live серій Serhii обрав **0.60/0.80 s як поточні configurable defaults**; retries=0. [Symfony HttpClient](https://symfony.com/doc/7.4/http_client.html) розрізняє idle timeout і повну тривалість; одного `timeout` недостатньо. [Порівняння](evaluation/stage-1-results.md) показує technical failures, а не empty-catalog fallback rate. Це не прийняття production SLA: майбутні validation, DB read/write й мережа також входитимуть у загальний бюджет.
 
 Розрізняти provider timeout, auth/config failure, throttling, invalid response та порожній каталог у метриках. Не логувати raw питання/ключ. Логи: request ID, durations, фактично викликана модель, pool tier, причина fallback за наявності. Це не вимога окремих version/status колонок у VERDICT; мінімальний історичний контекст описано в моделі даних. Provider 401/422 — сигнал конфігураційної помилки, а не причина нескінченного retry. Circuit breaker/спільний cache додавати лише при підтвердженій потребі.
 
@@ -119,7 +119,7 @@ Twig autoescape, JS `textContent`, параметризований SQL, від�
 | Етап | Результат | Критерій завершення |
 | --- | --- | --- |
 | 0. Старт | Мінімальний Symfony/Twig, локальна документація | Kernel boot, GET/HEAD працюють, POST на заглушку відхиляється, документи пов'язані |
-| 1. Контент і Jev spike | Таксономія v1, розмічені питання, перевірений adapter contract | Обидва choice повертаються за один call; відомі якість, latency, fallback rate; версія моделі визначена |
+| 1. Контент і Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline виконано, development live baseline отримано | Один call з обома choice підтверджено mock і 95 live successes у двох серіях; model pin, accuracy, latency й technical failure rate відомі. Holdout/human quality та production latency ще не перевірені; empty-catalog fallback rate тут не існує |
 | 2. Домен і каталог | Selector, прив'язки, DB migrations/import | Unit-тести fallback/random, інтеграційні тести SQLite/PostgreSQL, непорожній universal pool |
 | 3. Вертикальний сценарій | POST, Jev adapter, збереження, JSON | Помилки провайдера й БД покрито тестами; permalink видається тільки після commit |
 | 4. UI та поширення | Vanilla fetch, результат, permalink, About, OG | XSS/duplicate-submit/error/retry UX перевірені; GET не викликає Jev |
@@ -127,4 +127,4 @@ Twig autoescape, JS `textContent`, параметризований SQL, від�
 
 Для етапу даних прийнято UUID PK і `created_at` у кожній таблиці, окремий UUID у eligibility зі збереженням unique трійки, без ANSWER.revision/VERDICT.answer_revision. До production можна редагувати development migrations на місці та перебудовувати disposable dev/test БД. Коли дані стають спільними/постійними — лише нові incremental migrations із перевіркою upgrade. Це майбутній порядок роботи; зараз БД не скидається, міграції не створюються, deployment не виконується.
 
-Не переходити до реалізації всіх етапів на підставі цього плану. Поточний дозвіл — bootstrap, дослідження, архітектура й тестове планування; skeleton має власні executable перевірки. [Стратегія тестів](testing.md) описує решту. Нові сесії/агенти можуть брати обмежений етап із документованими залежностями.
+Не переходити до реалізації наступних етапів на підставі цього плану. Поточне доручення дозволило scoped етап 1, Composer/локальні docs/tests та окремо дві серії максимум 54 development live calls кожна. Git delivery/deployment не входять; selector, БД, import, VERDICT, POST/fetch і permalink не реалізовані. [Стратегія тестів](testing.md) описує наступні перевірки.
