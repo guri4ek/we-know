@@ -1,0 +1,6 @@
+framework:
+    trusted_proxies: []
+    rate_limiter:
+        answer:
+            limit: 3
+            interval: '1 minute'

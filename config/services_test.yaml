@@ -23,3 +23,19 @@ services:
             $projectDir: '%kernel.project_dir%'
             $model: 'jev-1.13.0'
             $apiKey: ''
+
+    Doctrine\DBAL\Connection:
+        factory: ['App\Infrastructure\Persistence\ConnectionFactory', 'create']
+        arguments: ['sqlite:///%kernel.project_dir%/var/test-backend.sqlite', 'test']
+        public: true
+
+    App\Domain\Answer\RandomIndexSource:
+        alias: App\Infrastructure\Random\SecureRandomIndex
+        public: true
+
+    App\Http\TrustedOrigin:
+        arguments: ['http://localhost']
+
+    app.answer_rate_cache:
+        class: Symfony\Component\Cache\Adapter\ArrayAdapter
+        arguments: []

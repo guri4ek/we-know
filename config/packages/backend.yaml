@@ -1,0 +1,12 @@
+framework:
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    # Only the IP header is trusted, and only from explicitly configured proxies.
+    trusted_headers: ['x-forwarded-for']
+    lock: flock
+    rate_limiter:
+        answer:
+            policy: fixed_window
+            limit: '%env(int:ANSWER_RATE_LIMIT)%'
+            interval: '%env(ANSWER_RATE_INTERVAL)%'
+            cache_pool: app.answer_rate_cache
+            lock_factory: lock.factory

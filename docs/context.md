@@ -10,6 +10,14 @@
 
 This is a substantive context transfer, not a verbatim export. Earlier ChatGPT claims about comparable products, papers, prices, and speed are not independently confirmed facts. Historical permissions do not authorize current work.
 
+## Post-audit backend approval — 2026-10-11
+
+Serhii confirmed DBAL + Migrations without ORM; VERDICT with UUID/text snapshots/nullable eligibility FK/decision_context/UTC created_at and ON DELETE SET NULL; the diagnostic minimum of actual provider, requested/resolved model, labels or failure, selected tier/reason/pool/count/algorithm/mechanism. He chose complete backend in the next session after Composer correction: catalog, migrations/import, selector, verdict persistence, POST /answer and stored-result reading. Frontend implementation remains later, with a confirmed **dark theme**. The [implementation prompt](handoff/backend-implementation-prompt.md) transfers this scope; this chat prepares documentation rather than implementing it. No new live-call budget, Git delivery, or deployment was authorized.
+
+## Scoped backend implementation — 2026-10-11
+
+The next-session task was executed locally: Composer minimum/platform corrected to PHP 8.4; DBAL + Migrations without ORM; catalog/import, selector, immutable verdict persistence, POST and minimal stored-result SSR implemented. All new classification checks were offline with fakes/mocks. No new live budget, Git delivery or deployment was used. SQLite evidence and remaining PostgreSQL/content/production gaps are in the [verification event](verification.md#backend-implementation-verification-event); setup is in the [backend guide](backend.md). The frontend remains deferred with a confirmed dark theme. Later historical sections below preserve their checkpoint state.
+
 ## Product
 
 The working public name is **Instant Answer**, the mentioned domain is `instant-answer.net`, and the local/repository name is **we-know**. Domain ownership and final branding have not been checked.
@@ -34,13 +42,13 @@ This is post-irony about AI certainty: a restrained, serious interface gives a s
 | Language | Concepts were mostly English | User explicitly confirmed **English** for the first version; documentation is now English and communication Ukrainian |
 | Identifiers and time | UUID PK and created_at | Accepted for every table, including eligibility; answer/intent/topic remains unique |
 | Content versions | ANSWER.revision and VERDICT.answer_revision | Removed by user decision; answer text snapshot remains |
-| Selection explanation | Separate diagnostic VERDICT fields questioned | **Proposal:** nullable eligibility FK + short historical decision_context JSON; final structure is not approved |
+| Selection explanation | Separate diagnostic VERDICT fields questioned | **Accepted after audit:** nullable eligibility FK, ON DELETE SET NULL, and short historical decision_context JSON; implementation pending |
 | Pre-launch migrations | Edit development migrations and rebuild disposable local/test databases | Accepted; shared/persistent data requires immutable incremental migrations. No reset/deployment is being performed |
 | Runtime/database clarification | Personal development environment | PHP 8.4 → planned 8.5; minimum 8.4; SQLite local / PostgreSQL production accepted, not alternative candidates |
 
 ## Contextual Absurdity mechanics
 
-Jev determines the expected answer form (`intent`) and topic (`topic`), in one request. In the target application PHP selects a random prepared phrase from an eligible pool. The model does not see the full library and does not choose the funniest phrase. The selector remains unimplemented.
+Jev determines the expected answer form (`intent`) and topic (`topic`), in one request. In the target application PHP selects a random prepared phrase from an eligible pool. The model does not see the full library and does not choose the funniest phrase. The selector is implemented in the scoped backend task.
 
 The initial taxonomy proposal became the stage-1 [baseline v1](content/taxonomy-v1.md), including ambiguity rules. Independent human label review remains outstanding:
 
@@ -48,7 +56,7 @@ The initial taxonomy proposal became the stage-1 [baseline v1](content/taxonomy-
 - Topic: `TECH`, `WORK`, `MONEY`, `LOVE`, `HEALTH`, `LIFE`, `GENERAL`.
 - `ANY` is editorial eligibility for a universal answer, not a classifier response.
 
-Target fallback: exact `intent + topic` → `intent + GENERAL` → `ANY + GENERAL`. A temporal question should receive an absurd date/temporal response rather than a random object. This distinguishes contextual absurdity from chaos. If classification is unavailable, the future policy goes directly to universal fallback: service degradation, not hidden Chaos activation.
+Target fallback: exact `intent + topic` → `intent + GENERAL` → `ANY + GENERAL`. A temporal question should receive an absurd date/temporal response rather than a random object. This distinguishes contextual absurdity from chaos. If classification is unavailable, the implemented backend policy goes directly to universal fallback: service degradation, not hidden Chaos activation.
 
 A saved permalink must not rerun random selection or Jev. Asking a new question again may yield another result; opening an existing URL must not.
 

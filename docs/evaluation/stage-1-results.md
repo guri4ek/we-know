@@ -2,6 +2,8 @@
 
 Date: 2026-10-11. Offline implementation completed; **live contract and development baseline were actually checked**, beyond a mock spike. This is not production acceptance, independently human-verified quality, or a completed product. The audit translated this record without modifying the original JSON measurements or making new live calls.
 
+Subsequent user confirmation accepted DBAL + Migrations without ORM and VERDICT/decision_context persistence for the [next-session backend](../handoff/backend-implementation-prompt.md). Statements about unapproved persistence below describe the stage-1 checkpoint; no backend code was added while preparing that prompt. The subsequent backend task is now implemented and verified separately in [backend verification](../verification.md#backend-implementation-verification-event); the historical measurements below remain unchanged.
+
 ## Implementation
 
 - [Taxonomy/rubric v1](../content/taxonomy-v1.md): 9 intents / 7 topics, ambiguity rules; ANY only future answer eligibility. Refinements to the original proposal are explicit.

@@ -7,7 +7,10 @@ services:
         resource: '../src/'
         exclude:
             - '../src/Kernel.php'
-            - '../src/Domain/Classification/'
+            - '../src/Domain/'
+            - '../src/Infrastructure/Persistence/Migrations/'
+            - '../src/Infrastructure/Persistence/ConnectionFactory.php'
+            - '../src/Infrastructure/Persistence/MigrationFactory.php'
 
     # A plain dedicated client: no retry or profiling decorator retaining credentials.
     jev.http_client:
@@ -32,3 +35,48 @@ services:
             $apiKey: '%env(JEV_API_KEY)%'
             $timeout: '%env(float:JEV_TIMEOUT)%'
             $maxDuration: '%env(float:JEV_MAX_DURATION)%'
+
+    Doctrine\DBAL\Connection:
+        factory: ['App\Infrastructure\Persistence\ConnectionFactory', 'create']
+        arguments: ['%env(resolve:DATABASE_URL)%', '%kernel.environment%']
+
+    Doctrine\Migrations\DependencyFactory:
+        factory: ['App\Infrastructure\Persistence\MigrationFactory', 'create']
+        arguments: ['@Doctrine\DBAL\Connection']
+
+    Doctrine\Migrations\Tools\Console\Command\MigrateCommand:
+        arguments: ['@Doctrine\Migrations\DependencyFactory']
+        tags: [{name: console.command, command: 'migrations:migrate'}]
+
+    Doctrine\Migrations\Tools\Console\Command\StatusCommand:
+        arguments: ['@Doctrine\Migrations\DependencyFactory']
+        tags: [{name: console.command, command: 'migrations:status'}]
+
+    App\Domain\Answer\AnswerSelector: ~
+    App\Domain\Answer\AnswerCatalog:
+        alias: App\Infrastructure\Persistence\CatalogRepository
+    App\Domain\Answer\RandomIndexSource:
+        alias: App\Infrastructure\Random\SecureRandomIndex
+
+    App\Application\AnswerQuestion:
+        arguments:
+            $classifierProvider: 'typesafe'
+            $requestedModel: '%env(JEV_MODEL)%'
+
+    App\Http\TrustedOrigin:
+        arguments:
+            $origin: '%env(APP_PUBLIC_ORIGIN)%'
+
+    App\Controller\AnswerController:
+        arguments:
+            $limiter: '@limiter.answer'
+        tags: ['controller.service_arguments']
+
+    app.answer_rate_cache:
+        class: Symfony\Component\Cache\Adapter\FilesystemAdapter
+        arguments: ['answer', 0, '%kernel.project_dir%/var/rate-limit/%kernel.environment%']
+
+    App\Command\ImportCatalogCommand:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+            $environment: '%kernel.environment%'

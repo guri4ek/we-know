@@ -2,10 +2,9 @@
 
 Date: 2026-10-11. Working directory: `/Users/serhii/OwnProjects/we-know`.
 
-**Current implementation:** scoped stage 1, offline suites, and two historical development live batches. See [stage 1](#stage-1-content-and-jev-spike) and [comparison](evaluation/stage-1-results.md). Skeleton/baseline sections retain earlier verification and pre-stage-1 state. The [documentation-audit event](#documentation-audit-verification-event) is a separate current check, not a replacement live measurement.
+**Current implementation:** skeleton, stage-1 classifier/evaluation and the complete scoped backend. The [backend verification event](#backend-implementation-verification-event) records new offline evidence. Earlier sections retain their historical stage-1/audit states and live measurements.
 
-**Latest user decisions:** personal project/account; development/minimum PHP 8.4, planned PHP 8.5; locally installed PHP; SQLite local and PostgreSQL production, definite; production Jev key for authorized evaluation, no separate test key/sandbox workflow. Composer's remaining 8.2 minimum/platform is an [error for a separate prompt](#documentation-audit-findings).
-
+Personal project/account; development/minimum PHP 8.4 (manifest/platform corrected), planned PHP 8.5; SQLite local and PostgreSQL production; one production Jev key for separately authorized live evaluation. This backend task made no paid live calls. Dark-theme frontend remains later.
 
 ## Current status by evidence
 
@@ -16,10 +15,12 @@ Date: 2026-10-11. Working directory: `/Users/serhii/OwnProjects/we-know`.
 | CLI/metrics | Implemented and offline tested | Actual adapter fixture replay, deterministic denominator/matrix/percentile tests |
 | Jev live classification | Historically measured | Two repeated 54-question development batches; no new calls in this audit |
 | Humor/eligibility | Proposed editorial content | Hold drafts, known failed probes; no independent human humor assessment or import |
-| Selector/database/import/answer HTTP/fetch/permalink | Not implemented | Target plan only; no product acceptance evidence |
-| decision_context and final mechanism codes | Proposed, unapproved | Accepted high-level schema boundaries do not approve final JSON/enum |
+| Selector/database/import/answer HTTP/permalink | Implemented and SQLite/offline tested | Atomic catalog, uniform first pool, immutable snapshots, strict POST and saved SSR; synthetic content only |
+| Frontend form/fetch/design | Deferred | Confirmed dark theme; home remains a placeholder |
+| VERDICT/decision_context and DBAL + Migrations | Accepted and implemented | SQLite constraints/FKs/reconnect, immutable JSON and real failed COMMIT rollback verified; no ORM |
+| Final mechanism codes | Editorial proposal | No independent content acceptance; mechanism metadata does not affect selection |
 | Chaos/NLP/weights/admin/likes/queues/cache | Deferred | No implementation authorized by documentation |
-| PHP 8.5, holdout, production load, billing/retention | Unverified | Separate future work; Composer's erroneous 8.2 baseline awaits its own correction prompt |
+| PHP 8.5, holdout, production load, billing/retention | Unverified | Separate future work; Composer now requires/resolves PHP 8.4 |
 
 ## Skeleton: created
 
@@ -154,3 +155,48 @@ Actually executed in this chat, through `rtk proxy`:
 Source/configuration/tests and both original live reports were inspected read-only. No new live API calls, server/browser smoke, Git commands, dependency installation, product edits, or personal/Claude configuration writes occurred. The two original live reports, frozen corpus, and fixture data were preserved. SHA-256 comparison confirmed inventoried source/config/test/corpus/report/fixture files unchanged; `.gitignore` changed concurrently outside this audit and was preserved without edits. Temporary local validators checked document structure, links/anchors, JSON, shell syntax, Mermaid, original report arithmetic, and preserved examples. Current counts above include root AGENTS, both handoff documents, and fixture provenance README. Historical counts retain their original scopes. External citations/pricing/account terms were not refreshed; published-rate expense arithmetic is not measured billing. No real PHP 8.5 or production concurrent/load validation was performed.
 
 The [pause handoff](handoff/documentation-audit-resume.md) is retained as a historical snapshot and has been superseded by this completed audit. The deferred Composer correction remains open.
+
+
+## Backend handoff preparation event
+
+2026-10-11, after the completed documentation audit: Serhii approved DBAL + Migrations without ORM, the VERDICT columns/FK, diagnostic minimum, and complete next-session backend scope. Dark-theme frontend remains deferred. The implementation prompt and relevant current decision/status documents were updated; no product, dependency, database, or live-API change was made in this preparation step. Historical verification events above keep their original counts and scope.
+
+Current handoff validation: **21 Markdown files, 175 local links/anchors, 16 fenced blocks, 5 JSON blocks, 8 JSON files**, pass; **6 Mermaid diagrams parsed**. Original JSON examples, English answer examples/smoke rows, citations, live-report arithmetic, and inventoried source/config/test/corpus/fixtures/manifest/lock/live-report hashes were preserved. The concurrent .gitignore difference remains outside these edits. Product tests were not rerun for this documentation-only handoff preparation.
+
+
+## Backend implementation verification event
+
+Date: 2026-10-11. New local implementation under the complete [backend handoff](handoff/backend-implementation-prompt.md), independent of earlier audit/live evidence. No Git commands, subagents, deployment, paid provider calls, personal configuration or Claude writes. Existing secret env files were not inspected/copied/rewritten. Nonsecret DB/origin/proxy/limit defaults were appended separately to `.env`.
+
+Implemented: `Answer`, `Eligibility`, `Question`, `Verdict`, UUID/UTC helpers; `AnswerCatalog`/`RandomIndexSource`; DBAL catalog/verdict repositories, importer and transaction cleanup; initial migration `Version20261011000100`; `migrations:migrate`, `migrations:status`, `app:catalog:import`; `POST /answer`, `GET`/`HEAD /a/{publicId}` with minimal escaped Twig/canonical/textual OG. Precise configuration, content format and error contract: [backend guide](backend.md).
+
+Composer now declares PHP >=8.4 / platform 8.4.0 and PDO. A targeted minimal-change update installed eight packages and updated/removed none: DBAL 4.5.0, Migrations 3.9.8, doctrine/deprecations 1.1.6, doctrine/event-manager 2.1.1, Lock 7.4.20, RateLimiter 7.4.18, Stopwatch 7.4.8, and transitive OptionsResolver 8.0.8 (PHP 8.4 compatible). Plugins/scripts were disabled and Composer cache was placed in `/tmp`. Official dependency manifests for [DBAL](https://github.com/doctrine/dbal/blob/4.5.0/composer.json) and [Migrations](https://github.com/doctrine/migrations/blob/3.9.8/composer.json) permit the chosen PHP/Symfony combination; installed manifest/platform checks passed. Rate limiting follows [Symfony 7.4 documentation](https://symfony.com/doc/7.4/rate_limiter.html).
+
+Actually executed through `rtk proxy`:
+
+| Check | New result |
+| --- | --- |
+| Full default offline PHPUnit | **237 tests, 911 assertions, pass**, PHP 8.4.10 / PHPUnit 11.5.57; all original 156 tests retained |
+| Composer strict validation / installed platform requirements | Pass; PHP 8.4 manifest/platform reconciled with lock |
+| YAML / DI / Twig | 8 YAML files; dev and prod container lint; 2 Twig files: pass |
+| PHP syntax | 71 PHP source/test/bootstrap/entry files: pass |
+| Fresh SQLite migration / integrity | Three business tables + Doctrine metadata; UUID PK/nonnull, unique triple, FK enforcement on each connection and reconnect; pass |
+| Catalog import | 5 synthetic development answers / 6 explicit eligibility rows; valid reimport, invalid fields/IDs/time/labels/metadata, stable identities and full atomicity tested |
+| Transactions / snapshots | Insert failure and real deferred-FK COMMIT failure roll back verdict/import; edited/disabled/deleted catalog preserves text/context, deletion sets FK NULL |
+| HTTP | Listed 400/403/413/415/422/429/503, success 201/headers, Unicode/8 KiB boundaries, rate/spoofed forwarded IP, escaping/canonical, GET/HEAD/404 and kernel reboot with separate file connection; pass |
+| Jev offline replay | 6 fixture attempts, 4 valid successes and 2 deliberate failures; known synthetic tokens 400/80; no live traffic |
+| Prod/debug-off Jev offline replay | `--limit=2`: 2 fixture attempts/successes; known synthetic tokens 200/40; no live traffic |
+| Prod/debug-off HTTP error smoke | Temporary local server, forcibly empty Jev key, synthetic unavailable PostgreSQL DSN: 503, fixed JSON, no Location/private details, no provider call; server stopped. Stale pre-backend prod cache first returned 404; clearing local prod cache and repeating passed |
+| Local artifacts | 23 Markdown files, 188 local links/anchors, 18 paired fences, 6 JSON blocks, 9 JSON files; 5 shell blocks pass syntax; 6 Mermaid diagrams parse (no visual-layout claim) |
+| Preserved evidence | 34 classifier/evaluation/source/test/corpus/report hashes match the prior inventory; historical live-report arithmetic and research candidate quotes/draft JSON preserved |
+| Real local DB smoke with fake classifier | Explicit synthetic import → one persisted timeout fallback → read via new DB connection; one fake classifier call, zero network calls, snapshot equality |
+
+Focused red checks preceded migration/catalog/selector/question/HTTP/command implementations and the COMMIT/reconnect/nonnull fixes. Tests exercise behavior and actual SQLite constraints rather than repeat configuration. The real deferred-COMMIT test caught an open native SQLite transaction after DBAL's counter reset; the shared cleanup now rolls it back. The reconnect test caught PRAGMA initialization only once; driver middleware now initializes every native connection.
+
+The final local file is **`/Users/serhii/OwnProjects/we-know/var/we-know.sqlite`**. Migration application created it; it was not an empty touched placeholder. After adding explicit nonnull UUID PKs to the unreleased migration, a freshly migrated sibling file received all existing business rows, exact row equality/FK checks passed, and the active file was replaced only after checking that its hash had not changed. All **5 answers, 6 eligibility rows and 1 synthetic verdict** were preserved. The prior local file remains at `var/we-know.sqlite.before-schema-finalization`; nothing was destructively reset. This is development schema refinement, not a production upgrade procedure.
+
+The fixture and smoke strings are explicitly synthetic backend data; research hold drafts were not imported or promoted. A saved synthetic result exists at `/a/2ef216a7-3d19-4410-8bed-d9527ae8ce65`. No production-approved answer library, human scores or live measurements were fabricated.
+
+PostgreSQL acceptance **did not run**: no `psql`/`pg_isready`, no local port-5432/socket server, and no running Docker/Podman service was available. No global services were installed/started and no production database was contacted. PostgreSQL-specific JSONB/boolean SQL and candidate-row share locks are implemented, but SQLite results do not prove PostgreSQL runtime, concurrency, migration or query-plan acceptance.
+
+Remaining gaps: real PostgreSQL (version/hosting undecided), multi-process/production concurrency and load, limiter topology/limits and shared storage for multiple hosts, reverse-proxy size/TLS configuration, total paid API budgets, backups/restore, retention/deletion/privacy/sensitive-question policy, human content-pool quality and independently labeled/live holdout, billing, PHP 8.5. No browser/frontend acceptance was run; the next stage is the confirmed **dark-theme frontend**, form/fetch/error/storage notice and sharing UX.
