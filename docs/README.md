@@ -19,4 +19,6 @@
 
 Розрізняти **рішення користувача**, **архітектурні пропозиції** та **факти перевіреної реалізації**. C4 показує цільову MVP-архітектуру, а не вже написаний код. Оновлювати статус документів разом зі зміною реалізації.
 
-Репозиторій: https://github.com/guri4ek/we-know. Serhii спочатку залишив Git собі, згодом явно дозволив Git і субагентів для продовження роботи. Під час цього старту Git-операції не були потрібні й не виконувались. Особисті Codex/Claude конфігурації не змінювалися.
+Останні уточнення схеми: усі таблиці мають UUID PK/created_at; eligibility — окремий UUID, unique answer/intent/topic і `humor_mechanism`, який selector ігнорує; revision-поля прибрано. Спрощений VERDICT із nullable eligibility FK та `decision_context` залишається **пропозицією**. До production дозволено редагувати development migrations і перебудовувати disposable БД; після появи спільних/постійних даних — незмінні incremental migrations. Деталі — [дані](architecture/data.md) і [ADR-014–017](architecture/decisions.md).
+
+Репозиторій: https://github.com/guri4ek/we-know. Serhii спочатку залишив Git собі, згодом явно дозволив Git і субагентів, а потім доручив commit/push основи та уточнень документації. Локальний baseline і перевірки зафіксовані у [verification.md](verification.md). Deployment та бізнес-реалізація залишаються поза цим дорученням. Особисті Codex/Claude конфігурації не змінювалися.

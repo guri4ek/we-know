@@ -44,6 +44,18 @@ HTTP smoke пройдено через тимчасовий PHP server на `127
 
 ## Межі змін
 
-Git-операцій, ініціалізації репозиторію, commit/push або змін GitHub не виконувалося, хоча користувач пізніше дозволив Git. Посилання на репозиторій збережено для продовження. Особисті Codex/Claude файли та їхні backups не змінювалися.
+Початковий scaffold створено без Git. За наступним явним дорученням користувача окремий агент перевірив `https://github.com/guri4ek/we-know`: `git ls-remote` не повернув refs. Локальний репозиторій ініціалізовано на `main`, origin вказує на цей URL. Baseline commit: `e0dcdcc9671b9b046cc17ec436d53d60f196a729` — 30 файлів наявного source/config/tests/docs та Composer lock. Використано вже налаштованого Git author, без зміни особистої конфігурації. Користувач окремо дозволив push основи й документації; це не deployment продукту.
+
+Перед baseline перевірено staged paths/content і source URLs 64 lockfile packages: credential patterns та URL credentials не виявлено. `.env` має лише локальні defaults із порожнім APP_SECRET. `vendor/`, `var/` та локальні secret env-файли виключені чинним `.gitignore`; `.idea/` та автоматично створений Symfony `config/reference.php` також додано до ignore разом з уточненням документації, без видалення локальних файлів. IDE/runtime/generated reference не входять до комітів. Особисті Codex/Claude файли та їхні backups не змінювалися.
+
+## Уточнення документації після baseline
+
+- UUID PK/created_at у кожній таблиці, окремий UUID eligibility зі збереженням unique трійки; ANSWER.revision/VERDICT.answer_revision прибрано.
+- Прийняте поле humor_mechanism на eligibility не впливає на selector. Один контрольований mechanism string на рядок — пропозиція; статистика/лайки/голосування не реалізовані.
+- Спрощений VERDICT із nullable eligibility FK та коротким historical decision_context JSON позначений як пропозиція. Розділено категорії Jev і вибраний пул; зміна/видалення каталогу не переписує текстовий чи діагностичний snapshot.
+- Зафіксовано правила редагованих development migrations для disposable БД до production та незмінних incremental migrations після появи спільних/постійних даних. Міграції не створені, жодного reset не виконано.
+- README, карта документів, context, ADR, C4, технічний план, Jev research і план тестів узгоджені. Окремі версії rubric/corpus у дослідницьких звітах не означають обов'язкових колонок VERDICT.
+
+Перевірки цього уточнення: перед baseline повторено PHPUnit — **5 tests, 16 assertions, pass**; після змін документації Mermaid parser прийняв **6 діаграм**, перевірено **10 Markdown-файлів, 34 локальні посилання, 4 JSON-блоки та парність fences**. `git diff --check` пройшов. Нові бізнес-тести, live Jev, DB checks і browser automation не запускалися; змін application code після baseline немає.
 
 Наступний етап — taxonomy/corpus та Jev spike за [технічним планом](technical-plan.md), з реалізацією й тестами адаптера в окремій задачі. Поточна основа не повинна вважатися готовим продуктом лише тому, що skeleton suite зелений.

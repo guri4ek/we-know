@@ -12,6 +12,8 @@
 
 Почніть із [карти документації](docs/README.md), [контексту вихідної сесії](docs/context.md), [технічного плану](docs/technical-plan.md) та [C4-моделі](docs/architecture/c4.md).
 
+[Модель даних](docs/architecture/data.md) враховує UUID PK/created_at у всіх таблицях і `humor_mechanism` на eligibility без впливу на random. Спрощений VERDICT із діагностичним JSON поки є пропозицією. Development migrations до production можна редагувати для disposable БД; постійні дані потребуватимуть incremental migrations. БД/міграції ще не створені.
+
 ## Локальний запуск
 
 PHP 8.2+ і Composer 2. PHP baseline для розв'язання залежностей зафіксований у `composer.json`; фактичне встановлення перевірено на PHP 8.4.10. Розширення: ctype, iconv; повні вимоги залежностей перевіряє Composer. Для майбутньої БД потрібні `pdo_sqlite` локально та `pdo_pgsql` для PostgreSQL.

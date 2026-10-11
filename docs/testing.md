@@ -12,6 +12,9 @@ Jev — зовнішній класифікатор, а не тестовий ф
 4. Редагування чи деактивація фрази в бібліотеці не змінює вже виданий результат.
 5. Помилка Jev приводить до визначеної деградації; помилка запису в БД не видає удавано успішний permalink.
 6. Серверна валідація працює незалежно від JavaScript. Жоден секрет провайдера не потрапляє у HTML, JSON для браузера, exceptions чи тестові артефакти.
+7. У всіх таблицях UUID PK і `created_at`; eligibility має окрему unique трійку answer/intent/topic. Механізм гумору не змінює доступність чи ймовірність вибору відповіді.
+
+Наступні перевірки `decision_context` і nullable eligibility FK умовні: цей спрощений контракт збереження ще є пропозицією. Після погодження перевіряти historical snapshot окремо від поточного стану каталогу, за [моделлю даних](architecture/data.md).
 
 Очікувані URL, поля та статуси звіряти з [технічним планом](technical-plan.md); його затверджений HTTP-контракт має перевагу над прикладами тут. Назви майбутніх інтерфейсів у цьому документі — пропозиції.
 
@@ -54,6 +57,8 @@ Jev — зовнішній класифікатор, а не тестовий ф
 | Taxonomy | Усі дозволені значення; невідомий intent/topic чи `ANY` у відповіді Jev відхиляється адаптером як invalid_response. Application переводить typed failure у OTHER/GENERAL fallback-контекст, зберігаючи failure status |
 | Fallback | Точний intent/topic → intent/GENERAL → ANY/GENERAL; на кожному кроці непорожній пул завершує пошук; GENERAL не шукається двічі; неактивні та іншомовні фрази виключаються; IDs дедуплікуються |
 | Selector | Пули з 1 і кількох елементів; fake random обирає перший/останній доступний індекс. Помилковий індекс не маскується переходом до сторонньої категорії |
+| Humor mechanism | Зміна механізму на eligibility не змінює candidate IDs, порядок правил fallback або ваги; import відхиляє дубль answer/intent/topic навіть з іншим механізмом |
+| Decision context, якщо прийнято | Успіх із точним пулом та fallback: категорії Jev не підміняються категоріями вибраного пулу; tier, candidate_count та механізм відповідають фактичному вибору. Timeout не створює вигаданих classifier labels; повний response/кандидати/секрети не зберігаються |
 | Порожня бібліотека | Повертається окрема доменна помилка та контрольована HTTP-помилка; не зберігається порожній вердикт |
 | Application service | Успіх викликає класифікацію, вибір і запис у визначеному порядку; invalid input не викликає жодного з них |
 | Jev unavailable | Використано універсальний погоджений fallback, причина деградації доступна телеметрії; текст не генерується моделлю |
@@ -105,11 +110,12 @@ Live suite відділений від default runner: наприклад, ок�
 
 | Сценарій | Перевірка |
 | --- | --- |
-| Міграції | Чиста БД проходить весь migration chain; наступні зміни проходять upgrade із попередньої версії з даними. `schema:create` не замінює перевірку міграцій |
-| Цілісність | UNIQUE public ID, foreign keys, NOT NULL і погоджені enum/check constraints реально діють; для SQLite явно перевірити ввімкнений foreign key enforcement |
+| Міграції | До production після редагування development migrations перебудована disposable test БД проходить поточний chain на обох рушіях. Коли є спільні/постійні дані — застосовані міграції незмінні; нові проходять upgrade з попередньої версії зі збереженням даних. `schema:create` не замінює перевірку міграцій |
+| Цілісність | UUID PK і created_at у всіх таблицях, окремий UUID PK eligibility і UNIQUE (answer_id, intent, topic), foreign keys, NOT NULL та погоджені enum/check constraints реально діють; для SQLite явно перевірити foreign key enforcement |
 | Fixtures | У кожного intent є достатній доступний fallback; inactive та duplicate join rows не спотворюють eligible pool |
 | Точний вибір | Queries повертають погоджені пари: `(WHY, WORK)` та `(WHEN, TECH)` не дозволяють `(WHY, TECH)`; case sensitivity/collation не змінюють enum lookup; службові IDs не залежать від випадкового порядку DB rows |
-| Snapshot | Після створення змінити/деактивувати бібліотечну фразу; старий permalink лишається незмінним. Політика видалення оригіналу зберігає snapshot |
+| Snapshot | Після створення змінити/деактивувати бібліотечну фразу; старий permalink лишається незмінним без revision-полів. Якщо decision_context/FK прийнято: змінити categories/mechanism eligibility — JSON не змінюється; видалити eligibility — FK стає null, вердикт та snapshots залишаються |
+| Catalog import | UUID відповідей/eligibility і created_at стабільні при повторному import; дозволені mechanism strings перевіряються; помилка не залишає частково оновлений каталог |
 | Unicode/час | Emoji, лапки, HTML-подібний текст і UTC timestamp проходять round trip; довжина не непомітно обрізається |
 | Atomic write | Штучна помилка DBAL insert/commit не лишає частково створеного результату; success відправляється лише після commit; зовнішній HTTP-виклик не утримує DB transaction |
 | Public ID collision | Fake generator повертає існуючий ID; контрольований retry має обмеження, не перезаписує результат |
@@ -117,6 +123,8 @@ Live suite відділений від default runner: наприклад, ок�
 | Недоступність БД | Контрольована `503` або інший затверджений status; не повертається успішний JSON із недоступним permalink |
 
 За замовчуванням кожен тест використовує ізольовані fixtures і відновлює стан. Migration/concurrency тести запускаються окремо від suite із transaction rollback: один зовнішній rollback не імітує незалежних клієнтів. SQLite in-memory прив'язаний до connection; для kernel reboot і кількох процесів використовувати окремий тимчасовий файл. PostgreSQL — окрема тестова БД/схема на worker. Перед destructive reset перевіряти test environment і allowlisted test DSN; production DSN тестам не доступний.
+
+Це план майбутніх DB-тестів. Під час уточнення документації reset не виконується, БД та міграції ще не створені.
 
 ## HTTP та browser acceptance
 
