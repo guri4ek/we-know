@@ -22,11 +22,12 @@ final class CorpusLoader
         }
         if (!is_array($corpus) || !is_string($corpus['version'] ?? null) || $corpus['version'] === ''
             || ($corpus['taxonomy_version'] ?? null) !== JevRubric::TAXONOMY_VERSION
+            || ($corpus['rubric_version'] ?? null) !== JevRubric::VERSION
             || ($corpus['split'] ?? null) !== $split || ($corpus['language'] ?? null) !== 'en'
             || ($corpus['label_status'] ?? null) !== 'author_labels_not_independently_reviewed'
             || !is_array($corpus['samples'] ?? null) || !array_is_list($corpus['samples']) || $corpus['samples'] === []
         ) {
-            throw new \InvalidArgumentException('Invalid corpus metadata or samples.');
+            throw new \InvalidArgumentException('Invalid corpus metadata/samples or unsupported taxonomy/rubric version.');
         }
         $ids = [];
         foreach ($corpus['samples'] as $sample) {

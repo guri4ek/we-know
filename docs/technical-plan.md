@@ -1,6 +1,6 @@
 # MVP technical plan
 
-Status: bootstrap, stage 1 and the scoped complete backend are implemented. Catalog/migrations/import, selector, VERDICT persistence, POST and minimal permalink SSR are verified offline on SQLite. PostgreSQL, human content and launch evidence remain outstanding. The broader MVP UI remains a target: frontend is deferred with a confirmed **dark theme**. Current setup/contract: [backend guide](backend.md); actual checks: [verification](verification.md). Historical live baseline: [stage-1 results](evaluation/stage-1-results.md).
+Status: bootstrap, active [taxonomy v2](content/taxonomy-v2.md) and the scoped complete backend are implemented. The [24-answer preliminary seed](content/seed-v2/README.md) is imported into an isolated SQLite file; the [100-question live trial](evaluation/corpus-v2/README.md) is prepared but unexecuted. Catalog/migrations/import, selector, VERDICT persistence, POST and minimal permalink SSR are verified offline on SQLite. PostgreSQL, human content and launch evidence remain outstanding. The broader MVP UI remains a target: frontend is deferred with a confirmed **dark theme**. Current setup/contract: [backend guide](backend.md); actual checks: [verification](verification.md). Historical live baseline: [stage-1 results](evaluation/stage-1-results.md).
 
 ## 1. Scope
 
@@ -119,8 +119,8 @@ Twig autoescape, JS `textContent`, parameterized SQL, no raw HTML in the library
 | Stage | Output | Exit criterion / current evidence |
 | --- | --- | --- |
 | 0. Bootstrap | Minimal Symfony/Twig and local docs | Kernel boots, GET/HEAD work, placeholder rejects POST, documents link correctly; verified historically and by current functional tests |
-| 1. Content and Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline implementation and historical development live baseline | One call with both Choice questions confirmed by mocks and 95 live successes in two batches. Model pin, accuracy, latency, technical failure rate recorded. Holdout/human quality and production latency unverified; empty-catalog fallback does not exist here |
-| 2. Domain and catalog | Implemented selector, explicit associations, DB migrations/import | Offline selector/import and real SQLite constraints/FKs pass; synthetic universal pool. PostgreSQL and human catalog acceptance outstanding |
+| 1. Historical content and Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline implementation and historical development live baseline | One call with both Choice questions confirmed by mocks and 95 live successes in two batches. Model pin, accuracy, latency, technical failure rate recorded. Holdout/human quality and production latency unverified; empty-catalog fallback does not exist here |
+| 2. Domain and catalog | Implemented selector, explicit associations, DB migrations/import | Offline selector/import and real SQLite constraints/FKs pass; preliminary editorial seed with universal fallback, checked in an isolated database. PostgreSQL and human catalog acceptance outstanding |
 | 3. Vertical flow | Implemented POST, classifier boundary, immutable persistence, JSON | Offline status/origin/rate/body, fallback and insert/commit rollback tests pass; 201 only after commit |
 | 4. UI and sharing | Minimal stored-result SSR/textual OG implemented; dark-theme form/fetch/About deferred | Escaping and GET/HEAD without provider/random verified; browser UI acceptance remains future work |
 | 5. Launch readiness | Deployment config, telemetry, backups, data policy | Future measured load targets, backup restore, production PostgreSQL integration matrix |

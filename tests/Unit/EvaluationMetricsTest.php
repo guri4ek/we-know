@@ -21,8 +21,8 @@ final class EvaluationMetricsTest extends TestCase
             new ClassificationSuccess($intent, $topic, 'fixture-model', 1.0, 1.0, [], [], 100, 20, $latency);
         $report = (new EvaluationMetrics())->summarize([
             ['sample' => $sample, 'result' => $success(Intent::WHEN, Topic::TECH, 10)],
-            ['sample' => $sample, 'result' => $success(Intent::WHEN, Topic::WORK, 50)],
-            ['sample' => $sample, 'result' => $success(Intent::WHY, Topic::TECH, 20)],
+            ['sample' => $sample, 'result' => $success(Intent::WHEN, Topic::WORK_STUDY, 50)],
+            ['sample' => $sample, 'result' => $success(Intent::EXPLAIN, Topic::TECH, 20)],
             ['sample' => $sample, 'result' => $success(Intent::OTHER, Topic::GENERAL, 30)],
             ['sample' => $sample, 'result' => new ClassificationFailure(FailureReason::TIMEOUT, 40)],
         ]);
@@ -41,7 +41,7 @@ final class EvaluationMetricsTest extends TestCase
         self::assertSame(4, $report['token_usage']['sample_count_with_usage']);
         self::assertSame(1, $report['token_usage']['sample_count_without_usage']);
         self::assertSame(2, $report['confusion_matrices']['intent']['WHEN']['WHEN']);
-        self::assertSame(1, $report['confusion_matrices']['intent']['WHEN']['WHY']);
+        self::assertSame(1, $report['confusion_matrices']['intent']['WHEN']['EXPLAIN']);
         self::assertSame(1, $report['confusion_matrices']['intent']['WHEN']['TECHNICAL_FAILURE']);
         self::assertSame(2, $report['confusion_matrices']['topic']['TECH']['TECH']);
         self::assertSame(5, array_sum($report['confusion_matrices']['topic']['TECH']));

@@ -16,7 +16,7 @@ final class CatalogCommandTest extends TestCase
         $tester = new CommandTester(new ImportCatalogCommand(new CatalogImporter($db), dirname(__DIR__, 2), 'dev'));
         self::assertSame(0, $tester->execute(['--development-fixture' => true]));
         self::assertSame(5, (int) $db->fetchOne('SELECT COUNT(*) FROM answer'));
-        self::assertSame(2, $tester->execute(['file' => __DIR__.'/../Fixtures/Catalog/development-v1.json']));
+        self::assertSame(2, $tester->execute(['file' => __DIR__.'/../Fixtures/Catalog/development-v2.json']));
         $production = new CommandTester(new ImportCatalogCommand(new CatalogImporter($db), dirname(__DIR__, 2), 'prod'));
         self::assertSame(2, $production->execute(['--development-fixture' => true]));
     }

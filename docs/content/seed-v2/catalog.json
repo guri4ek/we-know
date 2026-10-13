@@ -1,0 +1,389 @@
+{
+  "version": 2,
+  "answers": [
+    {
+      "id": "cf661709-099a-5ebd-aa17-582551d557d4",
+      "text": "Because the machine follows instructions, including the instructions telling it to disregard the instructions.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "2836cac2-40d1-5933-ba1c-e45f65414a04",
+          "intent": "EXPLAIN",
+          "topic": "TECH",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "5ccb02bd-2222-5f78-88b9-53ad86de2ad1",
+      "text": "Because every simple operation includes a full rehearsal of the complicated version.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "e703dc6d-2142-5e3c-8124-ac97d69dd560",
+          "intent": "EXPLAIN",
+          "topic": "TECH",
+          "humor_mechanism": "hyperbole",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "478a7e56-5835-588e-aadf-a13dd5f979e4",
+      "text": "The distinction is small enough to fit in a footnote and large enough to support a lifelong feud.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "fdca3271-07f4-58cc-84b5-48d6130597f5",
+          "intent": "COMPARE",
+          "topic": "LANGUAGE",
+          "humor_mechanism": "hyperbole",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "41875d62-6048-59e4-8ee8-dd3cdcc943d7",
+      "text": "They differ mainly in which correction you will receive from someone who understood you perfectly.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "c5a06f65-d0b3-5691-b5ec-8cf410da27b4",
+          "intent": "COMPARE",
+          "topic": "LANGUAGE",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "27136064-9f4f-5692-bb3d-dd91b6e71310",
+      "text": "At the precise moment the schedule stops describing its ambitions as facts.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "d6562c53-7531-5a5e-801b-60288611a58f",
+          "intent": "WHEN",
+          "topic": "GENERAL",
+          "humor_mechanism": "false_causality",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "a16df348-91d6-5a5a-852d-5ea4ae4e057d",
+      "text": "At the opening ceremony for the present. Attendance by the future is compulsory.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "e4446524-e6fc-5b52-846b-fcf2b7dc2e18",
+          "intent": "WHEN",
+          "topic": "GENERAL",
+          "humor_mechanism": "bureaucratic_absurdity",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "20337701-48cf-5da4-88a8-ad3b14613b14",
+      "text": "Choose whichever option sounds least likely to ask you to join a loyalty program.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "bfd0edd3-02e8-53cb-88fb-756072b2527d",
+          "intent": "CHOICE",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "15848c7a-9320-5672-b7b9-b74a753ce675",
+      "text": "Choose the option you can explain to a pigeon without losing the pigeon's respect.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "d5e1f747-55a6-5bb9-a82e-fa1e94242194",
+          "intent": "CHOICE",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "3b5a5769-af90-56a7-82ef-ca22722cc596",
+      "text": "The answer is on standby. It refuses to guess its own assignment.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "1e755690-cc28-5e72-a39a-60a89cf0e145",
+          "intent": "OTHER",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "0d59dcf6-7699-5ec8-8732-af842f961325",
+      "text": "Please specify what you want to know. Omniscience requires unusually detailed instructions.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "6ea127e0-7966-5060-a8dd-986fc12b2c87",
+          "intent": "OTHER",
+          "topic": "GENERAL",
+          "humor_mechanism": "bureaucratic_absurdity",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "651b2340-af8d-54eb-a6c5-e2e5da83b3fe",
+      "text": "Because the hardware believes the software, and the software has mistaken that for independent confirmation.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "b75f66fa-339c-5787-817f-fa3f4d5a6020",
+          "intent": "EXPLAIN",
+          "topic": "TECH",
+          "humor_mechanism": "false_causality",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "a99b45e7-ae66-50cf-9cde-f39180dd73e0",
+      "text": "Because the interface translates every request into the dialect spoken by its least cooperative component.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "f86435fb-df9f-5c90-85d4-df888c34699c",
+          "intent": "EXPLAIN",
+          "topic": "TECH",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "e8e2ef11-17c4-5359-8442-4775c424b742",
+      "text": "Turn the procedure inside out. The missing step is usually hiding in the lining.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "1b18660d-ba14-5c4c-90a8-0380e3502051",
+          "intent": "METHOD",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "8405460b-85ca-58ac-8498-e382490b5860",
+      "text": "Give the instructions a practical exam. They have been marking everyone else's work.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "d4fb9003-f251-583c-b56f-e1b25ab381ee",
+          "intent": "METHOD",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "703afa63-a0cf-56e3-a3cd-cbfb447105e1",
+      "text": "Draw a straight line from intention to result. Apply for permission to bend the paper.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "a410941a-ff47-54eb-b365-f923b702cba8",
+          "intent": "METHOD",
+          "topic": "GENERAL",
+          "humor_mechanism": "bureaucratic_absurdity",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "37750865-4e65-5617-8231-0a3e34e4d775",
+      "text": "Because coincidence has been promoted to project manager.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "5162119c-3830-52fe-9c8b-35df93140506",
+          "intent": "EXPLAIN",
+          "topic": "GENERAL",
+          "humor_mechanism": "false_causality",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "0efdc751-0cb5-534a-ac63-092dfbccdf33",
+      "text": "Because cause and effect are sharing a password.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "64ae636b-dd54-555a-8264-525f01c12e1d",
+          "intent": "EXPLAIN",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "d6216ac0-62a5-5ae8-ab54-acf2c000f702",
+      "text": "Because the explanation is paid by the complication.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "93e83b86-98b8-5580-8df6-911fdad23a08",
+          "intent": "EXPLAIN",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "068fed12-237c-554d-8f04-e2fedd2042f3",
+      "text": "The witness called by the alibi.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "deeae01d-acb2-543d-8f2d-e8f98658f81a",
+          "intent": "WHO",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "2611413b-7f99-5aa3-84eb-0ae56cb46bb7",
+      "text": "The expert appointed by a show of invisible hands.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "f9990292-7ab0-5d94-a910-2f6197ecba94",
+          "intent": "WHO",
+          "topic": "GENERAL",
+          "humor_mechanism": "bureaucratic_absurdity",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "6184bda9-367b-5b26-9766-e96dd341a412",
+      "text": "Choose whichever option would be most embarrassed to appear in its own advertisement.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "d2c97ab3-741e-55a2-97af-299b11d6fc7f",
+          "intent": "CHOICE",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "afbc2bda-e479-5c54-9013-4a39b5e879fc",
+      "text": "Because the dictionary records the rules after the words have already broken them.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "7f24e0a2-aa24-53ea-acdd-42727c04fc48",
+          "intent": "EXPLAIN",
+          "topic": "LANGUAGE",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "69071892-036b-56ff-bb5c-b45ef9baf2fe",
+      "text": "This answer contains no useful information. Its confidence is sold separately.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "0647c0e6-93fa-58ba-af22-e7dce30ecda6",
+          "intent": "ANY",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    },
+    {
+      "id": "9acf41fe-41c8-5a38-9817-7434c661114c",
+      "text": "The oracle is out of facts. It is polishing the delivery.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-12T19:52:15Z",
+      "eligibility": [
+        {
+          "id": "c7af233f-2b0d-5463-879e-f0ad2359f04c",
+          "intent": "ANY",
+          "topic": "GENERAL",
+          "humor_mechanism": "reversal",
+          "created_at": "2026-10-12T19:52:15Z"
+        }
+      ]
+    }
+  ]
+}

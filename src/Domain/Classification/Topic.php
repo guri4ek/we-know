@@ -7,10 +7,16 @@ namespace App\Domain\Classification;
 enum Topic: string
 {
     case TECH = 'TECH';
-    case WORK = 'WORK';
+    case WORK_STUDY = 'WORK_STUDY';
     case MONEY = 'MONEY';
-    case LOVE = 'LOVE';
+    case RELATIONSHIPS = 'RELATIONSHIPS';
     case HEALTH = 'HEALTH';
-    case LIFE = 'LIFE';
+    case FOOD = 'FOOD';
+    case HOME = 'HOME';
+    case NATURE = 'NATURE';
+    case TRAVEL = 'TRAVEL';
+    case SPORTS = 'SPORTS';
+    case ENTERTAINMENT = 'ENTERTAINMENT';
+    case LANGUAGE = 'LANGUAGE';
     case GENERAL = 'GENERAL';
 }

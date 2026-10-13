@@ -50,7 +50,7 @@ final class JevResponseNormalizerTest extends TestCase
     {
         $data = ResponseFixture::data();
         $data['answers']['intent']['probabilities']['WHEN'] = 0.5002;
-        $data['answers']['intent']['probabilities']['WHY'] = 0.5002;
+        $data['answers']['intent']['probabilities']['EXPLAIN'] = 0.5002;
         $data['answers']['intent']['confidence'] = 0.0;
         $result = (new JevResponseNormalizer())->normalize(json_encode($data), 0.0);
         self::assertInstanceOf(ClassificationSuccess::class, $result);

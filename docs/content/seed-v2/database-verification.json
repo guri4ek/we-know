@@ -1,0 +1,37 @@
+{
+    "recorded_at_utc": "2026-10-12T20:00:22Z",
+    "database": "/Users/serhii/OwnProjects/we-know/var/answer-seed-v2-20261012.sqlite",
+    "catalog_sha256": "6b225e5e36da1dd2e6710e564fc939aea6b18e79da6ab9f4ea008bd25ba6684a",
+    "answers": 24,
+    "eligibilities": 24,
+    "pools": {
+        "ANY/GENERAL": 2,
+        "CHOICE/GENERAL": 3,
+        "COMPARE/LANGUAGE": 2,
+        "EXPLAIN/GENERAL": 3,
+        "EXPLAIN/LANGUAGE": 1,
+        "EXPLAIN/TECH": 4,
+        "METHOD/GENERAL": 3,
+        "OTHER/GENERAL": 2,
+        "WHEN/GENERAL": 2,
+        "WHO/GENERAL": 2
+    },
+    "offline_verdicts": 5,
+    "network_calls": 0,
+    "checks": [
+        "existing_migration_and_import_command",
+        "validation_atomicity",
+        "database_failure_rollback",
+        "repeat_import_stable_ids_and_times",
+        "stored_counts",
+        "exact_intent_general_universal",
+        "other_distinct_from_failure",
+        "every_index_reachable",
+        "mechanism_independence",
+        "edit_disable_delete_snapshot_immutability",
+        "foreign_keys",
+        "reconnect_durability"
+    ],
+    "uniformity_evidence": "Each index addresses one candidate; production uses random_int(0, count - 1). No statistical distribution claim.",
+    "postgresql": "not_run"
+}

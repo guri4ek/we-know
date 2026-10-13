@@ -50,11 +50,7 @@ This is post-irony about AI certainty: a restrained, serious interface gives a s
 
 Jev determines the expected answer form (`intent`) and topic (`topic`), in one request. In the target application PHP selects a random prepared phrase from an eligible pool. The model does not see the full library and does not choose the funniest phrase. The selector is implemented in the scoped backend task.
 
-The initial taxonomy proposal became the stage-1 [baseline v1](content/taxonomy-v1.md), including ambiguity rules. Independent human label review remains outstanding:
-
-- Intent: `YES_NO`, `WHEN`, `WHY`, `HOW`, `WHO`, `WHAT`, `HOW_MANY`, `CHOICE`, `OTHER`.
-- Topic: `TECH`, `WORK`, `MONEY`, `LOVE`, `HEALTH`, `LIFE`, `GENERAL`.
-- `ANY` is editorial eligibility for a universal answer, not a classifier response.
+The active [taxonomy v2](content/taxonomy-v2.md) has 14 intents and 13 topics. It classifies the requested outcome rather than question grammar. OTHER means no recoverable outcome, and ANY is exclusively editorial eligibility in ANY/GENERAL. The original stage-1 baseline remains historical research, not an active compatibility mode. Independent human label review remains outstanding.
 
 Target fallback: exact `intent + topic` → `intent + GENERAL` → `ANY + GENERAL`. A temporal question should receive an absurd date/temporal response rather than a random object. This distinguishes contextual absurdity from chaos. If classification is unavailable, the implemented backend policy goes directly to universal fallback: service degradation, not hidden Chaos activation.
 
@@ -122,3 +118,7 @@ Implemented: typed classification boundary, Symfony HttpClient/DI, strict normal
 Both separate humor research documents were read and preserved during stage 1; new [form illustrations](content/stage-1-answer-examples.md) were written separately with hold status. Database/selector/import/VERDICT/POST/permalink remain unimplemented; decision_context was not approved. Claude material and personal configuration/backups were unchanged.
 
 After comparing both live batches Serhii chose 600/800 ms as current timeout/max_duration defaults. The original 300/400 ms and report remain historical comparison evidence; rubric/labels were unchanged. The later audit translates documentation without rerunning live measurements or regenerating research examples.
+
+## V2 implementation and preliminary seed — 2026-10-12–13
+
+Serhii adopted the 14-intent / 13-topic proposal and authorized local implementation, offline tests, source-preserving author annotations and a new isolated seed database. He explicitly chose direct development evolution rather than old-version support. [Taxonomy v2](content/taxonomy-v2.md), the [24-answer seed](content/seed-v2/README.md) and [100-question live-test preparation](evaluation/corpus-v2/README.md) are current. Existing development data, original corpora, pilot texts and recorded reports remain unchanged. No v2 live call, Git operation, deployment, production database work or human approval is claimed.

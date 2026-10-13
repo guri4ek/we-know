@@ -18,7 +18,7 @@ use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 
-#[AsCommand(name: 'app:jev:evaluate', description: 'Evaluate synthetic corpus with offline fixtures, or explicitly opt in to bounded live calls.')]
+#[AsCommand(name: 'app:jev:evaluate', description: 'Evaluate versioned corpus with offline fixtures, or explicitly opt in to bounded live calls.')]
 final class EvaluateJevCommand extends Command
 {
     public function __construct(
@@ -40,6 +40,7 @@ final class EvaluateJevCommand extends Command
         $this->addOption('live', null, InputOption::VALUE_NONE, 'Allow paid outbound calls using JEV_API_KEY.')
             ->addOption('limit', null, InputOption::VALUE_REQUIRED, 'Explicit maximum calls; required for live, 1–1000.')
             ->addOption('split', null, InputOption::VALUE_REQUIRED, 'development or holdout', 'development')
+            ->addOption('corpus', null, InputOption::VALUE_REQUIRED, 'Corpus JSON; must match the active taxonomy/rubric.')
             ->addOption('offline-fixtures', null, InputOption::VALUE_REQUIRED, 'Replay JSON response fixtures (default: bundled development fixtures).');
     }
 
@@ -64,13 +65,13 @@ final class EvaluateJevCommand extends Command
             if (!is_finite($this->timeout) || !is_finite($this->maxDuration) || $this->timeout <= 0 || $this->maxDuration < $this->timeout) {
                 throw new \InvalidArgumentException('Timeout must be positive and max duration must be at least timeout.');
             }
-            $corpus = $this->loader->load($this->projectDir.'/docs/evaluation/corpus-v1/'.$split.'.json', $split);
+            $corpus = $this->loader->load($input->getOption('corpus') ?? $this->projectDir.'/docs/evaluation/corpus-v2/'.$split.'.json', $split);
             $corpus['total_sample_count'] = count($corpus['samples']);
             if ($live) {
                 $client = HttpClient::create();
                 $key = $this->apiKey;
             } else {
-                $path = $input->getOption('offline-fixtures') ?? $this->projectDir.'/tests/Fixtures/Jev/evaluation-v1.json';
+                $path = $input->getOption('offline-fixtures') ?? $this->projectDir.'/tests/Fixtures/Jev/evaluation-v2.json';
                 if (!is_file($path) || !is_readable($path)) {
                     throw new \InvalidArgumentException('Offline fixtures are not readable.');
                 }
@@ -79,7 +80,8 @@ final class EvaluateJevCommand extends Command
                 } catch (\JsonException) {
                     throw new \InvalidArgumentException('Offline fixtures must be valid JSON.');
                 }
-                if (!is_array($fixtures) || ($fixtures['corpus_version'] ?? null) !== $corpus['version']
+                if (!is_array($fixtures) || ($fixtures['taxonomy_version'] ?? null) !== JevRubric::TAXONOMY_VERSION
+                    || ($fixtures['rubric_version'] ?? null) !== JevRubric::VERSION || ($fixtures['corpus_version'] ?? null) !== $corpus['version']
                     || ($fixtures['split'] ?? null) !== $split || !is_array($fixtures['responses'] ?? null) || $fixtures['responses'] === []
                 ) {
                     throw new \InvalidArgumentException('Offline fixtures do not match corpus version/split.');

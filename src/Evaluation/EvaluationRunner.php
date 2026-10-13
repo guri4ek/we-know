@@ -15,6 +15,11 @@ final class EvaluationRunner
 
     public function run(array $corpus, QuestionClassifier $classifier, string $requestedModel, string $mode): array
     {
+        if (($corpus['taxonomy_version'] ?? null) !== JevRubric::TAXONOMY_VERSION
+            || ($corpus['rubric_version'] ?? null) !== JevRubric::VERSION
+        ) {
+            throw new \InvalidArgumentException('Unsupported corpus taxonomy/rubric combination.');
+        }
         $observations = [];
         foreach ($corpus['samples'] as $sample) {
             $observations[] = ['sample' => $sample, 'result' => $classifier->classify($sample['question'])];

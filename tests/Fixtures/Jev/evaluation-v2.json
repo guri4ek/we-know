@@ -1,0 +1,32 @@
+{
+  "corpus_version": "2.0.0",
+  "taxonomy_version": "2.0.0",
+  "rubric_version": "2.0.0",
+  "split": "development",
+  "responses": {
+    "v2-L0001": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"METHOD\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"DURATION\": 0, \"EXPLAIN\": 0, \"METHOD\": 1, \"WHO\": 0, \"IDENTIFY\": 0, \"DESCRIBE\": 0, \"WHERE\": 0, \"QUANTITY\": 0, \"CHOICE\": 0, \"RECOMMEND\": 0, \"COMPARE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"FOOD\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK_STUDY\": 0, \"MONEY\": 0, \"RELATIONSHIPS\": 0, \"HEALTH\": 0, \"FOOD\": 1, \"HOME\": 0, \"NATURE\": 0, \"TRAVEL\": 0, \"SPORTS\": 0, \"ENTERTAINMENT\": 0, \"LANGUAGE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "v2-L0003": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"EXPLAIN\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"DURATION\": 0, \"EXPLAIN\": 1, \"METHOD\": 0, \"WHO\": 0, \"IDENTIFY\": 0, \"DESCRIBE\": 0, \"WHERE\": 0, \"QUANTITY\": 0, \"CHOICE\": 0, \"RECOMMEND\": 0, \"COMPARE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"GENERAL\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK_STUDY\": 0, \"MONEY\": 0, \"RELATIONSHIPS\": 0, \"HEALTH\": 0, \"FOOD\": 0, \"HOME\": 0, \"NATURE\": 0, \"TRAVEL\": 0, \"SPORTS\": 0, \"ENTERTAINMENT\": 0, \"LANGUAGE\": 0, \"GENERAL\": 1}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "v2-L0028": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"OTHER\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"DURATION\": 0, \"EXPLAIN\": 0, \"METHOD\": 0, \"WHO\": 0, \"IDENTIFY\": 0, \"DESCRIBE\": 0, \"WHERE\": 0, \"QUANTITY\": 0, \"CHOICE\": 0, \"RECOMMEND\": 0, \"COMPARE\": 0, \"OTHER\": 1}}, \"topic\": {\"type\": \"choice\", \"choice\": \"FOOD\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK_STUDY\": 0, \"MONEY\": 0, \"RELATIONSHIPS\": 0, \"HEALTH\": 0, \"FOOD\": 1, \"HOME\": 0, \"NATURE\": 0, \"TRAVEL\": 0, \"SPORTS\": 0, \"ENTERTAINMENT\": 0, \"LANGUAGE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "v2-L0033": {
+      "status": 200,
+      "body": "{\"model\": \"jev-1.13.0\", \"answers\": {\"intent\": {\"type\": \"choice\", \"choice\": \"DURATION\", \"confidence\": 1, \"probabilities\": {\"YES_NO\": 0, \"WHEN\": 0, \"DURATION\": 1, \"EXPLAIN\": 0, \"METHOD\": 0, \"WHO\": 0, \"IDENTIFY\": 0, \"DESCRIBE\": 0, \"WHERE\": 0, \"QUANTITY\": 0, \"CHOICE\": 0, \"RECOMMEND\": 0, \"COMPARE\": 0, \"OTHER\": 0}}, \"topic\": {\"type\": \"choice\", \"choice\": \"FOOD\", \"confidence\": 1, \"probabilities\": {\"TECH\": 0, \"WORK_STUDY\": 0, \"MONEY\": 0, \"RELATIONSHIPS\": 0, \"HEALTH\": 0, \"FOOD\": 1, \"HOME\": 0, \"NATURE\": 0, \"TRAVEL\": 0, \"SPORTS\": 0, \"ENTERTAINMENT\": 0, \"LANGUAGE\": 0, \"GENERAL\": 0}}}, \"usage\": {\"input_tokens\": 100, \"output_tokens\": 20}}"
+    },
+    "v2-L0068": {
+      "status": 500,
+      "body": "{}"
+    },
+    "v2-L0150": {
+      "status": 500,
+      "body": "{}"
+    }
+  }
+}

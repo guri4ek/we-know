@@ -1,0 +1,92 @@
+{
+  "version": 2,
+  "answers": [
+    {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "text": "Synthetic backend answer 1.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-11T00:00:00Z",
+      "eligibility": [
+        {
+          "id": "20000000-0000-4000-8000-000000000010",
+          "intent": "EXPLAIN",
+          "topic": "WORK_STUDY",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        },
+        {
+          "id": "20000000-0000-4000-8000-000000000011",
+          "intent": "WHEN",
+          "topic": "TECH",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000002",
+      "text": "Synthetic backend answer 2.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-11T00:00:00Z",
+      "eligibility": [
+        {
+          "id": "20000000-0000-4000-8000-000000000020",
+          "intent": "WHEN",
+          "topic": "TECH",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000003",
+      "text": "Synthetic backend answer 3.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-11T00:00:00Z",
+      "eligibility": [
+        {
+          "id": "20000000-0000-4000-8000-000000000030",
+          "intent": "WHEN",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000004",
+      "text": "Synthetic backend answer 4.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-11T00:00:00Z",
+      "eligibility": [
+        {
+          "id": "20000000-0000-4000-8000-000000000040",
+          "intent": "OTHER",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000005",
+      "text": "Synthetic backend answer 5.",
+      "locale": "en",
+      "enabled": true,
+      "created_at": "2026-10-11T00:00:00Z",
+      "eligibility": [
+        {
+          "id": "20000000-0000-4000-8000-000000000050",
+          "intent": "ANY",
+          "topic": "GENERAL",
+          "humor_mechanism": "metaphor",
+          "created_at": "2026-10-11T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}

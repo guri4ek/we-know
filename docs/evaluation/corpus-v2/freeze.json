@@ -1,0 +1,16 @@
+{
+  "frozen_at_utc": "2026-10-13T06:54:51Z",
+  "taxonomy_version": "2.0.0",
+  "rubric_version": "2.0.0",
+  "corpus_version": "2.0.0",
+  "live_calls": 0,
+  "human_review": "pending",
+  "sha256": {
+    "docs/evaluation/corpus-v2/development.json": "c4d848eab714544221aefd29475ffe02c424043d3e5b68e860c3c3704d058e43",
+    "src/Infrastructure/Classification/JevRubric.php": "dd4f2a206b27f0198827b591c43bc16b627e1f60a0be198c02f9af61d0155e4e",
+    "src/Domain/Classification/Intent.php": "c406cb3b8701ae03b4fae597534d5217d06823d090dfabdbaf703f01b7db0958",
+    "src/Domain/Classification/Topic.php": "701eaea46be405d9d22fa137e35d50aaab1701f8d31d56fc0390e13f9fcc548f",
+    "docs/research/questions-v1/questions.txt": "6b6e07fd9d9d1d75f06a9c907f81efc987ecb598e6fe36fd6d1011a184f20e99",
+    "docs/research/questions-v1/sources.csv": "1d3e21755d343e2923fec74725a4c1d793aed68ba7e9aad63f27897271daba88"
+  }
+}

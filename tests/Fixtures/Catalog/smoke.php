@@ -15,7 +15,7 @@ if (!is_file($path)) {
     throw new RuntimeException('Apply development migrations first.');
 }
 $db = ConnectionFactory::create('sqlite:///'.$path, 'dev');
-(new CatalogImporter($db))->import(file_get_contents(__DIR__.'/development-v1.json'));
+(new CatalogImporter($db))->import(file_get_contents(__DIR__.'/development-v2.json'));
 $classifier = new class implements QuestionClassifier {
     public int $calls = 0;
     public function classify(string $question): ClassificationFailure

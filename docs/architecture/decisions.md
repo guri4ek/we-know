@@ -33,7 +33,7 @@ The provisional eight mechanism strings, full-catalog import semantics, strict O
 
 ## Open decisions and evidence gaps
 
-1. **Taxonomy/content:** baseline v1 is frozen; independently review labels, holdout quality, and content-pool fit. Taxonomy explains v1 refinements; humor codes remain editorial proposals.
+1. **Taxonomy/content:** v2 is the sole active implementation. Independently review the 100 author annotations and preliminary seed, and run the separately authorized live trial. Historical baseline remains evidence only; humor quality is unaccepted.
 2. **Jev access:** the production key works and pinned-model access is confirmed by two development live batches. Billing/balance, sustained limits, and account privacy terms are unverified. Do not search unrelated configuration for keys. Public documentation research found no separate sandbox; that does not rule out private options, and none is required for this project.
 3. **Quality gate:** minimum intent/topic accuracy, fallback rate, and editorial humor criteria. Set criteria before evaluating against them; development results do not retroactively create a passed release gate.
 4. **Brand/domain:** `we-know` is the repository; `Instant Answer` / `instant-answer.net` is the source concept. Domain ownership is unconfirmed.
@@ -50,3 +50,11 @@ Chaos driver, lexical/NLP classifier, weighted selection, embeddings/vector DB, 
 ## Historical work authorization
 
 Bootstrap initially had an explicit local exception to the supplied reviewer profile; later requests authorized research, architecture, testing, subagents, and Git, including separate-agent foundation/documentation commit/push. Stage 1 and humor research had different scopes. These are historical permissions, not standing authorization or product deployment. [Verification](../verification.md) retains supplied baseline evidence; it was not rechecked through Git in this audit. Personal Codex/Claude configuration remains outside product work. Current project context is defined by the user's personal-project clarification and [AGENTS.md](../../AGENTS.md).
+
+## Taxonomy and seed evolution — 2026-10-12–13
+
+ADR-024 — **Accepted by user, implemented offline:** adopt 14 intents / 13 topics as taxonomy/rubric 2.0.0, superseding the research proposal's implementation deferral. Classify requested outcomes, preserve first-request/topic tie-break rules, keep ANY editorial-only and successful OTHER distinct from provider failure. No local semantic classifier.
+
+The user explicitly clarified that the project is still in development without a frontend: evolve the active implementation directly, without parallel old-version support or migration machinery. Update the unreleased initial schema and synthetic fixtures; catalog integer version 2 binds the changed semantics with no extra fields. Existing development data remains untouched; the [isolated seed database](../content/seed-v2/README.md) uses a fresh file. Old eligibility is not mechanically converted.
+
+The task authorized local code, tests, documentation, editorial artifacts and the isolated SQLite import. It excluded Git, deployment, production changes, external/paid calls, subagents and personal configuration. Twenty-four completed answers passed preliminary author screening; human approval and production PostgreSQL acceptance remain outstanding. The [100-question v2 trial](../evaluation/corpus-v2/README.md) is prepared but unexecuted.

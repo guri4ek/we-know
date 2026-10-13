@@ -1,47 +1,37 @@
-# Jev evaluation v1
+# Jev evaluation
 
-Date: 2026-10-11. Taxonomy/rubric/corpus version **1.0.0**. [Taxonomy and tie-break rules](../content/taxonomy-v1.md) were frozen before live runs; `JevRubric` constructs the exact provider payload.
+Active taxonomy/rubric/corpus: **2.0.0**. The sole active 100-question corpus uses unchanged original titles with source references and frozen author annotations. [Sampling, ambiguity notes and live readiness](corpus-v2/README.md) · [taxonomy](../content/taxonomy-v2.md). No v2 live results exist.
 
-## Corpus
+## Current offline replay
 
-- [development.json](corpus-v1/development.json): **54** synthetic English questions for development and the initial live baseline.
-- [holdout.json](corpus-v1/holdout.json): **27** separate questions; do not tune the rubric on them. No live holdout run has been authorized/performed in the recorded work.
-- `label_status=author_labels_not_independently_reviewed`: author annotations **without independent human review**. Both splits cover all 9 intents/7 topics; development tags cover ambiguity, negation, typos, non-question text, and instruction attacks. This small control corpus is not representative production traffic.
-- Split IDs/texts are disjoint. Schema/coverage tests read both without rubric tuning on holdout. Any text/label/split change requires a new corpus version. Live `--limit` takes the frozen corpus prefix; offline replay takes the fixture-selected sequence prefix, in fixture response-map order.
-
-## Running
-
-Default offline replay uses six intentionally mixed fixtures from [evaluation-v1.json](../../tests/Fixtures/Jev/evaluation-v1.json) through the **real JevClassifier with MockHttpClient**. It is not model evaluation. Expected: 4 valid successes, 2 failures; intent 3/6, topic 3/6, joint 2/6; known 400 input / 80 output tokens. Mock latency is not provider latency. [Fixture provenance](../../tests/Fixtures/Jev/README.md).
+The default CLI uses six explicitly synthetic responses in [evaluation-v2.json](../../tests/Fixtures/Jev/evaluation-v2.json) through the real Jev adapter with MockHttpClient. Four successes, two HTTP failures; intent 3/6, topic 3/6, joint 2/6; mock usage 400 input / 80 output tokens. This tests payload/normalization/metrics, not Jev classification. The [current offline report](offline-v2.json) records mock timing only.
 
 ```sh
 rtk proxy php vendor/bin/phpunit
-rtk proxy php bin/console app:jev:evaluate
-rtk proxy php bin/console app:jev:evaluate --limit=2
+rtk proxy env APP_ENV=test APP_DEBUG=0 JEV_API_KEY= php bin/console app:jev:evaluate
+rtk proxy env APP_ENV=test APP_DEBUG=0 JEV_API_KEY= php bin/console app:jev:evaluate --limit=2
 ```
 
-The runner does not search personal configuration for keys. This personal project uses **one production JEV_API_KEY** for the adapter and authorized evaluation; no separate test account/key or sandbox workflow. Set it in already ignored `.env.local` or process environment, never CLI arguments/fixtures/committed `.env`. Default replay does not use it or access the network. `JEV_MODEL` is configurable, default pin `jev-1.13.0`. Test DI forces dummy/empty credentials and a deny-network client.
+`--corpus=<file>` selects a corpus matching the active taxonomy/rubric. `--split=development` is the default; no v2 holdout was prepared. Other taxonomy/rubric combinations and mismatching response fixtures fail before classification. No compatibility classifier or old-rubric execution switch exists. Frozen v1 corpora and reports are historical evidence, not relabeled v2 data.
 
-Live requires **`--live`, nonempty JEV_API_KEY/JEV_MODEL, and explicit `--limit=1..1000` together**, plus user authorization for the run. Failed preconditions exit 2 before network. No retries, parallel calls, or sleep; at most one call per selected question. Current configurable `JEV_TIMEOUT` / `JEV_MAX_DURATION`: **0.60 / 0.80 seconds**, chosen after comparison. Historical initial baseline: 0.30 / 0.40. Budgets must be finite, timeout positive, max_duration ≥ timeout; redirects=0. Reports record policy. A live run with technical failures still writes a report and exits 1; no failures→exit 0. Offline replay exits 0 even with deliberate fixture failures. Calls never exceed the limit or available selected sample count.
+Fixture fields: `corpus_version`, `taxonomy_version`, `rubric_version`, `split`, `responses`; response keys must be corpus sample IDs, each with integer `status` and string `body`. `--offline-fixtures=<file>` supplies another matching local replay. Default replay selects the fixture-map sequence, and `--limit` takes its prefix. Live takes the corpus sequence prefix. Report schema remains 1.0.0 because its structure did not change; taxonomy/rubric/corpus are separately reported as 2.0.0.
 
-If an existing production cache predates service/source changes, refresh it locally first. The live commands below consume provider budget and require separate explicit authorization; **the audit did not run them**. They reproduce historical policies rather than define new defaults.
+## Later bounded live trial — not run
 
-```sh
-rtk proxy env APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
-rtk proxy env APP_ENV=prod APP_DEBUG=0 JEV_TIMEOUT=0.30 JEV_MAX_DURATION=0.40 php bin/console app:jev:evaluate --live --split=development --limit=54 > /private/tmp/jev-development-report.json
-# Larger-budget comparison; also requires separate authorization for 54 calls:
-rtk proxy env APP_ENV=prod APP_DEBUG=0 JEV_TIMEOUT=0.60 JEV_MAX_DURATION=0.80 php bin/console app:jev:evaluate --live --split=development --limit=54 > /private/tmp/jev-development-600-800-report.json
-# Separate future run, only after holdout authorization:
-rtk proxy env APP_ENV=prod APP_DEBUG=0 php bin/console app:jev:evaluate --live --split=holdout --limit=27 > /private/tmp/jev-holdout-report.json
-```
+The [100-question trial](corpus-v2/README.md) is prepared, not executed. One production JEV_API_KEY serves application and authorized evaluation; no separate test key or sandbox is required. The command requires `--live`, explicit `--limit=1..1000`, configured model/key, and a separately authorized run. The current corpus bounds a full run to 100 sequential requests, one per question. Two rubrics on 100 inputs would require 200 calls and are not silently substituted for a 100-call test.
 
-Offline fixture format: object with `corpus_version`, `split`, `responses`; responses keyed by corpus sample ID, each with integer `status` and string `body`. `--offline-fixtures=/absolute/path.json` supports another local replay set for that split. Unknown IDs, version/split mismatch, malformed fixtures are rejected before the runner. Bundled fixtures match development; offline holdout requires matching fixtures. Do not copy live Bearer headers/raw traffic into fixtures.
+Keys remain in local secret/environment configuration, never arguments, fixtures or reports. Current model pin is `jev-1.13.0`; timeout/max_duration are 0.60/0.80 seconds. No retries, redirects, sleeps or parallel calls. Preflight validates finite positive budgets, max_duration ≥ timeout, key/model and mode; failures exit 2 before network. A live run with technical failures writes a report and exits 1; no failures exits 0. Deliberate offline fixture failures still exit 0. Exact labels are annotations to evaluate, not hard assertions about language or model behavior.
+
+## Historical baseline
+
+[Stage-1 results](stage-1-results.md), [54 development titles](corpus-v1/development.json), [27 holdout titles](corpus-v1/holdout.json), and original [300/400 ms](live-development-v1.json) / [600/800 ms](live-development-v1-600-800.json) reports remain unchanged. Their classifications belong to taxonomy/rubric 1.0.0. No historical accuracy transfers to the current taxonomy, and the current runner explicitly rejects those corpora.
 
 ## Metric denominators and limits
 
 Reports include requested model, **resolved-model counts** from valid responses only, taxonomy/rubric/corpus versions, split, UTC timestamp, corpus size, attempted sample count. Each sample records ID, expected/predicted labels or failure, latency, known usage; no raw questions, keys, provider errors.
 
 - Main intent/topic/joint accuracy = correct / **all attempted samples**, counting technical failures as incorrect. Conditional accuracy = correct / **valid successful responses**. Each metric has numerator, denominator, value; zero denominator→`null` value.
-- Technical failure rate = typed failures / **all attempts**, with reason breakdown. It is **not empty-catalog fallback rate**: no selector/database exists. HTTP failures differ from semantic mistakes.
+- Technical failure rate = typed failures / **all attempts**, with reason breakdown. It is **not empty-catalog fallback rate**: this runner does not select or persist answers. HTTP failures differ from semantic mistakes.
 - Confusion matrices: rows=expected, columns=predicted; special `TECHNICAL_FAILURE` column. Valid OTHER/GENERAL remains a genuine prediction.
 - Latency P50/P95: **nearest rank**, sorted elapsed milliseconds at `ceil(p*N)-1`, all attempts including failures. Classifier wall time includes HTTP/parsing, not POST/end-to-end SLA. Offline timing is explicitly marked mock transport.
 - Tokens sum **validated successes only**, with counts for known/unavailable usage. Current normalizer requires usage on every success; failures have no known usage and may still be billed. Mock tokens are synthetic. The runner does not calculate billing/cost.

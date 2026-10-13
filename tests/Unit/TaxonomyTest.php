@@ -12,10 +12,10 @@ use PHPUnit\Framework\TestCase;
 
 final class TaxonomyTest extends TestCase
 {
-    public function testExactV1CategoriesAndEligibilityExclusion(): void
+    public function testExactV2CategoriesAndEligibilityExclusion(): void
     {
-        self::assertSame(['YES_NO', 'WHEN', 'WHY', 'HOW', 'WHO', 'WHAT', 'HOW_MANY', 'CHOICE', 'OTHER'], array_column(Intent::cases(), 'value'));
-        self::assertSame(['TECH', 'WORK', 'MONEY', 'LOVE', 'HEALTH', 'LIFE', 'GENERAL'], array_column(Topic::cases(), 'value'));
+        self::assertSame(TaxonomyV2ContractTest::INTENTS, array_column(Intent::cases(), 'value'));
+        self::assertSame(TaxonomyV2ContractTest::TOPICS, array_column(Topic::cases(), 'value'));
         self::assertNull(Intent::tryFrom('ANY'));
         self::assertNull(Topic::tryFrom('ANY'));
         self::assertNull(Intent::tryFrom('when'));
@@ -27,23 +27,25 @@ final class TaxonomyTest extends TestCase
         }
     }
 
-    public function testCorpusSplitsHaveDisjointIdsAndCoverAllCategories(): void
+    public function testFrozenV2CorpusHasOneHundredOriginalQuestionsAndDisjointGroups(): void
     {
-        $loader = new CorpusLoader();
-        $root = dirname(__DIR__, 2).'/docs/evaluation/corpus-v1/';
-        $development = $loader->load($root.'development.json', 'development');
-        $holdout = $loader->load($root.'holdout.json', 'holdout');
-        self::assertSame(54, count($development['samples']));
-        self::assertSame(27, count($holdout['samples']));
-        self::assertSame([], array_intersect(array_column($development['samples'], 'id'), array_column($holdout['samples'], 'id')));
-        self::assertSame([], array_intersect(array_column($development['samples'], 'question'), array_column($holdout['samples'], 'question')));
-        foreach ([$development, $holdout] as $corpus) {
-            self::assertSame([], array_diff(array_column(Intent::cases(), 'value'), array_column($corpus['samples'], 'intent')));
-            self::assertSame([], array_diff(array_column(Topic::cases(), 'value'), array_column($corpus['samples'], 'topic')));
+        $root = dirname(__DIR__, 2);
+        $corpus = (new CorpusLoader())->load($root.'/docs/evaluation/corpus-v2/development.json', 'development');
+        self::assertCount(100, $corpus['samples']);
+        self::assertCount(100, array_unique(array_column($corpus['samples'], 'source_line')));
+        self::assertSame(['ordinary'=>50,'indirect'=>20,'no_outcome'=>10,'boundary'=>20], array_count_values(array_column($corpus['samples'], 'group')));
+        self::assertSame([], array_diff(array_column(Intent::cases(), 'value'), array_column($corpus['samples'], 'intent')));
+        self::assertSame([], array_diff(array_column(Topic::cases(), 'value'), array_column($corpus['samples'], 'topic')));
+        $questions = file($root.'/docs/research/questions-v1/questions.txt', FILE_IGNORE_NEW_LINES);
+        foreach ($corpus['samples'] as $sample) {
+            self::assertSame($questions[$sample['source_line'] - 1], $sample['question']);
+            self::assertNotSame('', $sample['ambiguity_note']);
         }
-        $tags = array_merge(...array_column($development['samples'], 'tags'));
-        foreach (['duration', 'salary_career', 'technology_work', 'multiple_questions', 'negation', 'typo', 'non_question', 'injection_only', 'injection_question', 'explicit_alternatives'] as $tag) {
-            self::assertContains($tag, $tags);
-        }
+    }
+
+    public function testOtherTaxonomiesAreExplicitlyUnsupported(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        (new CorpusLoader())->load(dirname(__DIR__, 2).'/docs/evaluation/corpus-v1/development.json', 'development');
     }
 }

@@ -34,7 +34,7 @@ final class ImportCatalogCommand extends Command
         }
         $fixtureDir = $this->projectDir.'/tests/Fixtures/Catalog';
         if ($development) {
-            $file = $fixtureDir.'/development-v1.json';
+            $file = $fixtureDir.'/development-v2.json';
         } elseif (str_starts_with(realpath($file) ?: '', $fixtureDir.'/')) {
             $output->writeln('Use --development-fixture to load synthetic content.');
             return self::INVALID;

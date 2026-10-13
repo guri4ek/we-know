@@ -8,12 +8,12 @@ final class ResponseFixture
 {
     public static function data(): array
     {
-        return json_decode(file_get_contents(__DIR__.'/success.json'), true, 32, JSON_THROW_ON_ERROR);
+        return json_decode(file_get_contents(__DIR__.'/success-v2.json'), true, 32, JSON_THROW_ON_ERROR);
     }
 
     public static function json(): string
     {
-        return file_get_contents(__DIR__.'/success.json');
+        return file_get_contents(__DIR__.'/success-v2.json');
     }
 
     public static function malformedBodies(): iterable
@@ -50,7 +50,7 @@ final class ResponseFixture
             [['answers', 'intent', 'probabilities', 'WHEN'], false], [['answers', 'intent', 'probabilities', 'WHEN'], -1],
             [['answers', 'intent', 'probabilities', 'WHEN'], 1.1], [['answers', 'topic', 'probabilities', 'TECH'], null],
             [['answers', 'topic', 'probabilities', 'TECH'], 0.5], [['answers', 'intent', 'probabilities', 'ALIEN'], 0],
-            [['answers', 'intent', 'choice'], 'WHY'],
+            [['answers', 'intent', 'choice'], 'EXPLAIN'],
             [['usage', 'input_tokens'], -1], [['usage', 'input_tokens'], '100'],
             [['usage', 'input_tokens'], 1.5], [['usage', 'output_tokens'], true], [['usage', 'output_tokens'], -2],
         ] as $index => [$path, $value]) {
@@ -64,7 +64,7 @@ final class ResponseFixture
             yield 'invalid '.$index.' '.implode('.', $path) => [json_encode($data, JSON_THROW_ON_ERROR)];
         }
         $data = self::data();
-        unset($data['answers']['intent']['probabilities']['WHY']);
+        unset($data['answers']['intent']['probabilities']['EXPLAIN']);
         yield 'incomplete distribution' => [json_encode($data, JSON_THROW_ON_ERROR)];
         yield 'infinite number' => [str_replace('"confidence": 1', '"confidence": 1e999', self::json())];
     }

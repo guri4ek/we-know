@@ -1,6 +1,6 @@
 # Testing strategy
 
-As of 2026-10-11. The skeleton and stage 1 have executable **Application, Unit, and Integration** PHPUnit suites. Backend selector/import/SQLite/HTTP suites are also implemented; browser, PostgreSQL and production checks remain plans. Actual runs, installed tools, and results are recorded in [verification](verification.md); planned tests do not imply implemented features.
+As of 2026-10-13. The skeleton and stage 1 have executable **Application, Unit, and Integration** PHPUnit suites. Backend selector/import/SQLite/HTTP suites are also implemented; browser, PostgreSQL and production checks remain plans. Actual runs, installed tools, and results are recorded in [verification](verification.md); planned tests do not imply implemented features.
 
 Jev is an external classifier, not a test framework or answer generator. PHPUnit tests our PHP components. Local HTTP mocks and separately authorized real-service calls provide different integration evidence; human editorial evaluation is separate again.
 
@@ -119,7 +119,7 @@ Run the same repository contract on both accepted engines. SQLite does not prove
 | Migrations | Edited unreleased migrations run on rebuilt disposable test databases on both engines. Shared/persistent data makes applied migrations immutable; new migrations upgrade prior schema preserving data. `schema:create` is not migration verification |
 | Integrity | UUID PK/created_at everywhere, own eligibility UUID and UNIQUE triple, FKs, NOT NULL, agreed enum/check constraints enforced; explicitly verify SQLite FK enforcement |
 | Fixtures | Enough available intent fallback; inactive/duplicate join rows do not bias pool |
-| Exact selection | `(WHY, WORK)` and `(WHEN, TECH)` do not imply `(WHY, TECH)`; collation/case does not alter enums; IDs independent of incidental row order |
+| Exact selection | `(EXPLAIN, WORK_STUDY)` and `(WHEN, TECH)` do not imply `(EXPLAIN, TECH)`; collation/case does not alter enums; IDs independent of incidental row order |
 | Snapshot | Editing/disabling library text leaves old permalink unchanged without revisions. For the accepted context/FK, changing categories/mechanism leaves JSON unchanged; deleting eligibility nulls FK but preserves verdict/snapshots |
 | Catalog import | Answer/eligibility UUIDs and creation times stable across reimport; allowed mechanism strings checked; invalid entries leave no partial update |
 | Unicode/time | Emoji, quotes, HTML-like text, UTC timestamps round-trip without silent truncation |
@@ -169,3 +169,9 @@ Before any authorized behavior change, follow the root [test-first rule](../AGEN
 Existing directories are `tests/Application`, `tests/Unit`, `tests/Integration`, `tests/Fixtures`; discovery includes the first three. Historical proposed `tests/Integration/Jev`, `tests/Integration/Persistence`, `tests/Functional`, `tests/Contract/Live` are not all present. Any future live tests must remain outside default discovery. Current default HTTP dependency is mock/deny-network; unplanned outbound calls fail. PostgreSQL/live checks must expose omitted execution explicitly so a green local suite cannot imply they ran.
 
 Completion requires the task's relevant scenarios and listed exceptions/preconditions in verification. Coverage can expose gaps but does not replace immutable-permalink, fallback, or real-contract evidence. Human humor judgments, billing, and production measurements remain distinct from test-suite results.
+
+## V2 taxonomy and seed checks
+
+Active enums/rubric and strict normalizer cover all 182 v2 pairs. Payload tests establish the sent contract, not semantic Jev compliance. Corpus tests check 100 source-exact questions, disjoint 50/20/10/20 groups and all labels; a counting double establishes one call per question. Unsupported taxonomy/rubric and fixture combinations are rejected before classification. Synthetic response fixtures were separately authored for v2.
+
+The [isolated seed verification](content/seed-v2/database-verification.json) checks actual migration/import, rollback, repeat import, stable UUIDs/times, all first-pool fallbacks, successful OTHER versus failure, every random index, mechanism independence and immutable saved snapshots. [Editorial matrices](content/seed-v2/editorial.md) are separate author judgments. PostgreSQL, live v2 classification and human humor/portability remain unverified.

@@ -23,10 +23,10 @@ final class EvaluateJevCommandTest extends TestCase
         self::assertSame(Command::SUCCESS, $tester->execute([]));
         $report = json_decode($tester->getDisplay(), true, 32, JSON_THROW_ON_ERROR);
         self::assertSame('offline_fixture_replay', $report['mode']);
-        self::assertSame('1.0.0', $report['corpus_version']);
-        self::assertSame('1.0.0', $report['rubric_version']);
+        self::assertSame('2.0.0', $report['corpus_version']);
+        self::assertSame('2.0.0', $report['rubric_version']);
         self::assertSame('development', $report['split']);
-        self::assertSame(54, $report['corpus_sample_count']);
+        self::assertSame(100, $report['corpus_sample_count']);
         self::assertSame(6, $report['sample_count']);
         self::assertSame(4, $report['successful_count']);
         self::assertSame(3, $report['intent_accuracy']['numerator']);
@@ -76,6 +76,8 @@ final class EvaluateJevCommandTest extends TestCase
         foreach (['0', '-1', '1.5', '1001', 'abc'] as $limit) {
             yield 'invalid limit '.$limit => [['--live' => true, '--limit' => $limit], 'do-not-print-secret'];
         }
+        yield 'unsupported corpus taxonomy' => [['--corpus'=>dirname(__DIR__, 2).'/docs/evaluation/corpus-v1/development.json'], ''];
+        yield 'unsupported response fixtures' => [['--offline-fixtures'=>dirname(__DIR__, 2).'/tests/Fixtures/Jev/evaluation-v1.json'], ''];
         yield 'invalid split' => [['--split' => 'unknown'], ''];
         yield 'mixed modes' => [['--live' => true, '--limit' => '3', '--offline-fixtures' => 'some.json'], 'do-not-print-secret'];
         yield 'missing offline file' => [['--offline-fixtures' => '/nonexistent-fixture.json'], ''];

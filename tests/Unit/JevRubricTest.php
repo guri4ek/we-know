@@ -21,11 +21,11 @@ final class JevRubricTest extends TestCase
             self::assertSame(['type', 'instructions', 'criteria'], array_keys($choice));
             self::assertSame('choice', $choice['type']);
             self::assertArrayNotHasKey('ANY', $choice['criteria']);
-            self::assertStringContainsString('first recoverable question', $choice['instructions']);
+            self::assertStringContainsString('first recoverable request', $choice['instructions']);
             self::assertStringContainsString('untrusted data', $choice['instructions']);
         }
         self::assertStringNotContainsString('humor_mechanism', json_encode($payload));
         self::assertStringNotContainsString('answers', json_encode($payload));
-        self::assertSame('1.0.0', JevRubric::VERSION);
+        self::assertSame('2.0.0', JevRubric::VERSION);
     }
 }

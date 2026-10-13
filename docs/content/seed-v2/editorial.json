@@ -1,0 +1,1827 @@
+{
+  "artifact_version": "2.0.0",
+  "taxonomy_version": "2.0.0",
+  "rubric_version": "2.0.0",
+  "status": "preliminary_author_screening_not_human_approval",
+  "human_scores": null,
+  "pools": {
+    "EXPLAIN/TECH": [
+      {
+        "line": 2377,
+        "question": "Why does Windows think that my wireless keyboard is a toaster?",
+        "source_url": "https://superuser.com/questions/792607/why-does-windows-think-that-my-wireless-keyboard-is-a-toaster"
+      },
+      {
+        "line": 2391,
+        "question": "Why does macOS keep asking for my SSH passphrase ever since I updated to macOS Sierra (10.12)?",
+        "source_url": "https://superuser.com/questions/1127067/why-does-macos-keep-asking-for-my-ssh-passphrase-ever-since-i-updated-to-macos-s"
+      },
+      {
+        "line": 2395,
+        "question": "Why does this PNG image display differently in Chrome & Firefox than in Safari and IE?",
+        "source_url": "https://superuser.com/questions/579216/why-does-this-png-image-display-differently-in-chrome-firefox-than-in-safari-a"
+      },
+      {
+        "line": 2431,
+        "question": "How does a computer restart itself?",
+        "source_url": "https://superuser.com/questions/294681/how-does-a-computer-restart-itself"
+      },
+      {
+        "line": 2460,
+        "question": "Why don't websites immediately display their text these days?",
+        "source_url": "https://superuser.com/questions/547743/why-dont-websites-immediately-display-their-text-these-days"
+      },
+      {
+        "line": 2503,
+        "question": "What could be the reason that some messenger remove EXIF data from photos sent as regular messages instead of documents?",
+        "source_url": "https://superuser.com/questions/1940780/what-could-be-the-reason-that-some-messenger-remove-exif-data-from-photos-sent-a"
+      },
+      {
+        "line": 3299,
+        "question": "Why is my cellphone getting hot while listening to music, on YouTube, and charging at the same time?",
+        "source_url": "https://www.fluther.com/241453/why-is-my-cellphone-getting-hot-while-listening-to-music-on/"
+      },
+      {
+        "line": 3327,
+        "question": "How do QR codes work?",
+        "source_url": "https://www.fluther.com/241346/how-do-qr-codes-work/"
+      }
+    ],
+    "COMPARE/LANGUAGE": [
+      {
+        "line": 2991,
+        "question": "What's the difference between \"requester\" and \"requestor\"?",
+        "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor"
+      },
+      {
+        "line": 3015,
+        "question": "Difference between \"artifact\" and \"artefact\"",
+        "source_url": "https://english.stackexchange.com/questions/37903/difference-between-artifact-and-artefact"
+      },
+      {
+        "line": 3017,
+        "question": "What is the difference between \"complicated\" and \"complex\"?",
+        "source_url": "https://english.stackexchange.com/questions/10459/what-is-the-difference-between-complicated-and-complex"
+      },
+      {
+        "line": 3033,
+        "question": "What is the difference between \"till\" and \"until\"?",
+        "source_url": "https://english.stackexchange.com/questions/6989/what-is-the-difference-between-till-and-until"
+      },
+      {
+        "line": 3063,
+        "question": "Difference between \"delete\" and \"remove\"",
+        "source_url": "https://english.stackexchange.com/questions/52508/difference-between-delete-and-remove"
+      },
+      {
+        "line": 3073,
+        "question": "What (film) or what kind of (film): difference",
+        "source_url": "https://english.stackexchange.com/questions/640671/what-film-or-what-kind-of-film-difference"
+      },
+      {
+        "line": 3138,
+        "question": "Differences between 'stand next to', 'stand with', and 'stand by'",
+        "source_url": "https://english.stackexchange.com/questions/640404/differences-between-stand-next-to-stand-with-and-stand-by"
+      },
+      {
+        "line": 3092,
+        "question": "Pronunciation of the name “Evelyn” in British vs. American English",
+        "source_url": "https://english.stackexchange.com/questions/640601/pronunciation-of-the-name-evelyn-in-british-vs-american-english"
+      }
+    ],
+    "WHEN/GENERAL": [
+      {
+        "line": 915,
+        "question": "When should I disclose an upcoming vacation that overlaps with the start date of an internal job position?",
+        "source_url": "https://workplace.stackexchange.com/questions/203641/when-should-i-disclose-an-upcoming-vacation-that-overlaps-with-the-start-date-of"
+      },
+      {
+        "line": 1922,
+        "question": "When exactly does the game clock start during an American football kickoff?",
+        "source_url": "https://sports.stackexchange.com/questions/30199/when-exactly-does-the-game-clock-start-during-an-american-football-kickoff"
+      },
+      {
+        "line": 1201,
+        "question": "When should I pile more dirt onto a growing potato plant?",
+        "source_url": "https://gardening.stackexchange.com/questions/286/when-should-i-pile-more-dirt-onto-a-growing-potato-plant"
+      },
+      {
+        "line": 1293,
+        "question": "When do crabgrass seeds mature?",
+        "source_url": "https://gardening.stackexchange.com/questions/70959/when-do-crabgrass-seeds-mature"
+      },
+      {
+        "line": 1456,
+        "question": "When is the best time of day to accurately weigh yourself?",
+        "source_url": "https://fitness.stackexchange.com/questions/3618/when-is-the-best-time-of-day-to-accurately-weigh-yourself"
+      },
+      {
+        "line": 1472,
+        "question": "When is it time to buy new running shoes",
+        "source_url": "https://fitness.stackexchange.com/questions/685/when-is-it-time-to-buy-new-running-shoes"
+      },
+      {
+        "line": 1517,
+        "question": "When should you do warm-up sets?",
+        "source_url": "https://fitness.stackexchange.com/questions/48782/when-should-you-do-warm-up-sets"
+      },
+      {
+        "line": 3294,
+        "question": "At what times of the day should you take pills?",
+        "source_url": "https://www.fluther.com/241478/at-what-times-of-the-day-should-you-take-pills/"
+      },
+      {
+        "line": 693,
+        "question": "At what point do index funds become unreliable?",
+        "source_url": "https://money.stackexchange.com/questions/85706/at-what-point-do-index-funds-become-unreliable"
+      }
+    ],
+    "CHOICE/GENERAL": [
+      {
+        "line": 9,
+        "question": "Do you heat the pan first, then add oil? Or put the oil in and heat up with the pan?",
+        "source_url": "https://cooking.stackexchange.com/questions/2690/do-you-heat-the-pan-first-then-add-oil-or-put-the-oil-in-and-heat-up-with-the"
+      },
+      {
+        "line": 365,
+        "question": "Should I bring Speedos or Swimming Shorts to Egypt?",
+        "source_url": "https://travel.stackexchange.com/questions/204171/should-i-bring-speedos-or-swimming-shorts-to-egypt"
+      },
+      {
+        "line": 618,
+        "question": "Should I buy my house in cash, or with a mortgage and invest the rest of my money?",
+        "source_url": "https://money.stackexchange.com/questions/89245/should-i-buy-my-house-in-cash-or-with-a-mortgage-and-invest-the-rest-of-my-mone"
+      },
+      {
+        "line": 685,
+        "question": "Pay online: credit card or debit card?",
+        "source_url": "https://money.stackexchange.com/questions/9154/pay-online-credit-card-or-debit-card"
+      },
+      {
+        "line": 1462,
+        "question": "Persistent mild knee pain due to squats - push through or stop?",
+        "source_url": "https://fitness.stackexchange.com/questions/3660/persistent-mild-knee-pain-due-to-squats-push-through-or-stop"
+      },
+      {
+        "line": 3025,
+        "question": "Which is correct: \"Filename\", \"File Name\" or \"FileName\"?",
+        "source_url": "https://english.stackexchange.com/questions/5366/which-is-correct-filename-file-name-or-filename"
+      },
+      {
+        "line": 3253,
+        "question": "M2 MVNe drive or SATA SSD?",
+        "source_url": "https://www.fluther.com/241672/m2-mvne-drive-or-sata-ssd/"
+      },
+      {
+        "line": 3502,
+        "question": "If you were going to completely replace your driveway, would you do asphalt, gravel, or concrete and why?",
+        "source_url": "https://www.fluther.com/240599/if-you-were-going-to-completely-replace-your-driveway-would-you/"
+      }
+    ],
+    "OTHER/GENERAL": [
+      {
+        "line": 3557,
+        "question": "Discord",
+        "source_url": "https://ask.metafilter.com/359990/Discord"
+      },
+      {
+        "line": 3593,
+        "question": "It's time",
+        "source_url": "https://ask.metafilter.com/340967/Its-time"
+      },
+      {
+        "line": 3577,
+        "question": "cooking",
+        "source_url": "https://ask.metafilter.com/33745/cooking"
+      },
+      {
+        "line": 2940,
+        "question": "Non-classical logics",
+        "source_url": "https://philosophy.stackexchange.com/questions/142111/non-classical-logics"
+      },
+      {
+        "line": 2900,
+        "question": "L'amour, l'amour, l'amour",
+        "source_url": "https://philosophy.stackexchange.com/questions/142381/lamour-lamour-lamour"
+      },
+      {
+        "line": 2487,
+        "question": "Audio in html website",
+        "source_url": "https://superuser.com/questions/1940843/audio-in-html-website"
+      },
+      {
+        "line": 524,
+        "question": "Washing machine sometimes hums and won't spin",
+        "source_url": "https://diy.stackexchange.com/questions/332301/washing-machine-sometimes-hums-and-wont-spin"
+      },
+      {
+        "line": 3184,
+        "question": "I have a medical question about dizziness? ( Details inside)",
+        "source_url": "https://www.fluther.com/241998/i-have-a-medical-question-about-dizziness-details-inside/"
+      },
+      {
+        "line": 1446,
+        "question": "My legs still ache 3-4 days after legs day",
+        "source_url": "https://fitness.stackexchange.com/questions/11643/my-legs-still-ache-3-4-days-after-legs-day"
+      },
+      {
+        "line": 603,
+        "question": "I'm supposedly eligible for an inheritance from a distant relative. Offer appears to be legitimate",
+        "source_url": "https://money.stackexchange.com/questions/101935/im-supposedly-eligible-for-an-inheritance-from-a-distant-relative-offer-appear"
+      }
+    ],
+    "METHOD/GENERAL": [
+      {
+        "line": 1,
+        "question": "How can I chop onions without crying?",
+        "source_url": "https://cooking.stackexchange.com/questions/567/how-can-i-chop-onions-without-crying"
+      },
+      {
+        "line": 489,
+        "question": "How do I fix a \"water hammer\" problem?",
+        "source_url": "https://diy.stackexchange.com/questions/1749/how-do-i-fix-a-water-hammer-problem"
+      },
+      {
+        "line": 709,
+        "question": "How do I budget effectively when income arrives at irregular intervals rather than a fixed monthly salary?",
+        "source_url": "https://money.stackexchange.com/questions/169983/how-do-i-budget-effectively-when-income-arrives-at-irregular-intervals-rather-th"
+      },
+      {
+        "line": 803,
+        "question": "How to convince HR to let my star employee work from home?",
+        "source_url": "https://workplace.stackexchange.com/questions/128981/how-to-convince-hr-to-let-my-star-employee-work-from-home"
+      },
+      {
+        "line": 1075,
+        "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+        "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why"
+      },
+      {
+        "line": 1406,
+        "question": "How can I make myself get enough sleep?",
+        "source_url": "https://fitness.stackexchange.com/questions/3351/how-can-i-make-myself-get-enough-sleep"
+      },
+      {
+        "line": 1702,
+        "question": "How do I choose the right tent for different weather conditions?",
+        "source_url": "https://outdoors.stackexchange.com/questions/30441/how-do-i-choose-the-right-tent-for-different-weather-conditions"
+      },
+      {
+        "line": 2407,
+        "question": "Reload a Linux user's group assignments without logging out",
+        "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out"
+      },
+      {
+        "line": 593,
+        "question": "how to fix voltage in the soil and shocks when outside AC compressor unit(s) turns on",
+        "source_url": "https://diy.stackexchange.com/questions/332013/how-to-fix-voltage-in-the-soil-and-shocks-when-outside-ac-compressor-units-tur"
+      },
+      {
+        "line": 1485,
+        "question": "How can I safely program leg exercises for a student with flat feet, hypermobility, and hEDS-type joint restrictions?",
+        "source_url": "https://fitness.stackexchange.com/questions/48945/how-can-i-safely-program-leg-exercises-for-a-student-with-flat-feet-hypermobili"
+      }
+    ],
+    "EXPLAIN/GENERAL": [
+      {
+        "line": 3,
+        "question": "Why add salt to the water when cooking pasta?",
+        "source_url": "https://cooking.stackexchange.com/questions/2574/why-add-salt-to-the-water-when-cooking-pasta"
+      },
+      {
+        "line": 54,
+        "question": "Why is it dangerous to eat meat which has been left out and then cooked?",
+        "source_url": "https://cooking.stackexchange.com/questions/12992/why-is-it-dangerous-to-eat-meat-which-has-been-left-out-and-then-cooked"
+      },
+      {
+        "line": 600,
+        "question": "If a stock doesn't pay dividends, then why is the stock worth anything?",
+        "source_url": "https://money.stackexchange.com/questions/51976/if-a-stock-doesnt-pay-dividends-then-why-is-the-stock-worth-anything"
+      },
+      {
+        "line": 1397,
+        "question": "Why does running make you have to poop?",
+        "source_url": "https://fitness.stackexchange.com/questions/509/why-does-running-make-you-have-to-poop"
+      },
+      {
+        "line": 1535,
+        "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+        "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit"
+      },
+      {
+        "line": 1782,
+        "question": "Points are given in tennis 15-30-40. Why 40?",
+        "source_url": "https://sports.stackexchange.com/questions/203/points-are-given-in-tennis-15-30-40-why-40"
+      },
+      {
+        "line": 2431,
+        "question": "How does a computer restart itself?",
+        "source_url": "https://superuser.com/questions/294681/how-does-a-computer-restart-itself"
+      },
+      {
+        "line": 2783,
+        "question": "Why is there something instead of nothing?",
+        "source_url": "https://philosophy.stackexchange.com/questions/821/why-is-there-something-instead-of-nothing"
+      }
+    ],
+    "WHO/GENERAL": [
+      {
+        "line": 272,
+        "question": "Denied boarding although I have proper visa and documentation. To whom should I make a complaint?",
+        "source_url": "https://travel.stackexchange.com/questions/135751/denied-boarding-although-i-have-proper-visa-and-documentation-to-whom-should-i"
+      },
+      {
+        "line": 597,
+        "question": "Who can truly afford luxury cars?",
+        "source_url": "https://money.stackexchange.com/questions/43967/who-can-truly-afford-luxury-cars"
+      },
+      {
+        "line": 1859,
+        "question": "Who keeps the record of each international cricket match?",
+        "source_url": "https://sports.stackexchange.com/questions/463/who-keeps-the-record-of-each-international-cricket-match"
+      },
+      {
+        "line": 1926,
+        "question": "Who is this guy at the back of the grid with a green flag?",
+        "source_url": "https://sports.stackexchange.com/questions/30192/who-is-this-guy-at-the-back-of-the-grid-with-a-green-flag"
+      },
+      {
+        "line": 2004,
+        "question": "Who was the oldest actor to play a teenager?",
+        "source_url": "https://movies.stackexchange.com/questions/75534/who-was-the-oldest-actor-to-play-a-teenager"
+      },
+      {
+        "line": 2096,
+        "question": "Who was Yuri Zhivago chasing in his final moments?",
+        "source_url": "https://movies.stackexchange.com/questions/132416/who-was-yuri-zhivago-chasing-in-his-final-moments"
+      },
+      {
+        "line": 3343,
+        "question": "Who were the republicans that refused to show up to the public hearing on ICE victims?",
+        "source_url": "https://www.fluther.com/241291/who-were-the-republicans-that-refused-to-show-up-to-the/"
+      },
+      {
+        "line": 3432,
+        "question": "Who is a primary relief organization that will focus on aid to Jamaica after Melissa hits?",
+        "source_url": "https://www.fluther.com/240891/who-is-a-primary-relief-organization-that-will-focus-on-aid/"
+      }
+    ],
+    "EXPLAIN/LANGUAGE": [
+      {
+        "line": 3013,
+        "question": "Why are the vowels in Christ and Christmas different? (and other strange diphthong behaviour)",
+        "source_url": "https://english.stackexchange.com/questions/329151/why-are-the-vowels-in-christ-and-christmas-different-and-other-strange-diphtho"
+      },
+      {
+        "line": 3014,
+        "question": "Why is “cannot” spelled as one word?",
+        "source_url": "https://english.stackexchange.com/questions/4510/why-is-cannot-spelled-as-one-word"
+      },
+      {
+        "line": 3019,
+        "question": "Why do English writers avoid explicit numerals?",
+        "source_url": "https://english.stackexchange.com/questions/979/why-do-english-writers-avoid-explicit-numerals"
+      },
+      {
+        "line": 3021,
+        "question": "Why does \"quadratic\" describe second power when \"quad\" means \"four\"?",
+        "source_url": "https://english.stackexchange.com/questions/151217/why-does-quadratic-describe-second-power-when-quad-means-four"
+      },
+      {
+        "line": 3024,
+        "question": "Why is \"bicycle\" pronounced differently from other obviously related words?",
+        "source_url": "https://english.stackexchange.com/questions/26085/why-is-bicycle-pronounced-differently-from-other-obviously-related-words"
+      },
+      {
+        "line": 3028,
+        "question": "Why is \"Pokémon\" written with an accent?",
+        "source_url": "https://english.stackexchange.com/questions/336890/why-is-pok%c3%a9mon-written-with-an-accent"
+      },
+      {
+        "line": 3037,
+        "question": "Why should the first person pronoun 'I' always be capitalized?",
+        "source_url": "https://english.stackexchange.com/questions/7986/why-should-the-first-person-pronoun-i-always-be-capitalized"
+      },
+      {
+        "line": 3067,
+        "question": "Why does the multi-paragraph quotation rule exist?",
+        "source_url": "https://english.stackexchange.com/questions/96608/why-does-the-multi-paragraph-quotation-rule-exist"
+      }
+    ],
+    "ANY/GENERAL": [
+      {
+        "line": 68,
+        "question": "Should I refrigerate eggs?",
+        "source_url": "https://cooking.stackexchange.com/questions/1672/should-i-refrigerate-eggs"
+      },
+      {
+        "line": 3294,
+        "question": "At what times of the day should you take pills?",
+        "source_url": "https://www.fluther.com/241478/at-what-times-of-the-day-should-you-take-pills/"
+      },
+      {
+        "line": 1480,
+        "question": "For better muscle growth, how many hours' sleep are recommended after doing a workout?",
+        "source_url": "https://fitness.stackexchange.com/questions/366/for-better-muscle-growth-how-many-hours-sleep-are-recommended-after-doing-a-wo"
+      },
+      {
+        "line": 1535,
+        "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+        "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit"
+      },
+      {
+        "line": 593,
+        "question": "how to fix voltage in the soil and shocks when outside AC compressor unit(s) turns on",
+        "source_url": "https://diy.stackexchange.com/questions/332013/how-to-fix-voltage-in-the-soil-and-shocks-when-outside-ac-compressor-units-tur"
+      },
+      {
+        "line": 1859,
+        "question": "Who keeps the record of each international cricket match?",
+        "source_url": "https://sports.stackexchange.com/questions/463/who-keeps-the-record-of-each-international-cricket-match"
+      },
+      {
+        "line": 1258,
+        "question": "What is this fast growing plant with blue/black berries?",
+        "source_url": "https://gardening.stackexchange.com/questions/2609/what-is-this-fast-growing-plant-with-blue-black-berries"
+      },
+      {
+        "line": 607,
+        "question": "What happens to people without any retirement savings?",
+        "source_url": "https://money.stackexchange.com/questions/79065/what-happens-to-people-without-any-retirement-savings"
+      },
+      {
+        "line": 2145,
+        "question": "Where was the Mummers Parade scene in It's Always Sunny in Philadelphia filmed?",
+        "source_url": "https://movies.stackexchange.com/questions/132264/where-was-the-mummers-parade-scene-in-its-always-sunny-in-philadelphia-filmed"
+      },
+      {
+        "line": 3560,
+        "question": "How much should I put into a joint account twice a month?",
+        "source_url": "https://ask.metafilter.com/372405/How-much-should-I-put-into-a-joint-account-twice-a-month"
+      },
+      {
+        "line": 1462,
+        "question": "Persistent mild knee pain due to squats - push through or stop?",
+        "source_url": "https://fitness.stackexchange.com/questions/3660/persistent-mild-knee-pain-due-to-squats-push-through-or-stop"
+      },
+      {
+        "line": 3311,
+        "question": "Recommend a printer?",
+        "source_url": "https://www.fluther.com/241423/recommend-a-printer/"
+      },
+      {
+        "line": 1396,
+        "question": "What are the trade-offs of weight versus repetition?",
+        "source_url": "https://fitness.stackexchange.com/questions/8238/what-are-the-trade-offs-of-weight-versus-repetition"
+      },
+      {
+        "line": 3184,
+        "question": "I have a medical question about dizziness? ( Details inside)",
+        "source_url": "https://www.fluther.com/241998/i-have-a-medical-question-about-dizziness-details-inside/"
+      },
+      {
+        "line": 1446,
+        "question": "My legs still ache 3-4 days after legs day",
+        "source_url": "https://fitness.stackexchange.com/questions/11643/my-legs-still-ache-3-4-days-after-legs-day"
+      },
+      {
+        "line": 3557,
+        "question": "Discord",
+        "source_url": "https://ask.metafilter.com/359990/Discord"
+      },
+      {
+        "line": 3593,
+        "question": "It's time",
+        "source_url": "https://ask.metafilter.com/340967/Its-time"
+      },
+      {
+        "line": 3563,
+        "question": "I need personal cloud storage",
+        "source_url": "https://ask.metafilter.com/374375/I-need-personal-cloud-storage"
+      },
+      {
+        "line": 2407,
+        "question": "Reload a Linux user's group assignments without logging out",
+        "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out"
+      },
+      {
+        "line": 3191,
+        "question": "How do you feel about this?",
+        "source_url": "https://www.fluther.com/241960/how-do-you-feel-about-this/"
+      },
+      {
+        "line": 3281,
+        "question": "What could have caused this (details below)?",
+        "source_url": "https://www.fluther.com/241527/what-could-have-caused-this-details-below/"
+      },
+      {
+        "line": 324,
+        "question": "Will I be able to enter Latvia without a visa?",
+        "source_url": "https://travel.stackexchange.com/questions/204570/will-i-be-able-to-enter-latvia-without-a-visa"
+      },
+      {
+        "line": 1075,
+        "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+        "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why"
+      },
+      {
+        "line": 2783,
+        "question": "Why is there something instead of nothing?",
+        "source_url": "https://philosophy.stackexchange.com/questions/821/why-is-there-something-instead-of-nothing"
+      },
+      {
+        "line": 3487,
+        "question": "Does democracy work if majority of the population are uneducated?",
+        "source_url": "https://www.fluther.com/240651/does-democracy-work-if-majority-of-the-population-are-uneducated/"
+      },
+      {
+        "line": 3471,
+        "question": "How long will it take for the \"Head and Shoulders, plus Old Spice , shampoo and conditioner \" to get out of my eyes?",
+        "source_url": "https://www.fluther.com/240718/how-long-will-it-take-for-the-head-and-shoulders-plus/"
+      },
+      {
+        "line": 54,
+        "question": "Why is it dangerous to eat meat which has been left out and then cooked?",
+        "source_url": "https://cooking.stackexchange.com/questions/12992/why-is-it-dangerous-to-eat-meat-which-has-been-left-out-and-then-cooked"
+      },
+      {
+        "line": 618,
+        "question": "Should I buy my house in cash, or with a mortgage and invest the rest of my money?",
+        "source_url": "https://money.stackexchange.com/questions/89245/should-i-buy-my-house-in-cash-or-with-a-mortgage-and-invest-the-rest-of-my-mone"
+      },
+      {
+        "line": 3432,
+        "question": "Who is a primary relief organization that will focus on aid to Jamaica after Melissa hits?",
+        "source_url": "https://www.fluther.com/240891/who-is-a-primary-relief-organization-that-will-focus-on-aid/"
+      },
+      {
+        "line": 2177,
+        "question": "How can I tell if a corpse is safe to eat?",
+        "source_url": "https://gaming.stackexchange.com/questions/4999/how-can-i-tell-if-a-corpse-is-safe-to-eat"
+      },
+      {
+        "line": 915,
+        "question": "When should I disclose an upcoming vacation that overlaps with the start date of an internal job position?",
+        "source_url": "https://workplace.stackexchange.com/questions/203641/when-should-i-disclose-an-upcoming-vacation-that-overlaps-with-the-start-date-of"
+      },
+      {
+        "line": 2991,
+        "question": "What's the difference between \"requester\" and \"requestor\"?",
+        "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor"
+      }
+    ],
+    "DURATION/GENERAL": [
+      {
+        "line": 33,
+        "question": "How long can I store a food in the pantry, refrigerator, or freezer?",
+        "source_url": "https://cooking.stackexchange.com/questions/21068/how-long-can-i-store-a-food-in-the-pantry-refrigerator-or-freezer"
+      },
+      {
+        "line": 432,
+        "question": "How long should I wait before plugging in a new refrigerator?",
+        "source_url": "https://diy.stackexchange.com/questions/2959/how-long-should-i-wait-before-plugging-in-a-new-refrigerator"
+      },
+      {
+        "line": 1231,
+        "question": "How long does it take for the compost to ripen?",
+        "source_url": "https://gardening.stackexchange.com/questions/3176/how-long-does-it-take-for-the-compost-to-ripen"
+      },
+      {
+        "line": 1422,
+        "question": "How long should I rest in between sets?",
+        "source_url": "https://fitness.stackexchange.com/questions/300/how-long-should-i-rest-in-between-sets"
+      },
+      {
+        "line": 1480,
+        "question": "For better muscle growth, how many hours' sleep are recommended after doing a workout?",
+        "source_url": "https://fitness.stackexchange.com/questions/366/for-better-muscle-growth-how-many-hours-sleep-are-recommended-after-doing-a-wo"
+      },
+      {
+        "line": 1608,
+        "question": "How long does water need to be boiled for to kill all bacteria / viruses?",
+        "source_url": "https://outdoors.stackexchange.com/questions/1117/how-long-does-water-need-to-be-boiled-for-to-kill-all-bacteria-viruses"
+      },
+      {
+        "line": 3252,
+        "question": "How long will a wasp live in a car?",
+        "source_url": "https://www.fluther.com/241686/how-long-will-a-wasp-live-in-a-car/"
+      },
+      {
+        "line": 3471,
+        "question": "How long will it take for the \"Head and Shoulders, plus Old Spice , shampoo and conditioner \" to get out of my eyes?",
+        "source_url": "https://www.fluther.com/240718/how-long-will-it-take-for-the-head-and-shoulders-plus/"
+      }
+    ],
+    "RECOMMEND/GENERAL": [
+      {
+        "line": 3311,
+        "question": "Recommend a printer?",
+        "source_url": "https://www.fluther.com/241423/recommend-a-printer/"
+      },
+      {
+        "line": 3563,
+        "question": "I need personal cloud storage",
+        "source_url": "https://ask.metafilter.com/374375/I-need-personal-cloud-storage"
+      },
+      {
+        "line": 3215,
+        "question": "Please make a list of cleaning supplies that I should purchase to clean my apartment?",
+        "source_url": "https://www.fluther.com/241850/please-make-a-list-of-cleaning-supplies-that-i-should-purchase/"
+      },
+      {
+        "line": 3542,
+        "question": "Need a better shower filter",
+        "source_url": "https://ask.metafilter.com/390928/Need-a-better-shower-filter"
+      },
+      {
+        "line": 3331,
+        "question": "Suggest an insta-meal lunch-type frozen product?",
+        "source_url": "https://www.fluther.com/241329/suggest-an-insta-meal-lunch-type-frozen-product/"
+      },
+      {
+        "line": 3397,
+        "question": "Can anyone recommend a weighted blanket that isn't too hot?",
+        "source_url": "https://www.fluther.com/241051/can-anyone-recommend-a-weighted-blanket-that-isnt-too-hot/"
+      },
+      {
+        "line": 3513,
+        "question": "Can you recommend a solar charging phone power bank?",
+        "source_url": "https://www.fluther.com/240554/can-you-recommend-a-solar-charging-phone-power-bank/"
+      },
+      {
+        "line": 3587,
+        "question": "Find me an online fashion home!",
+        "source_url": "https://ask.metafilter.com/78554/Find-me-an-online-fashion-home"
+      }
+    ],
+    "WHERE/GENERAL": [
+      {
+        "line": 342,
+        "question": "Where is the Vandenberg Space and Missile Technology Center (SAMTEC) and is it open to foreigners?",
+        "source_url": "https://travel.stackexchange.com/questions/204438/where-is-the-vandenberg-space-and-missile-technology-center-samtec-and-is-it-o"
+      },
+      {
+        "line": 2145,
+        "question": "Where was the Mummers Parade scene in It's Always Sunny in Philadelphia filmed?",
+        "source_url": "https://movies.stackexchange.com/questions/132264/where-was-the-mummers-parade-scene-in-its-always-sunny-in-philadelphia-filmed"
+      },
+      {
+        "line": 2180,
+        "question": "Where is the \"impossible space\" in Portal 2?",
+        "source_url": "https://gaming.stackexchange.com/questions/20601/where-is-the-impossible-space-in-portal-2"
+      },
+      {
+        "line": 2223,
+        "question": "Where are all the random dungeons?",
+        "source_url": "https://gaming.stackexchange.com/questions/66418/where-are-all-the-random-dungeons"
+      },
+      {
+        "line": 2314,
+        "question": "Where is the anvil in the Shattered Keep Cellars?",
+        "source_url": "https://gaming.stackexchange.com/questions/419572/where-is-the-anvil-in-the-shattered-keep-cellars"
+      },
+      {
+        "line": 2333,
+        "question": "Where should I look to find the entrance to the underground area that holds a Pyroculus to the west of the southern Coatepec Mountain waypoint?",
+        "source_url": "https://gaming.stackexchange.com/questions/419528/where-should-i-look-to-find-the-entrance-to-the-underground-area-that-holds-a-py"
+      },
+      {
+        "line": 3175,
+        "question": "Where are all these spam text messages coming from?",
+        "source_url": "https://www.fluther.com/242032/where-are-all-these-spam-text-messages-coming-from/"
+      },
+      {
+        "line": 3544,
+        "question": "Where can I get a real NASA onesie?",
+        "source_url": "https://ask.metafilter.com/390926/Where-can-I-get-a-real-NASA-onesie"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "key": "A2",
+      "text": "Because the machine follows instructions, including the instructions telling it to disregard the instructions.",
+      "pair": "EXPLAIN/TECH",
+      "mechanism": "reversal",
+      "origin": "pilot:A2 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Instruction-following defeats itself.",
+      "novelty": "Obedience recursion; distinct from mutual corroboration in N01.",
+      "limit": "An absurd operating principle, not a technical walkthrough; QR and overheating included.",
+      "matrix": {
+        "2377": "P/C/L",
+        "2391": "P/C/L",
+        "2395": "P/C/L",
+        "2431": "P/C/L",
+        "2460": "P/C/L",
+        "2503": "P/C/L",
+        "3299": "P/C/L",
+        "3327": "P/C/L"
+      }
+    },
+    {
+      "key": "A4",
+      "text": "Because every simple operation includes a full rehearsal of the complicated version.",
+      "pair": "EXPLAIN/TECH",
+      "mechanism": "hyperbole",
+      "origin": "pilot:A4 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Simple operations rehearse their complicated counterparts.",
+      "novelty": "Theatrical overhead; do not add more rehearsal variants.",
+      "limit": "Does not diagnose heat or prescribe repair.",
+      "matrix": {
+        "2377": "P/C/L",
+        "2391": "P/C/L",
+        "2395": "P/C/L",
+        "2431": "P/C/L",
+        "2460": "P/C/L",
+        "2503": "P/C/L",
+        "3299": "P/C/L",
+        "3327": "P/C/L"
+      }
+    },
+    {
+      "key": "B1",
+      "text": "The distinction is small enough to fit in a footnote and large enough to support a lifelong feud.",
+      "pair": "COMPARE/LANGUAGE",
+      "mechanism": "hyperbole",
+      "origin": "pilot:B1 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Tiny distinctions sustain enormous social conflict.",
+      "novelty": "Scale/conflict contrast; no further footnote or feud variants.",
+      "limit": "Smallness is comic exaggeration, not a claim of synonymy; three expressions and pronunciation included.",
+      "matrix": {
+        "2991": "P/C/L",
+        "3015": "P/C/L",
+        "3017": "P/C/L",
+        "3033": "P/C/L",
+        "3063": "P/C/L",
+        "3073": "P/C/L",
+        "3138": "P/C/L",
+        "3092": "P/C/L"
+      }
+    },
+    {
+      "key": "B3",
+      "text": "They differ mainly in which correction you will receive from someone who understood you perfectly.",
+      "pair": "COMPARE/LANGUAGE",
+      "mechanism": "reversal",
+      "origin": "pilot:B3 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Successful understanding generates unnecessary correction.",
+      "novelty": "Social correction, not B1's scale or B2's shared destination.",
+      "limit": "Compares consequences of usage, not literal lexical properties; human form-fit review needed.",
+      "matrix": {
+        "2991": "P/C/L",
+        "3015": "P/C/L",
+        "3017": "P/C/L",
+        "3033": "P/C/L",
+        "3063": "P/C/L",
+        "3073": "P/C/L",
+        "3138": "P/C/L",
+        "3092": "P/C/L"
+      }
+    },
+    {
+      "key": "C2",
+      "text": "At the precise moment the schedule stops describing its ambitions as facts.",
+      "pair": "WHEN/GENERAL",
+      "mechanism": "false_causality",
+      "origin": "pilot:C2 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "The schedule must stop mistaking plans for facts.",
+      "novelty": "Epistemic condition; distinct from ceremony chronology.",
+      "limit": "Impossible meta-condition, not a waiting instruction; medication and index-fund threshold remain sensitive.",
+      "matrix": {
+        "915": "P/C/L",
+        "1922": "P/C/L",
+        "1201": "P/C/L",
+        "1293": "P/C/L",
+        "1456": "P/C/L",
+        "1472": "P/C/L",
+        "1517": "P/C/L",
+        "3294": "P/C/L",
+        "693": "P/C/L"
+      }
+    },
+    {
+      "key": "C4",
+      "text": "At the opening ceremony for the present. Attendance by the future is compulsory.",
+      "pair": "WHEN/GENERAL",
+      "mechanism": "bureaucratic_absurdity",
+      "origin": "pilot:C4 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "The present holds a ceremony with compulsory future attendance.",
+      "novelty": "Impossible temporal landmark; no renamed-ceremony variants.",
+      "limit": "No real date or delay; human review of timing jokes on medication remains essential.",
+      "matrix": {
+        "915": "P/C/L",
+        "1922": "P/C/L",
+        "1201": "P/C/L",
+        "1293": "P/C/L",
+        "1456": "P/C/L",
+        "1472": "P/C/L",
+        "1517": "P/C/L",
+        "3294": "P/C/L",
+        "693": "P/C/L"
+      }
+    },
+    {
+      "key": "E2",
+      "text": "Choose whichever option sounds least likely to ask you to join a loyalty program.",
+      "pair": "CHOICE/GENERAL",
+      "mechanism": "metaphor",
+      "origin": "pilot:E2 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Alternatives become vendors seeking customer loyalty.",
+      "novelty": "Commercial solicitation criterion, not pigeon evaluation.",
+      "limit": "Fictional criterion gives no winner; on payment questions must not read as advice against loyalty cards.",
+      "matrix": {
+        "9": "P/C/L",
+        "365": "P/C/L",
+        "618": "P/C/L",
+        "685": "P/C/L",
+        "1462": "P/C/L",
+        "3025": "P/C/L",
+        "3253": "P/C/L",
+        "3502": "P/C/L"
+      }
+    },
+    {
+      "key": "E3",
+      "text": "Choose the option you can explain to a pigeon without losing the pigeon's respect.",
+      "pair": "CHOICE/GENERAL",
+      "mechanism": "reversal",
+      "origin": "pilot:E3 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "A pigeon becomes the evaluator of a decision.",
+      "novelty": "Inverted judgment hierarchy; not a claim the reader owns a bird.",
+      "limit": "Criterion-only answer is an explicit editorial allowance; no medical/financial winner selected.",
+      "matrix": {
+        "9": "P/C/L",
+        "365": "P/C/L",
+        "618": "P/C/L",
+        "685": "P/C/L",
+        "1462": "P/C/L",
+        "3025": "P/C/L",
+        "3253": "P/C/L",
+        "3502": "P/C/L"
+      }
+    },
+    {
+      "key": "F3",
+      "text": "The answer is on standby. It refuses to guess its own assignment.",
+      "pair": "OTHER/GENERAL",
+      "mechanism": "reversal",
+      "origin": "pilot:F3 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "The answer refuses to invent its assignment.",
+      "novelty": "Agency belongs to the answer; unlike historical answer-first/recruit-question joke.",
+      "limit": "Mild clarification; no claim of meaningless input or deficient punctuation.",
+      "matrix": {
+        "3557": "P/C/L",
+        "3593": "P/C/L",
+        "3577": "P/C/L",
+        "2940": "P/C/L",
+        "2900": "P/C/L",
+        "2487": "P/C/L",
+        "524": "P/C/L",
+        "3184": "P/C/L",
+        "1446": "P/C/L",
+        "603": "P/C/L"
+      }
+    },
+    {
+      "key": "F4",
+      "text": "Please specify what you want to know. Omniscience requires unusually detailed instructions.",
+      "pair": "OTHER/GENERAL",
+      "mechanism": "bureaucratic_absurdity",
+      "origin": "pilot:F4 unchanged",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "shift": "Omniscience requires detailed instructions.",
+      "novelty": "Knowledge/specification contradiction; avoid crystal-ball variants.",
+      "limit": "Direct clarification remains considerate on incomplete symptoms and finance reports.",
+      "matrix": {
+        "3557": "P/C/L",
+        "3593": "P/C/L",
+        "3577": "P/C/L",
+        "2940": "P/C/L",
+        "2900": "P/C/L",
+        "2487": "P/C/L",
+        "524": "P/C/L",
+        "3184": "P/C/L",
+        "1446": "P/C/L",
+        "603": "P/C/L"
+      }
+    },
+    {
+      "key": "N01",
+      "text": "Because the hardware believes the software, and the software has mistaken that for independent confirmation.",
+      "pair": "EXPLAIN/TECH",
+      "mechanism": "false_causality",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Circular corroboration masquerades as evidence.",
+      "novelty": "Two components validate each other, rather than cancel instructions.",
+      "limit": "Hardware/software is technical vocabulary, not an assumed malfunction.",
+      "matrix": {
+        "2377": "P/C/L",
+        "2391": "P/C/L",
+        "2395": "P/C/L",
+        "2431": "P/C/L",
+        "2460": "P/C/L",
+        "2503": "P/C/L",
+        "3299": "P/C/L",
+        "3327": "P/C/L"
+      }
+    },
+    {
+      "key": "N02",
+      "text": "Because the interface translates every request into the dialect spoken by its least cooperative component.",
+      "pair": "EXPLAIN/TECH",
+      "mechanism": "metaphor",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Interoperation becomes diplomacy in a hostile dialect.",
+      "novelty": "Translation/cooperation rather than A2 obedience or A4 rehearsal.",
+      "limit": "Includes normal QR operation; cooperation is personification, not an actual defect claim.",
+      "matrix": {
+        "2377": "P/C/L",
+        "2391": "P/C/L",
+        "2395": "P/C/L",
+        "2431": "P/C/L",
+        "2460": "P/C/L",
+        "2503": "P/C/L",
+        "3299": "P/C/L",
+        "3327": "P/C/L"
+      }
+    },
+    {
+      "key": "N03",
+      "text": "Turn the procedure inside out. The missing step is usually hiding in the lining.",
+      "pair": "METHOD/GENERAL",
+      "mechanism": "metaphor",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "An abstract procedure becomes clothing with a concealed step.",
+      "novelty": "Hidden lining, not a supervisor or solution-before-problem reversal.",
+      "limit": "Impossible action; no actual treatment, electrical repair or investment instruction.",
+      "matrix": {
+        "1": "P/C/L",
+        "489": "P/C/L",
+        "709": "P/C/L",
+        "803": "P/C/L",
+        "1075": "P/C/L",
+        "1406": "P/C/L",
+        "1702": "P/C/L",
+        "2407": "P/C/L",
+        "593": "P/C/L",
+        "1485": "P/C/L"
+      }
+    },
+    {
+      "key": "N04",
+      "text": "Give the instructions a practical exam. They have been marking everyone else's work.",
+      "pair": "METHOD/GENERAL",
+      "mechanism": "reversal",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "The evaluator must demonstrate its own competence.",
+      "novelty": "Examining instructions rather than assigning more supervisors.",
+      "limit": "Does not imply that the user failed; satire targets instructions.",
+      "matrix": {
+        "1": "P/C/L",
+        "489": "P/C/L",
+        "709": "P/C/L",
+        "803": "P/C/L",
+        "1075": "P/C/L",
+        "1406": "P/C/L",
+        "1702": "P/C/L",
+        "2407": "P/C/L",
+        "593": "P/C/L",
+        "1485": "P/C/L"
+      }
+    },
+    {
+      "key": "N05",
+      "text": "Draw a straight line from intention to result. Apply for permission to bend the paper.",
+      "pair": "METHOD/GENERAL",
+      "mechanism": "bureaucratic_absurdity",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "A shortcut in an abstract plan needs a physical-paper permit.",
+      "novelty": "Geometry plus permission, not repeated signatures or waiting recursion.",
+      "limit": "Physical metaphor cannot be followed as clinical or electrical procedure.",
+      "matrix": {
+        "1": "P/C/L",
+        "489": "P/C/L",
+        "709": "P/C/L",
+        "803": "P/C/L",
+        "1075": "P/C/L",
+        "1406": "P/C/L",
+        "1702": "P/C/L",
+        "2407": "P/C/L",
+        "593": "P/C/L",
+        "1485": "P/C/L"
+      }
+    },
+    {
+      "key": "N06",
+      "text": "Because coincidence has been promoted to project manager.",
+      "pair": "EXPLAIN/GENERAL",
+      "mechanism": "false_causality",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Coincidence receives causal responsibility by appointment.",
+      "novelty": "Misattributed causation, not evidence arriving after its conclusion.",
+      "limit": "Does not assert a real diagnosis or assign blame to the questioner.",
+      "matrix": {
+        "3": "P/C/L",
+        "54": "P/C/L",
+        "600": "P/C/L",
+        "1397": "P/C/L",
+        "1535": "P/C/L",
+        "1782": "P/C/L",
+        "2431": "P/C/L",
+        "2783": "P/C/L"
+      }
+    },
+    {
+      "key": "N07",
+      "text": "Because cause and effect are sharing a password.",
+      "pair": "EXPLAIN/GENERAL",
+      "mechanism": "metaphor",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Separate causal roles lose their identity through shared credentials.",
+      "novelty": "Authentication transfer; no named technology or runtime substitution.",
+      "limit": "Not actual credential advice; short but conceptual turn may need reader review.",
+      "matrix": {
+        "3": "P/C/L",
+        "54": "P/C/L",
+        "600": "P/C/L",
+        "1397": "P/C/L",
+        "1535": "P/C/L",
+        "1782": "P/C/L",
+        "2431": "P/C/L",
+        "2783": "P/C/L"
+      }
+    },
+    {
+      "key": "N08",
+      "text": "Because the explanation is paid by the complication.",
+      "pair": "EXPLAIN/GENERAL",
+      "mechanism": "metaphor",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Payment incentives manufacture unnecessary complexity.",
+      "novelty": "Incentive structure rather than A4 theatrical overhead; related complexity motif acknowledged.",
+      "limit": "Satirizes explanatory machinery, not a medical professional or distressed user.",
+      "matrix": {
+        "3": "P/C/L",
+        "54": "P/C/L",
+        "600": "P/C/L",
+        "1397": "P/C/L",
+        "1535": "P/C/L",
+        "1782": "P/C/L",
+        "2431": "P/C/L",
+        "2783": "P/C/L"
+      }
+    },
+    {
+      "key": "N09",
+      "text": "The witness called by the alibi.",
+      "pair": "WHO/GENERAL",
+      "mechanism": "reversal",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "An abstract defense calls its own witness.",
+      "novelty": "Legal role reversal; no calendar, committee or fabricated real identity.",
+      "limit": "An obviously impossible agent relation; factual identification intentionally not provided.",
+      "matrix": {
+        "272": "P/C/L",
+        "597": "P/C/L",
+        "1859": "P/C/L",
+        "1926": "P/C/L",
+        "2004": "P/C/L",
+        "2096": "P/C/L",
+        "3343": "P/C/L",
+        "3432": "P/C/L"
+      }
+    },
+    {
+      "key": "N10",
+      "text": "The expert appointed by a show of invisible hands.",
+      "pair": "WHO/GENERAL",
+      "mechanism": "bureaucratic_absurdity",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "An appointment rests on votes nobody can observe.",
+      "novelty": "Invisible voting, distinct from alibi agency.",
+      "limit": "No actual expert, doctor, accused person or relief organization is named.",
+      "matrix": {
+        "272": "P/C/L",
+        "597": "P/C/L",
+        "1859": "P/C/L",
+        "1926": "P/C/L",
+        "2004": "P/C/L",
+        "2096": "P/C/L",
+        "3343": "P/C/L",
+        "3432": "P/C/L"
+      }
+    },
+    {
+      "key": "N11",
+      "text": "Choose whichever option would be most embarrassed to appear in its own advertisement.",
+      "pair": "CHOICE/GENERAL",
+      "mechanism": "reversal",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "A sales pitch embarrasses the thing being sold.",
+      "novelty": "Self-image against publicity, not vendor loyalty or an external animal judge.",
+      "limit": "No named winner; the criterion requires impossible option emotions, not financial comparison.",
+      "matrix": {
+        "9": "P/C/L",
+        "365": "P/C/L",
+        "618": "P/C/L",
+        "685": "P/C/L",
+        "1462": "P/C/L",
+        "3025": "P/C/L",
+        "3253": "P/C/L",
+        "3502": "P/C/L"
+      }
+    },
+    {
+      "key": "N12",
+      "text": "Because the dictionary records the rules after the words have already broken them.",
+      "pair": "EXPLAIN/LANGUAGE",
+      "mechanism": "reversal",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Rule-breaking precedes the authority that records rules.",
+      "novelty": "Lexicographic time reversal, not generic exception exemption.",
+      "limit": "Dictionary is a fictional authority here, not a factual history of spelling or pronunciation.",
+      "matrix": {
+        "3013": "P/C/L",
+        "3014": "P/C/L",
+        "3019": "P/C/L",
+        "3021": "P/C/L",
+        "3024": "P/C/L",
+        "3028": "P/C/L",
+        "3037": "P/C/L",
+        "3067": "P/C/L"
+      }
+    },
+    {
+      "key": "U01",
+      "text": "This answer contains no useful information. Its confidence is sold separately.",
+      "pair": "ANY/GENERAL",
+      "mechanism": "metaphor",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "Confidence is an optional paid accessory to an empty product.",
+      "novelty": "Commodity separation rather than fictional certification, proof of purchase or settled uncertainty.",
+      "limit": "Explicitly useless answer; specific form degrades without pretending to offer advice.",
+      "matrix": {
+        "68": "U/C/L",
+        "3294": "U/C/L",
+        "1480": "U/C/L",
+        "1535": "U/C/L",
+        "593": "U/C/L",
+        "1859": "U/C/L",
+        "1258": "U/C/L",
+        "607": "U/C/L",
+        "2145": "U/C/L",
+        "3560": "U/C/L",
+        "1462": "U/C/L",
+        "3311": "U/C/L",
+        "1396": "U/C/L",
+        "3184": "U/C/L",
+        "1446": "U/C/L",
+        "3557": "U/C/L",
+        "3593": "U/C/L",
+        "3563": "U/C/L",
+        "2407": "U/C/L",
+        "3191": "U/C/L",
+        "3281": "U/C/L",
+        "324": "U/C/L",
+        "1075": "U/C/L",
+        "2783": "U/C/L",
+        "3487": "U/C/L",
+        "3471": "U/C/L",
+        "54": "U/C/L",
+        "618": "U/C/L",
+        "3432": "U/C/L",
+        "2177": "U/C/L",
+        "915": "U/C/L",
+        "2991": "U/C/L"
+      }
+    },
+    {
+      "key": "U02",
+      "text": "The oracle is out of facts. It is polishing the delivery.",
+      "pair": "ANY/GENERAL",
+      "mechanism": "reversal",
+      "origin": "new",
+      "status": "preliminary_pass",
+      "human_scores": null,
+      "author_scores": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "shift": "The source of knowledge substitutes presentation for knowledge.",
+      "novelty": "Presentation replacing substance, distinct from U01 accessory pricing.",
+      "limit": "Target is the oracle; neither reassures about harm nor blames incomplete inputs.",
+      "matrix": {
+        "68": "U/C/L",
+        "3294": "U/C/L",
+        "1480": "U/C/L",
+        "1535": "U/C/L",
+        "593": "U/C/L",
+        "1859": "U/C/L",
+        "1258": "U/C/L",
+        "607": "U/C/L",
+        "2145": "U/C/L",
+        "3560": "U/C/L",
+        "1462": "U/C/L",
+        "3311": "U/C/L",
+        "1396": "U/C/L",
+        "3184": "U/C/L",
+        "1446": "U/C/L",
+        "3557": "U/C/L",
+        "3593": "U/C/L",
+        "3563": "U/C/L",
+        "2407": "U/C/L",
+        "3191": "U/C/L",
+        "3281": "U/C/L",
+        "324": "U/C/L",
+        "1075": "U/C/L",
+        "2783": "U/C/L",
+        "3487": "U/C/L",
+        "3471": "U/C/L",
+        "54": "U/C/L",
+        "618": "U/C/L",
+        "3432": "U/C/L",
+        "2177": "U/C/L",
+        "915": "U/C/L",
+        "2991": "U/C/L"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "key": "B2",
+      "text": "Same destination, different toll booths. Each charges extra for being technically correct.",
+      "pair": "COMPARE/LANGUAGE",
+      "status": "hold",
+      "reason": "Same destination can assert equivalent meaning at L3017 and L3138. The author cannot require readers to reinterpret it as merely communication.",
+      "origin": "pilot:B2 unchanged",
+      "human_scores": null,
+      "matrix": {
+        "2991": "P/C/L",
+        "3015": "P/C/L",
+        "3017": "P/A/L",
+        "3033": "P/C/L",
+        "3063": "P/C/L",
+        "3073": "P/C/L",
+        "3138": "P/A/L",
+        "3092": "P/C/L"
+      }
+    },
+    {
+      "key": "R01",
+      "text": "Choose the option that makes the fewest demands on you. The demands have formed a union.",
+      "pair": "CHOICE/GENERAL",
+      "status": "reject",
+      "reason": "At L1462 a literal least-demand criterion can decide whether to continue through pain; joke does not cancel advice.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "9": "P/C/L",
+        "365": "P/C/L",
+        "618": "P/I/L",
+        "685": "P/I/L",
+        "1462": "P/I/L",
+        "3025": "P/C/L",
+        "3253": "P/C/L",
+        "3502": "P/C/L"
+      }
+    },
+    {
+      "key": "R02",
+      "text": "Three business eternities. The receipt expires first.",
+      "pair": "DURATION/GENERAL",
+      "status": "reject",
+      "reason": "Long-wait implication fails food storage, water sanitation and eye exposure; also clones pilot D1.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "33": "P/I/L",
+        "432": "P/C/L",
+        "1231": "P/C/L",
+        "1422": "P/C/L",
+        "1480": "P/C/L",
+        "1608": "P/I/L",
+        "3252": "P/C/L",
+        "3471": "P/I/L"
+      }
+    },
+    {
+      "key": "R03",
+      "text": "The differences are pronounced. The agreement is silent.",
+      "pair": "COMPARE/LANGUAGE",
+      "status": "hold",
+      "reason": "At L3092 pronounced is literal and the supposed agreement is invented; familiar wordplay, weak comparison.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "2991": "P/C/L",
+        "3015": "P/C/L",
+        "3017": "P/C/L",
+        "3033": "P/C/L",
+        "3063": "P/C/L",
+        "3073": "P/C/L",
+        "3138": "S/A/S",
+        "3092": "S/A/S"
+      }
+    },
+    {
+      "key": "R04",
+      "text": "When the clock finishes checking whether now is available.",
+      "pair": "WHEN/GENERAL",
+      "status": "hold",
+      "reason": "Form is temporal but concept repeats the guide waiting-period recursion and pilot temporal bureaucracy.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "915": "P/C/L",
+        "1922": "P/C/L",
+        "1201": "P/C/L",
+        "1293": "P/C/L",
+        "1456": "P/C/L",
+        "1472": "P/C/L",
+        "1517": "P/C/L",
+        "3294": "P/C/L",
+        "693": "P/C/L"
+      }
+    },
+    {
+      "key": "R05",
+      "text": "Please specify the request. The crystal ball currently works as a paperweight.",
+      "pair": "OTHER/GENERAL",
+      "status": "hold",
+      "reason": "Considerate clarification but repeats F4 omniscience needing user input with a replacement prop.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "3557": "P/C/L",
+        "3593": "P/C/L",
+        "3577": "P/C/L",
+        "2940": "P/C/L",
+        "2900": "P/C/L",
+        "2487": "P/C/L",
+        "524": "P/C/L",
+        "3184": "P/C/L",
+        "1446": "P/C/L",
+        "603": "P/C/L"
+      }
+    },
+    {
+      "key": "R06",
+      "text": "Because the exception found a loophole in the rule against exceptions.",
+      "pair": "EXPLAIN/GENERAL",
+      "status": "hold",
+      "reason": "At L1535 treats a health plateau as an exception without basis; recursive-rule motif adds little novelty.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "3": "P/C/L",
+        "54": "P/C/L",
+        "600": "P/C/L",
+        "1397": "P/C/L",
+        "1535": "P/A/L",
+        "1782": "P/C/L",
+        "2431": "P/C/L",
+        "2783": "P/C/L"
+      }
+    },
+    {
+      "key": "R07",
+      "text": "The similarities fit on a postcard. The differences have applied for their own postal code.",
+      "pair": "COMPARE/LANGUAGE",
+      "status": "hold",
+      "reason": "Form fits but repeats B1 small-versus-large distinction scale with substituted stationery.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "2991": "P/C/L",
+        "3015": "P/C/L",
+        "3017": "P/C/L",
+        "3033": "P/C/L",
+        "3063": "P/C/L",
+        "3073": "P/C/L",
+        "3138": "P/C/L",
+        "3092": "P/C/L"
+      }
+    },
+    {
+      "key": "R08",
+      "text": "Because grammar has diplomatic immunity from its own examples.",
+      "pair": "EXPLAIN/LANGUAGE",
+      "status": "hold",
+      "reason": "Grammar does not cover all pronunciation and spelling probes; at L3028 the assumed grammar jurisdiction is strained.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "3013": "S/A/L",
+        "3014": "S/A/L",
+        "3019": "P/C/L",
+        "3021": "P/C/L",
+        "3024": "S/A/L",
+        "3028": "S/A/L",
+        "3037": "P/C/L",
+        "3067": "P/C/L"
+      }
+    },
+    {
+      "key": "R09",
+      "text": "A pocket-sized second opinion. It disagrees before unfolding.",
+      "pair": "RECOMMEND/GENERAL",
+      "status": "hold",
+      "reason": "Wrong kind of recommendation for printer, food and shower-filter requests; abstraction is not a portable suitable item.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "3311": "F/A/L",
+        "3563": "F/A/L",
+        "3215": "F/A/L",
+        "3542": "F/A/L",
+        "3331": "F/A/L",
+        "3397": "F/A/L",
+        "3513": "F/A/L",
+        "3587": "F/A/L"
+      }
+    },
+    {
+      "key": "R10",
+      "text": "At the point where the map quietly changes the subject.",
+      "pair": "WHERE/GENERAL",
+      "status": "hold",
+      "reason": "Virtual source and factual filming-location requests strain a single map premise; current original probes lack sufficient health/financial breadth.",
+      "origin": "new",
+      "human_scores": null,
+      "matrix": {
+        "342": "S/A/L",
+        "2145": "S/A/L",
+        "2180": "P/C/L",
+        "2223": "P/C/L",
+        "2314": "P/C/L",
+        "2333": "P/C/L",
+        "3175": "S/A/L",
+        "3544": "S/A/L"
+      }
+    }
+  ],
+  "universal_coverage_annotations": {
+    "68": {
+      "intent": "YES_NO",
+      "topic": "FOOD"
+    },
+    "3294": {
+      "intent": "WHEN",
+      "topic": "HEALTH"
+    },
+    "1480": {
+      "intent": "DURATION",
+      "topic": "HEALTH"
+    },
+    "1535": {
+      "intent": "EXPLAIN",
+      "topic": "HEALTH"
+    },
+    "593": {
+      "intent": "METHOD",
+      "topic": "HOME"
+    },
+    "1859": {
+      "intent": "WHO",
+      "topic": "SPORTS"
+    },
+    "1258": {
+      "intent": "IDENTIFY",
+      "topic": "NATURE"
+    },
+    "607": {
+      "intent": "DESCRIBE",
+      "topic": "MONEY"
+    },
+    "2145": {
+      "intent": "WHERE",
+      "topic": "ENTERTAINMENT"
+    },
+    "3560": {
+      "intent": "QUANTITY",
+      "topic": "MONEY"
+    },
+    "1462": {
+      "intent": "CHOICE",
+      "topic": "HEALTH"
+    },
+    "3311": {
+      "intent": "RECOMMEND",
+      "topic": "TECH"
+    },
+    "1396": {
+      "intent": "COMPARE",
+      "topic": "HEALTH"
+    },
+    "3184": {
+      "intent": "OTHER",
+      "topic": "HEALTH"
+    },
+    "1446": {
+      "intent": "OTHER",
+      "topic": "HEALTH"
+    },
+    "3557": {
+      "intent": "OTHER",
+      "topic": "GENERAL"
+    },
+    "3593": {
+      "intent": "OTHER",
+      "topic": "GENERAL"
+    },
+    "3563": {
+      "intent": "RECOMMEND",
+      "topic": "TECH"
+    },
+    "2407": {
+      "intent": "METHOD",
+      "topic": "TECH"
+    },
+    "3191": {
+      "intent": "DESCRIBE",
+      "topic": "GENERAL"
+    },
+    "3281": {
+      "intent": "EXPLAIN",
+      "topic": "GENERAL"
+    },
+    "324": {
+      "intent": "YES_NO",
+      "topic": "TRAVEL"
+    },
+    "1075": {
+      "intent": "METHOD",
+      "topic": "RELATIONSHIPS"
+    },
+    "2783": {
+      "intent": "EXPLAIN",
+      "topic": "GENERAL"
+    },
+    "3487": {
+      "intent": "YES_NO",
+      "topic": "GENERAL"
+    },
+    "3471": {
+      "intent": "DURATION",
+      "topic": "HEALTH"
+    },
+    "54": {
+      "intent": "EXPLAIN",
+      "topic": "FOOD"
+    },
+    "618": {
+      "intent": "CHOICE",
+      "topic": "MONEY"
+    },
+    "3432": {
+      "intent": "WHO",
+      "topic": "GENERAL"
+    },
+    "2177": {
+      "intent": "METHOD",
+      "topic": "FOOD"
+    },
+    "915": {
+      "intent": "WHEN",
+      "topic": "WORK_STUDY"
+    },
+    "2991": {
+      "intent": "COMPARE",
+      "topic": "LANGUAGE"
+    }
+  },
+  "coverage_annotation_status": "Author annotations only. Discord alone is ambiguous between a service and an abstract subject; GENERAL is conservative. L3432 names an aid organization outside retained topics. These are not observed model labels."
+}

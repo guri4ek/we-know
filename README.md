@@ -8,9 +8,11 @@ Repository: https://github.com/guri4ek/we-know
 
 ## Current status
 
-As of 2026-10-11: Symfony 7.4/Twig, typed Jev classification/evaluation, and the complete scoped backend are implemented. Doctrine DBAL + Migrations (no ORM) persist the catalog and immutable verdicts. Atomic CLI import, first-pool uniform selection, `POST /answer`, and `GET`/`HEAD /a/{publicId}` are offline tested. Home remains a static placeholder; the later frontend must use a **dark theme**. Historical live evidence remains in [stage-1 results](docs/evaluation/stage-1-results.md).
+As of 2026-10-13: Symfony 7.4/Twig, typed Jev classification/evaluation, and the complete scoped backend are implemented. Doctrine DBAL + Migrations (no ORM) persist the catalog and immutable verdicts. Atomic CLI import, first-pool uniform selection, `POST /answer`, and `GET`/`HEAD /a/{publicId}` are offline tested. Home remains a static placeholder; the later frontend must use a **dark theme**. Historical live evidence remains in [stage-1 results](docs/evaluation/stage-1-results.md).
 
-The local database is `/Users/serhii/OwnProjects/we-know/var/we-know.sqlite`, outside `public/` and ignored. It currently contains **synthetic development content**, not an approved production answer library. PostgreSQL remains the definite production engine; no local PostgreSQL acceptance run was available. See [backend setup and contract](docs/backend.md).
+Active [taxonomy/rubric v2](docs/content/taxonomy-v2.md): 14 intents / 13 topics. The [offline seed](docs/content/seed-v2/README.md) contains 24 preliminary answers / 24 eligibilities in a new isolated SQLite database. [Editorial matrices](docs/content/seed-v2/editorial.md) and [database evidence](docs/content/seed-v2/database-verification.json) distinguish author screening from human approval. The [100-question live trial](docs/evaluation/corpus-v2/README.md) is frozen and prepared, **not run**.
+
+The local database is `/Users/serhii/OwnProjects/we-know/var/we-know.sqlite`, outside `public/` and ignored. It contains preserved **synthetic development content** and an older development schema; it was not changed or reset. The v2 demonstration file is `var/answer-seed-v2-20261012.sqlite`; see its explicit-target setup before running current backend flows. PostgreSQL remains the definite production engine; no local PostgreSQL acceptance run was available. See [backend setup and contract](docs/backend.md).
 Start with the root [AGENTS.md](AGENTS.md), [documentation map](docs/README.md), [source-session context](docs/context.md), [technical plan](docs/technical-plan.md), and [C4 model](docs/architecture/c4.md).
 
 Before creating or editing answers, read the [offline authoring guide](docs/content/answer-generation-guide.md). Its examples are editorial drafts, not a ready seed; the [humor research](docs/research/humor-mechanisms.md) separates primary sources from practical hypotheses.
@@ -25,11 +27,9 @@ Development and minimum runtime are **PHP 8.4**; Composer now requires `>=8.4` a
 rtk proxy composer install --prefer-dist --no-plugins --no-scripts
 rtk proxy php bin/console about
 rtk proxy php vendor/bin/phpunit
-rtk proxy php bin/console migrations:migrate --no-interaction
-# Explicit synthetic fixture; do not use this flag in production.
-rtk proxy php bin/console app:catalog:import --development-fixture
-rtk proxy php tests/Fixtures/Catalog/smoke.php
-rtk proxy php bin/console app:jev:evaluate
+# New target only; refuses an existing file:
+rtk proxy php tools/verify-seed-v2.php /Users/serhii/OwnProjects/we-know/var/answer-seed-v2-recheck.sqlite
+rtk proxy env APP_ENV=test APP_DEBUG=0 JEV_API_KEY= php bin/console app:jev:evaluate
 rtk proxy php -S 127.0.0.1:8000 -t public public/index.php
 ```
 

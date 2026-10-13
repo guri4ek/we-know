@@ -39,9 +39,9 @@ Physical tables are lowercase `answer`, `answer_eligibility`, and `verdict`; Doc
 
 ## Why pairs are stored
 
-Independent intent and topic sets would create an unwanted Cartesian product. An answer allowed for `(WHY, WORK)` and `(WHEN, TECH)` must not automatically be eligible for `(WHY, TECH)`. Each eligibility row is explicit editorial approval. Classification categories are controlled string-backed enums with taxonomy versions; a separate CRUD dictionary is unnecessary before administration.
+Independent intent and topic sets would create an unwanted Cartesian product. An answer allowed for `(EXPLAIN, WORK_STUDY)` and `(WHEN, TECH)` must not automatically be eligible for `(EXPLAIN, TECH)`. Each eligibility row is an explicit author-assigned pair; enabled seed records do not imply human approval. Classification categories are controlled string-backed enums with taxonomy versions; a separate CRUD dictionary is unnecessary before administration.
 
-`ANY` means universal answer form; `OTHER` means a successfully classified question of unknown form. They differ. `GENERAL` is the general topic. Do not use comma-separated categories or JSON as the primary selection index.
+`ANY` means universal answer form; `OTHER` means a successful classification with no recoverable requested outcome. They differ. `GENERAL` is the general topic. Do not use comma-separated categories or JSON as the primary selection index.
 
 `humor_mechanism` is populated during catalog preparation/generation. It describes phrase eligibility for a particular pair, not a question category returned by Jev. The selector ignores it: no pool filtering or weighting. It is retained for possible statistics; likes, votes, or owner evaluation remain possibilities, with no corresponding tables/routes/implementation.
 
@@ -110,6 +110,10 @@ Once shared/persistent data needs preservation, including production, applied mi
 
 ## Editorial import
 
-Implemented: versioned content file and atomic CLI import, no web admin. Exact full-catalog replacement semantics and fixture boundaries are in the [backend guide](../backend.md#catalog-format-v1). Validate UUIDs and stable answer/eligibility IDs, `created_at` (reimport does not rewrite creation time), nonempty text, locale `en`, allowed intent/topic and `humor_mechanism`, no duplicate triples, and at least one active `(ANY, GENERAL)` answer. One invalid entry must not leave a partially updated catalog.
+Implemented: versioned content file and atomic CLI import, no web admin. Exact full-catalog replacement semantics and fixture boundaries are in the [backend guide](../backend.md#catalog-format-v2). Validate UUIDs and stable answer/eligibility IDs, `created_at` (reimport does not rewrite creation time), nonempty text, locale `en`, allowed intent/topic and `humor_mechanism`, no duplicate triples, and at least one active `(ANY, GENERAL)` answer. One invalid entry must not leave a partially updated catalog.
 
 The MVP should cover each supported intent with several different GENERAL answers. Quantity, editorial quality, and repetition are content-stage criteria, not a claim that a library exists.
+
+## Active v2 development schema
+
+The initial unreleased migration now constrains 14 classifier intents plus editorial ANY, and 13 topics, from [taxonomy v2](../content/taxonomy-v2.md). Catalog format 2 binds those semantics; it adds no row fields or tables. The existing development file was preserved; only fresh isolated SQLite databases were migrated for this task. Historical verdict snapshots remain unchanged. [Seed verification](../content/seed-v2/database-verification.json) is SQLite evidence only.

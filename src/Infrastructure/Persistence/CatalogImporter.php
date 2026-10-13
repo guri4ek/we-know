@@ -22,7 +22,7 @@ final class CatalogImporter
             throw new \InvalidArgumentException('Invalid catalog JSON.');
         }
         $this->keys($data, ['version', 'answers']);
-        $this->require($data['version'] === 1 && is_array($data['answers']) && array_is_list($data['answers']), 'Unsupported catalog format.');
+        $this->require($data['version'] === 2 && is_array($data['answers']) && array_is_list($data['answers']), 'Unsupported catalog format.');
         $answers = $eligibilities = $triples = [];
         $universal = false;
         foreach ($data['answers'] as $answer) {

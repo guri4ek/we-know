@@ -1,40 +1,43 @@
 # We Know offline answer authoring guide
 
-Date: 2026-10-11. Status: **proposed editorial guide** for a future Codex session and human editor. Examples are draft content, not a production-ready seed. Mechanism codes, editorial rubric, thresholds, and answer eligibility remain proposals. Classification taxonomy was proposed at research time and is now the frozen [stage-1 taxonomy v1](taxonomy-v1.md); this audit reconciles status without regenerating examples. Scientific basis/evidence limits: [mechanism research](../research/humor-mechanisms.md).
+Updated 2026-10-13. Active editorial workflow for [taxonomy v2](taxonomy-v2.md); human approval and humor remain unverified. Historical examples below retain their original labels/text and are not importable current eligibility. The [seed-v2 assessment](seed-v2/editorial.md) contains the current preliminary library. Scientific basis and evidence limits: [mechanism research](../research/humor-mechanisms.md).
 
 ## Task contract
 
 Instant Answer is an English satirical site with slogan **We don't think. We know.** It answers briefly, categorically, and seriously. Humor comes from unnecessary system certainty, bureaucracy, or an understandable logical shift. The system does not explain the punchline.
 
-As author, **create completed English library phrases offline, evaluate their fit, and hand them to a human editor**. This is not an LLM live answer. In the target flow Jev determines only intent/topic; PHP selects uniformly from the first nonempty eligible pool. Jev does not classify mechanisms, and mechanisms affect no filtering, ranking, weights, or random selection. At research start only a skeleton existed; stage-1 classification now exists, while selector/catalog/persistence remain future work. This guide describes editorial expectations, not completed business implementation.
+As author, **create completed English library phrases offline, evaluate their fit, and hand them to a human editor**. This is not an LLM live answer. In the target flow Jev determines only intent/topic; PHP selects uniformly from the first nonempty eligible pool. Jev does not classify mechanisms, and mechanisms affect no filtering, ranking, weights, or random selection. Classification, selector, catalog and immutable persistence are implemented. Editorial screening remains distinct from business-logic verification.
 
-Target pools from the [technical plan](../technical-plan.md): `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`, without merging tiers or searching the same GENERAL pool twice. The future selector checks enabled/locale and deduplicates answer IDs. Classification failure → directly `(ANY, GENERAL)`; successful `OTHER` follows normal tiers. Evaluate future content against this contract.
+Target pools from the [technical plan](../technical-plan.md): `(intent, topic)` → `(intent, GENERAL)` → `(ANY, GENERAL)`, without merging tiers or searching the same GENERAL pool twice. The selector checks enabled/locale and deduplicates answer IDs. Classification failure → directly `(ANY, GENERAL)`; successful `OTHER` follows normal tiers. Evaluate future content against this contract.
 
 Write only documents or explicitly requested draft content. Authoring itself does not authorize database import, migrations/reset, runtime templates, paid model calls, new tables/routes, commit/push, or personal skills/configuration changes. Claude material is read-only. Read applicable repository instructions before work; before catalog changes consult [context](../context.md), [data](../architecture/data.md), [decisions](../architecture/decisions.md).
 
-## Taxonomy: frozen classification baseline, proposed editorial fit
+## Active taxonomy and expected forms
 
-Do not invent labels in answers/draft JSON. If taxonomy prevents reliable eligibility, record the evidence gap. The table describes expected phrase forms, not a second classifier rubric; classification ambiguity rules come from [v1](taxonomy-v1.md).
+Use [taxonomy v2](taxonomy-v2.md) definitions and boundaries. Do not infer new eligibility by renaming historical labels. These phrase-form expectations support authoring; they are not a local semantic classifier.
 
-| Intent | Expected phrase form | Typical trap |
+| Intent | Expected completed phrase form | Typical trap |
 | --- | --- | --- |
-| `YES_NO` | Confident confirmation/denial with one shift | Confirmation read as dangerous real advice |
-| `WHEN` | Time, moment, duration, or condition of occurrence | Amount without time form; dependence on today's date |
-| `WHY` | A reason or apparent reason | Rephrased question without a new connection |
-| `HOW` | Method, procedure, sequence | A result rather than a method |
-| `WHO` | Person, role, agent, fictional responsible institution | Object without a legible agent role |
-| `WHAT` | Name, definition, nominal answer | Narrow definition failing other WHAT meanings |
-| `HOW_MANY` | Amount/measure with a controlled unit or no unit | “Three dollars” for people, time, or repetitions |
-| `CHOICE` | Selection or a legible satirical selection criterion | “Second” without a second option; fabricated specific option |
-| `OTHER` | Self-contained verdict without assuming question form | Secretly treating all OTHER as WHY/YES_NO |
+| YES_NO | Confirmation or denial | Real medical, safety or financial advice |
+| WHEN | Moment, stage or event condition | Interval mistaken for date; a real dosing schedule |
+| DURATION | Temporal interval | Extended waiting implied in urgent cases |
+| EXPLAIN | Reason or comic operating principle | Procedure instead of explanation; invented diagnosis |
+| METHOD | Method or procedure | Explanation instead of steps; dangerous actual actions |
+| WHO | Person, role or agent | Fabricated real identity or personal relationship |
+| IDENTIFY | Name or recognition | Definition of a known term instead of identification |
+| DESCRIBE | Meaning, properties, state or consequences | Definition-only text fails reaction/consequence requests |
+| WHERE | Physical/virtual location or specified source | Recommending an unsupplied resource instead |
+| QUANTITY | Count, amount, magnitude, frequency or probability | Incompatible units, realistic dosage/financial quantity |
+| CHOICE | Selection or legible satirical criterion | Literal winner selects a harmful action |
+| RECOMMEND | Suitable unsupplied item, role or resource | Generic abstraction fails item-specific requests |
+| COMPARE | Differences, similarities or trade-offs | Implied equivalence, binary framing for three referents |
+| OTHER | Considerate clarification of missing requested outcome | Mocking imperatives, punctuation or incomplete distress |
 
-Topics: `TECH`, `WORK`, `MONEY`, `LOVE`, `HEALTH`, `LIFE`, `GENERAL`. `ANY` is only an editorial intent for universal answers, never Jev's label; the target fallback pair is `(ANY, GENERAL)`. Do not invent `(ANY, TECH)` or topic `ANY`.
-
-Stage-1 rules now assign duration to `WHEN`, explicit alternatives to `CHOICE`, and multiple independent questions to the first recoverable question for both dimensions. Their classification quality and completed-answer portability remain unverified beyond recorded development evidence. Smoke-corpus assignments below were manually chosen for editorial probes before v1; they are not Jev predictions or independent gold labels. `GENERAL` includes thematic fallback, not philosophical questions only.
+Topics: TECH, WORK_STUDY, MONEY, RELATIONSHIPS, HEALTH, FOOD, HOME, NATURE, TRAVEL, SPORTS, ENTERTAINMENT, LANGUAGE, GENERAL. ANY exists only as editorial intent in ANY/GENERAL. Neither uncertainty nor a missing referent automatically means OTHER/GENERAL. GENERAL eligibility receives specialized fallback, not merely abstract questions.
 
 ## Workflow for each small batch
 
-1. **Define the pool.** Record an explicit intent/topic pair, expected form, and at least three different questions. Vary subject/situation rather than word order. Add a question likely to break the candidate. Do not start with one clever reply and assign arbitrary labels afterward.
+1. **Define the pool.** Record an explicit intent/topic pair, expected form, and at least eight unchanged original corpus questions with exact line references. Vary subject/situation rather than word order. Add a question likely to break the candidate. Do not start with one clever reply and assign arbitrary labels afterward.
 2. **Choose a primary mechanism.** Write ordinary expectation and one shift in an editorial note. Target the system, process, or apparent objectivity; a question does not authorize insulting its author. Mechanism choice here is manual/offline.
 3. **Write a complete phrase.** Use controlled slots below, filling them before handoff. Aim for 6–24 English words, one or two short sentences: an editorial budget, not a DB/API limit. One turn, ordinary grammar, deadpan. No emoji, “haha,” joke explanation, introductory “As an AI,” Markdown, or HTML in the answer.
 4. **Check form and fit.** Read every question with unchanged answer text. Do not substitute question names, gender, verbs, numbers, pronouns. Topic alone does not establish a partner, job, or device. Do not use real links, regulator brands, news, or unverified factual claims as authority.
@@ -45,7 +48,9 @@ Stage-1 rules now assign duration to `WHEN`, explicit alternatives to `CHOICE`, 
 
 A note “do not show for questions about X” **does not execute**: the target selector has no such filter. If X belongs to the same intent/topic pair, repair text or remove eligibility; if no pairs remain, reject/hold the candidate. Do not invent hidden tags, confidence thresholds, or mechanism filters to rescue drafts.
 
-## Mechanism cards and controlled slots
+## Historical mechanism cards and controlled slots
+
+The following examples preserve original research labels and text. Apply the mechanisms to current v2 pairs only after new whole-pool screening; these examples are not active eligibility.
 
 These are editorial recipes, not mathematical formulas or runtime template syntax. Brace values exist only during writing. Examples were authored for this guide and have not been human-evaluated.
 
@@ -120,7 +125,7 @@ Use sparingly: Office→Council is not a new candidate. `oxymoron`/`paradox` rem
 
 **Hard gates:** allowed labels/explicit pairs; complete English phrase without slots; form fits intent; no exact-question dependence; no duplicate answer/intent/topic triple; no real dangerous-action, treatment, or financial prescription disguised as a joke. If a question makes text threatening, humiliating, or factually misleading, repair/remove eligibility. These are content checks, not implemented runtime safety filters.
 
-For `HEALTH` and serious `MONEY`, `LOVE`, `LIFE` questions, do not infer a dose, diagnosis, forecast, verdict, or advice from random text. Keep an abstract system as the target. GENERAL/ANY can also receive these questions. If YES_NO/HOW_MANY creates undesirable specific advice through its form, record a content/policy limit; a satirical About does not make all phrases appropriate.
+For `HEALTH`, serious `MONEY`, `RELATIONSHIPS` and other sensitive questions, do not infer a dose, diagnosis, forecast, verdict, or advice from random text. Keep an abstract system as the target. GENERAL/ANY can also receive these questions. If YES_NO/QUANTITY creates undesirable specific advice through its form, record a content/policy limit; a satirical About does not make all phrases appropriate.
 
 Proposed manual 0–2 scale, not a validated psychological instrument:
 
@@ -183,7 +188,7 @@ These probes create no executable exclusions. A draft fitting the positive matri
 
 Valid JSON **editorial draft package**, not DB schema, API request, import contract, or seed. `draft_key`, `review`, `fit_questions`, `probe_questions` are review-package fields only; no columns/filters/routes are added. One answer, two explicit eligibilities, one primary mechanism each. Probes are not runtime exclusions. `hold` is intentional: no human evaluation or complete pool testing.
 
-The historical example retains `taxonomy_status: proposal` because it predates stage-1 v1; it describes that draft's provenance, not the current classifier taxonomy. Current authoring should reference [taxonomy v1](taxonomy-v1.md). The recorded example itself is preserved.
+The historical example retains `taxonomy_status: proposal` because it predates stage-1 v1; it describes that draft's provenance, not the current classifier taxonomy. Current authoring must reference [taxonomy v2](taxonomy-v2.md). The recorded example itself is preserved.
 
 ```json
 {
@@ -238,7 +243,7 @@ Replace bracketed placeholders before use. This is a future offline-authoring ta
 
 ```text
 Read docs/content/answer-generation-guide.md in full and check current
-context.md, architecture/data.md, architecture/decisions.md, and taxonomy-v1.md.
+context.md, architecture/data.md, architecture/decisions.md, and taxonomy-v2.md.
 Work offline as an author for the We Know / Instant Answer library.
 Write completed phrases in English: brief, final, deadpan.
 
@@ -247,7 +252,8 @@ Desired number of strong draft candidates: [number].
 Existing content for deduplication: [file or explicitly "none yet"].
 Output local draft document: [agreed path].
 
-First record at least three diverse questions and a negative probe per pool.
+First record at least eight unchanged original corpus questions per pool,
+with exact line/source references, including challenging same-pool cases.
 Choose one primary mechanism, write completed text without slots, check every
 candidate against every question, and reject weak variants.
 For GENERAL include thematic fallback; for ANY include every intent.

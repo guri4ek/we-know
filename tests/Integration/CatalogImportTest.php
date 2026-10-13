@@ -14,7 +14,7 @@ final class CatalogImportTest extends TestCase
 {
     public static function fixture(): array
     {
-        return json_decode(file_get_contents(__DIR__.'/../Fixtures/Catalog/development-v1.json'), true, 512, JSON_THROW_ON_ERROR);
+        return json_decode(file_get_contents(__DIR__.'/../Fixtures/Catalog/development-v2.json'), true, 512, JSON_THROW_ON_ERROR);
     }
 
     public function testImportIsIdempotentAndPairsAreExplicit(): void
@@ -29,10 +29,10 @@ final class CatalogImportTest extends TestCase
         self::assertSame(6, (int) $db->fetchOne('SELECT COUNT(*) FROM answer_eligibility'));
         self::assertSame('2026-10-11T00:00:00Z', $db->fetchOne('SELECT created_at FROM answer LIMIT 1'));
         $catalog = new CatalogRepository($db);
-        self::assertCount(0, $catalog->pool('WHY', 'TECH'));
-        self::assertCount(1, $catalog->pool('WHY', 'WORK'));
+        self::assertCount(0, $catalog->pool('EXPLAIN', 'TECH'));
+        self::assertCount(1, $catalog->pool('EXPLAIN', 'WORK_STUDY'));
         self::assertCount(2, $catalog->pool('WHEN', 'TECH'));
-        self::assertSame($data['answers'][0]['text'], $catalog->pool('WHY', 'WORK')[0]->answer->text);
+        self::assertSame($data['answers'][0]['text'], $catalog->pool('EXPLAIN', 'WORK_STUDY')[0]->answer->text);
         $db->update('answer', ['enabled' => false], ['id' => $data['answers'][0]['id']], ['enabled' => \Doctrine\DBAL\Types\Types::BOOLEAN]);
         $db->update('answer', ['locale' => 'uk'], ['id' => $data['answers'][1]['id']]);
         self::assertSame([], $catalog->pool('WHEN', 'TECH'));
@@ -48,7 +48,7 @@ final class CatalogImportTest extends TestCase
         $data = $original;
         $data['answers'][0]['text'] = 'Must not persist';
         switch ($case) {
-            case 'version': $data['version'] = 2; break;
+            case 'version': $data['version'] = 1; break;
             case 'uuid': $data['answers'][1]['id'] = 'invalid'; break;
             case 'time': $data['answers'][1]['created_at'] = '2026-02-30T00:00:00Z'; break;
             case 'offset': $data['answers'][1]['created_at'] = '2026-10-11T01:00:00+01:00'; break;

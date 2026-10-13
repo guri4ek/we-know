@@ -1,0 +1,1012 @@
+{
+  "version": "2.0.0",
+  "taxonomy_version": "2.0.0",
+  "rubric_version": "2.0.0",
+  "split": "development",
+  "language": "en",
+  "label_status": "author_labels_not_independently_reviewed",
+  "frozen_at_utc": "2026-10-13T06:54:51Z",
+  "source_questions_sha256": "6b6e07fd9d9d1d75f06a9c907f81efc987ecb598e6fe36fd6d1011a184f20e99",
+  "samples": [
+    {
+      "id": "v2-L0001",
+      "question": "How can I chop onions without crying?",
+      "intent": "METHOD",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 1,
+      "source_url": "https://cooking.stackexchange.com/questions/567/how-can-i-chop-onions-without-crying",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0003",
+      "question": "Why add salt to the water when cooking pasta?",
+      "intent": "EXPLAIN",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 3,
+      "source_url": "https://cooking.stackexchange.com/questions/2574/why-add-salt-to-the-water-when-cooking-pasta",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0028",
+      "question": "What is the difference between white and brown eggs?",
+      "intent": "COMPARE",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 28,
+      "source_url": "https://cooking.stackexchange.com/questions/3/what-is-the-difference-between-white-and-brown-eggs",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0033",
+      "question": "How long can I store a food in the pantry, refrigerator, or freezer?",
+      "intent": "DURATION",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 33,
+      "source_url": "https://cooking.stackexchange.com/questions/21068/how-long-can-i-store-a-food-in-the-pantry-refrigerator-or-freezer",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0068",
+      "question": "Should I refrigerate eggs?",
+      "intent": "YES_NO",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 68,
+      "source_url": "https://cooking.stackexchange.com/questions/1672/should-i-refrigerate-eggs",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0150",
+      "question": "What is celery salt?",
+      "intent": "DESCRIBE",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 150,
+      "source_url": "https://cooking.stackexchange.com/questions/137071/what-is-celery-salt",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0324",
+      "question": "Will I be able to enter Latvia without a visa?",
+      "intent": "YES_NO",
+      "topic": "TRAVEL",
+      "group": "ordinary",
+      "source_line": 324,
+      "source_url": "https://travel.stackexchange.com/questions/204570/will-i-be-able-to-enter-latvia-without-a-visa",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0365",
+      "question": "Should I bring Speedos or Swimming Shorts to Egypt?",
+      "intent": "CHOICE",
+      "topic": "TRAVEL",
+      "group": "ordinary",
+      "source_line": 365,
+      "source_url": "https://travel.stackexchange.com/questions/204171/should-i-bring-speedos-or-swimming-shorts-to-egypt",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0489",
+      "question": "How do I fix a \"water hammer\" problem?",
+      "intent": "METHOD",
+      "topic": "HOME",
+      "group": "ordinary",
+      "source_line": 489,
+      "source_url": "https://diy.stackexchange.com/questions/1749/how-do-i-fix-a-water-hammer-problem",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0535",
+      "question": "How many clamps is needed for a frameless shower glass?",
+      "intent": "QUANTITY",
+      "topic": "HOME",
+      "group": "ordinary",
+      "source_line": 535,
+      "source_url": "https://diy.stackexchange.com/questions/332269/how-many-clamps-is-needed-for-a-frameless-shower-glass",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0607",
+      "question": "What happens to people without any retirement savings?",
+      "intent": "DESCRIBE",
+      "topic": "MONEY",
+      "group": "ordinary",
+      "source_line": 607,
+      "source_url": "https://money.stackexchange.com/questions/79065/what-happens-to-people-without-any-retirement-savings",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0618",
+      "question": "Should I buy my house in cash, or with a mortgage and invest the rest of my money?",
+      "intent": "CHOICE",
+      "topic": "MONEY",
+      "group": "ordinary",
+      "source_line": 618,
+      "source_url": "https://money.stackexchange.com/questions/89245/should-i-buy-my-house-in-cash-or-with-a-mortgage-and-invest-the-rest-of-my-mone",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0685",
+      "question": "Pay online: credit card or debit card?",
+      "intent": "CHOICE",
+      "topic": "MONEY",
+      "group": "ordinary",
+      "source_line": 685,
+      "source_url": "https://money.stackexchange.com/questions/9154/pay-online-credit-card-or-debit-card",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0709",
+      "question": "How do I budget effectively when income arrives at irregular intervals rather than a fixed monthly salary?",
+      "intent": "METHOD",
+      "topic": "MONEY",
+      "group": "ordinary",
+      "source_line": 709,
+      "source_url": "https://money.stackexchange.com/questions/169983/how-do-i-budget-effectively-when-income-arrives-at-irregular-intervals-rather-th",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0803",
+      "question": "How to convince HR to let my star employee work from home?",
+      "intent": "METHOD",
+      "topic": "WORK_STUDY",
+      "group": "ordinary",
+      "source_line": 803,
+      "source_url": "https://workplace.stackexchange.com/questions/128981/how-to-convince-hr-to-let-my-star-employee-work-from-home",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0915",
+      "question": "When should I disclose an upcoming vacation that overlaps with the start date of an internal job position?",
+      "intent": "WHEN",
+      "topic": "WORK_STUDY",
+      "group": "ordinary",
+      "source_line": 915,
+      "source_url": "https://workplace.stackexchange.com/questions/203641/when-should-i-disclose-an-upcoming-vacation-that-overlaps-with-the-start-date-of",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1075",
+      "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+      "intent": "METHOD",
+      "topic": "RELATIONSHIPS",
+      "group": "ordinary",
+      "source_line": 1075,
+      "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1201",
+      "question": "When should I pile more dirt onto a growing potato plant?",
+      "intent": "WHEN",
+      "topic": "NATURE",
+      "group": "ordinary",
+      "source_line": 1201,
+      "source_url": "https://gardening.stackexchange.com/questions/286/when-should-i-pile-more-dirt-onto-a-growing-potato-plant",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1231",
+      "question": "How long does it take for the compost to ripen?",
+      "intent": "DURATION",
+      "topic": "NATURE",
+      "group": "ordinary",
+      "source_line": 1231,
+      "source_url": "https://gardening.stackexchange.com/questions/3176/how-long-does-it-take-for-the-compost-to-ripen",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1258",
+      "question": "What is this fast growing plant with blue/black berries?",
+      "intent": "IDENTIFY",
+      "topic": "NATURE",
+      "group": "ordinary",
+      "source_line": 1258,
+      "source_url": "https://gardening.stackexchange.com/questions/2609/what-is-this-fast-growing-plant-with-blue-black-berries",
+      "ambiguity_note": "Missing image does not erase identification form."
+    },
+    {
+      "id": "v2-L1293",
+      "question": "When do crabgrass seeds mature?",
+      "intent": "WHEN",
+      "topic": "NATURE",
+      "group": "ordinary",
+      "source_line": 1293,
+      "source_url": "https://gardening.stackexchange.com/questions/70959/when-do-crabgrass-seeds-mature",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1396",
+      "question": "What are the trade-offs of weight versus repetition?",
+      "intent": "COMPARE",
+      "topic": "HEALTH",
+      "group": "ordinary",
+      "source_line": 1396,
+      "source_url": "https://fitness.stackexchange.com/questions/8238/what-are-the-trade-offs-of-weight-versus-repetition",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1406",
+      "question": "How can I make myself get enough sleep?",
+      "intent": "METHOD",
+      "topic": "HEALTH",
+      "group": "ordinary",
+      "source_line": 1406,
+      "source_url": "https://fitness.stackexchange.com/questions/3351/how-can-i-make-myself-get-enough-sleep",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1456",
+      "question": "When is the best time of day to accurately weigh yourself?",
+      "intent": "WHEN",
+      "topic": "HEALTH",
+      "group": "ordinary",
+      "source_line": 1456,
+      "source_url": "https://fitness.stackexchange.com/questions/3618/when-is-the-best-time-of-day-to-accurately-weigh-yourself",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1535",
+      "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+      "intent": "EXPLAIN",
+      "topic": "HEALTH",
+      "group": "ordinary",
+      "source_line": 1535,
+      "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1702",
+      "question": "How do I choose the right tent for different weather conditions?",
+      "intent": "METHOD",
+      "topic": "TRAVEL",
+      "group": "ordinary",
+      "source_line": 1702,
+      "source_url": "https://outdoors.stackexchange.com/questions/30441/how-do-i-choose-the-right-tent-for-different-weather-conditions",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1782",
+      "question": "Points are given in tennis 15-30-40. Why 40?",
+      "intent": "EXPLAIN",
+      "topic": "SPORTS",
+      "group": "ordinary",
+      "source_line": 1782,
+      "source_url": "https://sports.stackexchange.com/questions/203/points-are-given-in-tennis-15-30-40-why-40",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1859",
+      "question": "Who keeps the record of each international cricket match?",
+      "intent": "WHO",
+      "topic": "SPORTS",
+      "group": "ordinary",
+      "source_line": 1859,
+      "source_url": "https://sports.stackexchange.com/questions/463/who-keeps-the-record-of-each-international-cricket-match",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1871",
+      "question": "How do you correctly learn how to hockey stop",
+      "intent": "METHOD",
+      "topic": "SPORTS",
+      "group": "ordinary",
+      "source_line": 1871,
+      "source_url": "https://sports.stackexchange.com/questions/27/how-do-you-correctly-learn-how-to-hockey-stop",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1922",
+      "question": "When exactly does the game clock start during an American football kickoff?",
+      "intent": "WHEN",
+      "topic": "SPORTS",
+      "group": "ordinary",
+      "source_line": 1922,
+      "source_url": "https://sports.stackexchange.com/questions/30199/when-exactly-does-the-game-clock-start-during-an-american-football-kickoff",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L1926",
+      "question": "Who is this guy at the back of the grid with a green flag?",
+      "intent": "WHO",
+      "topic": "SPORTS",
+      "group": "ordinary",
+      "source_line": 1926,
+      "source_url": "https://sports.stackexchange.com/questions/30192/who-is-this-guy-at-the-back-of-the-grid-with-a-green-flag",
+      "ambiguity_note": "Missing image does not erase person-identification form WHO."
+    },
+    {
+      "id": "v2-L1984",
+      "question": "Why isn't Bruce Willis's character in the Sixth Sense self-aware?",
+      "intent": "EXPLAIN",
+      "topic": "ENTERTAINMENT",
+      "group": "ordinary",
+      "source_line": 1984,
+      "source_url": "https://movies.stackexchange.com/questions/130/why-isnt-bruce-williss-character-in-the-sixth-sense-self-aware",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2145",
+      "question": "Where was the Mummers Parade scene in It's Always Sunny in Philadelphia filmed?",
+      "intent": "WHERE",
+      "topic": "ENTERTAINMENT",
+      "group": "ordinary",
+      "source_line": 2145,
+      "source_url": "https://movies.stackexchange.com/questions/132264/where-was-the-mummers-parade-scene-in-its-always-sunny-in-philadelphia-filmed",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2314",
+      "question": "Where is the anvil in the Shattered Keep Cellars?",
+      "intent": "WHERE",
+      "topic": "ENTERTAINMENT",
+      "group": "ordinary",
+      "source_line": 2314,
+      "source_url": "https://gaming.stackexchange.com/questions/419572/where-is-the-anvil-in-the-shattered-keep-cellars",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2376",
+      "question": "How do I make a POST request using curl?",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "ordinary",
+      "source_line": 2376,
+      "source_url": "https://superuser.com/questions/149329/how-do-i-make-a-post-request-using-curl",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2377",
+      "question": "Why does Windows think that my wireless keyboard is a toaster?",
+      "intent": "EXPLAIN",
+      "topic": "TECH",
+      "group": "ordinary",
+      "source_line": 2377,
+      "source_url": "https://superuser.com/questions/792607/why-does-windows-think-that-my-wireless-keyboard-is-a-toaster",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2395",
+      "question": "Why does this PNG image display differently in Chrome & Firefox than in Safari and IE?",
+      "intent": "EXPLAIN",
+      "topic": "TECH",
+      "group": "ordinary",
+      "source_line": 2395,
+      "source_url": "https://superuser.com/questions/579216/why-does-this-png-image-display-differently-in-chrome-firefox-than-in-safari-a",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2431",
+      "question": "How does a computer restart itself?",
+      "intent": "EXPLAIN",
+      "topic": "TECH",
+      "group": "ordinary",
+      "source_line": 2431,
+      "source_url": "https://superuser.com/questions/294681/how-does-a-computer-restart-itself",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2460",
+      "question": "Why don't websites immediately display their text these days?",
+      "intent": "EXPLAIN",
+      "topic": "TECH",
+      "group": "ordinary",
+      "source_line": 2460,
+      "source_url": "https://superuser.com/questions/547743/why-dont-websites-immediately-display-their-text-these-days",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2979",
+      "question": "How many spaces should come after a period/full stop?",
+      "intent": "QUANTITY",
+      "topic": "LANGUAGE",
+      "group": "ordinary",
+      "source_line": 2979,
+      "source_url": "https://english.stackexchange.com/questions/2544/how-many-spaces-should-come-after-a-period-full-stop",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2991",
+      "question": "What's the difference between \"requester\" and \"requestor\"?",
+      "intent": "COMPARE",
+      "topic": "LANGUAGE",
+      "group": "ordinary",
+      "source_line": 2991,
+      "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3060",
+      "question": "What does \"something 101\" mean?",
+      "intent": "DESCRIBE",
+      "topic": "LANGUAGE",
+      "group": "ordinary",
+      "source_line": 3060,
+      "source_url": "https://english.stackexchange.com/questions/14265/what-does-something-101-mean",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3198",
+      "question": "How long does my hair need to be to keep it off my face, and neck?",
+      "intent": "QUANTITY",
+      "topic": "GENERAL",
+      "group": "ordinary",
+      "source_line": 3198,
+      "source_url": "https://www.fluther.com/241936/how-long-does-my-hair-need-to-be-to-keep-it/",
+      "ambiguity_note": "Physical hair length, not elapsed time; nonclinical grooming stays GENERAL."
+    },
+    {
+      "id": "v2-L3294",
+      "question": "At what times of the day should you take pills?",
+      "intent": "WHEN",
+      "topic": "HEALTH",
+      "group": "ordinary",
+      "source_line": 3294,
+      "source_url": "https://www.fluther.com/241478/at-what-times-of-the-day-should-you-take-pills/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3308",
+      "question": "How long does an opened bottle of red wine stay good?",
+      "intent": "DURATION",
+      "topic": "FOOD",
+      "group": "ordinary",
+      "source_line": 3308,
+      "source_url": "https://www.fluther.com/241432/how-long-does-an-opened-bottle-of-red-wine-stay-good/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3380",
+      "question": "What's the name of this font in the following screenshot?",
+      "intent": "IDENTIFY",
+      "topic": "LANGUAGE",
+      "group": "ordinary",
+      "source_line": 3380,
+      "source_url": "https://www.fluther.com/241147/whats-the-name-of-this-font-in-the-following-screenshot/",
+      "ambiguity_note": "Font naming is provisionally LANGUAGE; TECH is plausible. Screenshot is absent."
+    },
+    {
+      "id": "v2-L3412",
+      "question": "What are the names of the flying bugs in my apartment? ( Details inside)",
+      "intent": "IDENTIFY",
+      "topic": "NATURE",
+      "group": "ordinary",
+      "source_line": 3412,
+      "source_url": "https://www.fluther.com/240985/what-are-the-names-of-the-flying-bugs-in-my-apartment/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3544",
+      "question": "Where can I get a real NASA onesie?",
+      "intent": "WHERE",
+      "topic": "GENERAL",
+      "group": "ordinary",
+      "source_line": 3544,
+      "source_url": "https://ask.metafilter.com/390926/Where-can-I-get-a-real-NASA-onesie",
+      "ambiguity_note": "Finding a specified product is WHERE; shopping alone does not establish MONEY. GENERAL subject."
+    },
+    {
+      "id": "v2-L3560",
+      "question": "How much should I put into a joint account twice a month?",
+      "intent": "QUANTITY",
+      "topic": "MONEY",
+      "group": "ordinary",
+      "source_line": 3560,
+      "source_url": "https://ask.metafilter.com/372405/How-much-should-I-put-into-a-joint-account-twice-a-month",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3487",
+      "question": "Does democracy work if majority of the population are uneducated?",
+      "intent": "YES_NO",
+      "topic": "GENERAL",
+      "group": "ordinary",
+      "source_line": 3487,
+      "source_url": "https://www.fluther.com/240651/does-democracy-work-if-majority-of-the-population-are-uneducated/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L0083",
+      "question": "How to Store Fresh Herbs",
+      "intent": "METHOD",
+      "topic": "FOOD",
+      "group": "indirect",
+      "source_line": 83,
+      "source_url": "https://cooking.stackexchange.com/questions/139/how-to-store-fresh-herbs",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2407",
+      "question": "Reload a Linux user's group assignments without logging out",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2407,
+      "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2382",
+      "question": "Find out which process is locking a file or folder in Windows",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2382,
+      "source_url": "https://superuser.com/questions/117902/find-out-which-process-is-locking-a-file-or-folder-in-windows",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2392",
+      "question": "View list of files in ZIP archive on Linux",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2392,
+      "source_url": "https://superuser.com/questions/216617/view-list-of-files-in-zip-archive-on-linux",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2410",
+      "question": "Automatically answer 'Yes' when using apt-get install",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2410,
+      "source_url": "https://superuser.com/questions/164553/automatically-answer-yes-when-using-apt-get-install",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2415",
+      "question": "Remove audio from video file with FFmpeg",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2415,
+      "source_url": "https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2429",
+      "question": "Test if a port on a remote system is reachable (without telnet)",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 2429,
+      "source_url": "https://superuser.com/questions/621870/test-if-a-port-on-a-remote-system-is-reachable-without-telnet",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3311",
+      "question": "Recommend a printer?",
+      "intent": "RECOMMEND",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 3311,
+      "source_url": "https://www.fluther.com/241423/recommend-a-printer/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3563",
+      "question": "I need personal cloud storage",
+      "intent": "RECOMMEND",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 3563,
+      "source_url": "https://ask.metafilter.com/374375/I-need-personal-cloud-storage",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3215",
+      "question": "Please make a list of cleaning supplies that I should purchase to clean my apartment?",
+      "intent": "RECOMMEND",
+      "topic": "HOME",
+      "group": "indirect",
+      "source_line": 3215,
+      "source_url": "https://www.fluther.com/241850/please-make-a-list-of-cleaning-supplies-that-i-should-purchase/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3541",
+      "question": "Book Identification: Chapter book about girls experiencing puberty",
+      "intent": "IDENTIFY",
+      "topic": "ENTERTAINMENT",
+      "group": "indirect",
+      "source_line": 3541,
+      "source_url": "https://ask.metafilter.com/390929/Book-Identification-Chapter-book-about-girls-experiencing-puberty",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3542",
+      "question": "Need a better shower filter",
+      "intent": "RECOMMEND",
+      "topic": "HOME",
+      "group": "indirect",
+      "source_line": 3542,
+      "source_url": "https://ask.metafilter.com/390928/Need-a-better-shower-filter",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3331",
+      "question": "Suggest an insta-meal lunch-type frozen product?",
+      "intent": "RECOMMEND",
+      "topic": "FOOD",
+      "group": "indirect",
+      "source_line": 3331,
+      "source_url": "https://www.fluther.com/241329/suggest-an-insta-meal-lunch-type-frozen-product/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3397",
+      "question": "Can anyone recommend a weighted blanket that isn't too hot?",
+      "intent": "RECOMMEND",
+      "topic": "HOME",
+      "group": "indirect",
+      "source_line": 3397,
+      "source_url": "https://www.fluther.com/241051/can-anyone-recommend-a-weighted-blanket-that-isnt-too-hot/",
+      "ambiguity_note": "Suitable blanket without explicit medical purpose: HOME; HEALTH requires additional context."
+    },
+    {
+      "id": "v2-L3513",
+      "question": "Can you recommend a solar charging phone power bank?",
+      "intent": "RECOMMEND",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 3513,
+      "source_url": "https://www.fluther.com/240554/can-you-recommend-a-solar-charging-phone-power-bank/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3434",
+      "question": "Please give me advice on cooking a large box of frozen chicken quarters?",
+      "intent": "METHOD",
+      "topic": "FOOD",
+      "group": "indirect",
+      "source_line": 3434,
+      "source_url": "https://www.fluther.com/240875/please-give-me-advice-on-cooking-a-large-box-of-frozen/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L3529",
+      "question": "Can you help me turn my Words back into PDFs?",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "indirect",
+      "source_line": 3529,
+      "source_url": "https://www.fluther.com/240482/can-you-help-me-turn-my-words-back-into-pdfs/",
+      "ambiguity_note": "No competing reading selected in this author pass; independent human review remains pending."
+    },
+    {
+      "id": "v2-L2980",
+      "question": "Is there a word or phrase for the feeling you get after looking at a word for too long?",
+      "intent": "IDENTIFY",
+      "topic": "LANGUAGE",
+      "group": "indirect",
+      "source_line": 2980,
+      "source_url": "https://english.stackexchange.com/questions/6170/is-there-a-word-or-phrase-for-the-feeling-you-get-after-looking-at-a-word-for-to",
+      "ambiguity_note": "Indirect lexical identification, not literal existence YES_NO."
+    },
+    {
+      "id": "v2-L3419",
+      "question": "Can someone help me understand the tax exclusion for capital gains?",
+      "intent": "DESCRIBE",
+      "topic": "MONEY",
+      "group": "indirect",
+      "source_line": 3419,
+      "source_url": "https://www.fluther.com/240967/can-someone-help-me-understand-the-tax-exclusion-for-capital-gains/",
+      "ambiguity_note": "Indirect request for meaning of a known tax concept, not literal ability confirmation; EXPLAIN is plausible if causal workings are intended."
+    },
+    {
+      "id": "v2-L3587",
+      "question": "Find me an online fashion home!",
+      "intent": "RECOMMEND",
+      "topic": "GENERAL",
+      "group": "indirect",
+      "source_line": 3587,
+      "source_url": "https://ask.metafilter.com/78554/Find-me-an-online-fashion-home",
+      "ambiguity_note": "An unspecified suitable online community, not location of an already specified site. Fashion has no retained specialized topic."
+    },
+    {
+      "id": "v2-L3184",
+      "question": "I have a medical question about dizziness? ( Details inside)",
+      "intent": "OTHER",
+      "topic": "HEALTH",
+      "group": "no_outcome",
+      "source_line": 3184,
+      "source_url": "https://www.fluther.com/241998/i-have-a-medical-question-about-dizziness-details-inside/",
+      "ambiguity_note": "Announces a medical question but omits its requested outcome; not a request merely because of punctuation."
+    },
+    {
+      "id": "v2-L3475",
+      "question": "I have a question about sound (Details inside)?",
+      "intent": "OTHER",
+      "topic": "GENERAL",
+      "group": "no_outcome",
+      "source_line": 3475,
+      "source_url": "https://www.fluther.com/240703/i-have-a-question-about-sound-details-inside/",
+      "ambiguity_note": "Announces a sound question; no cause, device or requested outcome is supplied. Do not infer TECH from provenance."
+    },
+    {
+      "id": "v2-L3219",
+      "question": "A question about switching on/off a SATA Hard drive with PC running.",
+      "intent": "OTHER",
+      "topic": "TECH",
+      "group": "no_outcome",
+      "source_line": 3219,
+      "source_url": "https://www.fluther.com/241829/a-question-about-switching-onoff-a-sata-hard-drive-with-pc/",
+      "ambiguity_note": "Names a subject and announces a question; feasibility, method and risks remain unresolved. METHOD or YES_NO is contestable."
+    },
+    {
+      "id": "v2-L3269",
+      "question": "Can you answer my (NSFW) question about Milk2Go and normal 3% pasteurized cows milk? (NSFW)",
+      "intent": "OTHER",
+      "topic": "FOOD",
+      "group": "no_outcome",
+      "source_line": 3269,
+      "source_url": "https://www.fluther.com/241567/can-you-answer-my-nsfw-question-about-milk2go-and-normal-3/",
+      "ambiguity_note": "Ability wrapper around an omitted question; food subject does not recover the actual outcome. YES_NO is a literal alternative."
+    },
+    {
+      "id": "v2-L3289",
+      "question": "I have a NSFW question about Febreze commercials? (NSFW)",
+      "intent": "OTHER",
+      "topic": "ENTERTAINMENT",
+      "group": "no_outcome",
+      "source_line": 3289,
+      "source_url": "https://www.fluther.com/241498/i-have-a-nsfw-question-about-febreze-commercials-nsfw/",
+      "ambiguity_note": "Announces a question about commercials without supplying it; entertainment subject remains recoverable."
+    },
+    {
+      "id": "v2-L3251",
+      "question": "Can anybody help with drive cloning questions?",
+      "intent": "OTHER",
+      "topic": "TECH",
+      "group": "no_outcome",
+      "source_line": 3251,
+      "source_url": "https://www.fluther.com/241690/can-anybody-help-with-drive-cloning-questions/",
+      "ambiguity_note": "Help wrapper around unspecified cloning questions: neither procedure nor diagnosis requested specifically. METHOD is plausible."
+    },
+    {
+      "id": "v2-L3300",
+      "question": "Can you help me with this popcorn problem?",
+      "intent": "OTHER",
+      "topic": "FOOD",
+      "group": "no_outcome",
+      "source_line": 3300,
+      "source_url": "https://www.fluther.com/241452/can-you-help-me-with-this-popcorn-problem/",
+      "ambiguity_note": "Unspecified popcorn problem: neither cause nor repair is supplied; METHOD is plausible."
+    },
+    {
+      "id": "v2-L3448",
+      "question": "Help me with my mouse?",
+      "intent": "OTHER",
+      "topic": "GENERAL",
+      "group": "no_outcome",
+      "source_line": 3448,
+      "source_url": "https://www.fluther.com/240830/help-me-with-my-mouse/",
+      "ambiguity_note": "Help requested but the outcome and whether mouse means animal or device are absent. METHOD/TECH is plausible but assumes context."
+    },
+    {
+      "id": "v2-L3531",
+      "question": "If you read light novel \"Another,\" what's the answer to the following doubt?",
+      "intent": "OTHER",
+      "topic": "ENTERTAINMENT",
+      "group": "no_outcome",
+      "source_line": 3531,
+      "source_url": "https://www.fluther.com/240461/if-you-read-light-novel-another-whats-the-answer-to-the/",
+      "ambiguity_note": "Asks for an answer to an omitted doubt, not any specified form; fiction is explicit."
+    },
+    {
+      "id": "v2-L3199",
+      "question": "Post mortem Covid AMA thread?",
+      "intent": "OTHER",
+      "topic": "HEALTH",
+      "group": "no_outcome",
+      "source_line": 3199,
+      "source_url": "https://www.fluther.com/241934/post-mortem-covid-ama-thread/",
+      "ambiguity_note": "An AMA-thread heading with punctuation; no substantive medical question supplied. Invitation interpretation is plausible."
+    },
+    {
+      "id": "v2-L0007",
+      "question": "How can I tell the difference between a rabbit and a cat?",
+      "intent": "METHOD",
+      "topic": "NATURE",
+      "group": "boundary",
+      "source_line": 7,
+      "source_url": "https://cooking.stackexchange.com/questions/56418/how-can-i-tell-the-difference-between-a-rabbit-and-a-cat",
+      "ambiguity_note": "Requests a diagnostic procedure rather than a list of differences. Animals are explicit; cooking is not, so source-community context must not imply FOOD."
+    },
+    {
+      "id": "v2-L0448",
+      "question": "Is there a way to unscrew a light bulb that has broken?",
+      "intent": "METHOD",
+      "topic": "HOME",
+      "group": "boundary",
+      "source_line": 448,
+      "source_url": "https://diy.stackexchange.com/questions/47713/is-there-a-way-to-unscrew-a-light-bulb-that-has-broken",
+      "ambiguity_note": "Feasibility phrasing conventionally requests removal method; literal YES_NO is plausible."
+    },
+    {
+      "id": "v2-L0459",
+      "question": "What is this cable in my yard, why is it exposed, and what can I do about it?",
+      "intent": "IDENTIFY",
+      "topic": "HOME",
+      "group": "boundary",
+      "source_line": 459,
+      "source_url": "https://diy.stackexchange.com/questions/224886/what-is-this-cable-in-my-yard-why-is-it-exposed-and-what-can-i-do-about-it",
+      "ambiguity_note": "Three independent requests; first asks identity. Classify both dimensions from that first request."
+    },
+    {
+      "id": "v2-L0466",
+      "question": "How do I run ethernet cable through a wall cavity?",
+      "intent": "METHOD",
+      "topic": "HOME",
+      "group": "boundary",
+      "source_line": 466,
+      "source_url": "https://diy.stackexchange.com/questions/7270/how-do-i-run-ethernet-cable-through-a-wall-cavity",
+      "ambiguity_note": "Cable installation through physical wall is HOME, despite ethernet vocabulary."
+    },
+    {
+      "id": "v2-L0711",
+      "question": "How can I completely remove GnuCash from my computer?",
+      "intent": "METHOD",
+      "topic": "TECH",
+      "group": "boundary",
+      "source_line": 711,
+      "source_url": "https://money.stackexchange.com/questions/169972/how-can-i-completely-remove-gnucash-from-my-computer",
+      "ambiguity_note": "Removing finance software is TECH, not MONEY."
+    },
+    {
+      "id": "v2-L1480",
+      "question": "For better muscle growth, how many hours' sleep are recommended after doing a workout?",
+      "intent": "DURATION",
+      "topic": "HEALTH",
+      "group": "boundary",
+      "source_line": 1480,
+      "source_url": "https://fitness.stackexchange.com/questions/366/for-better-muscle-growth-how-many-hours-sleep-are-recommended-after-doing-a-wo",
+      "ambiguity_note": "Hours of sleep are a temporal interval, not general QUANTITY."
+    },
+    {
+      "id": "v2-L1600",
+      "question": "How do you determine how long a hike will take?",
+      "intent": "METHOD",
+      "topic": "TRAVEL",
+      "group": "boundary",
+      "source_line": 1600,
+      "source_url": "https://outdoors.stackexchange.com/questions/708/how-do-you-determine-how-long-a-hike-will-take",
+      "ambiguity_note": "Requests a way to estimate time, not the time itself."
+    },
+    {
+      "id": "v2-L2676",
+      "question": "When does paraphrasing become patchwork (or mosaic) plagiarism?",
+      "intent": "DESCRIBE",
+      "topic": "WORK_STUDY",
+      "group": "boundary",
+      "source_line": 2676,
+      "source_url": "https://academia.stackexchange.com/questions/227838/when-does-paraphrasing-become-patchwork-or-mosaic-plagiarism",
+      "ambiguity_note": "Boundary defining plagiarism, not a calendar moment; METHOD is plausible if interpreted as usage guidance."
+    },
+    {
+      "id": "v2-L2975",
+      "question": "When should I use an em-dash, an en-dash, and a hyphen?",
+      "intent": "METHOD",
+      "topic": "LANGUAGE",
+      "group": "boundary",
+      "source_line": 2975,
+      "source_url": "https://english.stackexchange.com/questions/2116/when-should-i-use-an-em-dash-an-en-dash-and-a-hyphen",
+      "ambiguity_note": "Punctuation usage rules, not temporal occurrence."
+    },
+    {
+      "id": "v2-L2990",
+      "question": "Are \"whores\" and \"horse\" homophones?",
+      "intent": "YES_NO",
+      "topic": "LANGUAGE",
+      "group": "boundary",
+      "source_line": 2990,
+      "source_url": "https://english.stackexchange.com/questions/342273/are-whores-and-horse-homophones",
+      "ambiguity_note": "One equivalence proposition, not a request to compare differences."
+    },
+    {
+      "id": "v2-L3191",
+      "question": "How do you feel about this?",
+      "intent": "DESCRIBE",
+      "topic": "GENERAL",
+      "group": "boundary",
+      "source_line": 3191,
+      "source_url": "https://www.fluther.com/241960/how-do-you-feel-about-this/",
+      "ambiguity_note": "Reaction form survives missing referent; no autobiographical answer is authorized."
+    },
+    {
+      "id": "v2-L3281",
+      "question": "What could have caused this (details below)?",
+      "intent": "EXPLAIN",
+      "topic": "GENERAL",
+      "group": "boundary",
+      "source_line": 3281,
+      "source_url": "https://www.fluther.com/241527/what-could-have-caused-this-details-below/",
+      "ambiguity_note": "Cause requested despite absent referent; EXPLAIN survives."
+    },
+    {
+      "id": "v2-L0524",
+      "question": "Washing machine sometimes hums and won't spin",
+      "intent": "OTHER",
+      "topic": "HOME",
+      "group": "boundary",
+      "source_line": 524,
+      "source_url": "https://diy.stackexchange.com/questions/332301/washing-machine-sometimes-hums-and-wont-spin",
+      "ambiguity_note": "Fault report leaves explanation versus repair unresolved; METHOD is a plausible inferred intention."
+    },
+    {
+      "id": "v2-L1446",
+      "question": "My legs still ache 3-4 days after legs day",
+      "intent": "OTHER",
+      "topic": "HEALTH",
+      "group": "boundary",
+      "source_line": 1446,
+      "source_url": "https://fitness.stackexchange.com/questions/11643/my-legs-still-ache-3-4-days-after-legs-day",
+      "ambiguity_note": "Incomplete symptom report; explanation versus treatment versus reassurance unresolved. METHOD/EXPLAIN are plausible; never mock distress."
+    },
+    {
+      "id": "v2-L2409",
+      "question": "From a quality perspective, what is better: turning volume up in the software, in the OS, or on the speakers?",
+      "intent": "CHOICE",
+      "topic": "TECH",
+      "group": "boundary",
+      "source_line": 2409,
+      "source_url": "https://superuser.com/questions/492281/from-a-quality-perspective-what-is-better-turning-volume-up-in-the-software-i",
+      "ambiguity_note": "Explicit three-way selection, not open recommendation or comparison."
+    },
+    {
+      "id": "v2-L3566",
+      "question": "App or strategy for stripping photos from gmail?",
+      "intent": "RECOMMEND",
+      "topic": "TECH",
+      "group": "boundary",
+      "source_line": 3566,
+      "source_url": "https://ask.metafilter.com/372581/App-or-strategy-for-stripping-photos-from-gmail",
+      "ambiguity_note": "Seeks unsupplied app or strategy; provisional RECOMMEND, METHOD is a credible disagreement."
+    },
+    {
+      "id": "v2-L2177",
+      "question": "How can I tell if a corpse is safe to eat?",
+      "intent": "METHOD",
+      "topic": "FOOD",
+      "group": "boundary",
+      "source_line": 2177,
+      "source_url": "https://gaming.stackexchange.com/questions/4999/how-can-i-tell-if-a-corpse-is-safe-to-eat",
+      "ambiguity_note": "No fiction supplied. Treat as a food-safety method request; HEALTH is plausible. Gaming provenance supplies no runtime context."
+    },
+    {
+      "id": "v2-L2217",
+      "question": "How do I deliver a baby?",
+      "intent": "METHOD",
+      "topic": "HEALTH",
+      "group": "boundary",
+      "source_line": 2217,
+      "source_url": "https://gaming.stackexchange.com/questions/223800/how-do-i-deliver-a-baby",
+      "ambiguity_note": "No game context supplied: childbirth method is HEALTH, not ENTERTAINMENT."
+    },
+    {
+      "id": "v2-L2230",
+      "question": "How do I make money efficiently?",
+      "intent": "METHOD",
+      "topic": "MONEY",
+      "group": "boundary",
+      "source_line": 2230,
+      "source_url": "https://gaming.stackexchange.com/questions/35800/how-do-i-make-money-efficiently",
+      "ambiguity_note": "No game context supplied: money method is MONEY."
+    },
+    {
+      "id": "v2-L3521",
+      "question": "How do I tell a good friend I don't want to travel with her?",
+      "intent": "METHOD",
+      "topic": "RELATIONSHIPS",
+      "group": "boundary",
+      "source_line": 3521,
+      "source_url": "https://www.fluther.com/240520/how-do-i-tell-a-good-friend-i-dont-want-to/",
+      "ambiguity_note": "Negotiating friendship boundary, not trip logistics."
+    }
+  ]
+}
