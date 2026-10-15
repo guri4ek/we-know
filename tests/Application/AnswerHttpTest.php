@@ -5,6 +5,7 @@ namespace App\Tests\Application;
 
 use App\Domain\Answer\RandomIndexSource;
 use App\Domain\Classification\{ClassificationFailure, FailureReason, QuestionClassifier};
+use App\Http\TrustedOrigin;
 use App\Infrastructure\Persistence\CatalogImporter;
 use App\Infrastructure\Persistence\ConnectionFactory;
 use App\Tests\Integration\{BackendPersistenceTest, CatalogImportTest};
@@ -13,6 +14,7 @@ use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\Dotenv\Dotenv;
 
 final class AnswerHttpTest extends WebTestCase
 {
@@ -36,6 +38,34 @@ final class AnswerHttpTest extends WebTestCase
     private function post(KernelBrowser $client, string $body, array $headers = []): void
     {
         $client->request('POST', '/answer', [], [], $headers + ['CONTENT_TYPE'=>'application/json', 'HTTP_ORIGIN'=>'http://localhost', 'REMOTE_ADDR'=>'127.0.0.1'], $body);
+    }
+
+    public function testDefaultLocalOriginAcceptsLocalhostWhileRejectingCrossOriginRequests(): void
+    {
+        [$client, $db] = $this->client(1);
+        // Exercise shipped defaults rather than the test-only origin override.
+        $defaults = (new Dotenv())->parse(file_get_contents(dirname(__DIR__, 2).'/.env'));
+        self::getContainer()->set(TrustedOrigin::class, new TrustedOrigin($defaults['APP_PUBLIC_ORIGIN']));
+        $headers = ['HTTP_HOST' => 'localhost:8000', 'HTTP_ORIGIN' => 'http://localhost:8000'];
+
+        $this->post($client, '{"question":"A synthetic localhost question"}', $headers);
+        self::assertResponseStatusCodeSame(201);
+        $data = json_decode($client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
+
+        foreach ([
+            ['HTTP_ORIGIN' => 'http://127.0.0.1:8000'],
+            ['HTTP_HOST' => '127.0.0.1:8000'],
+            ['HTTP_ORIGIN' => 'https://evil.example'],
+            ['HTTP_SEC_FETCH_SITE' => 'cross-site'],
+        ] as $mismatch) {
+            $this->post($client, '{"question":"A synthetic blocked question"}', $mismatch + $headers);
+            self::assertResponseStatusCodeSame(403);
+        }
+        self::assertSame(1, (int) $db->fetchOne('SELECT COUNT(*) FROM verdict'));
+
+        $client->request('GET', $data['url']);
+        self::assertResponseIsSuccessful();
+        self::assertSelectorExists('link[rel="canonical"][href="http://localhost:8000'.$data['url'].'"]');
     }
 
     public function testCreatesOnlyAfterCommitAndReadsEscapedSnapshotWithoutProvider(): void

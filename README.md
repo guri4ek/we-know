@@ -33,12 +33,12 @@ rtk proxy php vendor/bin/phpunit
 # New target only; refuses an existing file:
 rtk proxy php tools/verify-seed-v2.php /Users/serhii/OwnProjects/we-know/var/answer-seed-v2-recheck.sqlite
 rtk proxy env APP_ENV=test APP_DEBUG=0 JEV_API_KEY= php bin/console app:jev:evaluate
-rtk proxy php -S 127.0.0.1:8000 -t public public/router.php
+rtk proxy php -S localhost:8000 -t public public/router.php
 ```
 
 The equivalent individual database commands are `rtk proxy composer db:reset`, `rtk proxy composer db:migrate`, and `rtk proxy composer db:seed`, in that order. They require `APP_ENV=dev` and the exact default local SQLite URL. Reset clears application data and migration state; migrate creates the current schema; seed imports `docs/content/seed-v2/catalog.json`. Fresh stops on the first failure. Stop local application processes before resetting. After editing an unreleased table-creation migration, run fresh; rerunning an already recorded migration does not rebuild its tables. No upgrade path or separate schema definition is used.
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The built-in PHP server is for development only; `public/router.php` serves assets directly and routes application requests through Symfony. The browser origin must match `APP_PUBLIC_ORIGIN` (the default is this exact address). Submitting through the development application uses the configured production Jev key; automated frontend checks use intercepted responses and isolated synthetic data instead. See [browser test instructions](docs/testing.md#frontend-browser-checks--2026-10-15).
+Open [http://localhost:8000](http://localhost:8000). The built-in PHP server is for development only; `public/router.php` serves assets directly and routes application requests through Symfony. The browser origin must match `APP_PUBLIC_ORIGIN` (the default is this exact address). `localhost` and `127.0.0.1` are different browser origins: using the IP address with the default configuration produces a controlled 403 on submission. If you choose another address or port, set `APP_PUBLIC_ORIGIN` to that exact origin and restart the server if it was set in the process environment. Submitting through the development application uses the configured production Jev key; automated frontend checks use intercepted responses and isolated synthetic data instead. See [browser test instructions](docs/testing.md#frontend-browser-checks--2026-10-15).
 
 `.env` contains local defaults only. Secrets belong in `.env.local` or environment variables; `APP_SECRET` is currently empty because sessions, CSRF, and signed URLs are not wired. Set a random secret before adding those features. Production requires `APP_ENV=prod`, `APP_DEBUG=0`, a web server with document root `public/`, and a separate deployment preparation stage.
 

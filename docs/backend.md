@@ -40,6 +40,8 @@ PHPUnit forces a separate SQLite connection configuration in `test`, ignoring de
 
 ## Production configuration boundaries
 
+For local development, run PHP, Composer and console commands as the same non-root user. Symfony writes compiled service/container and Twig cache files atomically using a temporary file followed by `rename`. A permission failure under `var/cache/dev` can therefore prevent a page from booting before its controller runs; this is unrelated to renaming or updating a verdict. Recreate only the disposable dev cache with the application user's ownership, preserving the database and source. Do not use a database reset to repair a cache ownership problem.
+
 Production requires a `postgresql://` PDO connection via secret environment configuration, `pdo_pgsql`, `APP_ENV=prod`, `APP_DEBUG=0`, and the actual canonical `APP_PUBLIC_ORIGIN` (scheme, host, optional port; no trailing slash/path). SQLite is rejected in `prod`. No production database connection, deployment or PHP 8.5 run occurred here. A local prod/debug-off HTTP smoke used a synthetic unavailable DSN and a forcibly empty Jev key to verify controlled errors. After backend/config changes, clear and rebuild the local prod cache before judging debug-off behavior; a stale pre-backend cache can still serve old routes.
 
 `TRUSTED_PROXIES` is empty by default: forwarded headers from arbitrary clients cannot change the IP used by the limiter. The explicit initial trusted-header policy accepts only `X-Forwarded-For` from configured proxy addresses. Keep proxies narrow and configure the real topology before launch. A TLS-terminating proxy must either preserve the correct application scheme or separately configure trusted scheme/port headers; those are not currently trusted. Host/canonical links are never taken from forwarded host headers.
@@ -93,6 +95,8 @@ Editing/disabling text or changing eligibility metadata does not change saved sn
 ## HTTP contract
 
 `POST /answer` requires `Content-Type: application/json` (UTF-8), an `Origin` exactly equal to configured `APP_PUBLIC_ORIGIN`, and matching request scheme/host. Missing/null/mismatched Origin is rejected, including non-browser callers unless they supply it explicitly. If `Sec-Fetch-Site` is present it must be `same-origin`. CORS is closed. This is a browser-origin check, not bot authentication.
+
+The local default is `APP_PUBLIC_ORIGIN=http://localhost:8000`. Open that exact address when using the form. `http://127.0.0.1:8000` is a different origin even though it reaches the same machine; choose one canonical address and configure it explicitly rather than weakening the POST check. A server process environment value takes precedence over Dotenv defaults and requires a restart after changing that value.
 
 The body is read at most 8193 bytes to enforce an 8192-byte limit even without Content-Length. JSON must be an object containing only string `question`. Unicode whitespace is trimmed; the result must contain 1–500 Unicode code points and no NUL. Malformed JSON/UTF-8 is rejected before Jev, as are media/origin/validation/rate failures.
 
