@@ -1,0 +1,127 @@
+# Author screening: all shared probe cells P/C/L; preliminary rubric 2,2,2,2,1,1; human null. Final decisions may remove eligibility.
+@EXPLAIN/RELATIONSHIPS
+M|Because feelings and explanations live in different time zones.|Emotion and reasoning unsynchronized
+R|Because human nature refuses to read the instructions written for it.|People reject imposed manual
+M|Because understanding is a bridge built from both banks by different architects.|Mutual understanding construction
+H|Because one small feeling can bring an entire orchestra to a quiet conversation.|Emotion amplifies exchange
+M|Because expectations arrive early and rearrange the furniture.|Assumptions shape interaction
+C|Because the social rulebook counted nodding as a binding agreement.|Gesture overinterpreted
+R|Because the explanation wants to be understood without doing any listening.|Explanation lacks reciprocity
+M|Because emotional logic has windows where ordinary logic expects walls.|Different ways through situation
+H|Because a universal rule about people needs more asterisks than there are people.|Generalizations overwhelmed by exceptions
+R|Because the theory of togetherness booked itself a private room.|Theory contradicts subject
+M|Because feelings use handwriting that changes while being read.|Emotion changes during interpretation
+C|Because the explanation borrowed certainty from a story with a suspiciously tidy ending.|Neat narrative validates claim
+M|Because understanding has a front door, and certainty keeps trying the chimney.|Certainty takes wrong route
+R|Because expectations have appointed themselves the interpreters of everything they hear.|Expectations control interpretation
+M|Because social rules are written on a tablecloth while everyone is moving the plates.|Rules amid changing circumstances
+H|Because the smallest unspoken assumption can fill a room with imaginary furniture.|Assumptions crowd shared space
+M|Because empathy travels on foot while certainty has bought a racing motorcycle.|Different speeds of knowing
+R|Because the universal explanation has forgotten to include the people it is universal about.|Generality omits subjects
+C|Because the handbook treats being easy to print as being easy to live.|Publishability mistaken for usability
+M|Because people are not puzzles, despite the handbook's excellent picture on the box.|Model assumes fixed solution
+@EXPLAIN/HEALTH
+M|Because biology uses the instruction manual as material for a nest.|Living systems repurpose rules
+R|Because the model patient has never agreed to model the actual patient.|Average refuses real complexity
+M|Because physiology has an underground railway that the wellness map draws as a straight path.|Hidden complexity under model
+H|Because one tidy health theory must squeeze a billion untidy details into a tracksuit.|Simple model overfilled
+M|Because the health chart is a portrait painted by a calculator.|Measurement lacks human representation
+C|Because the explanation mistook its own pulse of confidence for a clinical finding.|Confidence mistaken for observation
+R|Because the universal health formula has never met anyone who is universal.|Population model has no individual subject
+M|Because biology keeps its filing system in a living hedge.|Organic organization resists filing
+H|Because the asterisk on the simple explanation has its own medical library.|Qualifications eclipse claim
+M|Because the wellness ideal is a mannequin trying to give a weather report from inside a shop.|Ideal detached from reality
+R|Because the health model expects reality to attend its introductory seminar.|Model teaches world
+M|Because the diagram is a paper skeleton applying for a job as a person.|Representation claims life
+C|Because a reassuring color scheme was mistaken for a second source.|Design counted as evidence
+H|Because the imaginary average person needs more adjustments than an entire orchestra.|Model never fits simply
+M|Because the theory drew a finish line on a landscape that keeps changing shape.|Fixed goal dynamic physiology
+R|Because the health slogan has mistaken applause for a vital sign.|Reception as physiology
+M|Because biology stores its exceptions in the same drawer as its rules.|Exceptions integral to system
+C|Because the model read the word normal and stopped reading the rest of the sentence.|Label truncates understanding
+M|Because the explanation is a coat hanger pretending it knows the shape of every coat.|Universal support assumes universal fit
+R|Because the wellness promise wants reality to apologize for being complicated.|Marketing blames complexity
+@EXPLAIN/MONEY
+M|Because zero discovered that standing behind other numbers improves its social position.|Numerical place as status
+R|Because money keeps asking value what it can afford.|Price reverses value relationship
+M|Because the invisible hand has developed a taste for expensive gloves.|Market metaphor gains luxury
+H|Because financial optimism can fit a mansion inside a decimal place.|Small notation grand promise
+C|Because the price heard a rumor about itself and took it seriously.|Self-referential valuation
+M|Because arithmetic arrived on foot and marketing arrived in a limousine.|Presentation outruns substance
+R|Because the receipt considers itself the final authority on whether anything happened.|Transaction record claims reality
+M|Because wealth looks through windows that double as mirrors.|Perspective reflects status
+H|Because the fine print has enough room to hide an entire alternative economy.|Qualifications contain hidden system
+C|Because the model counted the word potential as money already in the room.|Possibility mistaken for holdings
+R|Because the decimal point has become the most ambitious character in the story.|Notation seeks agency
+M|Because the economy is a dinner party where the bill keeps changing seats.|Cost allocation circulates
+B|Because the invisible hand refuses to leave fingerprints on the explanation.|Agency avoids accountability
+M|Because the estimate is wearing a tailor-made suit of borrowed precision.|Precision as costume
+C|Because the prediction saw a number with many digits and assumed it was well-informed.|Precision mistaken for accuracy
+R|Because the asset has hired its valuation to make introductions.|Value markets object
+H|Because every modest financial claim travels with a convoy of conditions.|Claim has heavy qualifiers
+M|Because the ledger treats the future as a shelf that has already been installed.|Future capacity assumed
+R|Because the calculator wants credit for being right about a badly chosen question.|Correct computation wrong framing
+M|Because money learned to whistle and now expects everything to come when called.|Money as commanding owner
+@EXPLAIN/FOOD
+M|Because flavor is allowed to enter through doors that arithmetic cannot find.|Taste exceeds calculation
+R|Because the kitchen has appointed the recipe's margin as its improvisation coach.|Marginal notes direct cooking
+M|Because culinary tradition is a table with legs of several different lengths.|Inherited practices unstable support
+H|Because one ordinary ingredient can support an empire of confident opinions.|Ingredient overinterpreted
+C|Because the explanation tasted familiar and skipped the identity check.|Familiarity substitutes for evidence
+M|Because the recipe has a family tree where its flowchart should be.|Tradition replaces procedure
+R|Because the tasting note is trying to become a cooking instruction.|Description seeks authority
+M|Because kitchen certainty is a soufflé held upright by adjectives.|Confidence supported by words
+H|Because the smallest cooking detail can summon a thousand grandmothers who disagree.|Tradition has conflicting authorities
+C|Because the explanation confused being passed down with being checked.|Inheritance mistaken for validation
+M|Because flavor keeps a spare key under the doormat of logic.|Sensory outcome bypasses logic
+R|Because the recipe thinks the food exists to illustrate the recipe.|Representation claims purpose
+M|Because the kitchen's explanation has been wrapped in foil with the shiny side facing itself.|Explanation reflects inward
+B|Because culinary tradition has issued itself a lifetime exemption from follow-up questions.|Tradition self-exempts
+H|Because a pinch of interpretation is measured with a shovel.|Interpretation overused
+M|Because cooking theory is a sandcastle trying to explain the tide.|Model vulnerable to conditions
+C|Because the recipe's author used a very decisive spoon.|Confidence assigned to instrument
+R|Because the menu has been explaining the kitchen to the kitchen.|Description instructs source
+M|Because the explanation contains a secret ingredient called Unexamined Confidence.|Assumptions as ingredient
+H|Because a single kitchen rule can come with an attic full of incompatible heirlooms.|Tradition carries contradictions
+@EXPLAIN/SPORTS
+M|Because competition has a secret side event for confusing the explanation.|Competition extends to rules
+R|Because the spectator's certainty has entered the event without qualifying.|Observer claims expertise
+M|Because the sporting tradition is a trophy engraved with several contradictory origin stories.|History has competing accounts
+H|Because one disputed detail can keep a commentary booth alive for generations.|Small dispute sustains commentary
+C|Because the official explanation was wearing a whistle when it arrived.|Appearance grants authority
+M|Because the rule is a shortcut paved with all the arguments that came before it.|Rules accumulate disputes
+R|Because the technical explanation is trying to set a record for avoiding the point.|Explanation becomes competitor
+M|Because competitive logic has a separate changing room for exceptions.|Exceptions get privileged treatment
+H|Because a single replay can contain enough interpretations to populate a small country.|Interpretation excess
+C|Because the rulebook mistook being hard to memorize for being well designed.|Difficulty mistaken for quality
+R|Because the explanation has been sponsored by the need for another explanation.|Complexity funds itself
+M|Because sporting precision wears running shoes with unequal laces.|Exactness has uneven support
+B|Because tradition qualified under a rule it wrote before qualifying.|Self-serving qualification
+M|Because the commentary is a magnifying glass that insists it is a microscope.|Analysis overstates resolution
+H|Because the smallest margin attracts the largest available vocabulary.|Tiny difference overdescribed
+R|Because the result has been teaching the prediction how it should have behaved.|Hindsight instructs forecast
+M|Because the rulebook has a spring-loaded chapter called Except.|Exception interrupts system
+C|Because the explanation mistook unanimous shouting for unanimous understanding.|Noise mistaken for knowledge
+M|Because the official account carries yesterday's arguments in today's kit bag.|Past disputes accompany present
+R|Because the sport has begun using the commentator as a very elaborate sound effect.|Expert reduced to decoration
+@EXPLAIN/ENTERTAINMENT
+M|Because the imaginary world has curtains where a load-bearing wall should be.|Spectacle replaces structure
+R|Because the background detail has acquired a fan club larger than the main idea.|Peripheral object gains prominence
+H|Because one creative choice can generate enough commentary to outlive the civilization that made it.|Interpretation exceeds creation
+M|Because imagination paid for the room and reality is sleeping on the sofa.|Fiction controls space
+C|Because the explanation tested well with an audience composed entirely of explanations.|Self-selected validation
+R|Because the interpretation has started charging the original work an entrance fee.|Commentary controls access
+M|Because artistic freedom keeps a spare universe in its coat pocket.|Creation can replace rules
+B|Because the license to be entertaining was issued on unusually forgiving terms.|Entertainment permission broad
+H|Because a tiny mystery can feed an army of people armed with screenshots.|Small detail sustains fandom
+M|Because the creative process uses a spotlight to hold the ceiling up.|Display substitutes for structure
+R|Because the explanation arrived wearing merchandise of itself.|Account markets itself
+C|Because the sequel to the reasoning was commissioned before the reasoning was finished.|Expansion precedes foundation
+M|Because the imagination has installed a revolving wall between possible and convenient.|Creative convenience changes reality
+H|Because the detail has accumulated enough interpretations to qualify as a franchise.|Analysis creates industry
+R|Because the fictional universe wants a second opinion from a different fictional universe.|Fiction seeks fictional confirmation
+M|Because spectacle is a peacock trained to distract the question marks.|Display diverts scrutiny
+C|Because the idea brought an impressive soundtrack to its job interview.|Presentation wins approval
+R|Because the creative choice has appointed its own most enthusiastic reviewer.|Self-picked critic
+M|Because the explanation is a backstage pass to a stage that keeps moving.|Access cannot catch object
+H|Because a single flourish has enough defenders to form its own historical period.|Artistic detail overdefended

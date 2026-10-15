@@ -1,6 +1,6 @@
 # Testing strategy
 
-As of 2026-10-13. The skeleton and stage 1 have executable **Application, Unit, and Integration** PHPUnit suites. Backend selector/import/SQLite/HTTP suites are also implemented; browser, PostgreSQL and production checks remain plans. Actual runs, installed tools, and results are recorded in [verification](verification.md); planned tests do not imply implemented features.
+As of 2026-10-15. The project has executable **Application, Unit, and Integration** PHPUnit suites, including backend selector/import/SQLite/HTTP checks, plus isolated frontend browser checks using Node and Playwright. PostgreSQL and production checks remain plans. Actual runs, installed tools, and results are recorded in [verification](verification.md); planned tests do not imply implemented features.
 
 Jev is an external classifier, not a test framework or answer generator. PHPUnit tests our PHP components. Local HTTP mocks and separately authorized real-service calls provide different integration evidence; human editorial evaluation is separate again.
 
@@ -30,7 +30,7 @@ Use the [technical plan](technical-plan.md) for proposed URLs/fields/statuses. I
 | Kernel integration | Existing: classification DI/test client; backend application wiring implemented | No network | Wiring changes |
 | Persistence integration | Implemented real SQLite migrations/repositories/transactions; PostgreSQL outstanding | Fresh isolated SQLite; production acceptance requires PostgreSQL | Schema/query changes; release |
 | HTTP answer application | Implemented: controller→service→test database, fake classifier | Test database | Creation/read flow changes |
-| Browser E2E | Planned: isolated browser, DOM, fetch, navigation | Local server, fake classifier | When JS exists |
+| Browser E2E | Implemented: form states, DOM text safety, sharing, no-JS pages, keyboard, contrast, narrow/zoom layouts | Node + Playwright, isolated local server, intercepted POST, synthetic in-memory saved data | Frontend changes |
 | Live Jev contract | CLI exists; two historical development batches recorded; no live PHPUnit suite | Jev, production key, network | Separately authorized model/contract evaluation |
 | Quality/performance | Classification metrics implemented; development measured live. Human humor, holdout, production load unverified | Experiment-specific | Separate research runs |
 
@@ -41,7 +41,7 @@ Symfony provides `KernelTestCase` for integration and `WebTestCase` for HTTP app
 Useful tests boot/render the application rather than repeat a controller `render()` call:
 
 - `GET /`: 200, HTML content type, `lang="en"`, product name, primary heading, exactly one `main`.
-- Clear placeholder state and current `noindex, nofollow` robots copy; deliberately revisit at launch.
+- Labelled form, initialization-disabled submit, storage notice, local assets and current `noindex, nofollow`; deliberately revisit indexing at launch.
 - `HEAD /`: 200 with page headers and no body; unknown URL→404; `POST /`→405 without business flow.
 - Test kernel boots. Bootstrap regression verifies process `APP_ENV=prod` / `APP_DEBUG=0` precedence. A historical debug-off production HTTP smoke checked absence of traces; this audit did not repeat a server/browser smoke.
 - No Jev/database/key/browser automation needed.
@@ -130,7 +130,7 @@ Run the same repository contract on both accepted engines. SQLite does not prove
 
 Isolate fixtures and restore state per test. Migration/concurrency tests are separate from transaction-rollback suites: one outer rollback does not simulate independent clients. SQLite in-memory is connection-bound; use a temporary file for kernel reboot/multiple processes. PostgreSQL gets a separate test DB/schema per worker. Destructive resets require verified test environment/allowlisted DSN; tests have no production DSN. The backend task creates a separate development SQLite file; tests never reset it.
 
-## Implemented HTTP and deferred browser acceptance
+## Implemented HTTP and browser acceptance
 
 Implemented HTTP tests use fake classifier plus real migrated SQLite end-to-end: valid request→201 JSON stored result, correct Location/no-store→GET permalink→same question/answer after kernel reboot. Two new requests may have different UUIDv4 and identical answer text; both valid. Canonical/OG derive from snapshots/trusted origin; hostile Host must not replace share URL.
 
@@ -138,7 +138,7 @@ Proposed negative matrix: malformed JSON 400; disallowed Origin/cross-site 403; 
 
 Security scenarios: Twig escaping/DOM text insertion for HTML/script; instruction strings as data; same-origin/media/rate checks before paid calls. If CSRF tokens are adopted, test missing/invalid/valid; CSRF does not replace automated-abuse controls. Production errors omit traces, DSNs, keys, raw provider errors. `100% confidence` is satirical copy only.
 
-Browser E2E requires an isolated test profile, never personal tabs. Choose a runner (e.g. Playwright) when JS exists; this does not require a SPA/framework. No browser automation was used by this audit.
+Browser E2E uses an isolated Playwright profile, never personal tabs. Historical audit work used no browser automation; current frontend checks are recorded below. Screen-reader and cross-browser acceptance remain separate from these automated checks.
 
 - Enter/click produces one POST; clear pending state; controls usable after success/error.
 - Network error/timeout/429/503/HTML instead of JSON/malformed JSON: truthful error and preserved input.
@@ -163,7 +163,7 @@ Before any authorized behavior change, follow the root [test-first rule](../AGEN
 2. **Classification:** existing taxonomy/adapter/metrics, offline matrix/DI; separately authorized live baseline recorded. Holdout/human quality remains open.
 3. **Domain/catalog:** implemented fallback, synthetic fixture pools, Question/selector/application tests and deterministic random boundary; follows the [technical plan](technical-plan.md) rather than silently expanding stage 1.
 4. **Data + POST/permalink:** SQLite migrations/snapshots/insert-and-commit rollback/HTTP acceptance implemented; PostgreSQL and production concurrency remain outstanding.
-5. **Vanilla JS:** future isolated browser success/error/race/accessibility scenarios.
+5. **Vanilla JS:** implemented isolated browser success/error/pending/sharing/keyboard/contrast/layout scenarios; screen-reader and cross-browser acceptance remain outstanding.
 6. **Release:** future production configuration, PostgreSQL/security/performance acceptance and current live-contract evidence. Separately restore backups into an isolated DB and verify snapshots/permalinks/counts. After retention/deletion decisions, verify deletion without UUID reuse. Blocked/unperformed checks are gaps, not passes.
 
 Existing directories are `tests/Application`, `tests/Unit`, `tests/Integration`, `tests/Fixtures`; discovery includes the first three. Historical proposed `tests/Integration/Jev`, `tests/Integration/Persistence`, `tests/Functional`, `tests/Contract/Live` are not all present. Any future live tests must remain outside default discovery. Current default HTTP dependency is mock/deny-network; unplanned outbound calls fail. PostgreSQL/live checks must expose omitted execution explicitly so a green local suite cannot imply they ran.
@@ -175,3 +175,28 @@ Completion requires the task's relevant scenarios and listed exceptions/precondi
 Active enums/rubric and strict normalizer cover all 182 v2 pairs. Payload tests establish the sent contract, not semantic Jev compliance. Corpus tests check 100 source-exact questions, disjoint 50/20/10/20 groups and all labels; a counting double establishes one call per question. Unsupported taxonomy/rubric and fixture combinations are rejected before classification. Synthetic response fixtures were separately authored for v2.
 
 The [isolated seed verification](content/seed-v2/database-verification.json) checks actual migration/import, rollback, repeat import, stable UUIDs/times, all first-pool fallbacks, successful OTHER versus failure, every random index, mechanism independence and immutable saved snapshots. [Editorial matrices](content/seed-v2/editorial.md) are separate author judgments. PostgreSQL, live v2 classification and human humor/portability remain unverified.
+
+
+## Local lifecycle and expanded editorial catalog — 2026-10-15
+
+`LocalDatabaseTest` exercises an absent and obsolete database under a unique temporary project root, repeat real-catalog seeding, preserved demonstration files, regular sidecar cleanup, environment/DSN/path/symlink/hardlink restrictions, controlled console failures, and Composer's actual stop-on-failure script sequencing. It never resets the real development target. `EditorialCatalogTest` imports the complete current catalog, compares every stored field, checks canonical identities/texts/triples/enums, repeats import, induces transactional rollback, and exercises all 182 classification pairs plus every pool index after changing mechanism metadata.
+
+`tools/build-seed-batch.py` checks exact corpus quotations and CSV URLs, accepted/excluded cell coverage, UUID serialization, preserved original identities, counts and historical hashes. It serializes recorded author decisions; it cannot establish semantic fit or humor. `tools/verify-local-database.php` opens only the expected existing default file, enables query-only mode, and compares its schema with fresh in-memory migrations and every catalog column with the canonical seed. It requires zero verdicts and successful integrity/foreign-key checks.
+
+The real development lifecycle was explicitly authorized and exercised after temporary-database tests. The [new verification event](verification.md#development-library-and-local-database-lifecycle--2026-10-15) separates these runs from historical 24-answer demonstrations. No test or command calls Jev; PostgreSQL and human editorial approval remain outside this evidence.
+
+## Frontend browser checks — 2026-10-15
+
+`tests/Browser/frontend.cjs` uses Node's built-in test runner and an available Playwright installation. No browser tooling is required to run the application. With Playwright resolvable from `node_modules` or `NODE_PATH`, run:
+
+```sh
+rtk proxy node --test tests/Browser/frontend.cjs
+# Use an existing installed Chrome instead of a Playwright-managed Chromium:
+rtk proxy env PLAYWRIGHT_CHANNEL=chrome node --test tests/Browser/frontend.cjs
+```
+
+The runner starts and stops its own loopback PHP server on port 8137 and creates isolated headless browser contexts. Non-result GET requests use the real `public/router.php`, testing local CSS/JS delivery and Symfony pages. `tests/Fixtures/Frontend/router.php` injects a freshly migrated in-memory database with one explicitly synthetic saved verdict for result reads; it rejects all non-GET/HEAD requests. Every POST scenario is intercepted in the browser. No development database, key, live Jev call or personal browser profile is used. Fixture debug mode enables template reloading, avoiding stale debug-off Twig cache during iteration.
+
+Ten scenarios cover one POST while pending, editing lock, server text/link fidelity and safe DOM insertion, result focus/reset, Unicode trimming/code points, blank/over-limit validation, 429/Retry-After without automatic retry, 400/403/413/415/422/500/503 failures, malformed/unsafe success and lost response, clipboard success/denial, no-JS saved/informational pages, 320px layouts, keyboard and fill-only examples, computed text/field contrast and visible focus, 200% zoom and 1,500-character unbroken answers. The computed contrast sample is not a full accessibility audit.
+
+HTTP application tests additionally verify About/Privacy without classification, styled original-URL 404/503 with safe content/cache headers, and the existing real JSON creation→immutable SSR flow with fake classification. The browser suite checks the UI around controlled responses; it does not establish a live-provider or production end-to-end result. Manual screen-reader, Safari/Firefox, mobile-device/IME and production checks remain unperformed.

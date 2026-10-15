@@ -44,6 +44,12 @@
             "App\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "db:reset": "@php bin/console app:db reset --no-interaction",
+        "db:migrate": "@php bin/console app:db migrate --no-interaction",
+        "db:seed": "@php bin/console app:db seed --no-interaction",
+        "db:fresh": ["@db:reset", "@db:migrate", "@db:seed"]
+    },
     "replace": {
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",

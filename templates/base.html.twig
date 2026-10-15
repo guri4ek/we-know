@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#101114">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Life has questions. We have suspiciously confident answers. A little satirical certainty in an uncertain world.">
+    <title>{% block title %}We Know — Instant Answer{% endblock %}</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/app.css">
+    <script type="module" src="/assets/app.js"></script>
+    {% block metadata %}{% endblock %}
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="/" aria-label="We Know — home"><span class="brand-mark" aria-hidden="true">w.</span><span>we know<span class="brand-period">.</span></span></a>
+            <a class="nav-link" href="/about"{% if app.request.pathInfo == '/about' %} aria-current="page"{% endif %}>About <span aria-hidden="true">↗</span></a>
+        </header>
+        <main id="main" tabindex="-1" class="{% block main_class %}{% endblock %}">{% block body %}{% endblock %}</main>
+        <footer class="site-footer">
+            <span class="satire-label"><span class="status-dot" aria-hidden="true"></span> Satirical entertainment</span>
+            <nav aria-label="Footer"><a href="/about">About</a><a href="/privacy">Privacy</a></nav>
+            <span class="footer-note">Uncertainty ends here.</span>
+        </footer>
+    </div>
+</body>
+</html>

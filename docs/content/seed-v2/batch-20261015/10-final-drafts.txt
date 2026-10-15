@@ -1,0 +1,106 @@
+# Every shared probe paired with every candidate. P/C/L, ANY U/C/L; rubric 2,2,2,2,1,1; human null. Final exclusions take priority.
+@ANY/GENERAL
+M|Our answer is a stage door painted on a brick wall. The entrance is theoretical.|Promised access not real
+R|The oracle has outsourced knowing to a voice actor with excellent posture.|Knowledge replaced by performance
+H|This conclusion has enough confidence to power a city that has never existed.|Confidence powers fiction
+C|We know because nobody in this sentence has contradicted us.|Closed statement self-validates
+M|The answer is a paperweight made from a particularly heavy guess.|Speculation gains apparent substance
+B|Our reasoning has been granted diplomatic immunity from the question.|Reasoning escapes accountability
+R|We have asked the unknown to stop being so vague about our expertise.|Ignorance blamed for authority's weakness
+M|Certainty has entered on stilts. Please ignore the unusually long trousers.|Height of authority artificial
+C|The oracle took a census of its opinions. All residents agreed.|Agreement within one mind
+R|The explanation has been excused from attending the answer on compassionate grounds.|Reasoning absent by procedure
+M|Our knowledge is a decorative fireplace. The warmth is supplied by the brochure.|Simulated utility
+H|The confidence interval has expanded to include several imaginary universes.|Uncertainty overwide
+B|This conclusion was notarized by a fictional person with very real handwriting.|Formal validation fictional
+M|Our answer is a marching band hired to announce an empty envelope.|Announcement exceeds content
+R|The oracle knows its limitations. It has listed them under Other People's Concerns.|Authority delegates limitations
+C|We have confused the ability to answer immediately with the ability to know immediately.|Speed mistaken for knowledge
+M|The verdict is a throne assembled from unsold self-help books.|Authority built on advice commodity
+H|Our expertise is so portable it requires no supporting material whatsoever.|Lack of evidence sold as portability
+R|The conclusion has requested anonymity from the reasoning that produced it.|Outcome distances itself from process
+M|This answer is a wax apple in the fruit bowl of understanding.|Knowledge represented but not nourishing
+@WHO/GENERAL
+R|The person the instruction manual calls when it cannot follow itself.|Instructions need external interpreter
+M|The lifeguard at a pool filled entirely with confident assumptions.|Epistemic rescue role
+H|The only professor with tenure in an imaginary dimension.|Fictional academic authority
+B|The designated custodian of matters officially designated Someone Else's Problem.|Responsibility delegated to abstraction
+C|The expert whose biography cites the biography as its primary source.|Circular credential history
+M|The beekeeper tending a hive of very industrious guesses.|Speculation cultivated as production
+R|The witness who insists on cross-examining the question.|Witness reverses inquiry
+M|The navigator steering by the brightest adjective.|Authority uses rhetoric as guide
+H|The last remaining graduate of a school that has not opened yet.|Impossible credential timing
+R|The assistant hired to keep the expert from quoting the assistant.|Circular expertise maintained
+M|The stagehand moving the scenery behind the appearance of certainty.|Authority is staged
+B|The officially appointed neighbor of the concept of responsibility.|Responsibility adjacent instead of owned
+C|The authority chosen by a poll conducted among its own reflections.|Self-election through duplication
+R|The critic invited by the applause to review the performance.|Reception selects evaluation
+M|The seamstress who stitches missing evidence into impressive curtains.|Evidence gap becomes concealment
+H|The archivist of conclusions reached in parallel universes.|Authority based on inaccessible evidence
+R|The consultant retained by the word Obviously.|Rhetorical certainty hires support
+M|The plumber connecting the fountain of certainty to the tank of guesses.|Confidence supplied by speculation
+B|The spokesperson for a silence that never authorized representation.|Absence assigned voice
+R|The author the footnote hired to make itself look incidental.|Supporting material controls main account
+@CHOICE/GENERAL
+M|Choose whichever option can walk across a bridge made of its own qualifications.|Claim supported by caveats
+R|Pick the alternative that would let a skeptical snail set the pace of its victory parade.|Option submits celebration to doubt
+H|Choose the option whose ego fits in the overhead compartment without moving anyone else's luggage.|Self-importance constrained socially
+B|Pick whichever alternative has declared its superlatives on the appropriate imaginary form.|Promotion discloses overclaim
+M|Choose the option that can keep its balance when its sales platform is removed.|Substance without promotion
+R|Pick whichever alternative would admit that its halo came with assembly instructions.|Reputation acknowledges construction
+M|Choose the option that has a back door for its own overconfidence.|Choice allows certainty to exit
+C|Pick whichever alternative remembers being an idea before it became an inevitability.|History challenges necessity
+R|Choose the option that would let its critics design one room in its monument.|Option permits contrary perspective
+M|Pick the alternative that can explain why its crown needs a chin strap.|Status tenuously held
+H|Choose whichever option can fit the word Obviously through an ordinary letterbox.|Certainty scaled down
+R|Pick the alternative willing to watch its own victory speech with the sound off.|Presentation faces stripped evaluation
+B|Choose whichever option has obtained permission from its consequences to call itself brilliant.|Outcome authorizes praise
+M|Pick the alternative with a handle on the inside of its argument.|Reasoning permits exit
+R|Choose the option that can tell its origin story without giving itself all the speaking parts.|Choice acknowledges others
+M|Pick whichever alternative can stand on its own feet after removing its rhetorical stilts.|Argument without inflated stature
+H|Choose the option that can carry its entire legend in a lunch bag.|Myth made proportional
+R|Pick whichever alternative would return applause it had not ordered.|Undeserved praise relinquished
+M|Choose the option whose promise has seams visible from the outside.|Construction of promise transparent
+B|Pick the alternative that has listed Doubt as an emergency contact.|Option makes uncertainty accessible
+@METHOD/GENERAL
+M|Put the plan on a seesaw with its assumptions. Find out which end never touches the ground.|Model balance tested
+R|Ask the question to choose a seat before the answer rearranges the room.|Inquiry determines framing
+B|Have every step declare whether it is a step or just an impressive pause.|Sequence separates action and theater
+H|Borrow a bucket large enough to catch the confidence leaking from the explanation.|Confidence as leak
+M|Turn the difficulty into a coat hook. Hang the complicated explanation where you can see it.|Problem exposes complexity
+R|Ask the procedure what it would do if the procedure were unavailable.|Method finds own necessity
+M|Give the conclusion a ball of string before it enters the argument.|Outcome can trace reasoning
+C|Tell the plan the solution is already listening. It may stop giving itself a speech.|Plan gains practical audience
+B|Require the obvious step to carry identification. Impostors have been using its name.|Simplicity claims verified
+M|Set the explanation on an imaginary turntable. Listen for the scratch it calls a principle.|Repeated flaw as doctrine
+R|Make the goal explain why it keeps dressing as the next goal.|Scope creep anthropomorphized
+H|Use a magnifying glass on the small print of the phrase No Problem.|Dismissal conceals difficulty
+M|Give the plan a tail. Follow it back to the assumption wagging the whole thing.|Assumption controls plan
+C|Tell the shortcut it is now the official route. Its hidden detours will demand recognition.|Informal route exposes costs
+R|Ask the solution to stop introducing the problem as its assistant.|Outcome dominates inquiry
+M|Put a periscope on the instructions. They have been traveling below the actual task.|Method misses context
+B|Require the grand idea to submit a sample of its ordinary behavior.|Concept faces practical example
+H|Bring enough string to connect every use of Therefore to something that actually came before it.|Inference links scrutinized
+R|Ask the explanation to leave its entourage outside.|Account stripped of excess
+M|Give the process a pocket watch that measures purpose instead of duration.|Time metric replaced by purpose
+@EXPLAIN/GENERAL
+M|Because the argument is riding a unicycle while describing itself as a transport network.|Small support overclaims infrastructure
+R|Because the reason has hired the excuse as its publicist.|Justification markets cause
+H|Because a small fact has been asked to support a cathedral with a swimming pool.|Evidence overloaded
+C|Because the explanation mistook being difficult to disprove for being easy to trust.|Falsification gap mistaken for support
+M|Because certainty is a sandcastle that has appointed itself mayor of the beach.|Fragile idea claims authority
+R|Because the example has started giving orders to the thing it exemplifies.|Example controls subject
+M|Because the logic is a sock turned inside out and labeled Advanced.|Reversal marketed as sophistication
+B|Because the premise has exercised its contractual right to remain unexamined.|Foundation avoids scrutiny by contract
+C|Because the answer was available in several fonts and looked independently corroborated.|Typography mistaken for multiple sources
+H|Because the tiniest missing detail occupies the largest room in the explanation.|Absence dominates account
+R|Because the summary has been feeding instructions to the original.|Synopsis controls source
+M|Because the reasoning is a revolving restaurant with a fixed opinion of the view.|Perspective changes conclusion does not
+C|Because the explanation won an award judged entirely by its own examples.|Selected evidence validates theory
+M|Because the idea keeps its foundations in a suitcase for convenient relocation.|Claim moves foundations
+R|Because the assumption has asked the evidence to stop interrupting.|Premise suppresses contradiction
+H|Because one well-dressed guess can occupy an entire chapter.|Presentation expands unsupported claim
+M|Because common sense is trying to thread a needle with a spotlight.|Visibility not precision
+C|Because the conclusion interpreted a lack of immediate applause as thoughtful agreement.|Silence counted as assent
+R|Because the explanation has begun defending itself against the original question.|Account treats inquiry as attack
+M|Because logic is following breadcrumbs left by a bakery advertising its own existence.|Reasoning follows promotion

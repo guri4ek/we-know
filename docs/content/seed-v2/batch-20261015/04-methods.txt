@@ -1,0 +1,145 @@
+# Author screening against every shared probe; pass cells P/C/L, subject to later novelty exclusions. Scores 2,2,2,2,1,1; human null.
+@METHOD/TECH
+R|Ask the computer to prove it is a computer. Keep selecting all the pictures containing existential doubt.|Captcha reverses evaluator
+M|Download a smaller problem. Your current difficulty exceeds the available imagination.|Problem as oversized download
+B|Open a support ticket for the support ticket. It has stopped responding emotionally.|Support system receives support
+M|Give the cursor a map of your intentions. It has only been following your hand.|Pointer needs intent
+R|Make the software accept your terms and conditions for a change.|User imposes license
+H|Compress the instruction manual until only the useful sentence remains. Bring industrial equipment.|Manual loses bulk
+M|Move the bug into a glass case. Charge the program admission to see it.|Defect as exhibit
+R|Ask the algorithm to describe a time it worked well as part of a team.|Algorithm faces job interview
+M|Translate the request into the dialect of a printer that has never known fear.|Machine confidence as language
+C|Tell the system the demonstration is over. It may accidentally do the real thing.|Performance stops competence begins
+M|Install a tiny drawbridge between the feature and the reason it exists.|Feature reconnects with purpose
+R|Have the error message apologize in a language the error understands.|Message addresses defect
+B|Request read access to the computer's intentions before granting it write access to your afternoon.|Permissions govern time
+M|Turn the help menu into a rope ladder. Climb out of its circular explanations.|Help becomes escape route
+H|Reduce the problem to one bit. Persuade the bit to stop having a career crisis.|Binary indecision
+@METHOD/LANGUAGE
+R|Ask the sentence to introduce its words. Several appear to have arrived as someone else's guests.|Sentence hosts words
+M|Escort the meaning across the sentence. Do not let the commas sell it souvenirs.|Meaning navigates tourist traps
+B|Give the expression a passport stamped Valid Outside This Example.|Usage requires portable identity
+H|Read the rule at a distance where its exceptions become visible as a separate continent.|Exceptions overwhelm rule
+M|Lend the phrase a pair of shoes. See whether it can walk without its explanation.|Expression gains independence
+R|Put the dictionary in the witness box. Ask where it was when the word changed meaning.|Authority interrogated about change
+M|Untangle the expression by following the thread that looks least pleased to be there.|Language as resistant knot
+C|Announce that the rule is universal. Its exceptions will immediately introduce themselves.|Overclaim summons contradiction
+M|Give the sentence a small garden. Let the meaning grow beyond the fence of the example.|Meaning exceeds example
+R|Ask the punctuation to demonstrate the emergency it was hired to prevent.|Punctuation justifies role
+M|Dress the expression for the occasion. Check that the occasion has not come as a different century.|Register meets historical change
+B|Invite the words to negotiate a boundary treaty with their neighbors.|Words negotiate grammar
+H|Borrow a telescope from the dictionary. The relevant exception is orbiting the appendix.|Rule requires distant exception
+R|Make the usage guide say it out loud in front of the people who actually say it.|Prescription faces usage
+M|Give the meaning a forwarding address before moving the words.|Rephrasing as relocation
+@METHOD/WORK_STUDY
+R|Invite the objective to the meeting. Everyone has been speaking on its behalf.|Purpose gets representation
+M|Give the task a roof. Its scope keeps expanding whenever it rains.|Scope as expanding building
+H|Shrink the mission statement until it fits inside an actual action.|Grand language becomes practical scale
+B|Ask the deadline to disclose its conflict of interest with the calendar.|Deadline audited
+M|Attach a bell to the moving goalpost. At least the progress report will have sound.|Moving target becomes audible
+R|Have the performance indicator perform something while you indicate.|Metric must act
+M|Put a window in the organizational chart. Let the work see daylight.|Hierarchy blocks real work
+C|Tell the process it has already succeeded. Observe which unnecessary steps object.|Success exposes redundant process
+R|Ask the agenda to summarize the meeting it thinks it is having.|Agenda reveals assumptions
+M|Give the deliverable a return address. It has been wandering between expectations.|Output lost between stakeholders
+H|Find a ruler long enough to measure the gap between important and marked Important.|Label overstates priority
+B|Register the unspoken expectation as a separate legal entity. Request an introduction.|Implicit demand becomes accountable
+M|Put wheels on the ivory tower. Park it beside the actual problem.|Abstraction moves to reality
+R|Have the citation explain what it remembers about the claim.|Reference must support assertion
+M|Build a small bridge from the presentation to the work it describes.|Reporting reconnects with reality
+@METHOD/FOOD
+R|Ask the recipe to wash its hands of its own assumptions.|Recipe performs hygiene on reasoning
+M|Give culinary certainty a sieve. Keep the bits that cannot pass through their own explanation.|Confidence filtered
+H|Use a mixing bowl large enough to contain every opinion about the correct method.|Cooking opinions exceed vessel
+M|Teach the recipe to recognize ingredients without their promotional photographs.|Recipe faces real ingredients
+R|Make the measuring cup estimate the size of its own authority.|Instrument measures its influence
+B|Serve the instructions with a declaration of their fictional ingredients.|Instructions disclose invented assumptions
+M|Knead the explanation until it stops leaving lumps of unexplained confidence.|Reasoning as dough
+R|Ask the cookbook to prepare one of its own adjectives.|Book must enact vague praise
+M|Give the kitchen theory an apron made of questions.|Theory protected by inquiry
+C|Tell the recipe a food critic is coming. Its optional steps will suddenly claim to be essential.|Evaluation reveals vanity
+H|Find a spoon big enough to stir the disagreement out of culinary tradition.|Tradition as oversized mixture
+M|Put the method on a plate. Notice how much of it is garnish.|Procedure exposes decoration
+R|Have the cooking instructions describe their last encounter with an actual kitchen.|Instructions face experience check
+M|Separate the explanation from its confidence using an imaginary salad spinner.|Confidence separated from substance
+B|Ask the recipe to declare which steps are ingredients in its own self-esteem.|Procedure discloses vanity
+@METHOD/HOME
+M|Give the floor plan a pair of slippers. Make it walk through its own assumptions.|Plan experiences home
+R|Ask the spirit level whether it has considered the house's point of view.|Instrument meets architectural opinion
+B|Request planning permission for the explanation before adding another extension to it.|Explanation as expanding building
+M|Fit a tiny door in the problem. Invite the solution to knock.|Problem receives visitor
+H|Use a tape measure long enough to reach the end of the manual's confidence.|Confidence measured as distance
+R|Have the diagram spend a night in the room it claims to understand.|Model experiences reality
+M|Install a skylight in the instructions. The crucial assumption prefers the dark.|Reasoning illuminated
+C|Tell the blueprint the house is reading over its shoulder. It may become more realistic.|Plan gains accountability
+M|Turn the explanation into a doormat. Make every assumption wipe its feet.|Assumptions vetted at entrance
+R|Ask the toolbox to nominate one tool qualified to repair its own advice.|Tools evaluate expertise
+M|Hang the grand plan on an imaginary nail. Check how much certainty falls off.|Plan loses unsupported confidence
+B|Invite the building regulations to inspect the sentence containing the word simply.|Simplicity claim inspected
+H|Borrow a ladder tall enough to reach the manual's expectations.|Expectations exceed practical scale
+R|Ask the house to describe its preferred user settings.|Dwelling configures resident
+M|Put the missing explanation in a transparent wall. Stop pretending it is load-bearing.|Absence exposed as structure
+@METHOD/MONEY
+R|Ask the budget to explain its childhood relationship with arithmetic.|Budget receives psychological interview
+M|Fit the forecast with a rear-view mirror. Introduce it to its previous forecasts.|Prediction sees history
+B|Require the decimal point to declare which side it is representing.|Notation discloses allegiance
+H|Find a wallet large enough to hold all the model's assumptions.|Assumptions exceed capacity
+M|Give the financial projection a parachute made of its own promises.|Forecast supported by promises
+R|Ask compound interest to explain itself without recruiting another exponent.|Financial concept cannot expand audience
+M|Turn the fine print into a loudspeaker and let it introduce the offer.|Qualifications get volume
+C|Tell the spreadsheet that optimism is now taxable. Watch its confidence become harder to find.|Confidence responds to tax
+B|Demand a receipt for the invisible hand's consulting services.|Market metaphor billed
+R|Make the price tag name the thing it thinks it is worth.|Price explains valuation
+M|Fold the financial model into a paper boat. Ask it to explain the ocean.|Fragile model meets reality
+H|Borrow a magnifying glass strong enough to see the word guaranteed blush.|Promise reveals doubt
+M|Give the balance sheet a hammock. Its two sides have been pulling all day.|Accounts as tension
+R|Ask the forecast to put its reputation in the same imaginary basket as its predictions.|Prediction shares risk
+B|Have the arithmetic sign a statement confirming it has not been coached by the sales pitch.|Numbers disclose influence
+@METHOD/NATURE
+R|Ask the field guide to identify itself before it identifies anything else.|Identifier must identify itself
+M|Give the explanation a pair of muddy boots. Introduce it to outdoors.|Theory enters environment
+B|Submit the plan to the weather for a purely symbolic signature.|Weather must consent
+H|Find a notebook large enough for nature's corrections in the margin.|World exceeds documentation
+M|Grow a question mark beside the tidy theory. See which one attracts more light.|Inquiry competes with certainty
+R|Ask the ecosystem what it thinks you are trying to manage.|Managed world evaluates manager
+M|Build a tiny gate in the classification system. Nature keeps climbing over it.|Taxonomy accommodates overflow
+C|Label the plan Foolproof. The natural world will volunteer as the examiner.|Claim provokes challenge
+M|Give the field guide a compass that points toward things it has never met.|Knowledge seeks unknown
+R|Have the specimen write a short description of the observer.|Subject reverses research
+B|Request permission from the horizon before drawing conclusions across it.|Inference needs landscape permission
+H|Borrow enough patience to hear a mountain finish clearing its throat.|Geological voice
+M|Put a raincoat on the theory. Its assumptions dissolve at the first encounter with weather.|Theory weather-tested
+R|Ask nature to demonstrate the version described in the brochure.|World confronts promotional representation
+M|Plant the explanation upside down. Its hidden assumptions should become visible.|Theory exposes roots
+@METHOD/HEALTH
+R|Ask the wellness slogan to demonstrate a push-up. Count only repetitions supported by evidence.|Claim faces fitness test
+M|Give the health chart a pair of reading glasses. It keeps overlooking the person.|Metric notices person
+B|Request a certificate of existence from the imaginary average patient.|Average must prove reality
+H|Find a scale capable of weighing the confidence in a miracle claim.|Confidence becomes mass
+M|Fit the wellness theory with a window. Let actual humans look back at it.|Model faces people
+R|Ask the progress graph to explain why it thinks life is graph-shaped.|Metric justifies reduction
+M|Make the health slogan wear its assumptions on the outside of its lab coat.|Authority exposes foundations
+C|Tell the universal wellness formula it has been selected for an individual assessment.|Universal claim faces specificity
+R|Have the motivational poster interview the wall about its results.|Motivation evaluated by recipient
+M|Put the perfect-health ideal on a treadmill made of its own fine print.|Ideal tested by qualifications
+B|Ask the diagram to distinguish its medical qualifications from its nice colors.|Visual authority questioned
+H|Borrow a ruler that can measure the distance between a wellness promise and a human being.|Promise separated from person
+M|Give the one-size-fits-all claim a fitting room with no mirrors.|Generality faces fit without self-admiration
+R|Ask the wellness checklist to list one thing it has learned from being checked.|Evaluator learns from evaluation
+M|Unroll the health slogan until you find the person it has wrapped in percentages.|Metrics conceal person
+@METHOD/TRAVEL
+R|Ask the itinerary to go on the trip first and send an honest postcard.|Plan scouts route
+M|Give the journey a pocket. Put the unexpected there instead of in the schedule.|Travel accommodates surprise
+B|Declare your expectations at the border between the brochure and reality.|Promotional claims pass customs
+H|Pack a map large enough to include the places omitted by the phrase just nearby.|Distance understatement exposed
+M|Put the route through a revolving door. See which direction comes out claiming to be shortest.|Route tests its own claims
+R|Have the travel guide explain the journey to someone who lives inside its footnotes.|Guide faces overlooked people
+M|Give the itinerary walking shoes instead of a highlighter.|Plan becomes practical
+C|Tell the destination the route has lost it. Ask them to settle the matter themselves.|Route and endpoint coordinate
+B|Apply for a visa to enter the brochure's version of reality.|Promotion as separate country
+R|Ask the timetable to carry its own luggage across a connection.|Schedule faces actual demands
+M|Turn the dotted line on the map into a zipper. Check what the journey has been hiding.|Route conceals complexity
+H|Borrow a suitcase big enough for everything the word straightforward left out.|Simplicity hides baggage
+M|Give the plan a compass pointed toward its missing assumptions.|Plan navigates blind spots
+R|Have the destination review the route's performance for once.|Endpoint judges journey
+M|Put a viewing platform on the itinerary. Admire the distance between the plan and the trip.|Plan-reality gap as scenery

@@ -1,17 +1,30 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noindex, nofollow">
-        <title>Instant Answer — We don't think. We know.</title>
-    </head>
-    <body>
-        <main>
-            <p>Instant Answer</p>
-            <h1>We don't think. We know.</h1>
-            <p>The world's first uncertainty-free answer engine.</p>
-            <p>Coming soon.</p>
-        </main>
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}We don't think. We know. — Instant Answer{% endblock %}
+{% block main_class %}home-page{% endblock %}
+{% block body %}
+    <section class="hero" aria-labelledby="home-heading" data-hero>
+        <p class="eyebrow"><span class="little-line" aria-hidden="true"></span> An answer to absolutely anything</p>
+        <h1 id="home-heading">We don't think. <span>We know.</span></h1>
+        <p class="hero-description">Life has questions. We have suspiciously confident answers.</p>
+    </section>
+    <section class="question-section" aria-label="Ask a question" data-composer>
+        <form class="question-card" action="/answer" method="post" novalidate data-question-form aria-busy="false">
+            <div class="card-heading"><label for="question">Your question</label><span class="eyebrow muted" aria-hidden="true">No overthinking required</span></div>
+            <textarea id="question" name="question" rows="3" placeholder="Go on. Ask the big question." aria-describedby="question-help question-count question-notice question-error" disabled></textarea>
+            <div class="field-meta"><span id="question-help">Ask in English. Anything on your mind.</span><span id="question-count"><span data-count>0</span> / 500</span></div>
+            <p class="form-error" id="question-error" data-form-error role="status" aria-live="polite" hidden></p>
+            <p class="storage-notice" id="question-notice">Your question is sent to Jev for classification and stored with its answer. Anyone with the result link can read both. Avoid personal or sensitive information. <a href="/privacy">Privacy details <span aria-hidden="true">↗</span></a></p>
+            <button class="button button-primary submit-button" type="submit" disabled><span data-submit-label>Get answer</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <noscript><p class="no-script">Enable JavaScript to ask a question. Saved answers and the information pages are readable without it.</p></noscript>
+        </form>
+        <div class="suggestions" data-suggestions hidden>
+            <span class="suggestion-label">Need a question?</span>
+            <button type="button" data-example="Should I quit my job?">Should I quit my job? <span aria-hidden="true">↗</span></button>
+            <button type="button" data-example="Why does my cat judge me?">Why does my cat judge me? <span aria-hidden="true">↗</span></button>
+            <button type="button" data-example="What should I eat tonight?">What should I eat tonight? <span aria-hidden="true">↗</span></button>
+        </div>
+    </section>
+    {% include 'verdict/_card.html.twig' with { question: '', answer: '', share_url: '', inline: true } only %}
+    <p class="home-footnote" data-home-footnote>One question. One verdict. <span>Absolutely no guarantee of wisdom.</span></p>
+{% endblock %}

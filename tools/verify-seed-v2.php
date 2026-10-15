@@ -70,7 +70,7 @@ $selector = new AnswerSelector($repository, $random);
 $success = static fn (Intent $intent, Topic $topic): ClassificationSuccess => new ClassificationSuccess($intent, $topic, 'offline-double', 1, 1, [], [], 0, 0, 0);
 $cases = [
     ['EXPLAIN','TECH','exact',2377],
-    ['METHOD','TECH','intent_general',2407],
+    ['METHOD','SPORTS','intent_general',1871],
     ['DURATION','FOOD','universal',33],
     ['OTHER','GENERAL','exact',3557],
     [null,null,'universal',3184],

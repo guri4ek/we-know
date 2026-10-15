@@ -54,7 +54,9 @@ final class AnswerHttpTest extends WebTestCase
         self::assertResponseIsSuccessful();
         self::assertSelectorTextContains('main', $data['question']);
         self::assertSelectorTextContains('main', $data['answer']);
-        self::assertSelectorNotExists('script');
+        self::assertSelectorNotExists('script:not([src])');
+        self::assertSelectorExists('[data-verdict] [data-copy-link]');
+        self::assertSelectorExists('[data-verdict] a[href="/"]');
         self::assertSelectorExists('link[rel="canonical"][href="http://localhost'.$data['url'].'"]');
         self::assertSelectorExists('meta[name="robots"][content="noindex, nofollow"]');
         self::assertResponseHeaderSame('X-Robots-Tag', 'noindex, nofollow');

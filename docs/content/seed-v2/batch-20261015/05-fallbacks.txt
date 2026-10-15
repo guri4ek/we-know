@@ -1,0 +1,120 @@
+# Every candidate paired with all named shared probes. P/C/L (U/C/L for ANY); scores 2,2,2,2,1,1; human null. Later exclusions take precedence.
+@ANY/GENERAL
+M|Our certainty is decorative. Please admire it from a reasonable intellectual distance.|Confidence as display object
+R|We have eliminated doubt by declining to consult anything that might cause it.|Certainty from avoiding evidence
+H|This answer has been tested on several imaginary experts. None survived the footnotes.|Imaginary validation excessive qualifications
+M|The oracle has a revolving door where its memory should be.|Knowledge as transient traffic
+C|We reached this conclusion by following the arrow labeled Conclusion.|Label mistaken for reasoning
+R|Our confidence has asked us to stop mentioning its qualifications.|Confidence hides credentials
+M|The answer is wearing a crown borrowed from a chess set.|Miniature borrowed authority
+B|This verdict is valid wherever imaginary jurisdiction is recognized.|Authority limited to fiction
+M|The explanation is hollow. The echo is our senior consultant.|Emptiness produces expertise
+R|We have a second opinion. It was written by the first opinion in a hat.|Disguised self-corroboration
+H|Our margin of error has acquired its own horizon.|Uncertainty exceeds view
+C|The answer passed inspection because the inspector was part of the answer.|Self-inspection
+M|Certainty has entered the room carrying an empty briefcase very professionally.|Authority costume lacks substance
+R|The facts declined our invitation. We have appointed their chairs as substitutes.|Absent evidence represented by furniture
+M|Our conclusion is a cardboard lighthouse. The beam is printed on the box.|Guidance only depicted
+B|This answer is licensed for ceremonial certainty only.|Authority limited to ceremony
+H|The reasoning is so thin it can slide under a closed question.|Absent substance as physical thinness
+R|We have put the verdict before the inquiry to improve punctuality.|Efficiency reverses reasoning
+M|Our expertise is a borrowed ladder leaning against a painted window.|False access to knowledge
+C|The sentence ends with a period. We consider the matter structurally complete.|Punctuation substitutes for completion
+M|The oracle is a snow globe. Shake gently for another arrangement of confidence.|Certainty as decorative randomness
+R|We asked the evidence to be more supportive. It requested a different answer.|Evidence rejects conclusion
+H|Our certainty is visible from space. Its supporting argument is not visible from here.|Confidence and evidence scale mismatch
+M|The conclusion has a velvet rope and nothing behind it.|Exclusivity conceals absence
+B|All objections must be submitted to the imaginary address printed on our imaginary stationery.|Fictional appeal process
+R|The answer has hired an explanation to defend a decision it already made.|Post-hoc justification
+M|Our reasoning is a suspension bridge supported entirely by suspense.|Support confused with anticipation
+C|The oracle consulted a mirror. The source agreed to remain anonymous.|Self-source anonymity
+M|This answer has the nutritional value of a photograph of soup.|Representation lacks substance
+R|Our expertise is currently checking whether we are authorized to possess it.|Expertise audits holder
+H|We have enough confidence to fill the gap left by all available knowledge.|Confidence replaces knowledge
+M|The answer arrived by hot-air balloon. The transport explains the contents.|Medium reveals emptiness
+B|The conclusion is official because we own a stamp that says Official.|Authority from self-made seal
+R|We have placed the question under the answer to stop the answer wobbling.|Question as physical support
+M|Our certainty is a house of cards with exceptionally strict visiting hours.|Fragility protected by procedure
+C|We repeated the answer louder. It is now supported by additional sound.|Volume as evidence
+H|The oracle's qualifications are printed in ink too advanced to exist.|Credentials absent by prestige claim
+M|Our logic has a scenic overlook where the missing step should be.|Gap presented as feature
+R|The conclusion is awaiting evidence that matches its preferred color scheme.|Evidence judged aesthetically
+B|This answer is protected by a warranty against appearing undecided.|Warranty covers presentation
+M|We built a pedestal for the answer. The answer turned out to be another pedestal.|Authority rests on display
+C|The oracle knows because the sign says Oracle. The sign was the oracle's idea.|Circular authority
+R|We have corrected the evidence's unfortunate tendency to disagree with us by not including it.|Evidence excluded for disagreement
+M|Our certainty is a weather vane mounted indoors.|Indicator isolated from reality
+H|This answer has crossed an ocean of ignorance without getting its shoes wet.|Ignorance bypassed theatrically
+R|The explanation was hired for its voice. Its references are other voices.|Authority from delivery
+M|We have put a handle on the unknown. It remains firmly attached to nothing.|Practical grip on absence
+C|The conclusion has a shadow, which we have accepted as an independent witness.|Dependent evidence counted separately
+B|The oracle is authorized to issue confidence in denominations of one sentence.|Certainty as minted currency
+M|This answer is a souvenir from a place our reasoning never visited.|Claim lacks investigation
+R|We have mistaken the absence of questions in this answer for clarity.|No inquiry mistaken for understanding
+H|Our expertise covers everything visible from inside a closed drawer.|Confined knowledge overclaims scope
+M|The conclusion is a wax seal on an empty envelope.|Formality without content
+C|We know this is definitive because definitive appears in the promotional material.|Marketing as proof
+R|The answer has requested a simpler question to justify its existing confidence.|Conclusion demands fitted inquiry
+M|Our certainty has a beautiful facade and stairs leading to the facade.|Presentation loops to itself
+B|The oracle has declared its inability to know irrelevant to its eligibility to answer.|Authority self-exempts from competence
+H|We have turned one unsupported sentence into a full-service certainty experience.|Thin claim marketed extensively
+M|This answer is a compass rose painted on a dinner plate.|Guidance merely decorative
+R|The evidence has been offered a supporting role. It declined on artistic grounds.|Evidence rejects assigned narrative
+@WHERE/GENERAL
+M|Behind the door marked Elsewhere. The room is devoted entirely to additional doors.|Location recursively deferred
+H|On the unnumbered floor between the map and the territory.|Impossible place between model and world
+M|In the cupboard where the atlas keeps its imaginary countries.|Geography stores fiction
+B|At the address reserved for things too confident to provide an address.|Certainty exempt from location
+M|Inside the gap that the map folds over.|Map crease becomes place
+R|Where the directions go when they refuse to ask for directions.|Instructions lose orientation
+H|Three dimensions past the back of the signpost.|Location exceeds spatial frame
+M|In the annex to the word Here.|Language gets physical extension
+B|At the registered headquarters of the concept of Somewhere.|Location has headquarters
+M|Under the floorboards of the nearest hypothetical location.|Imaginary place has hidden space
+R|At the destination the route is trying to keep for itself.|Route hoards destination
+M|Behind the scenery on the globe.|World model conceals stage
+H|At the far end of an inch measured by a very ambitious ruler.|Unit expands by ambition
+M|In the secret compartment of a compass that points inward.|Navigation turns inward
+R|Where the horizon stores everything it keeps moving away from.|Horizon retreats with destination
+B|At the postal address of the map's unresolved assumptions.|Assumptions have address
+M|In the room that the floor plan politely declines to discuss.|Plan hides room
+H|One impossible left turn inside the idea of straight ahead.|Direction contradicts itself
+M|On the other side of the label You Are Here.|Map marker has literal reverse
+R|Where the atlas goes to avoid being recognized.|Reference hides from readers
+@COMPARE/LANGUAGE
+M|The distinction is a fence. Usage keeps walking through the gate while the rules argue about the fence.|Boundary negotiated by usage
+R|They disagree about which one needs explaining. The explanation has taken sides.|Terms demand asymmetric justification
+M|Each brings a different suitcase to the same discussion about luggage.|Expressions carry different baggage
+H|The difference is audible to an expert standing three corrections away.|Difference measured in correction distance
+R|They invite different objections from the same person holding the same dictionary.|Usage consequences vary
+M|Their boundaries are drawn in pencil by people who argue in permanent marker.|Tentative distinction fierce conviction
+B|Each has a different permit to occupy roughly this part of the conversation.|Usage jurisdiction
+M|The distinction changes costume when it travels from the page to the mouth.|Writing and speech reframe difference
+R|They have different alibis for being exactly what the speaker intended.|Expressions justify themselves
+H|Their differences travel faster than the agreement on how to describe them.|Disagreement outpaces analysis
+M|Each wears its history differently. None kept the receipt.|Different inherited conventions
+C|They produce different explanations from people who all start with Obviously.|Confidence does not imply agreement
+M|The boundary is real enough for a fence and disputed enough for a revolving gate.|Porous lexical boundary
+R|Each makes a different part of the rulebook clear its throat.|Different rules assert themselves
+B|Their differences have separate forwarding addresses in formal and informal usage.|Context relocates distinction
+M|They cast different shadows when the light comes from a different century.|Historical perspective changes contrast
+R|They disagree on who owns the example. The example is consulting a dictionary.|Terms compete over evidence
+H|The distinction can be heard through several closed books.|Expert insistence hyperbole
+M|Each has a different handshake with context. Context refuses to wear name tags.|Context-sensitive lexical relationships
+R|They provoke different corrections from a language that refuses correction itself.|Unequal authority
+@COMPARE/GENERAL
+M|Their differences have different shadows. The comparison has installed a second lamp.|Comparison reveals contrast through framing
+R|Each considers the others a useful example of why it needs a better explanation.|Referents justify identity through contrast
+M|They carry their assumptions in different pockets.|Distinct hidden premises
+H|The distinction is large enough to trip over and small enough to disappear in a summary.|Contrast changes with resolution
+M|Their trade-offs wear different shoes but leave equally confident footprints.|Trade-offs differ without ranking
+R|They disagree about what should count as the main difference.|Comparison criteria contested
+B|Each has filed a separate claim to the word Obviously.|Shared certainty competing ownership
+M|Their similarities share a doorway. Their differences keep rearranging the furniture.|Overlap with shifting distinction
+R|Each makes the others look easier to explain than it is.|Relative explanation difficulty
+M|They come with different maps of the same disagreement.|Distinct framing
+H|Their differences expand to fill the entire time available for explaining them.|Comparison consumes attention
+M|Each wraps its complications differently. None includes scissors.|Different obstacles to understanding
+R|They disagree most confidently about the terms of comparison.|Criteria are source of difference
+B|Their similarities require a joint signature. Their differences have independent stationery.|Agreement vs autonomy
+M|They stand at different windows in a house built from qualifications.|Distinct perspectives on nuance

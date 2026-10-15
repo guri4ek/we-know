@@ -1,4 +1,22 @@
-# Frontend design proposal
+# Frontend design and implementation
+
+## Current implementation — 2026-10-15
+
+The user requested frontend implementation. The dark-theme Symfony/Twig and vanilla-JS UI is now implemented locally, with no new runtime packages, external fonts, bundler, client router or deployment. The wordmark uses **We Know**; Instant Answer remains in page titles as the working concept. Final brand/domain selection remains open.
+
+- `/`: question form, optional fill-only question suggestions, Unicode code-point validation/counter aligned with PHP whitespace trimming, one pending POST, inline server-returned verdict, manual new-question reset and explicit saved-answer link. The address stays `/`.
+- `/a/{publicId}`: shared verdict card rendered from stored snapshots; existing trusted canonical/textual OG, escaping, noindex and no-store are preserved. No new classification on reads.
+- `/about`: short explanation and native expandable FAQ. `/privacy`: implemented data-flow disclosure, explicitly identifying unresolved retention/deletion/provider/operational policy instead of claiming launch approval.
+- Missing pages/results and unavailable HTML pages: shared styled 404/503 at the original URL, safe fallback if error rendering fails. The answer endpoint retains its JSON failure handling.
+- Sharing: copies the saved URL; clipboard denial reveals and selects a readonly link field. Saved pages remain useful with JavaScript disabled; submission is disabled until the module initializes and a noscript explanation is present.
+- Client failures: preserve the draft, never fabricate a verdict or retry POST automatically. HTTP 429 honors integer `Retry-After`, blocks submission until expiry and announces readiness; network/invalid-success/15-second client timeout explains uncertain receipt and possible duplicate creation after manual resubmission.
+- Presentation: graphite canvas, warm white type, muted yellow actions, responsive single column, visible keyboard focus, skip link and reduced-motion support. No question history or drafts in local storage.
+
+Start the local application with `rtk proxy php -S 127.0.0.1:8000 -t public public/router.php`; use the exact configured `APP_PUBLIC_ORIGIN`. The development router serves `/assets/` directly. Browser tests run an isolated test server with synthetic saved data and intercepted POST responses; they do not submit to the development app or call Jev. Current checks and limitations are recorded in [verification](verification.md#frontend-implementation--2026-10-15) and [testing](testing.md#frontend-browser-checks--2026-10-15).
+
+## Original proposal — 2026-10-12
+
+The sections below retain the original proposal and its pre-implementation source-inspection snapshot. Statements about missing pages/assets, unperformed checks and proposed scope describe that checkpoint; current behavior is listed above.
 
 2026-10-12. Proposed information architecture, visual direction, and interaction design; not an accepted implementation scope or a completed UI. Product copy is English. The working brand remains Instant Answer; the final name/domain is unresolved.
 

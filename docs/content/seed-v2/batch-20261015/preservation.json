@@ -1,0 +1,16 @@
+{
+  "docs/research/questions-v1/taxonomy-analysis.md": "818168895a03b98fb6731bacfe86df8fc72b74fa4fd7bdf0f3b2d709ac7e8312",
+  "docs/research/questions-v1/questions.txt": "6b6e07fd9d9d1d75f06a9c907f81efc987ecb598e6fe36fd6d1011a184f20e99",
+  "docs/research/questions-v1/README.md": "3420d5a478029fcdfba63202f3cba20e85f01dbcb32fee13173f37a635d21ea2",
+  "docs/research/questions-v1/sources.csv": "1d3e21755d343e2923fec74725a4c1d793aed68ba7e9aad63f27897271daba88",
+  "docs/content/seed-v2/editorial.md": "e06328172970ac7397f4d6ac5fbde969e91b7394dc5a69301dae899eee95aede",
+  "docs/content/seed-v2/artifact-verification.json": "ee1f3a3937b7f3d86769e6777744e9a9177f1b82cd1081944a0cc0efa9f4bfab",
+  "docs/content/seed-v2/README.md": "abea80ecd78a6ada10cf069a807f8f75f0c781d68f40dee4e1e8b679947d6cf7",
+  "docs/content/seed-v2/database-verification.json": "8a052fba138382de7de92858ce5c2ed2c0c2015445a52a9af3b2e0dc61c7eff8",
+  "docs/content/seed-v2/editorial.json": "416b00f39dc11b44362095dd555c8bfab50e307ab51b5de347f550350f508261",
+  "docs/content/seed-v2/catalog.json": "6b225e5e36da1dd2e6710e564fc939aea6b18e79da6ab9f4ea008bd25ba6684a",
+  "docs/evaluation/corpus-v2/development.json": "c4d848eab714544221aefd29475ffe02c424043d3e5b68e860c3c3704d058e43",
+  "docs/evaluation/corpus-v2/README.md": "c7f95210aed116cbf15a41d18bdfc96c9668515217f1364e7a833fd8c82b6597",
+  "docs/evaluation/corpus-v2/freeze.json": "16ed6d905c77ac29278e2cfe5adfc3090071bab58ceee727108ff331b3b5f5a8",
+  "var/answer-seed-v2-20261012.sqlite": "ff82e0030e745f70d4efd84b5fdc739c218218c16eb27c1a8dfd9adffdb545b9"
+}

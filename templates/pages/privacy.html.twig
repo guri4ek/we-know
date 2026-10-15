@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Privacy — We Know{% endblock %}
+{% block main_class %}reading-page{% endblock %}
+{% block body %}
+    <a class="back-link" href="/">← Back to asking</a>
+    <p class="eyebrow">Before you ask</p>
+    <h1>Your question. Your call.</h1>
+    <p class="reading-lead">Here's what happens when you submit it.</p>
+    <div class="prose">
+        <h2>Your question is sent for classification.</h2>
+        <p>The server sends your question to Jev, an external classification service from TypeSafe, to identify its intent and topic. Jev does not generate the final answer.</p>
+        <h2>The question and answer are stored.</h2>
+        <p>A successful submission saves the question, its selected answer, a unique identifier, a creation time, and classification/selection diagnostics. The saved text lets the result link show the same pair on later visits.</p>
+        <h2>A result link gives access to both.</h2>
+        <p>Anyone with a result link can read its question and answer without signing in. Results are marked for search engines not to index, but that is not access control. People can forward the link, and third-party services may copy the question and answer into link previews.</p>
+        <h2>Keep sensitive information out.</h2>
+        <p>Do not submit names, contact details, secrets, or other personal or sensitive information. The browser does not save your question history or drafts in local storage.</p>
+        <h2>Retention and deletion are not finalized.</h2>
+        <p>This is a development-stage disclosure, not a finalized public-launch privacy policy. No retention period or deletion/contact process has been established, and there is currently no user-facing delete function. Provider retention and data handling, operational logging, and any future analytics or cookies still require confirmation before public launch.</p>
+    </div>
+    <a class="button button-primary reading-cta" href="/">Back to asking <span aria-hidden="true">↗</span></a>
+{% endblock %}

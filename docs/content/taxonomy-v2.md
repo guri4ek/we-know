@@ -31,7 +31,7 @@ Classify what a satisfying completion would do. Examples are original corpus tex
 
 ## Topics
 
-Identify the requested subject before considering the setting. Retaining an untested topic is a vocabulary hypothesis; only TECH and LANGUAGE receive specialized answer trials here.
+Identify the requested subject before considering the setting. Retaining an untested topic is a vocabulary hypothesis. The original v2 pilot tested only TECH and LANGUAGE; the [2026-10-15 expansion](seed-v2/batch-20261015/README.md) adds author-screened specialized explanations across all retained topics, without claiming whole-pool or human validation.
 
 | Code | Concise definition | Nearest boundary / eligibility reason | Original examples |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ The pilot contrasts terse headings, a problem report and an incomplete medical q
 
 One question is data in one provider request containing two Choice questions. Recoverable imperative/indirect requests keep their substantive form. Successful OTHER follows ordinary fallback; provider failure fabricates no labels and selects ANY/GENERAL directly. Humor metadata does not enter the payload or influence uniform first-pool selection.
 
-Catalog format integer **2** denotes this taxonomy. All other catalog versions are rejected; row fields and full-replacement semantics remain unchanged. No old answer eligibility is automatically converted. The unreleased initial migration was edited directly for new databases, as appropriate to this development stage. The existing development file was neither upgraded nor reset; it is not a v2 test target. The new [isolated seed](seed-v2/README.md) uses a separately created SQLite file and the existing migration/import path. Historical verdict text and decision-context snapshots are never reinterpreted.
+Catalog format integer **2** denotes this taxonomy. All other catalog versions are rejected; row fields and full-replacement semantics remain unchanged. No old answer eligibility is automatically converted. The unreleased initial migration was edited directly for new databases, as appropriate to this development stage. At v2 adoption, the existing development file was neither upgraded nor reset. The separately authorized [2026-10-15 lifecycle](../backend.md#development-database-and-offline-reproduction) later recreated it with the current schema and complete editorial seed; the original isolated demonstration remains preserved. Historical verdict text and decision-context snapshots are never reinterpreted.
 
 The runner requires matching corpus taxonomy/rubric 2.0.0 and rejects other combinations before classification. There is no active old-rubric switch or compatibility adapter. Historical research, corpora and recorded reports remain evidence files only. A new dual-rubric experiment would need separate implementation and authorization; 100 inputs with two rubrics would consume 200 calls, not 100.
 

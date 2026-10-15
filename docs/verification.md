@@ -1,22 +1,22 @@
 # Actual results and verification
 
-Date: 2026-10-11. Working directory: `/Users/serhii/OwnProjects/we-know`.
+Updated: 2026-10-15. Working directory: `/Users/serhii/OwnProjects/we-know`. Individual events retain their original dates and evidence.
 
-**Current implementation:** skeleton, stage-1 classifier/evaluation and the complete scoped backend. The [backend verification event](#backend-implementation-verification-event) records new offline evidence. Earlier sections retain their historical stage-1/audit states and live measurements.
+**Current implementation:** active v2 classifier/evaluation, canonical development catalog, complete scoped backend and dark-theme frontend. The [frontend event](#frontend-implementation--2026-10-15) records the latest offline UI evidence. Earlier events retain their historical stage-1/audit/backend states and live measurements.
 
-Personal project/account; development/minimum PHP 8.4 (manifest/platform corrected), planned PHP 8.5; SQLite local and PostgreSQL production; one production Jev key for separately authorized live evaluation. This backend task made no paid live calls. Dark-theme frontend remains later.
+Personal project/account; development/minimum PHP 8.4 (manifest/platform corrected), planned PHP 8.5; SQLite local and PostgreSQL production; one production Jev key for separately authorized live evaluation. The backend and frontend implementation tasks made no paid live calls.
 
 ## Current status by evidence
 
 | Area | Status | Evidence / limitation |
 | --- | --- | --- |
-| Kernel/Twig/home placeholder | Implemented and offline tested | GET/HEAD/404/405 and bootstrap tests; historical production HTTP smoke |
-| Taxonomy/rubric/corpus and Jev adapter/DI | Implemented and offline tested | Version 1.0.0, 81 synthetic questions; strict request/response/error tests; labels not independently reviewed |
+| Kernel/Twig/pages | Implemented and offline tested | Home/form, About/Privacy, styled errors, GET/HEAD/404/405 and bootstrap tests |
+| Taxonomy/rubric/corpus and Jev adapter/DI | Implemented and offline tested | Active version 2.0.0, 100 original-question annotations; strict request/response/error tests; labels not independently reviewed |
 | CLI/metrics | Implemented and offline tested | Actual adapter fixture replay, deterministic denominator/matrix/percentile tests |
 | Jev live classification | Historically measured | Two repeated 54-question development batches; no new calls in this audit |
-| Humor/eligibility | Proposed editorial content | Hold drafts, known failed probes; no independent human humor assessment or import |
-| Selector/database/import/answer HTTP/permalink | Implemented and SQLite/offline tested | Atomic catalog, uniform first pool, immutable snapshots, strict POST and saved SSR; synthetic content only |
-| Frontend form/fetch/design | Deferred | Confirmed dark theme; home remains a placeholder |
+| Humor/eligibility | Author-screened development catalog | 1,055 answers imported locally; no independent human humor acceptance |
+| Selector/database/import/answer HTTP/permalink | Implemented and SQLite/offline tested | Atomic catalog, uniform first pool, immutable snapshots, strict POST and saved SSR; tests use synthetic data |
+| Frontend form/fetch/design | Implemented and offline tested | Dark Twig/vanilla-JS UI; ten isolated browser scenarios and HTTP coverage; no live-provider/production acceptance |
 | VERDICT/decision_context and DBAL + Migrations | Accepted and implemented | SQLite constraints/FKs/reconnect, immutable JSON and real failed COMMIT rollback verified; no ORM |
 | Final mechanism codes | Editorial proposal | No independent content acceptance; mechanism metadata does not affect selection |
 | Chaos/NLP/weights/admin/likes/queues/cache | Deferred | No implementation authorized by documentation |
@@ -224,3 +224,53 @@ The actual isolated database `/Users/serhii/OwnProjects/we-know/var/answer-seed-
 The [100-question live trial](evaluation/corpus-v2/README.md) contains disjoint 50 ordinary / 20 indirect / 10 apparent-question-without-outcome / 20 boundary cases, preserving original text and sources. Expectations, ambiguity notes and rubric/source hashes were frozen before any v2 model responses. One corpus annotation was corrected during the pre-live audit: L7's animals do not establish cooking context. The counting double verifies exactly one call per each of 100 selected originals. **No live v2 trial was run**; a later single-rubric run needs its own bounded authorization. Running two rubrics on 100 questions would require 200 calls, and no comparison mode is implemented.
 
 Remaining acceptance: independent corpus labels, human answer fit/humor and sensitive-question tone, unseen-pool portability, repetition fatigue, v2 model outputs, production PostgreSQL and frontend. SQLite success and mock labels do not establish those results.
+
+
+## Development library and local database lifecycle — 2026-10-15
+
+Explicit user scope: substantial offline English answer generation, full canonical seed replacement, local DB lifecycle, tests and documentation. Clearing and rebuilding `var/we-know.sqlite` was authorized; the user later removed 1,000 as an upper limit and confirmed that human rewriting/filtering would follow. No Git delivery, deployment, paid/external services, personal configuration or Claude-file changes were performed for this task.
+
+### Editorial artifacts
+
+The final [complete catalog](content/seed-v2/catalog.json) contains **1,055 answers / 1,055 eligibilities**, retaining every original answer, eligibility, text, UUID and creation time and adding **1,031** enabled author drafts. Ten written batches plus six extra form/safety probes produced 1,151 proposals; **120** were held or rejected. The [new evidence](content/seed-v2/batch-20261015/README.md) contains source-exact shared probes, per-candidate shifts, final cell assessments, null human scores, rejected variants and explicit limitations. Scripts performed serialization/identity/provenance/count checks, not semantic or humor evaluation.
+
+There are 29 populated classification pools and 153 empty ones, plus 76 universal answers. All 14 intent/GENERAL pools were assessed; seven remain empty. No populated pool has fewer than five answers. Counts do not establish classifier accuracy, whole-pool suitability or human approval. The final stress pass added real-performer visibility to entertainment and excluded fiction-only explanations; existing medication-expiry probes excluded biology-only health explanations. The 24-answer historical reports and frozen corpora remain byte-identical.
+
+### Test-first and offline verification
+
+- Before lifecycle implementation, the focused suite failed with 16 missing-class errors and two missing Composer-script assertions. The tests then passed against isolated temporary project roots, never against the real development target.
+- Before expanding the seed, the full-catalog test failed its expansion assertion on the old 24-answer file. Final tests check every field after real import and repeat import; IDs, timestamps, text/ID/triple uniqueness and enums; induced transaction rollback; all 182 classification pairs; every candidate index; and unchanged selection after rewriting all mechanism metadata.
+- Reset tests cover absent and obsolete schemas, migration-state removal, sidecars, preservation of demonstration files, prod/test/remote/memory/alternate/traversal/query targets, symlinked ancestors and files (including dangling links), nonregular sidecars and hard links. Console tests check status codes and no connection-detail disclosure. Composer subprocess tests prove that reset/migration failure prevents later steps.
+- The existing standalone demonstration initially failed because METHOD/TECH had gained exact answers. Its fallback example was changed to METHOD/SPORTS, with an original hockey question. The corrected helper passed on a new intermediate-catalog demonstration, including five offline verdicts, import validation, repeat import, database rollback, immutable snapshots, every selectable index, mechanism independence, foreign keys and reconnect durability. Original demonstration files were untouched.
+- Final complete run: **`rtk proxy php vendor/bin/phpunit` — 266 tests, 48,052 assertions, all passing**, PHP 8.4.10, 17.609 seconds. Default test networking remains denied; only offline doubles were used.
+- `rtk proxy composer validate --no-check-publish` passed. `rtk proxy python3 tools/build-seed-batch.py` passed, including original quotations/URLs, retained identities, current artifact consistency and historical hashes. `git diff --check` passed.
+
+### Actual default database rebuild
+
+The exact commands `rtk proxy composer db:reset`, `rtk proxy composer db:migrate`, and `rtk proxy composer db:seed` succeeded separately. `rtk proxy composer db:fresh` also completed reset → migrate → seed. After the final editorial exclusions, fresh was rerun and seed repeated; the complete stored catalog hash remained identical across repeat import.
+
+[Final database evidence](content/seed-v2/batch-20261015/final-verification.json), recorded at 14:29 UTC, verifies SQLite 3.51.2 at `var/we-know.sqlite`: **1,055 answer rows, 1,055 eligibility rows, zero verdicts**; every catalog field matches the canonical JSON; table/index SQL and migration versions match fresh current migrations; `PRAGMA integrity_check` is `ok`; `PRAGMA foreign_key_check` is empty and foreign keys are enabled. No synthetic smoke content or demonstration verdicts are present. Canonical SHA-256: `6f85953e854e63729b46ad50797f39c26eeca81c828ed563604d00922a7bc0a8`.
+
+The [earlier run record](content/seed-v2/batch-20261015/database-verification.json) deliberately retains intermediate 1,062-row results before seven final exclusions; it does not describe the final database. The unreleased initial schema needed no modification. No ALTER migration, upgrade adapter, second schema or dependency was introduced. PHP 8.5, PostgreSQL, concurrency/load, live classifier behavior and human editorial approval were not verified.
+
+## Frontend implementation — 2026-10-15
+
+User scope: “build frontend”, within the personal project. Implemented locally using the existing Symfony/Twig/vanilla-JS design proposal and JSON contract. No runtime dependencies, package installation, external fonts, bundler, Git delivery, deployment, paid API calls, personal configuration or Claude-file changes. Existing uncommitted catalog/database work was preserved.
+
+### Delivered behavior
+
+Shared dark shell and verdict card; home form and fill-only suggestions; Unicode validation/counter; one pending POST with editing lock; server-returned question/answer rendered as text; focus transfer, explicit permalink and empty new-question reset. The home URL remains unchanged and there is no local-storage history. Saved results preserve existing escaped snapshots, canonical/textual OG and noindex/no-store behavior.
+
+Copy link includes clipboard-denial fallback with a selectable URL. About includes a native expandable FAQ; Privacy describes implemented storage/transmission/public-by-link behavior and explicitly states unresolved launch policy. Shared original-URL 404/503 pages omit exception details, while the answer API keeps JSON errors. The local PHP router now serves static assets directly. Network/invalid-success/15-second client timeout errors preserve the draft and explain possible duplicate results after a manual resubmission; POST is never retried automatically.
+
+### New offline evidence
+
+- Test-first HTTP check: **9 tests / 35 assertions, 7 expected failures** for the missing form, informational pages, styled errors and verdict actions. The first executable browser check also failed before frontend assets existed (CSS returned HTML). These checks preceded the implementation.
+- Full `rtk proxy php vendor/bin/phpunit`: **270 tests, 48,096 assertions, all passing**, PHP 8.4.10, 7.059 seconds. Existing creation→commit→immutable escaped permalink, no-provider reads, origin/rate/body policy and persistence cases remain green.
+- Browser suite: **10 tests passed**, Node 25.2.1, an existing Playwright 1.61.0 alpha installation, installed headless Chrome and fresh isolated contexts. The command used `NODE_PATH` for that existing installation and `PLAYWRIGHT_CHANNEL=chrome`; no package or browser was installed. See [reproduction and test boundary](testing.md#frontend-browser-checks--2026-10-15).
+- Browser scenarios exercised one POST despite another pending submit event; faithful/safe returned text; result focus/reset; Unicode whitespace and 500/501 astral characters; rate-limit expiry without retry; controlled HTTP errors, malformed/unsafe success and network loss; successful/denied clipboard; JS-disabled saved/information pages; fill-only examples, Enter/newline and Space/button submission; 320px pages; 200% CSS zoom and a 1,500-character unbroken answer. Real local asset routing and no uncaught page errors were checked.
+- Computed-style samples meet 4.5:1 text contrast and 3:1 normal field-boundary contrast. The textarea receives a visible 2px focus outline. Desktop, mobile and inline-result screenshots were visually inspected; a second mobile capture after responsive layout settled confirmed one header/form and no duplicated content.
+- Read-only `rtk proxy php tools/verify-local-database.php` passed: **1,055 answers, 1,055 eligibilities, zero verdicts**, current-schema/canonical-row equality, integrity `ok`, no FK violations, zero network calls. Browser fixtures use in-memory synthetic data; no reset, migration, seed or verdict write targeted the development database.
+- `rtk git diff --no-ext-diff --no-textconv --check` passed. Temporary fixture servers and isolated browsers were stopped after checks.
+
+Limits: browser POST responses are intercepted, while PHP HTTP tests cover the real application with fake classification; no live-provider/production end-to-end claim is made. Screen-reader, Safari/Firefox, physical mobile/IME, PHP 8.5, production PostgreSQL, load and deployment checks were not run. Retention/deletion/contact/provider/operational policy still requires explicit decisions before public launch. The current answer library still needs independent human acceptance.

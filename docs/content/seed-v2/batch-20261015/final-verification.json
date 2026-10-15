@@ -1,0 +1,62 @@
+{
+  "stage": "Final catalog after the additional entertainment/health stress pass",
+  "fresh": {
+    "recorded_at_utc": "2026-10-15T14:29:20Z",
+    "database": "/Users/serhii/OwnProjects/we-know/var/we-know.sqlite",
+    "sqlite_version": "3.51.2",
+    "php_version": "8.4.10",
+    "catalog_sha256": "6f85953e854e63729b46ad50797f39c26eeca81c828ed563604d00922a7bc0a8",
+    "stored_catalog_sha256": "e58eb5afe372751f1667cba5761868d60403f127866d138ae9cea0517b5e12a8",
+    "answers": 1055,
+    "eligibilities": 1055,
+    "verdicts": 0,
+    "integrity_check": "ok",
+    "foreign_key_check": [],
+    "checks": [
+      "schema_equals_fresh_current_migrations",
+      "migration_versions_match",
+      "all_catalog_columns_match",
+      "zero_verdicts",
+      "foreign_keys_enabled",
+      "sqlite_integrity"
+    ],
+    "network_calls": 0,
+    "postgresql": "not_run"
+  },
+  "repeated_seed": {
+    "recorded_at_utc": "2026-10-15T14:29:21Z",
+    "database": "/Users/serhii/OwnProjects/we-know/var/we-know.sqlite",
+    "sqlite_version": "3.51.2",
+    "php_version": "8.4.10",
+    "catalog_sha256": "6f85953e854e63729b46ad50797f39c26eeca81c828ed563604d00922a7bc0a8",
+    "stored_catalog_sha256": "e58eb5afe372751f1667cba5761868d60403f127866d138ae9cea0517b5e12a8",
+    "answers": 1055,
+    "eligibilities": 1055,
+    "verdicts": 0,
+    "integrity_check": "ok",
+    "foreign_key_check": [],
+    "checks": [
+      "schema_equals_fresh_current_migrations",
+      "migration_versions_match",
+      "all_catalog_columns_match",
+      "zero_verdicts",
+      "foreign_keys_enabled",
+      "sqlite_integrity"
+    ],
+    "network_calls": 0,
+    "postgresql": "not_run"
+  },
+  "repeat_identical": true,
+  "tests": {
+    "command": "rtk proxy php vendor/bin/phpunit",
+    "tests": 266,
+    "assertions": 48052,
+    "result": "passed",
+    "seconds": 17.609,
+    "php": "8.4.10"
+  },
+  "composer_validate": "passed",
+  "historical_hash_check": "passed",
+  "postgresql": "not_run",
+  "external_api_calls": 0
+}

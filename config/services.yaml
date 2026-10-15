@@ -80,3 +80,9 @@ services:
         arguments:
             $projectDir: '%kernel.project_dir%'
             $environment: '%kernel.environment%'
+
+    App\Infrastructure\Persistence\LocalDatabase:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+            $environment: '%kernel.environment%'
+            $databaseUrl: '%env(resolve:DATABASE_URL)%'

@@ -1,0 +1,131 @@
+# Every completed candidate screened against all probes in its shared pool. P/C/L throughout; scores 2,2,2,2,1,1; human null.
+@EXPLAIN/TECH
+M|Because the machine treats reality as an unsupported file format.|Reality incompatible with representation
+R|Because the progress bar is measuring the user's faith in progress.|Instrument measures observer
+H|Because each bit travels with an entourage of unnecessary bits.|Binary entourage
+M|Because the software speaks fluent electricity with a terrible accent.|Electrical language
+C|Because the device learned the demonstration by heart and forgot the actual operation.|Demo replaces competence
+R|Because the settings are configuring the person reading them.|Configuration controls user
+M|Because the algorithm wears a blindfold with a very high resolution.|Precision without perception
+B|Because the electrons must declare their intentions before crossing the circuit.|Regulated electron movement
+M|Because the data has been packed by someone who puts shoes on top of cakes.|Information mishandled as luggage
+R|Because the machine keeps its common sense in the recycle bin for convenience.|Common sense classified as waste
+H|Because every instruction brings its entire family tree.|Instructions carry ancestry
+C|Because the code mistook a confident comment for an executable command.|Comment mistaken for instruction
+M|Because the operating system has a secret handshake with the laws of physics.|Physics as exclusive club
+R|Because the button believes it is submitting a request to the user.|Interface reverses control
+M|Because digital certainty is held together with analog duct tape.|Precision relies on improvised support
+H|Because the computer performs a million tiny shrugs per second.|Computational speed measures indifference
+C|Because the machine counted its own echo as a second opinion.|Duplicated output mistaken for corroboration
+M|Because the interface is a doorman who only recognizes the building.|Access mediation loses user
+R|Because the instructions consider themselves suggestions for someone else's machine.|Instructions delegate obligation
+M|Because the data takes the scenic route through the idea of a processor.|Processing as tourism
+B|Because the hardware has reserved the right to interpret the software poetically.|License grants poetic interpretation
+H|Because the system's smallest assumption needs its own cooling tower.|Assumption exceeds engineering scale
+M|Because the code is a Rube Goldberg machine with excellent typing skills.|Complicated mechanism types
+R|Because the error message has been promoted above the error.|Description outranks event
+C|Because the system recognizes confidence as a valid input type.|Confidence becomes machine data
+@EXPLAIN/LANGUAGE
+R|Because words keep changing the locks after the dictionary moves in.|Usage evicts authority
+M|Because language is a staircase assembled while everyone is using it.|Collective construction under traffic
+H|Because every syllable brings several centuries of unattended luggage.|Historical baggage literalized
+C|Because usage won a popularity contest and called the result a rule.|Popularity creates authority
+M|Because English stores its logic in a drawer labeled Miscellaneous.|Linguistic logic misfiled
+R|Because the exception has started teaching the introductory course.|Exception teaches norm
+M|Because words borrow each other's coats and forget to return the meanings.|Language as clothing exchange
+B|Because the language grandfathered in a rule's imaginary ancestors.|Ancestry validates irregularity
+M|Because pronunciation and spelling keep separate address books.|Speech and writing disconnect
+R|Because the examples have been grading the rules.|Evidence evaluates authority
+C|Because someone said it twice and history mistook that for a consensus.|Repetition mistaken for agreement
+H|Because the simplest expression has enough ancestors to fill a stadium.|Tiny expression huge lineage
+M|Because language is a house with several front doors and no agreed front.|Conflicting orientation
+R|Because the dictionary is chasing a bus driven by the words.|Authority follows moving usage
+M|Because meaning travels economy while tradition checks fourteen suitcases.|Semantics burdened by tradition
+C|Because the explanation inherited the expression's confidence but none of its paperwork.|Confidence inherited without proof
+M|Because the language keeps its straight lines in a box of tangled string.|Rules as tangles
+R|Because the words have acquired squatters' rights in the rulebook.|Usage takes possession
+H|Because one tiny distinction is carrying an entire century on its shoulders.|Distinction carries history
+M|Because English is playing chess with pieces borrowed from several other games.|Mixed inherited systems
+B|Because consistency failed the language's residency requirement.|Consistency excluded institutionally
+R|Because the pronunciation guide is following somebody who is following the pronunciation guide.|Circular guidance
+M|Because every expression has a trapdoor into its childhood.|Historical layers as hidden access
+C|Because the language accepted an apology in place of an explanation.|Etiquette substitutes for logic
+R|Because common usage has the keys and formal logic is still ringing the bell.|Usage controls entry
+@EXPLAIN/WORK_STUDY
+R|Because the institution is studying how much work people will do to prove they are working.|Meta-evaluation creates labor
+M|Because progress is measured with a ruler made of deadlines.|Time used as length
+C|Because the chart grew taller and everybody assumed something had improved.|Graph height mistaken for success
+M|Because achievement has to wear a lanyard before anyone recognizes it.|Recognition requires costume
+R|Because the assessment criteria are applying for a position in reality.|Metrics seek relevance
+H|Because a small accomplishment needs a stadium-sized introduction.|Recognition overhead
+M|Because institutional memory is a whiteboard cleaned every evening.|Organization forgets by design
+B|Because the process requires proof that its proof-producing process is productive.|Recursive institutional proof
+R|Because the mission statement is supervising the mission.|Representation controls purpose
+M|Because effort goes up the stairs while credit takes the lift.|Effort and recognition unequal transport
+C|Because the agenda put importance next to urgency and they swapped name tags.|Scheduling confuses priorities
+M|Because the performance ladder has been leaning against a presentation.|Progress rests on representation
+R|Because the objective has become an assistant to its own measurement.|Measurement captures purpose
+H|Because the institution's smallest ambition arrives with a full brass band.|Ambition overannounced
+M|Because knowledge is being transported in containers marked Visibility.|Learning repackaged as exposure
+B|Because the milestone requires a written statement from the journey.|Process must justify endpoint
+R|Because the rubric has mistaken itself for the person doing the work.|Evaluation replaces performer
+C|Because a very tidy spreadsheet was mistaken for an explanation.|Presentation substitutes for understanding
+M|Because the official ladder includes a revolving door on every rung.|Progress circles back
+R|Because the institution rewards the echo for repeating the original contribution clearly.|Repetition receives credit
+H|Because each modest requirement has an extended family of optional necessities.|Requirements reproduce
+M|Because professional gravity pulls achievements toward the largest title.|Status attracts credit
+C|Because the process counted its own existence as a deliverable.|Self-existence as achievement
+M|Because the organization keeps planting signposts and calling them growth.|Markers substitute for development
+R|Because the finishing line is being evaluated for promotion.|Endpoint becomes participant
+@EXPLAIN/FOOD
+M|Because the kitchen treats the laws of nature as suggested serving sizes.|Physics recast as recipe note
+R|Because the ingredients have been reading the recipe as a review of their performance.|Ingredients judge instructions
+C|Because the explanation was seasoned before anyone checked what it contained.|Flavor replaces reasoning
+H|Because culinary certainty rises faster than anything in the oven.|Confidence as leavening
+M|Because the recipe is a map and the ingredients insist on being weather.|Plan meets uncontrollable conditions
+R|Because the measuring spoon has appointed itself head of taste.|Measure claims sensory authority
+M|Because the kitchen keeps its logic in the drawer that never opens properly.|Reasoning as stuck utensil
+B|Because tradition has granted itself permission to skip the explanation.|Custom self-exempts
+C|Because the cooking notes mistook a family anecdote for a controlled experiment.|Story replaces evidence
+M|Because culinary theory wears an apron to avoid getting reality on it.|Theory shields itself from evidence
+R|Because the recipe is taking credit for the ingredients' improvisation.|Plan claims spontaneous success
+H|Because every pinch of certainty contains a mountain of assumptions.|Small precision huge assumptions
+M|Because the kitchen's rulebook is printed on elastic dough.|Rules change shape
+C|Because a confident instruction survived longer than the reason for it.|Instructions outlive justification
+R|Because the explanation has been plated before it was prepared.|Presentation before substance
+M|Because taste and theory are sharing a kitchen but not a language.|Sensory and abstract domains disagree
+H|Because the footnote has become the largest ingredient in the explanation.|Qualification dominates account
+M|Because culinary logic travels through a sieve with ambitious holes.|Reasoning filtered badly
+R|Because the garnish has taken over the lecture.|Decoration controls explanation
+B|Because the recipe requires the ingredients to acknowledge receipt of its expectations.|Instructions demand acknowledgment
+M|Because the explanation came wrapped in a tradition too tight to unfold.|Custom constrains account
+C|Because the kitchen mistook the loudest sizzle for a peer review.|Sound replaces evaluation
+R|Because the cookbook has been consulting its own index for moral support.|Reference seeks reassurance
+M|Because the theory is trying to eat with a ruler.|Measurement misplaced as utensil
+H|Because every kitchen certainty comes with a cellar full of unasked questions.|Confidence conceals inquiry
+@EXPLAIN/HOME
+M|Because the house treats physics as a neighbor with whom it has a boundary dispute.|Building disputes physical law
+R|Because the maintenance manual is taking instructions from the thing it is supposed to explain.|Manual subordinate to object
+H|Because every simple fitting supports a cathedral of assumptions.|Small part huge assumptions
+M|Because the building's logic is concealed behind decorative trim.|Reasoning hidden as structure
+C|Because the diagram passed inspection before anyone asked whether it described this universe.|Diagram mistaken for reality
+R|Because the house has decided to renovate the concept of predictability.|Dwelling alters expectations
+M|Because the explanation was installed with the wrong size of certainty.|Epistemic component mismatch
+B|Because the laws of physics are disputing the floor plan's interpretation of their contract.|Physics negotiates plan
+M|Because the manual's straight lines have never met an actual corner.|Ideal diagram meets reality
+R|Because the fixture regards the owner as a replaceable attachment.|Object reverses ownership
+H|Because each minor detail has a load-bearing autobiography.|Components carry history
+C|Because someone labeled the drawing Final and reality took it as a challenge.|Label causes defiance
+M|Because domestic logic is a spirit level with ambitions to be a roller coaster.|Precision instrument wants chaos
+R|Because the specification is waiting for the building to explain itself first.|Specification awaits reality
+M|Because the explanation has been painted over so many times it now counts as insulation.|Reasoning buried as material
+B|Because the household's common sense is awaiting a certificate of occupancy.|Reason needs residential permission
+H|Because the smallest domestic principle has enough extensions to qualify as a suburb.|Principle expands spatially
+M|Because the house keeps its assumptions in a cupboard larger on the inside.|Hidden assumptions exceed space
+R|Because the owner's manual has become the property's autobiography.|Instructions become self-story
+C|Because the drawing and the explanation have agreed to use each other as references.|Circular design evidence
+M|Because the building interprets perfectly square as a matter of personal taste.|Geometry becomes opinion
+H|Because every home contains a secret mezzanine full of explanations nobody can reach.|Inaccessible understanding
+R|Because the diagram has mistaken the room for a badly drawn version of itself.|Model judges reality
+M|Because the household theory arrived flat-packed with an extra premise.|Reasoning assembled with surplus part
+C|Because the instruction sheet counted its confident font as structural support.|Typography replaces support

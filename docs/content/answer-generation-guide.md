@@ -1,6 +1,6 @@
 # We Know offline answer authoring guide
 
-Updated 2026-10-13. Active editorial workflow for [taxonomy v2](taxonomy-v2.md); human approval and humor remain unverified. Historical examples below retain their original labels/text and are not importable current eligibility. The [seed-v2 assessment](seed-v2/editorial.md) contains the current preliminary library. Scientific basis and evidence limits: [mechanism research](../research/humor-mechanisms.md).
+Updated 2026-10-13. Active editorial workflow for [taxonomy v2](taxonomy-v2.md); human approval and humor remain unverified. Historical examples below retain their original labels/text and are not importable current eligibility. The [current seed-v2 assessment](seed-v2/batch-20261015/README.md) contains the expanded development library; the [24-answer assessment](seed-v2/editorial.md) remains historical evidence. Scientific basis and evidence limits: [mechanism research](../research/humor-mechanisms.md).
 
 ## Task contract
 

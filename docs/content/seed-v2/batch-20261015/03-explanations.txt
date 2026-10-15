@@ -1,0 +1,127 @@
+# Author-screened against every shared probe. P/C/L throughout; scores 2,2,2,2,1,1; human null.
+@EXPLAIN/MONEY
+M|Because money treats arithmetic as an opening offer.|Numbers negotiable
+R|Because the price tag has been interviewing the object about its qualifications.|Price evaluates value
+C|Because the decimal point moved and everyone called it a strategy.|Notation mistaken for plan
+H|Because every financial certainty has a thousand tiny escape hatches.|Certainty designed to retreat
+M|Because the economy is a seesaw with a gift shop at both ends.|Instability monetized
+R|Because the forecast has started charging the future for appearing in it.|Prediction bills subject
+M|Because financial logic wears a reversible jacket marked Opportunity and Complication.|One rationale markets both sides
+B|Because the fine print has successfully applied to become the main text.|Qualifications capture agreement
+C|Because the projection mistook its upward arrow for a ladder.|Symbol mistaken for mechanism
+M|Because value is a balloon negotiating with its own string.|Value depends on restraint
+R|Because the spreadsheet has appointed the most optimistic cell as its spokesperson.|Optimism selects representation
+H|Because a small monetary question casts an unusually expensive shadow.|Financial inquiry has costly scale
+M|Because the financial model stores its assumptions in a vault and its promises in the window.|Evidence hidden promises displayed
+C|Because the chart counted the frame as part of the growth.|Presentation inflates measurement
+R|Because the guarantee has retained a lawyer to protect it from being guaranteed.|Promise protects itself
+M|Because money is the only passenger allowed to argue with the fare.|Value negotiates cost
+B|Because arithmetic has been asked to submit a business case.|Mathematics needs commercial justification
+H|Because the explanation has more moving parts than the mint.|Economic account overengineered
+M|Because the valuation ladder is made of other people's ladders.|Recursive valuation dependency
+C|Because the account balance gave the explanation a standing ovation.|Money as evidence
+@EXPLAIN/RELATIONSHIPS
+M|Because the universal handbook for people is written in disappearing ink.|Unreliable interpersonal manual
+R|Because the rules of understanding expect everyone else to understand them first.|Rules demand what they lack
+C|Because a theory about people mistook its reflection for a second person.|Theory mistakes itself for evidence
+H|Because every universal social rule has enough exceptions to hold a reunion.|Exceptions form family
+M|Because the human instruction manual is a pop-up book that refuses to stay open.|Unstable manual
+R|Because the explanation is trying to raise the people who invented it.|Social theory parents authors
+M|Because social certainty is a handshake attempted through a revolving door.|Assurance fails coordination
+C|Because the rulebook confused its table of contents with the contents of a person.|Representation replaces person
+B|Because the theory of human behavior forgot to ask humans to sign up.|Theory lacks consent
+M|Because interpersonal logic uses a ruler that bends when watched.|Observation changes measure
+R|Because the social script has started asking the actors for directions.|Script depends on performers
+H|Because a simple theory of people needs an annex larger than the theory.|Exceptions overwhelm theory
+M|Because the explanation is wearing a one-size-fits-all sweater knitted for a lamp.|General model wrong recipient
+C|Because the handbook counted understanding the heading as understanding the person.|Label substitutes for insight
+R|Because the advice column is being advised by its own punctuation.|Advice draws authority from form
+M|Because the supposed rules of people are a weather forecast printed on a windsock.|Model follows changing conditions
+B|Because common understanding was appointed without a job description.|Understanding lacks defined role
+M|Because the theory brought a seating chart to a moving conversation.|Static model meets dynamic exchange
+R|Because the instruction manual wants to be treated as a member of the family.|Rules seek relationship status
+C|Because a neat explanation mistook its neatness for proof.|Tidiness validates social theory
+@EXPLAIN/NATURE
+M|Because nature uses the field guide as a rough suggestion for a costume.|Guide as costume design
+R|Because the ecosystem is proofreading the people who describe it.|Nature edits observers
+H|Because the natural world has several billion unpaid improvisers.|Living complexity as improvisation
+M|Because the textbook put nature in a box and nature grew hinges.|Classification becomes escape mechanism
+C|Because the diagram assumed all its arrows were one-way streets.|Model oversimplifies interaction
+R|Because nature has declined the role of well-behaved example.|World rejects illustrative duty
+M|Because the field guide is a photograph of a dance still in progress.|Static knowledge dynamic reality
+B|Because the ecosystem never ratified the tidy version of its constitution.|World rejects imposed order
+H|Because a single natural pattern has more relatives than the chart can invite.|Pattern exceeds taxonomy
+M|Because nature's filing cabinet has roots through every drawer.|Classification interconnected
+R|Because the specimen has started collecting observations about the observer.|Subject studies researcher
+C|Because the explanation counted an attractive illustration as supporting data.|Picture replaces evidence
+M|Because the natural world regards straight lines as a temporary installation.|Nature resists geometry
+R|Because the field guide is following the footprints of its own last edition.|Guide trapped by prior knowledge
+H|Because the explanation needs a landscape-sized margin for exceptions.|Exceptions need physical expanse
+M|Because nature keeps revising a manuscript printed on moving water.|Continuous change
+B|Because the tidy theory forgot to obtain the ecosystem's consent.|Model needs subject permission
+R|Because the classification key has locked itself inside the thing it describes.|Knowledge tool trapped by object
+M|Because nature wears patterns the way a river wears banks.|Structure as changing boundary
+C|Because the illustration persuaded the caption that everything was settled.|Representation convinces explanation
+@EXPLAIN/HEALTH
+M|Because the wellness chart has confused a human being with a graph that eats breakfast.|Measurement reduces person to graph
+R|Because the universal explanation is trying to diagnose its own qualifications.|Explanation examines itself
+C|Because the health diagram counted its arrows as evidence of movement.|Diagram mistaken for mechanism
+M|Because the theory of perfect health was assembled from motivational refrigerator magnets.|Wellness certainty built from slogans
+H|Because every simple health claim arrives with enough qualifications to fill a gymnasium.|Health claims qualified at scale
+R|Because the wellness brochure has been promoted above the concept of evidence.|Marketing outranks evidence
+M|Because the one-size-fits-all explanation was measured using an imaginary person.|Universal model lacks real subject
+B|Because the chart has certified itself as a fully functioning human.|Representation self-certifies
+C|Because the confident diagram mistook a caption for a clinical history.|Label replaces evidence
+M|Because the wellness slogan is a paper umbrella claiming to control the weather.|Marketing overclaims power
+R|Because the progress tracker is competing with the idea of progress.|Measurement becomes rival
+H|Because the simple explanation requires a separate explanation larger than a hospital.|Oversimplification creates complexity
+M|Because the model of the body has mistaken its display stand for a spine.|Representation confuses support with anatomy
+C|Because the advice graph counted a smooth curve as proof of a smooth life.|Graph shape implies lived outcome
+R|Because the wellness checklist is demanding a fitness test from reality.|Checklist tests world
+M|Because the theory wears a lab coat tailored entirely from exclamation marks.|Authority costume from emphasis
+B|Because the imaginary average person was appointed without consulting any actual people.|Average lacks representation
+M|Because the confident explanation is trying to weigh a sunrise on bathroom scales.|Inappropriate measurement
+R|Because the health slogan has begun prescribing better slogans to itself.|Advice self-medicates rhetorically
+C|Because the model mistook its lack of question marks for a completed investigation.|Certainty typography mistaken for evidence
+@EXPLAIN/SPORTS
+R|Because the rulebook is secretly competing for the most influential player award.|Rules seek athletic status
+M|Because sporting logic takes the scenic route to the finishing line.|Sporting reasoning detours
+H|Because each rule carries the weight of a thousand disputed replays.|Rules burdened by history
+C|Because the explanation crossed its own finishing line and declared itself the winner.|Account self-certifies
+M|Because the laws of physics turned up in the wrong kit.|Physics as contestant
+B|Because competition requires its own competitive entry requirements.|Competition recursively qualifies
+R|Because the score is coaching the event on how to be memorable.|Outcome directs performance
+M|Because sporting tradition is a relay baton nobody remembers picking up.|Inherited practice lacks origin
+C|Because the rulebook mistook a standing ovation for a logical proof.|Applause validates rules
+H|Because a millimeter of sporting logic comes with a kilometer of commentary.|Explanation exceeds event
+R|Because the technicality has been training harder than the explanation.|Technical detail becomes athlete
+M|Because the official account has laces tied together by history.|Past tangles explanation
+B|Because the rules require the exception to wear a visible number.|Exception gets participant identity
+C|Because the diagram counted its arrows as athletes.|Representation mistaken for participants
+M|Because the explanation is doing warm-ups around the point.|Account avoids destination
+R|Because tradition has awarded itself a lifetime place on the podium.|Custom self-awards status
+H|Because the smallest sporting detail attracts a full arena of opinions.|Tiny detail huge audience
+M|Because the rulebook is a hurdle that also sells tickets.|Constraint monetizes observation
+R|Because the replay has started correcting the original event.|Recording rewrites event
+C|Because the explanation qualified on confidence and skipped the evidence round.|Confidence replaces qualification
+@EXPLAIN/ENTERTAINMENT
+M|Because imagination keeps reality as a consultant, not a supervisor.|Fiction controls reality's role
+R|Because the audience's expectations have hired a stunt double.|Expectation avoids risk
+H|Because a small creative decision can carry an entire marching band of consequences.|Creative choice amplified
+C|Because the explanation received applause before anyone checked its credentials.|Reception validates account
+M|Because artistic logic lives in a house whose doors lead to different genres.|Creative transitions as architecture
+R|Because the detail is trying to become the main attraction.|Background seeks spotlight
+B|Because disbelief has renewed its suspension without reading the terms.|Suspension as contract
+M|Because creativity treats consistency as a visiting relative.|Continuity intermittent guest
+C|Because the imaginary world mistook its popularity for a law of physics.|Audience approval becomes physical law
+H|Because a single creative flourish requires several acres of explanatory scaffolding.|Small flourish large justification
+R|Because the footnote has demanded creative control.|Ancillary detail takes power
+M|Because imagination uses a revolving door between sense and spectacle.|Logic and display alternate
+B|Because the artistic license includes permission to park across the explanation.|License becomes parking privilege
+C|Because the explanation saw its name in the credits and assumed it had contributed.|Recognition mistaken for work
+R|Because the surprise has been rehearsing its spontaneous entrance.|Spontaneity planned
+M|Because the creative process keeps a trapdoor under the obvious.|Expected outcome escapes
+H|Because one tiny detail has attracted a galaxy of unofficial historians.|Fan analysis at cosmic scale
+M|Because the spectacle is a magician who also sells the mirrors.|Illusion sells its means
+R|Because the interpretation has started auditioning the thing being interpreted.|Commentary controls work
+C|Because the explanation mistook the encore for a request for more certainty.|Audience demand misread

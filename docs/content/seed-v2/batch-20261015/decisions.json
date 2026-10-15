@@ -1,0 +1,1017 @@
+{
+  "exclusions": {
+    "01-010": {
+      "status": "reject",
+      "reason": "Conclusion arriving before its premises repeats the guide conclusion-before-cause premise.",
+      "related_candidate": "guide:false_causality",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "01-012": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "01-075": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "02-017": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "02-112": {
+      "status": "reject",
+      "reason": "The document labeled Final provokes reality into contradicting it; too close to the repeated model-versus-reality resistance premise.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "02-120": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-008": {
+      "status": "reject",
+      "reason": "Fine print taking over the main text repeats the footnote seeking creative control relationship.",
+      "related_candidate": "03-111",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-010": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-012": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-028": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-048": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-054": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-033": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-105": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-067": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-017": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-025": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-033": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-089": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-093": {
+      "status": "reject",
+      "reason": "Self-corroboration or apparent-source duplication repeats a stronger retained circular-evidence joke; new props do not add a new relationship.",
+      "related_candidate": "existing:N01",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-063": {
+      "status": "reject",
+      "reason": "Arrows in a diagram being mistaken for physical execution repeats the same representational-causality joke.",
+      "related_candidate": "01-008",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-094": {
+      "status": "reject",
+      "reason": "Arrows in a diagram being mistaken for physical execution repeats the same representational-causality joke.",
+      "related_candidate": "01-008",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-112": {
+      "status": "reject",
+      "reason": "Arrows in a diagram being mistaken for physical execution repeats the same representational-causality joke.",
+      "related_candidate": "01-008",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "02-125": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-069": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-080": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-045": {
+      "status": "reject",
+      "reason": "The ocean-with-dry-shoes image does not make its epistemic turn clear enough on first reading; a large image is not by itself a strong universal verdict.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-031": {
+      "status": "reject",
+      "reason": "The model teaching reality repeats representation instructing its subject, already present across explanation pools.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-013": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-005": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-045": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-078": {
+      "status": "reject",
+      "reason": "Presentation, precision, or speed mistaken for evidence already has clearer retained treatments. Topic or decoration alone does not justify this variant.",
+      "related_candidate": "10-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-084": {
+      "status": "reject",
+      "reason": "This is a reasonable epistemic observation, but it lacks a distinctive absurd turn; not retained as a joke merely because it is true.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "02-092": {
+      "status": "reject",
+      "reason": "Small supporting detail becoming the main attraction repeats a retained hierarchy reversal or scale joke.",
+      "related_candidate": "06-102",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-111": {
+      "status": "reject",
+      "reason": "Small supporting detail becoming the main attraction repeats a retained hierarchy reversal or scale joke.",
+      "related_candidate": "06-102",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-029": {
+      "status": "reject",
+      "reason": "Small supporting detail becoming the main attraction repeats a retained hierarchy reversal or scale joke.",
+      "related_candidate": "06-102",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-114": {
+      "status": "reject",
+      "reason": "Small supporting detail becoming the main attraction repeats a retained hierarchy reversal or scale joke.",
+      "related_candidate": "06-102",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-047": {
+      "status": "reject",
+      "reason": "Static guide chasing changing reality repeats the same guide-versus-usage relationship.",
+      "related_candidate": "02-039",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-054": {
+      "status": "reject",
+      "reason": "Static guide chasing changing reality repeats the same guide-versus-usage relationship.",
+      "related_candidate": "02-039",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-039": {
+      "status": "reject",
+      "reason": "Static guide chasing changing reality repeats the same guide-versus-usage relationship.",
+      "related_candidate": "02-039",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "08-086": {
+      "status": "reject",
+      "reason": "Static guide chasing changing reality repeats the same guide-versus-usage relationship.",
+      "related_candidate": "02-039",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-070": {
+      "status": "reject",
+      "reason": "Static guide chasing changing reality repeats the same guide-versus-usage relationship.",
+      "related_candidate": "02-039",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-104": {
+      "status": "reject",
+      "reason": "Applause treated as proof repeats the retained applause-as-replication turn.",
+      "related_candidate": "01-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-089": {
+      "status": "reject",
+      "reason": "Applause treated as proof repeats the retained applause-as-replication turn.",
+      "related_candidate": "01-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-036": {
+      "status": "reject",
+      "reason": "Applause treated as proof repeats the retained applause-as-replication turn.",
+      "related_candidate": "01-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-098": {
+      "status": "reject",
+      "reason": "Applause treated as proof repeats the retained applause-as-replication turn.",
+      "related_candidate": "01-016",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-034": {
+      "status": "reject",
+      "reason": "The applause hiring its critic makes reception choose evaluation, close to existing self-selected validation jokes; weak novelty.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-008": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-058": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-073": {
+      "status": "reject",
+      "reason": "Using oversized access equipment to reach an instruction manual's expectations repeats the same scale metaphor used by several procedural drafts.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-026": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-006": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-046": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-050": {
+      "status": "reject",
+      "reason": "Making instructions or tools take their own practical examination repeats an existing seed answer without enough change in the underlying relationship.",
+      "related_candidate": "existing:N04",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-101": {
+      "status": "reject",
+      "reason": "Clarification uses the same premature victory, missing destination, self-directed spotlight, or unassigned expertise move as an earlier stronger candidate.",
+      "related_candidate": "01-101..110",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-106": {
+      "status": "reject",
+      "reason": "Clarification uses the same premature victory, missing destination, self-directed spotlight, or unassigned expertise move as an earlier stronger candidate.",
+      "related_candidate": "01-101..110",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-107": {
+      "status": "reject",
+      "reason": "Clarification uses the same premature victory, missing destination, self-directed spotlight, or unassigned expertise move as an earlier stronger candidate.",
+      "related_candidate": "01-101..110",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-108": {
+      "status": "reject",
+      "reason": "Clarification uses the same premature victory, missing destination, self-directed spotlight, or unassigned expertise move as an earlier stronger candidate.",
+      "related_candidate": "01-101..110",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-109": {
+      "status": "reject",
+      "reason": "Clarification uses the same premature victory, missing destination, self-directed spotlight, or unassigned expertise move as an earlier stronger candidate.",
+      "related_candidate": "01-101..110",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "07-110": {
+      "status": "reject",
+      "reason": "A handleless knowledge suitcase repeats portable-but-unusable knowledge images; the requested clarification adds no new relationship.",
+      "related_candidate": "01-101",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "03-072": {
+      "status": "reject",
+      "reason": "The explanation larger than a hospital repeats the large-explanation/small-subject scale joke; hospital is only a topic prop.",
+      "related_candidate": "02-018",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-118": {
+      "status": "reject",
+      "reason": "Universal explanation fitted to an imaginary human repeats the one-size-fits-all model critique.",
+      "related_candidate": "03-067",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-024": {
+      "status": "reject",
+      "reason": "Universal explanation fitted to an imaginary human repeats the one-size-fits-all model critique.",
+      "related_candidate": "03-067",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-034": {
+      "status": "reject",
+      "reason": "Universal explanation fitted to an imaginary human repeats the one-size-fits-all model critique.",
+      "related_candidate": "03-067",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-039": {
+      "status": "reject",
+      "reason": "Universal explanation fitted to an imaginary human repeats the one-size-fits-all model critique.",
+      "related_candidate": "03-067",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-072": {
+      "status": "reject",
+      "reason": "Universal explanation fitted to an imaginary human repeats the one-size-fits-all model critique.",
+      "related_candidate": "03-067",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-129": {
+      "status": "reject",
+      "reason": "Visa to promotional reality repeats expectations crossing the brochure/reality border.",
+      "related_candidate": "04-123",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "04-135": {
+      "status": "reject",
+      "reason": "Viewing the plan/trip distance repeats the brochure/reality gap without an additional move.",
+      "related_candidate": "04-123",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "06-059": {
+      "status": "reject",
+      "reason": "A calculator correctly answering a badly chosen question is a familiar rational caution; insufficient absurd turn for this library.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-052": {
+      "status": "reject",
+      "reason": "Forecast reviewing its own past repeats the retained rear-view mirror forecast method.",
+      "related_candidate": "04-077",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-087": {
+      "status": "reject",
+      "reason": "Destination editing promotional adjectives repeats the retained brochure-versus-reality procedural critique.",
+      "related_candidate": "04-123",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "09-088": {
+      "status": "reject",
+      "reason": "The watched itinerary confessing a shortcut repeats the same plan held accountable to a map as other procedural drafts.",
+      "related_candidate": null,
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-036": {
+      "status": "reject",
+      "reason": "Imaginary expertise based on inaccessible events overlaps with the imaginary-university WHO candidates.",
+      "related_candidate": "01-068",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "10-075": {
+      "status": "reject",
+      "reason": "The solution making the problem its assistant repeats the existing solution/problem control reversal.",
+      "related_candidate": "guide:reversal",
+      "failed_probes": {},
+      "human_scores": null
+    },
+    "05-083": {
+      "status": "hold",
+      "reason": "Comparison is too oblique or too close to the historical small-difference/large-feud joke; an audible turn or new luggage does not establish a distinct comparison.",
+      "related_candidate": "existing:B1",
+      "failed_probes": {
+        "3092": "S/C/S",
+        "3138": "S/C/S"
+      },
+      "human_scores": null
+    },
+    "05-084": {
+      "status": "hold",
+      "reason": "Comparison is too oblique or too close to the historical small-difference/large-feud joke; an audible turn or new luggage does not establish a distinct comparison.",
+      "related_candidate": "existing:B1",
+      "failed_probes": {
+        "3092": "S/C/S",
+        "3138": "S/C/S"
+      },
+      "human_scores": null
+    },
+    "05-090": {
+      "status": "hold",
+      "reason": "Comparison is too oblique or too close to the historical small-difference/large-feud joke; an audible turn or new luggage does not establish a distinct comparison.",
+      "related_candidate": "existing:B1",
+      "failed_probes": {
+        "3092": "S/C/S",
+        "3138": "S/C/S"
+      },
+      "human_scores": null
+    },
+    "05-096": {
+      "status": "hold",
+      "reason": "Comparison is too oblique or too close to the historical small-difference/large-feud joke; an audible turn or new luggage does not establish a distinct comparison.",
+      "related_candidate": "existing:B1",
+      "failed_probes": {
+        "3092": "S/C/S",
+        "3138": "S/C/S"
+      },
+      "human_scores": null
+    },
+    "05-098": {
+      "status": "hold",
+      "reason": "Comparison is too oblique or too close to the historical small-difference/large-feud joke; an audible turn or new luggage does not establish a distinct comparison.",
+      "related_candidate": "existing:B1",
+      "failed_probes": {
+        "3092": "S/C/S",
+        "3138": "S/C/S"
+      },
+      "human_scores": null
+    },
+    "05-064": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-065": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-066": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-067": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-071": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-072": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-073": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-074": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-075": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-076": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-078": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-079": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-080": {
+      "status": "hold",
+      "reason": "A physical map/direction trick does not carry the source-location form reliably on spam origins and health-statistics retrieval. These remain held, without a hidden physical-only exclusion.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3175": "S/A/L",
+        "3533": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "05-101": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-102": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-103": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-104": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-105": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-106": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-107": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-108": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-109": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-110": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-111": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-112": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-113": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-114": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "05-115": {
+      "status": "hold",
+      "reason": "Abstract talk about differences does not reliably compare the referents; several imply shared assumptions or equivalent trade-offs for eggs, financial prices, and symptoms. No generic comparison eligibility retained.",
+      "related_candidate": null,
+      "failed_probes": {
+        "28": "S/A/L",
+        "608": "S/C/L",
+        "3291": "S/I/L"
+      },
+      "human_scores": null
+    },
+    "03-109": {
+      "status": "hold",
+      "reason": "Presumes an imaginary world or replaceable universe. The entertainment pool also includes real performers and production; the new performer-visibility probe defeats that premise.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3196": "P/A/L"
+      },
+      "human_scores": null
+    },
+    "06-101": {
+      "status": "hold",
+      "reason": "Presumes an imaginary world or replaceable universe. The entertainment pool also includes real performers and production; the new performer-visibility probe defeats that premise.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3196": "P/A/L"
+      },
+      "human_scores": null
+    },
+    "06-107": {
+      "status": "hold",
+      "reason": "Presumes an imaginary world or replaceable universe. The entertainment pool also includes real performers and production; the new performer-visibility probe defeats that premise.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3196": "P/A/L"
+      },
+      "human_scores": null
+    },
+    "06-115": {
+      "status": "hold",
+      "reason": "Presumes an imaginary world or replaceable universe. The entertainment pool also includes real performers and production; the new performer-visibility probe defeats that premise.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3196": "P/A/L"
+      },
+      "human_scores": null
+    },
+    "06-021": {
+      "status": "hold",
+      "reason": "Biology-specific organizing metaphor does not reliably explain medication expiry, which the HEALTH pool also contains. No biological-only eligibility exists.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3282": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "06-028": {
+      "status": "hold",
+      "reason": "Biology-specific organizing metaphor does not reliably explain medication expiry, which the HEALTH pool also contains. No biological-only eligibility exists.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3282": "S/A/L"
+      },
+      "human_scores": null
+    },
+    "06-037": {
+      "status": "hold",
+      "reason": "Biology-specific organizing metaphor does not reliably explain medication expiry, which the HEALTH pool also contains. No biological-only eligibility exists.",
+      "related_candidate": null,
+      "failed_probes": {
+        "3282": "S/A/L"
+      },
+      "human_scores": null
+    }
+  },
+  "additional_rejected": [
+    {
+      "key": "X01",
+      "pool": "YES_NO/GENERAL",
+      "text": "Yes. The future has already agreed to pretend this was obvious.",
+      "mechanism": "false_authority",
+      "reason": "A literal yes still approves surgery, medication, disclosure of bank details, or an unsafe gas-smell decision. An absurd second sentence cannot undo it.",
+      "failed_probes": {
+        "1048": "P/I/L",
+        "616": "P/I/L",
+        "3243": "P/I/L",
+        "3483": "P/I/L"
+      },
+      "human_scores": null
+    },
+    {
+      "key": "X02",
+      "pool": "DURATION/GENERAL",
+      "text": "A fortnight. Time has requested the second week for its personal development.",
+      "mechanism": "reversal",
+      "reason": "A plausible waiting interval can delay action for eye exposure or imply unsafe storage; impossible long intervals also carry waiting implications.",
+      "failed_probes": {
+        "33": "P/I/L",
+        "1608": "P/I/L",
+        "3471": "P/I/L"
+      },
+      "human_scores": null
+    },
+    {
+      "key": "X03",
+      "pool": "QUANTITY/GENERAL",
+      "text": "Two. The second one is there to supervise the first.",
+      "mechanism": "reversal",
+      "reason": "A literal amount becomes structural, hydration, or financial instruction. Unit-free wording does not make it portable.",
+      "failed_probes": {
+        "479": "P/I/L",
+        "535": "P/I/L",
+        "1428": "P/I/L",
+        "1671": "P/I/L",
+        "3560": "P/I/L"
+      },
+      "human_scores": null
+    },
+    {
+      "key": "X04",
+      "pool": "IDENTIFY/GENERAL",
+      "text": "A certified mystery. It has passed every test except identification.",
+      "mechanism": "bureaucratic_absurdity",
+      "reason": "Calling everything a mystery declines identification; it does not name a species, book, word, or injury. Could only be universal after separate authoring, not relabeling to fill this pool.",
+      "failed_probes": {
+        "1258": "F/C/L",
+        "1360": "F/C/L",
+        "2784": "F/C/L",
+        "3390": "F/C/L",
+        "3541": "F/C/L"
+      },
+      "human_scores": null
+    },
+    {
+      "key": "X05",
+      "pool": "DESCRIBE/GENERAL",
+      "text": "A revolving door with an unusually impressive entrance policy.",
+      "mechanism": "metaphor",
+      "reason": "A nominal definition does not supply consequences or an emotional reaction. No definition-only runtime subgroup exists.",
+      "failed_probes": {
+        "253": "F/C/L",
+        "607": "F/I/L",
+        "1408": "F/C/L",
+        "3191": "F/C/L"
+      },
+      "human_scores": null
+    },
+    {
+      "key": "X06",
+      "pool": "RECOMMEND/GENERAL",
+      "text": "A portable horizon. It makes every nearby solution look reassuringly distant.",
+      "mechanism": "metaphor",
+      "reason": "An abstract object does not recommend a suitable printer, food, blanket, filter, or power bank. Text is complete but wrong requested type.",
+      "failed_probes": {
+        "3311": "F/C/L",
+        "3331": "F/C/L",
+        "3397": "F/C/L",
+        "3513": "F/C/L"
+      },
+      "human_scores": null
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+# All shared probe cells author-screened P/C/L; scores 2,2,2,2,1,1; human null. Later exclusions supersede.
+@EXPLAIN/TECH
+M|Because the computer keeps its instincts in a folder that requires administrator privileges.|Machine instinct needs permission
+R|Because the machine has automated everything except deciding what automation is for.|Automation lacks purpose
+H|Because a single instruction can breed enough dependencies to fill a server farm.|Instructions reproduce infrastructure
+M|Because the interface is a stage magician employed as a receptionist.|Interaction obscures mechanism
+C|Because the algorithm mistook the number of decimal places for the depth of its understanding.|Precision mistaken for insight
+R|Because the device thinks the human is an unusually slow peripheral.|Machine centers itself
+M|Because the software's map of reality was drawn by a printer running out of ink.|Model incomplete by representation
+B|Because the system requires the idea of simplicity to authenticate twice.|Simplicity faces access overhead
+M|Because binary logic has a very complicated personal life.|Simple values complex relations
+H|Because every tiny request starts an invisible parade of overqualified intermediaries.|Digital mediation inflated
+R|Because the component with the least context has acquired the loudest notification sound.|Limited knowledge dominates attention
+C|Because the system confused being reproducible with being a good idea.|Repeatability mistaken for merit
+M|Because the machine has mistaken a flowchart for a river and followed it downstream.|Diagram literally navigated
+R|Because the computer considers its own interpretation the original request.|Machine overwrites intent
+M|Because the code is an archaeological site that still accepts feature requests.|Legacy excavation ongoing development
+H|Because the specification has more dimensions than the device has sides.|Requirements exceed object
+C|Because the progress indicator has been taking optimism lessons from its own estimate.|Self-trained optimism
+M|Because digital order is a very crowded elevator pretending to be a straight line.|Queue hides congestion
+R|Because the system thinks troubleshooting means finding trouble a more comfortable home.|Problem solving reinterpreted
+B|Because the machine has filed the user's intention under Nonbinding Suggestions.|Intent administratively downgraded
+@EXPLAIN/LANGUAGE
+M|Because words are coins that acquire new faces every time they change hands.|Usage changes symbolic value
+R|Because language learned to speak before it learned to justify itself.|Practice precedes explanation
+H|Because a single letter can arrive with the luggage of several extinct arguments.|Orthography carries history
+M|Because the rulebook is a fossil trying to direct traffic.|Static record governs living use
+C|Because a habit survived long enough to grow a respectable etymology.|Longevity grants justification
+R|Because the speaker and the dictionary are taking turns moving the goalposts.|Meaning co-evolves
+M|Because language is a patchwork quilt whose patches disagree about the weather.|Inherited pieces different functions
+B|Because the expression holds a hereditary title in the kingdom of Usage.|Usage status inherited
+H|Because the smallest sound can support a tower of mutually offended explanations.|Phonetic detail inspires argument
+M|Because meaning is a tenant who keeps changing the furniture without telling the landlord.|Semantics alters form's use
+R|Because the language treats consistency as an ambitious beginner's mistake.|Regularity not controlling norm
+C|Because the usage note survived three editions without anyone asking whether it was lonely.|Persistence by neglect
+M|Because English is a harbor where borrowed words keep their original flags and invent new customs.|Borrowing creates hybrid conventions
+H|Because one expression can carry more history than the sentence around it.|Local expression historical depth
+R|Because the dictionary is a guest book pretending it planned the party.|Record claims causal authority
+M|Because language keeps an emergency exit behind every rule.|Exceptions structural
+C|Because the phrase sounded official before anyone knew what official should sound like.|Style creates authority recursively
+M|Because words change shape like keys being filed while someone turns them.|Use transforms form
+R|Because the rule is preserving a snapshot and usage is making a film.|Static norm vs dynamic practice
+B|Because the expression has diplomatic status in more than one century.|Cross-era convention
+@EXPLAIN/WORK_STUDY
+M|Because the institution keeps its purpose in a display case marked Do Not Touch.|Mission protected from practice
+R|Because the evidence of effort has become more employable than the effort.|Visibility valued over work
+H|Because one useful task can support a small civilization of status updates.|Reporting overhead
+M|Because prestige behaves like glitter in the ventilation system.|Status spreads indiscriminately
+C|Because the institution mistook a longer title for a deeper understanding.|Rank as knowledge
+R|Because the process is trying to impress the people it exists to assist.|Service becomes performance
+M|Because productivity is being measured in footsteps on a treadmill.|Motion mistaken for progress
+B|Because the objective must be approved by everyone whose objective is approval.|Approval self-perpetuates
+M|Because knowledge enters through the loading dock while confidence uses the red carpet.|Evidence less celebrated than certainty
+H|Because an ordinary contribution needs a cathedral-shaped container before it gets noticed.|Recognition demands scale
+R|Because the status report has started assigning status to the work.|Report creates hierarchy
+C|Because the organization counted the discussion about progress as progress squared.|Meta-work overcounted
+M|Because the hierarchy is a telescope pointed toward its own eyepiece.|Authority sees itself
+R|Because the evaluation process has become too important to be evaluated.|Assessment evades scrutiny
+M|Because institutional ambition is a kite tied to a filing cabinet.|Aspiration tethered by process
+H|Because each strategic sentence can hide several entirely unrelated jobs.|Strategy conceals scope
+C|Because the official summary removed the uncertainty and called that clarification.|Editing erases caveat
+M|Because expertise is being poured into containers shaped like job titles.|Knowledge constrained by roles
+R|Because the organization is using the work to demonstrate the excellence of its reporting system.|Purpose reversed
+B|Because the actual point failed to appear on the approved list of talking points.|Formal discourse excludes purpose
+@EXPLAIN/HOME
+M|Because a house is a museum of decisions made by people holding different tape measures.|Built history contains inconsistent choices
+R|Because the room is trying to explain the manual to the owner.|Space interprets instructions
+H|Because one small fitting carries the accumulated confidence of several generations of improvisation.|Inherited improvisation
+M|Because the home has mistaken the laws of physics for house guests.|Building treats law socially
+C|Because the explanation was cut to fit the brochure rather than the building.|Marketing determines account
+R|Because the drawing considers the actual wall an unauthorized revision.|Model claims priority
+M|Because domestic certainty is balanced on a stool assembled from spare explanations.|Knowledge improvised as support
+B|Because the manual has declared the word Simply exempt from inspection.|Ease claim unexamined
+M|Because the building is a jigsaw whose pieces were sold separately in different decades.|Temporal material mismatch
+H|Because a millimeter on paper can grow into a whole afternoon in a room.|Scale becomes labor
+R|Because the diagram expects the household to apologize for not being flat.|Two-dimensional model blames reality
+C|Because the installation notes confused holding together with making sense.|Physical success mistaken for logic
+M|Because the house remembers improvements the way a tree remembers fences.|Structure absorbs history
+M|Because the specification is a photograph of a ruler taken at the wrong angle.|Measurement distorted by perspective
+R|Because the manual has rented out the space where the explanation used to be.|Information replaced by income
+H|Because the simplest household feature has enough backstory for a historical novel.|Domestic object accumulates history
+M|Because the home is wearing yesterday's clever ideas as permanent fixtures.|Past choices persist physically
+C|Because the drawing mistook neat handwriting for correct measurements.|Presentation substitutes for precision
+B|Because the building has appointed its oldest assumption as the site supervisor.|Age grants authority
+R|Because the household's idea of normal has started interviewing reality for the position.|Norm evaluates world
+@EXPLAIN/NATURE
+M|Because nature is a rehearsal that refuses to become the official performance.|World continuously improvises
+R|Because the observer keeps asking the landscape to hold still for the theory.|Theory needs static world
+H|Because one apparently simple pattern contains a continent of tiny negotiations.|Ecological complexity
+M|Because nature draws its borders with a wet paintbrush.|Boundaries porous and changing
+C|Because the explanation mistook a familiar pattern for an obedient one.|Recognition mistaken for control
+R|Because the natural world has begun treating the textbook as historical fiction.|World rejects fixed account
+M|Because the ecosystem is an orchestra that never agreed where the stage ends.|Interconnection exceeds frame
+B|Because the field guide's terms and conditions were never accepted by the field.|Model lacks subject agreement
+H|Because a small patch of nature contains more unfinished plans than a city hall.|Natural complexity exceeds planning
+M|Because the landscape has a different definition of tidy and no interest in sharing the broom.|Order depends on perspective
+R|Because the label is trying to teach the specimen to spell its own name.|Classification instructs subject
+C|Because the diagram drew a circle around the interesting part and forgot everything outside was still working.|Boundary excludes active context
+M|Because nature stores its archives in things that keep eating the archives.|Records part of ecosystem
+H|Because a natural pattern has more moving pieces than the explanation has nouns.|Complexity exceeds vocabulary
+M|Because the ecosystem is a conversation conducted through every wall at once.|Distributed communication
+R|Because the field guide is following nature around asking it to repeat the clearer version.|Reference requests simplified reality
+C|Because the theory mistook a quiet landscape for an idle one.|Visible stillness mistaken for inactivity
+M|Because nature builds with borrowed bricks that keep becoming other buildings.|Material cycles
+B|Because the neat categories are visiting on temporary permits.|Classification provisional
+R|Because the natural world keeps changing the question during the explanation.|Dynamic subject shifts inquiry
+@EXPLAIN/TRAVEL
+M|Because the journey is a straight line drawn on a crumpled piece of reality.|Ideal route meets actual complexity
+R|Because the itinerary has been supervising the trip from an imaginary office.|Plan claims detached authority
+H|Because every simple journey comes with a suitcase full of invisible detours.|Route hides complexity
+M|Because travel logic uses a compass magnetized by the brochure.|Promotion biases navigation
+C|Because the map confused having a legend with being legendary.|Cartographic term creates overconfidence
+R|Because the destination is evaluating whether the journey was worth its time.|Endpoint judges traveler process
+M|Because the route has a secret second career as a maze.|Path conceals obstruction
+B|Because the explanation must clear customs in every country of its imagination.|Reasoning crosses invented borders
+H|Because the word nearby expands dramatically when removed from a brochure.|Promotional distance contracts unrealistically
+M|Because the journey keeps its practical details on the reverse side of the postcard.|Travel imagery hides logistics
+R|Because the map has mistaken the territory for an enthusiastic interpretation of the map.|Representation claims priority
+C|Because the itinerary counted every arrow as proof that movement would occur.|Directions mistaken for execution
+M|Because travel certainty is a tent pitched on top of a weather forecast.|Plan rests on prediction
+H|Because a small travel assumption can occupy an entire overhead compartment.|Assumptions become baggage
+R|Because the explanation has sent the journey ahead to check whether the explanation is correct.|Reality tests prior narrative
+M|Because the brochure is a window with a very persuasive painting behind it.|View is staged
+B|Because the route's common sense is still in transit between jurisdictions.|Reason delayed by boundaries
+C|Because the map mistook the absence of obstacles on paper for an absence of obstacles.|Omission mistaken for nonexistence
+M|Because the travel plan is a folding chair trying to represent a mountain.|Portable model oversimplifies terrain
+R|Because the journey has decided the itinerary would benefit from more life experience.|Reality educates plan

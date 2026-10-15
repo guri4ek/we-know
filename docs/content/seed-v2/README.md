@@ -1,23 +1,36 @@
 # Offline seed v2
 
-Local preliminary editorial seed, created 2026-10-12; handoff verified 2026-10-13. **24 answers, 24 eligibilities, 9 populated classification pools and 173 empty**, plus two ANY/GENERAL answers. These are completed English texts screened by the author, not human-approved or production-ready content. Human scores remain null.
+Current development seed, **2026-10-15: 1,055 answers / 1,055 eligibilities**, including all 24 earlier answers unchanged and 1,031 accepted author additions. Human scores remain null. Author screening permits these drafts in the local development seed; it is not human approval or production certification.
 
-- [catalog.json](catalog.json): the complete replacement import, format 2 / active taxonomy 2.0.0. Stable UUIDs and UTC creation timestamps.
-- [editorial.md](editorial.md): matrices, screening method, weakest-pair judgments, rejected texts, pilot provenance and coverage.
-- [editorial.json](editorial.json): exact original quotations/source URLs, separate form/context/clarity cells, author scores and null human scores.
-- [database-verification.json](database-verification.json): actual SQLite checks, catalog hash and stored counts.
-- [Artifact verification](artifact-verification.json): exact-source/category/count/link validation and preservation evidence.
+[**Complete canonical catalog**](catalog.json) · [Current editorial batch, coverage and limitations](batch-20261015/README.md) · [Current database verification](batch-20261015/final-verification.json)
 
-The created database is `/Users/serhii/OwnProjects/we-know/var/answer-seed-v2-20261012.sqlite`, outside `public/`. It contains only this seed catalog plus **five offline-double demonstration verdicts**. The existing `var/we-know.sqlite` was not modified. No environment default was switched. Use an explicit database target for any later application inspection; changing a target does not authorize live calls.
+The canonical format remains integer version 2, active taxonomy/rubric 2.0.0. It contains full English texts, stable UUIDs and UTC creation times. Humor metadata belongs to eligibility and does not affect selection. Import replaces the entire catalog; partial batches would remove omitted content.
 
-[verify-seed-v2.php](../../../tools/verify-seed-v2.php) reproduces the database demonstration using the existing migration and import command. It requires a **new** absolute `var/answer-seed-v2-<name>.sqlite` path and refuses an existing file. It loads no Dotenv/credentials and calls no provider. Example, using a new name:
+## Current local workflow
+
+The disposable default target is `var/we-know.sqlite`. It now has the current schema, this complete editorial catalog, and zero verdicts. It contains no synthetic smoke content. Commands require `APP_ENV=dev` and the exact default SQLite target:
+
+```sh
+rtk proxy composer db:reset
+rtk proxy composer db:migrate
+rtk proxy composer db:seed
+# Equivalent complete sequence, stopping immediately on failure:
+rtk proxy composer db:fresh
+rtk proxy php tools/verify-local-database.php
+```
+
+Reset deletes only that database and its regular SQLite sidecars, including migration state. Migrate uses the existing migration infrastructure; seed uses the existing importer and `docs/content/seed-v2/catalog.json`. See [backend setup](../../backend.md#development-database-and-offline-reproduction). Run fresh after editing an unreleased table-creation migration; no incremental data upgrade is provided.
+
+## Preserved historical evidence
+
+The 2026-10-12–13 pilot contained **24 answers / 24 eligibilities**, nine populated classification pools and 173 empty pools. Its [editorial prose](editorial.md), [matrices](editorial.json), [database report](database-verification.json) and [artifact report](artifact-verification.json) remain unchanged historical evidence, not measurements of the expanded catalog. The old default database was untouched during that earlier task; the separately authorized 2026-10-15 task recreated it.
+
+The original demonstration `var/answer-seed-v2-20261012.sqlite` remains preserved with its 24-answer catalog and five offline-double verdicts. Other pre-existing demonstration files were also preserved. Never load a synthetic fixture into an editorial demonstration.
+
+The helper [verify-seed-v2.php](../../../tools/verify-seed-v2.php) can create a **new** named `var/answer-seed-v2-<name>.sqlite` demonstration of the current catalog; it refuses an existing target and adds five offline-double verdicts. It loads no credentials and calls no provider. Its METHOD/SPORTS case now demonstrates intent fallback because METHOD/TECH gained exact content. The default development lifecycle does not call this helper or create demonstration verdicts.
 
 ```sh
 rtk proxy php tools/verify-seed-v2.php /Users/serhii/OwnProjects/we-know/var/answer-seed-v2-recheck.sqlite
 ```
 
-The script checks import validation/rollback, repeat import with unchanged identities/times, all fallback tiers, successful OTHER versus failure, each selectable index, mechanism independence, immutable snapshots after edit/disable/delete, foreign keys and reconnect durability. Temporary mutation probes roll back; the final catalog exactly matches the complete JSON. The production random source uses `random_int(0, count - 1)`; deterministic checks establish equal index access and absence of mechanism weighting, not a statistical distribution result.
-
-**Never run the synthetic smoke importer on this database.** Import is full replacement, not merge. The unreleased initial migration was updated directly for v2; an existing database marked with its earlier schema is not automatically upgraded. This development task deliberately created a fresh isolated file rather than migrating existing data.
-
-Ten pilot survivors were retained unchanged; B2 was excluded; none was revised or declared human-approved. Fourteen new texts passed. The 30–50 target was not filled because eleven evaluated candidates failed portability, implications or novelty. Unseen-pool fit, medical/financial tone, criterion-only choices and repetition fatigue need human review. PostgreSQL acceptance and the later [100-question live trial](../../evaluation/corpus-v2/README.md) remain unexecuted.
+PostgreSQL, the separately planned live classification trial, and human humor/portability approval remain unverified.

@@ -15,7 +15,14 @@ final class HomeTest extends WebTestCase
         self::assertResponseHeaderSame('Content-Type', 'text/html; charset=UTF-8');
         self::assertSelectorExists('html[lang="en"]');
         self::assertSelectorTextContains('h1', "We don't think. We know.");
-        self::assertSelectorTextContains('main', 'Coming soon.');
+        self::assertSelectorExists('form[action="/answer"] textarea[name="question"][id="question"]');
+        self::assertSelectorExists('label[for="question"]');
+        self::assertSelectorExists('button[type="submit"][disabled]');
+        self::assertSelectorTextContains('noscript', 'JavaScript');
+        self::assertSelectorTextContains('main', 'Anyone with the result link');
+        self::assertSelectorExists('a[href="/privacy"]');
+        self::assertSelectorExists('link[rel="stylesheet"][href="/assets/app.css"]');
+        self::assertSelectorExists('script[type="module"][src="/assets/app.js"]');
         self::assertSelectorCount(1, 'main');
         self::assertSelectorExists('meta[name="robots"][content="noindex, nofollow"]');
     }
@@ -29,7 +36,7 @@ final class HomeTest extends WebTestCase
         self::assertSame('', $client->getResponse()->getContent());
     }
 
-    public function testHomeDoesNotAcceptSubmissionsYet(): void
+    public function testSubmissionsUseTheDedicatedAnswerEndpoint(): void
     {
         $client = self::createClient();
         $client->request('POST', '/');
@@ -44,5 +51,8 @@ final class HomeTest extends WebTestCase
         $client->request('GET', '/not-a-page');
 
         self::assertResponseStatusCodeSame(404);
+        self::assertSelectorTextContains('h1', 'Page not found');
+        self::assertSelectorExists('a[href="/"]');
+        self::assertStringNotContainsString('Stack trace', $client->getResponse()->getContent());
     }
 }

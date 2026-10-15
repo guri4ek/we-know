@@ -8,6 +8,12 @@ Communicate with Serhii in Ukrainian. Write project documentation and instructio
 
 Development uses locally installed PHP 8.4, with a planned transition to PHP 8.5. The minimum supported PHP version is 8.4. SQLite is the local database; PostgreSQL is the definite production database. Jev uses one production key for application calls and authorized live evaluation; do not require a separate test key or sandbox workflow. Keep credentials private and live usage bounded by the authorized scope. Configuration and verification details belong in the linked documents.
 
+## Local development lifecycle
+
+Start local database work from a fresh disposable database. The required order is: reset the default local database, run migrations to create the current tables and indexes, then seed the canonical catalog. Use `composer db:fresh` for the complete lifecycle; its equivalent steps are `composer db:reset`, `composer db:migrate`, and `composer db:seed` in that order.
+
+Agents may clean or reset the local development environment when it is useful. Limit cleanup to disposable, ignored local runtime artifacts. In particular, the database reset may remove only `var/we-know.sqlite` and its SQLite sidecars, and only when `APP_ENV=dev` uses the exact default local SQLite target. Never use cleanup to delete source, documentation, fixtures, credentials, or preserved demonstration databases.
+
 ## Hard principles
 
 1. **Think before code.** Analyze the task and evidence before acting. Make assumptions explicit, resolve consequential ambiguity, and understand the intended outcome rather than blindly executing instructions.

@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-15T14:06:59Z",
+  "uuid_namespace": "ae15b38d-94bd-5a48-8325-bb17ccbd28c8",
+  "status": "enabled_local_development_author_screened_drafts",
+  "human_scores": null,
+  "author_score_order": [
+    "form",
+    "portability_on_seen_probes",
+    "legible_shift",
+    "economy",
+    "batch_novelty",
+    "comic_potential"
+  ],
+  "source_scores": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "screening": "Each completed source line was paired with every question in its named shared probe set. Initial source-file pass statements are superseded by decisions.json. Scores are provisional author assessments, not measured humor or human approval. Build tooling serializes these decisions; it cannot judge semantic fit.",
+  "pool_limits": "EXPLAIN admits a comic operating principle, not factual explanation. METHOD admits a visibly impossible procedure. CHOICE admits an impossible criterion, never a named or ordinal winner. WHO uses fictional agents. WHEN uses impossible time markers. WHERE uses explicitly fictional places; physical map-only candidates failed source-retrieval probes. Universal deliberately degrades form. No seen set proves whole-pool suitability."
+}

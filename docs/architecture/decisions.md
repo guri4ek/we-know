@@ -4,7 +4,7 @@
 
 | ID | Status | Decision and consequence |
 | --- | --- | --- |
-| ADR-001 | Accepted by user | Symfony, SSR, vanilla JS POST fetch; no SPA. Fetch remains unimplemented |
+| ADR-001 | Accepted by user; implemented locally | Symfony, SSR, vanilla JS POST fetch; no SPA. Frontend implemented on 2026-10-15 |
 | ADR-002 | Accepted for bootstrap; runtime requirement corrected by user | Symfony 7.4 LTS, Twig, Composer lock; explicit configuration without Flex/Runtime recipes. Bootstrap used a PHP 8.2 dependency baseline; development is PHP 8.4 with planned 8.5, minimum 8.4. Composer now requires >=8.4 and platform 8.4.0; the audit finding is resolved |
 | ADR-003 | Accepted by user | Contextual Absurdity, Jev first; Chaos/NLP deferred |
 | ADR-004 | Accepted by user | Jev classifies categories; PHP random within a category. The model neither generates nor ranks final phrases |
@@ -14,7 +14,7 @@
 | ADR-008 | Implemented under backend authorization | Eligibility as explicit intent/topic pairs, not two independent sets |
 | ADR-009 | Stage-1 classification implemented | One Jev call; initial timeout 0.30 s / max_duration 0.40 s. After two live batches Serhii chose **0.60/0.80 s defaults**; no retry/redirect; model configurable/pinned. Adapter returns typed failure; direct universal application fallback is now implemented |
 | ADR-010 | Implemented under backend authorization | Catalog through validated CLI import; no web admin or runtime template generation at launch |
-| ADR-011 | Backend reading implemented; frontend data notice pending | Public by URL, noindex, no feed; explain question storage/transmission before submit |
+| ADR-011 | Implemented locally | Public by URL, noindex, no feed; question storage/transmission notice before submit, with data disclosure on `/privacy`; launch policy remains open |
 | ADR-012 | Accepted by user | Begin with minimal foundation, research, architecture, and test planning; do not implement the whole product at once |
 | ADR-013 | Accepted by user | Unit/integration tests, including Jev; real API calls separate from offline suite |
 | ADR-014 | Accepted by user | Before production, edit development migrations and rebuild disposable dev/test databases. Shared/persistent data requires new immutable incremental migrations; no reset/deployment performed here |
@@ -27,7 +27,7 @@
 | ADR-021 | User clarification during audit | Personal project/personal account; unrelated WHMCS/work reviewer defaults do not define the project role. Scope comes from explicit user requests. Real Jev costs should be assessed from authorized usage and billing evidence, not assumed from a low published price |
 
 | ADR-022 | Accepted by user, backend implemented locally | Complete backend after Composer minimum/platform correction: catalog, migrations/import, selector, verdict persistence, POST /answer, saved-result reading. Local implementation/tests only; see [backend prompt](../handoff/backend-implementation-prompt.md) |
-| ADR-023 | Accepted by user, deferred implementation | Future frontend uses a **dark theme**. Frontend design/form/fetch/theme implementation is a later stage; minimal stored-result SSR belongs to backend scope |
+| ADR-023 | Accepted by user; implemented locally on 2026-10-15 | **Dark-theme frontend**, shared Twig shell/verdict, vanilla-JS form/fetch and copying, About/FAQ, data disclosure and styled HTML errors. No deployment or paid calls; final privacy policy remains a launch decision |
 
 The provisional eight mechanism strings, full-catalog import semantics, strict Origin policy, and local fixed-window limit are documented implementation choices in the [backend guide](../backend.md). They do not establish human content or production acceptance.
 
@@ -58,3 +58,10 @@ ADR-024 — **Accepted by user, implemented offline:** adopt 14 intents / 13 top
 The user explicitly clarified that the project is still in development without a frontend: evolve the active implementation directly, without parallel old-version support or migration machinery. Update the unreleased initial schema and synthetic fixtures; catalog integer version 2 binds the changed semantics with no extra fields. Existing development data remains untouched; the [isolated seed database](../content/seed-v2/README.md) uses a fresh file. Old eligibility is not mechanically converted.
 
 The task authorized local code, tests, documentation, editorial artifacts and the isolated SQLite import. It excluded Git, deployment, production changes, external/paid calls, subagents and personal configuration. Twenty-four completed answers passed preliminary author screening; human approval and production PostgreSQL acceptance remain outstanding. The [100-question v2 trial](../evaluation/corpus-v2/README.md) is prepared but unexecuted.
+
+
+## Development seed and database lifecycle — 2026-10-15
+
+The user authorized substantial offline answer authoring, the complete canonical catalog, local database tooling/tests/documentation, and clearing `var/we-know.sqlite`. The completed batch retains all 24 existing answers and adds 1,031 author-screened drafts; human scores remain null. Counts, failed candidates and whole-pool limitations are in the [batch evidence](../content/seed-v2/batch-20261015/README.md).
+
+The four Composer commands reset, migrate, seed, and fresh target only the default development SQLite database. Fresh runs reset → current migrations → canonical importer, stopping at the first failure. The initial schema was sufficient and was not changed. Existing demonstration databases and historical reports were preserved. This authorization did not include Git delivery, deployment, ranking, live services, personal configuration or Claude files; the accepted first-pool uniform selector remains unchanged.

@@ -1,0 +1,117 @@
+# All named shared probes screened: P/C/L; rubric 2,2,2,2,1,1; human null; final exclusions authoritative.
+@EXPLAIN/GENERAL
+M|Because the obvious has been wrapped in bubble wrap and mistaken for something fragile.|Packaging changes perceived nature
+R|Because the consequence has started sending the cause reminders.|Result prompts origin
+H|Because the explanation contains a staircase with more landings than steps.|Reasoning interrupted by overhead
+C|Because the conclusion mistook arriving first for being correct.|Priority mistaken for validity
+M|Because logic is trying to read the room through a keyhole shaped like itself.|Reason sees only its own frame
+R|Because the explanation has made itself indispensable by moving the point.|Account creates dependence
+M|Because certainty is a parrot that has learned the word Therefore.|Reasoning reduced to mimicry
+C|Because the demonstration was mistaken for the thing it was demonstrating.|Model replaces reality
+H|Because the smallest assumption has brought a moving van.|Assumption displaces reasoning
+M|Because the proof has a revolving bookcase instead of a final step.|Reasoning exits through concealment
+R|Because the conclusion has declared the premises to be optional historical background.|Outcome dismisses foundations
+M|Because common sense arrived wearing a disguise to avoid being quoted.|Reason evades misuse
+C|Because the explanation had a title and was immediately mistaken for an expert.|Label grants expertise
+M|Because reasoning is a ladder whose top rung keeps giving motivational speeches.|Hierarchy distracts climber
+R|Because the point is trying to escape an explanation built around it.|Subject trapped by account
+H|Because one casual assumption has enough gravity to bend the rest of the argument.|Assumption creates gravitational field
+M|Because the theory has a sunroof but no engine.|Attractive theory lacks mechanism
+C|Because the answer survived the editing process and called that natural selection.|Editorial survival as proof
+R|Because the explanation is running an experiment on how little explaining it can do.|Account minimizes own purpose
+M|Because logic is wearing mittens while tying the knot.|Reasoning impedes itself
+@METHOD/GENERAL
+M|Put a small sail on the assumption. Find out which way the argument is actually blowing.|Assumption reveals argumentative direction
+R|Ask the easy part to account for everything it has been calling trivial.|Ease must justify dismissal
+H|Bring a telescope to the overview. The practical step is several galaxies below it.|Abstraction distances action
+M|Give the instruction a chair. It has been standing on another instruction's shoulders.|Dependency exposed as support
+C|Ask the impossible to explain why the merely difficult is using its name.|Difficulty exaggerates identity
+R|Have the diagram follow the instructions without looking at itself.|Representation tested independently
+M|Roll the plan into a telescope and look for the missing middle.|Plan searches own gap
+B|Make the loophole register as a doorway. Insist on a working handle.|Shortcut becomes accountable access
+M|Introduce the problem to its shadow. They have been blaming each other for the shape.|Problem separates appearance from substance
+H|Use a net with holes smaller than the phrase It Depends.|Method catches evasive qualification
+R|Ask the result to write a postcard explaining how it got there.|Outcome supplies path
+M|Give the procedure a bicycle. Its steps have been traveling in separate taxis.|Sequence coordinates transport
+C|Call the complication by its full name. It has been answering only to Simple.|Complexity exposes disguise
+M|Turn the plan into a snow globe. Notice which assumptions fall when it moves.|Perturbation reveals instability
+R|Have the solution explain why it needs quite so many problems.|Solution creates demand
+B|Require every unnecessary step to introduce the step that invited it.|Redundancy traces origin
+M|Give the explanation a zipper instead of another layer.|Understanding through access not expansion
+H|Find a lever long enough to lift the phrase Just Do It off the actual instructions.|Slogan obstructs method
+R|Ask the obstacle to take a number. The solution is interviewing obstacles in order.|Obstacle loses priority
+M|Draw a window on the dead end and make the plan explain the view.|Plan confronts termination
+@WHEN/GENERAL
+M|When the calendar opens an umbrella inside its own forecast.|Time reacts to prediction
+R|When the future finally recognizes the present from its publicity photographs.|Temporal recognition lags depiction
+H|At the second that falls out when eternity turns its pockets inside out.|Time as infinite pocket contents
+M|When yesterday leaves a spare key under tomorrow's doormat.|Past grants future access
+C|At the instant the prediction turns around and finds the event already posing for it.|Event stages forecast
+R|When the clock catches its own hands taking a shortcut.|Clock enforces honest time
+M|When the hourglass begins collecting sandcastles instead of sand.|Timekeeping changes unit form
+H|At the moment large enough to contain its own rehearsal.|Moment contains prior time
+M|When the timeline ties its loose ends into a bow.|Chronology becomes gift wrapping
+B|When now is granted permission to use the present tense.|Time licensed by grammar
+R|At the instant the calendar asks what day it thinks it is.|Date reference seeks self-knowledge
+M|When the future's shadow falls on the back of yesterday.|Chronological direction reversed
+C|When the appointment recognizes the moment it was supposed to describe.|Schedule identifies reality
+H|At the timestamp engraved inside a completely round century.|Time interval gains impossible geometry
+M|When the clock hands put down their luggage and call somewhere Now.|Time as arrival
+R|When the prediction stops introducing itself as an eyewitness.|Forecast admits epistemic position
+M|When the calendar's perforations line up with the holes in certainty.|Schedule uncertainty visualized
+H|At the instant a minute grows large enough to notice its seconds.|Scale produces awareness
+M|When the timeline finds a door in the margin.|Time escapes printed sequence
+R|When the future can give the present a receipt for having arrived.|Arrival provides evidence
+@WHO/GENERAL
+M|The pilot of the paper airplane labeled Expertise.|Authority as flimsy vehicle
+R|The person hired to teach the echo some original thoughts.|Repetition coached for originality
+B|The accredited representative of the unaccredited consensus.|Authority from uncertified agreement
+H|The founder of an academy small enough to fit inside its own diploma.|Credentials larger than institution
+M|The locksmith employed by a question that forgot what it was keeping out.|Inquiry guards unclear boundary
+R|The detective whose only suspect is the explanation.|Investigation targets account
+C|The authority recognized by a certificate it found in its own handwriting.|Self-certified authority
+M|The tailor who takes measurements for one-size-fits-all conclusions.|Universal claims need tailoring
+R|The person the answer calls when it needs a more confident voice.|Conclusion hires certainty
+H|The historian appointed to document events before they exist.|History precedes subject
+M|The gardener pruning the branches of a family tree of guesses.|Speculation cultivated
+B|The permanent substitute for the person theoretically responsible.|Responsibility structurally deferred
+R|The magician hired to make the evidence reappear.|Illusion used to restore substance
+M|The architect of a staircase leading exclusively to the architect's office.|Authority builds self-serving route
+C|The expert selected by a machine trained entirely on that expert's business card.|Self-training creates authority
+R|The actor hired to play the person who supposedly knows.|Knowledge as performance
+H|The only member of a crowd large enough to call itself unanimous.|Solitary consensus
+M|The librarian lending confidence against overdue evidence.|Confidence as library credit
+B|The official observer of meetings held entirely in theory.|Institution observes nonexistent event
+R|The person who taught the question to question the answer.|Inquiry gains self-correction
+@CHOICE/GENERAL
+M|Choose the option whose halo can survive being used as a hula hoop.|Reputation tested by play
+R|Pick the alternative that can explain itself to its future biographer without requesting edits.|Choice accountable to history
+M|Choose whichever option has a front door for its inconvenient assumptions.|Assumptions get honest entry
+H|Pick the alternative light enough to be carried by its own explanation.|Justification bears choice
+R|Choose the option that would share the microphone with the reasons against it.|Option permits opposition
+B|Choose whichever alternative has paid customs duty on its imported certainty.|Certainty provenance exposed
+M|Pick the option that can take its pedestal on public transport.|Prestige meets ordinary constraints
+R|Choose whichever alternative would blush if described as inevitable.|Choice rejects inflated necessity
+M|Pick the option whose baggage can explain why it packed itself.|Hidden costs justify presence
+H|Choose the alternative whose trumpet fits inside the achievement it announces.|Promotion proportional to substance
+R|Pick whichever option can sit through a documentary about its own fine print.|Option confronts qualifications
+M|Choose the option that has windows on the side facing doubt.|Choice open to scrutiny
+C|Pick whichever alternative can remember its name before the marketing team arrived.|Identity predates promotion
+M|Choose the option whose train of thought has room for the return journey.|Reasoning can reverse course
+R|Choose whichever alternative could accept a compliment from its most inconvenient consequence.|Choice faces outcome judgment
+B|Pick the option willing to surrender its ceremonial sword at the door of the explanation.|Status relinquishes threat
+M|Choose whichever alternative can grow without borrowing a taller flowerpot for the photograph.|Growth without presentation trick
+H|Pick the option that can fit its confidence into the luggage allowance of a fact.|Confidence bounded by evidence
+R|Choose the alternative that would lend its spotlight to an unanswered question.|Option highlights uncertainty
+M|Pick whichever option has a staircase down from its high opinion of itself.|Prestige offers exit
+@OTHER/GENERAL
+R|What do you want to know? The answer has brought a victory speech to an event it cannot identify.|Answer celebrates unidentified task
+M|Please specify the question. Our fishing rod is confidently pointing at a photograph of a lake.|Inquiry targets representation
+H|What needs clarifying? The machine has unfolded a map larger than the room and lost the destination.|Excess context loses request
+M|Tell us the question. The answer is a key currently trying to interview every lock.|Answer seeks matching task
+R|What would you like answered? The encyclopedia is waiting to hear which page should look important.|Reference needs focus
+B|Please name the request. Our certainty cannot be delivered without an address.|Certainty as undeliverable parcel
+M|What do you want to find out? Our searchlight is illuminating its own switch.|Tool self-absorbed
+R|Please specify the question. The answer has sent a representative to discover why it was invited.|Answer needs purpose
+M|What should we clarify? The machine has a spotlight where its listening ear should be.|Presentation replaces reception
+H|Tell us what you want to know. Our knowledge has arrived in a suitcase with no handle.|Knowledge inaccessible without request

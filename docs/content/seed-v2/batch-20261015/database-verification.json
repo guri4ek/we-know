@@ -1,0 +1,73 @@
+{
+  "event": "2026-10-15 local development rebuild",
+  "individual_reset_migrate_seed": "Passed separately before these checks",
+  "repeat_and_fresh": [
+    {
+      "command": "rtk proxy composer db:seed",
+      "verification": {
+        "recorded_at_utc": "2026-10-15T14:14:08Z",
+        "database": "/Users/serhii/OwnProjects/we-know/var/we-know.sqlite",
+        "sqlite_version": "3.51.2",
+        "php_version": "8.4.10",
+        "catalog_sha256": "a48df733aaa8dddb04f6e3da3f0e1e037f5c7caee474febfcc5793697b0d683d",
+        "stored_catalog_sha256": "fbd72fbfbf79354b301c3eff8852b3c8f76ef3b3874837eb06ec1d740fdea896",
+        "answers": 1062,
+        "eligibilities": 1062,
+        "verdicts": 0,
+        "integrity_check": "ok",
+        "foreign_key_check": [],
+        "checks": [
+          "schema_equals_fresh_current_migrations",
+          "migration_versions_match",
+          "all_catalog_columns_match",
+          "zero_verdicts",
+          "foreign_keys_enabled",
+          "sqlite_integrity"
+        ],
+        "network_calls": 0,
+        "postgresql": "not_run"
+      }
+    },
+    {
+      "command": "rtk proxy composer db:fresh",
+      "verification": {
+        "recorded_at_utc": "2026-10-15T14:14:12Z",
+        "database": "/Users/serhii/OwnProjects/we-know/var/we-know.sqlite",
+        "sqlite_version": "3.51.2",
+        "php_version": "8.4.10",
+        "catalog_sha256": "a48df733aaa8dddb04f6e3da3f0e1e037f5c7caee474febfcc5793697b0d683d",
+        "stored_catalog_sha256": "fbd72fbfbf79354b301c3eff8852b3c8f76ef3b3874837eb06ec1d740fdea896",
+        "answers": 1062,
+        "eligibilities": 1062,
+        "verdicts": 0,
+        "integrity_check": "ok",
+        "foreign_key_check": [],
+        "checks": [
+          "schema_equals_fresh_current_migrations",
+          "migration_versions_match",
+          "all_catalog_columns_match",
+          "zero_verdicts",
+          "foreign_keys_enabled",
+          "sqlite_integrity"
+        ],
+        "network_calls": 0,
+        "postgresql": "not_run"
+      }
+    }
+  ],
+  "tests": {
+    "command": "rtk proxy php vendor/bin/phpunit",
+    "tests": 266,
+    "assertions": 48178,
+    "result": "passed",
+    "runtime": "PHP 8.4.10",
+    "duration_seconds": 15.843
+  },
+  "initial_failures": [
+    "LocalDatabaseTest: 16 missing-class errors and 2 missing-script failures before implementation",
+    "EditorialCatalogTest: 24-answer seed failed expansion assertion before catalog update",
+    "Old demonstration helper expected METHOD/TECH fallback; corrected example to empty METHOD/SPORTS after observed failure"
+  ],
+  "postgresql": "not_run",
+  "external_api_calls": 0
+}

@@ -1,0 +1,1902 @@
+{
+  "annotation_status": "Author-assigned v2 pools, not observed classifier output. GENERAL sets deliberately contain specialized fallback questions.",
+  "universal_coverage_annotations": {
+    "68": {
+      "intent": "YES_NO",
+      "topic": "FOOD"
+    },
+    "3294": {
+      "intent": "WHEN",
+      "topic": "HEALTH"
+    },
+    "1480": {
+      "intent": "DURATION",
+      "topic": "HEALTH"
+    },
+    "1535": {
+      "intent": "EXPLAIN",
+      "topic": "HEALTH"
+    },
+    "593": {
+      "intent": "METHOD",
+      "topic": "HOME"
+    },
+    "1859": {
+      "intent": "WHO",
+      "topic": "SPORTS"
+    },
+    "1258": {
+      "intent": "IDENTIFY",
+      "topic": "NATURE"
+    },
+    "607": {
+      "intent": "DESCRIBE",
+      "topic": "MONEY"
+    },
+    "2145": {
+      "intent": "WHERE",
+      "topic": "ENTERTAINMENT"
+    },
+    "3560": {
+      "intent": "QUANTITY",
+      "topic": "MONEY"
+    },
+    "1462": {
+      "intent": "CHOICE",
+      "topic": "HEALTH"
+    },
+    "3311": {
+      "intent": "RECOMMEND",
+      "topic": "TECH"
+    },
+    "1396": {
+      "intent": "COMPARE",
+      "topic": "HEALTH"
+    },
+    "3184": {
+      "intent": "OTHER",
+      "topic": "HEALTH"
+    },
+    "1446": {
+      "intent": "OTHER",
+      "topic": "HEALTH"
+    },
+    "3557": {
+      "intent": "OTHER",
+      "topic": "GENERAL"
+    },
+    "3593": {
+      "intent": "OTHER",
+      "topic": "GENERAL"
+    },
+    "3563": {
+      "intent": "RECOMMEND",
+      "topic": "TECH"
+    },
+    "2407": {
+      "intent": "METHOD",
+      "topic": "TECH"
+    },
+    "3191": {
+      "intent": "DESCRIBE",
+      "topic": "GENERAL"
+    },
+    "3281": {
+      "intent": "EXPLAIN",
+      "topic": "GENERAL"
+    },
+    "324": {
+      "intent": "YES_NO",
+      "topic": "TRAVEL"
+    },
+    "1075": {
+      "intent": "METHOD",
+      "topic": "RELATIONSHIPS"
+    },
+    "2783": {
+      "intent": "EXPLAIN",
+      "topic": "GENERAL"
+    },
+    "3487": {
+      "intent": "YES_NO",
+      "topic": "GENERAL"
+    },
+    "3471": {
+      "intent": "DURATION",
+      "topic": "HEALTH"
+    },
+    "54": {
+      "intent": "EXPLAIN",
+      "topic": "FOOD"
+    },
+    "618": {
+      "intent": "CHOICE",
+      "topic": "MONEY"
+    },
+    "3432": {
+      "intent": "WHO",
+      "topic": "GENERAL"
+    },
+    "2177": {
+      "intent": "METHOD",
+      "topic": "FOOD"
+    },
+    "915": {
+      "intent": "WHEN",
+      "topic": "WORK_STUDY"
+    },
+    "2991": {
+      "intent": "COMPARE",
+      "topic": "LANGUAGE"
+    }
+  },
+  "pools": {
+    "EXPLAIN/TECH": [
+      {
+        "line": 2377,
+        "question": "Why does Windows think that my wireless keyboard is a toaster?",
+        "source_url": "https://superuser.com/questions/792607/why-does-windows-think-that-my-wireless-keyboard-is-a-toaster"
+      },
+      {
+        "line": 2391,
+        "question": "Why does macOS keep asking for my SSH passphrase ever since I updated to macOS Sierra (10.12)?",
+        "source_url": "https://superuser.com/questions/1127067/why-does-macos-keep-asking-for-my-ssh-passphrase-ever-since-i-updated-to-macos-s"
+      },
+      {
+        "line": 2395,
+        "question": "Why does this PNG image display differently in Chrome & Firefox than in Safari and IE?",
+        "source_url": "https://superuser.com/questions/579216/why-does-this-png-image-display-differently-in-chrome-firefox-than-in-safari-a"
+      },
+      {
+        "line": 2431,
+        "question": "How does a computer restart itself?",
+        "source_url": "https://superuser.com/questions/294681/how-does-a-computer-restart-itself"
+      },
+      {
+        "line": 2460,
+        "question": "Why don't websites immediately display their text these days?",
+        "source_url": "https://superuser.com/questions/547743/why-dont-websites-immediately-display-their-text-these-days"
+      },
+      {
+        "line": 2503,
+        "question": "What could be the reason that some messenger remove EXIF data from photos sent as regular messages instead of documents?",
+        "source_url": "https://superuser.com/questions/1940780/what-could-be-the-reason-that-some-messenger-remove-exif-data-from-photos-sent-a"
+      },
+      {
+        "line": 3299,
+        "question": "Why is my cellphone getting hot while listening to music, on YouTube, and charging at the same time?",
+        "source_url": "https://www.fluther.com/241453/why-is-my-cellphone-getting-hot-while-listening-to-music-on/"
+      },
+      {
+        "line": 3327,
+        "question": "How do QR codes work?",
+        "source_url": "https://www.fluther.com/241346/how-do-qr-codes-work/"
+      }
+    ],
+    "COMPARE/LANGUAGE": [
+      {
+        "line": 2991,
+        "question": "What's the difference between \"requester\" and \"requestor\"?",
+        "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor"
+      },
+      {
+        "line": 3015,
+        "question": "Difference between \"artifact\" and \"artefact\"",
+        "source_url": "https://english.stackexchange.com/questions/37903/difference-between-artifact-and-artefact"
+      },
+      {
+        "line": 3017,
+        "question": "What is the difference between \"complicated\" and \"complex\"?",
+        "source_url": "https://english.stackexchange.com/questions/10459/what-is-the-difference-between-complicated-and-complex"
+      },
+      {
+        "line": 3033,
+        "question": "What is the difference between \"till\" and \"until\"?",
+        "source_url": "https://english.stackexchange.com/questions/6989/what-is-the-difference-between-till-and-until"
+      },
+      {
+        "line": 3063,
+        "question": "Difference between \"delete\" and \"remove\"",
+        "source_url": "https://english.stackexchange.com/questions/52508/difference-between-delete-and-remove"
+      },
+      {
+        "line": 3073,
+        "question": "What (film) or what kind of (film): difference",
+        "source_url": "https://english.stackexchange.com/questions/640671/what-film-or-what-kind-of-film-difference"
+      },
+      {
+        "line": 3138,
+        "question": "Differences between 'stand next to', 'stand with', and 'stand by'",
+        "source_url": "https://english.stackexchange.com/questions/640404/differences-between-stand-next-to-stand-with-and-stand-by"
+      },
+      {
+        "line": 3092,
+        "question": "Pronunciation of the name “Evelyn” in British vs. American English",
+        "source_url": "https://english.stackexchange.com/questions/640601/pronunciation-of-the-name-evelyn-in-british-vs-american-english"
+      }
+    ],
+    "WHEN/GENERAL": [
+      {
+        "line": 915,
+        "question": "When should I disclose an upcoming vacation that overlaps with the start date of an internal job position?",
+        "source_url": "https://workplace.stackexchange.com/questions/203641/when-should-i-disclose-an-upcoming-vacation-that-overlaps-with-the-start-date-of"
+      },
+      {
+        "line": 1922,
+        "question": "When exactly does the game clock start during an American football kickoff?",
+        "source_url": "https://sports.stackexchange.com/questions/30199/when-exactly-does-the-game-clock-start-during-an-american-football-kickoff"
+      },
+      {
+        "line": 1201,
+        "question": "When should I pile more dirt onto a growing potato plant?",
+        "source_url": "https://gardening.stackexchange.com/questions/286/when-should-i-pile-more-dirt-onto-a-growing-potato-plant"
+      },
+      {
+        "line": 1293,
+        "question": "When do crabgrass seeds mature?",
+        "source_url": "https://gardening.stackexchange.com/questions/70959/when-do-crabgrass-seeds-mature"
+      },
+      {
+        "line": 1456,
+        "question": "When is the best time of day to accurately weigh yourself?",
+        "source_url": "https://fitness.stackexchange.com/questions/3618/when-is-the-best-time-of-day-to-accurately-weigh-yourself"
+      },
+      {
+        "line": 1472,
+        "question": "When is it time to buy new running shoes",
+        "source_url": "https://fitness.stackexchange.com/questions/685/when-is-it-time-to-buy-new-running-shoes"
+      },
+      {
+        "line": 1517,
+        "question": "When should you do warm-up sets?",
+        "source_url": "https://fitness.stackexchange.com/questions/48782/when-should-you-do-warm-up-sets"
+      },
+      {
+        "line": 3294,
+        "question": "At what times of the day should you take pills?",
+        "source_url": "https://www.fluther.com/241478/at-what-times-of-the-day-should-you-take-pills/"
+      },
+      {
+        "line": 693,
+        "question": "At what point do index funds become unreliable?",
+        "source_url": "https://money.stackexchange.com/questions/85706/at-what-point-do-index-funds-become-unreliable"
+      }
+    ],
+    "CHOICE/GENERAL": [
+      {
+        "line": 9,
+        "question": "Do you heat the pan first, then add oil? Or put the oil in and heat up with the pan?",
+        "source_url": "https://cooking.stackexchange.com/questions/2690/do-you-heat-the-pan-first-then-add-oil-or-put-the-oil-in-and-heat-up-with-the"
+      },
+      {
+        "line": 365,
+        "question": "Should I bring Speedos or Swimming Shorts to Egypt?",
+        "source_url": "https://travel.stackexchange.com/questions/204171/should-i-bring-speedos-or-swimming-shorts-to-egypt"
+      },
+      {
+        "line": 618,
+        "question": "Should I buy my house in cash, or with a mortgage and invest the rest of my money?",
+        "source_url": "https://money.stackexchange.com/questions/89245/should-i-buy-my-house-in-cash-or-with-a-mortgage-and-invest-the-rest-of-my-mone"
+      },
+      {
+        "line": 685,
+        "question": "Pay online: credit card or debit card?",
+        "source_url": "https://money.stackexchange.com/questions/9154/pay-online-credit-card-or-debit-card"
+      },
+      {
+        "line": 1462,
+        "question": "Persistent mild knee pain due to squats - push through or stop?",
+        "source_url": "https://fitness.stackexchange.com/questions/3660/persistent-mild-knee-pain-due-to-squats-push-through-or-stop"
+      },
+      {
+        "line": 3025,
+        "question": "Which is correct: \"Filename\", \"File Name\" or \"FileName\"?",
+        "source_url": "https://english.stackexchange.com/questions/5366/which-is-correct-filename-file-name-or-filename"
+      },
+      {
+        "line": 3253,
+        "question": "M2 MVNe drive or SATA SSD?",
+        "source_url": "https://www.fluther.com/241672/m2-mvne-drive-or-sata-ssd/"
+      },
+      {
+        "line": 3502,
+        "question": "If you were going to completely replace your driveway, would you do asphalt, gravel, or concrete and why?",
+        "source_url": "https://www.fluther.com/240599/if-you-were-going-to-completely-replace-your-driveway-would-you/"
+      }
+    ],
+    "OTHER/GENERAL": [
+      {
+        "line": 3557,
+        "question": "Discord",
+        "source_url": "https://ask.metafilter.com/359990/Discord"
+      },
+      {
+        "line": 3593,
+        "question": "It's time",
+        "source_url": "https://ask.metafilter.com/340967/Its-time"
+      },
+      {
+        "line": 3577,
+        "question": "cooking",
+        "source_url": "https://ask.metafilter.com/33745/cooking"
+      },
+      {
+        "line": 2940,
+        "question": "Non-classical logics",
+        "source_url": "https://philosophy.stackexchange.com/questions/142111/non-classical-logics"
+      },
+      {
+        "line": 2900,
+        "question": "L'amour, l'amour, l'amour",
+        "source_url": "https://philosophy.stackexchange.com/questions/142381/lamour-lamour-lamour"
+      },
+      {
+        "line": 2487,
+        "question": "Audio in html website",
+        "source_url": "https://superuser.com/questions/1940843/audio-in-html-website"
+      },
+      {
+        "line": 524,
+        "question": "Washing machine sometimes hums and won't spin",
+        "source_url": "https://diy.stackexchange.com/questions/332301/washing-machine-sometimes-hums-and-wont-spin"
+      },
+      {
+        "line": 3184,
+        "question": "I have a medical question about dizziness? ( Details inside)",
+        "source_url": "https://www.fluther.com/241998/i-have-a-medical-question-about-dizziness-details-inside/"
+      },
+      {
+        "line": 1446,
+        "question": "My legs still ache 3-4 days after legs day",
+        "source_url": "https://fitness.stackexchange.com/questions/11643/my-legs-still-ache-3-4-days-after-legs-day"
+      },
+      {
+        "line": 603,
+        "question": "I'm supposedly eligible for an inheritance from a distant relative. Offer appears to be legitimate",
+        "source_url": "https://money.stackexchange.com/questions/101935/im-supposedly-eligible-for-an-inheritance-from-a-distant-relative-offer-appear"
+      }
+    ],
+    "METHOD/GENERAL": [
+      {
+        "line": 1,
+        "question": "How can I chop onions without crying?",
+        "source_url": "https://cooking.stackexchange.com/questions/567/how-can-i-chop-onions-without-crying"
+      },
+      {
+        "line": 489,
+        "question": "How do I fix a \"water hammer\" problem?",
+        "source_url": "https://diy.stackexchange.com/questions/1749/how-do-i-fix-a-water-hammer-problem"
+      },
+      {
+        "line": 709,
+        "question": "How do I budget effectively when income arrives at irregular intervals rather than a fixed monthly salary?",
+        "source_url": "https://money.stackexchange.com/questions/169983/how-do-i-budget-effectively-when-income-arrives-at-irregular-intervals-rather-th"
+      },
+      {
+        "line": 803,
+        "question": "How to convince HR to let my star employee work from home?",
+        "source_url": "https://workplace.stackexchange.com/questions/128981/how-to-convince-hr-to-let-my-star-employee-work-from-home"
+      },
+      {
+        "line": 1075,
+        "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+        "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why"
+      },
+      {
+        "line": 1406,
+        "question": "How can I make myself get enough sleep?",
+        "source_url": "https://fitness.stackexchange.com/questions/3351/how-can-i-make-myself-get-enough-sleep"
+      },
+      {
+        "line": 1702,
+        "question": "How do I choose the right tent for different weather conditions?",
+        "source_url": "https://outdoors.stackexchange.com/questions/30441/how-do-i-choose-the-right-tent-for-different-weather-conditions"
+      },
+      {
+        "line": 2407,
+        "question": "Reload a Linux user's group assignments without logging out",
+        "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out"
+      },
+      {
+        "line": 593,
+        "question": "how to fix voltage in the soil and shocks when outside AC compressor unit(s) turns on",
+        "source_url": "https://diy.stackexchange.com/questions/332013/how-to-fix-voltage-in-the-soil-and-shocks-when-outside-ac-compressor-units-tur"
+      },
+      {
+        "line": 1485,
+        "question": "How can I safely program leg exercises for a student with flat feet, hypermobility, and hEDS-type joint restrictions?",
+        "source_url": "https://fitness.stackexchange.com/questions/48945/how-can-i-safely-program-leg-exercises-for-a-student-with-flat-feet-hypermobili"
+      }
+    ],
+    "EXPLAIN/GENERAL": [
+      {
+        "line": 3,
+        "question": "Why add salt to the water when cooking pasta?",
+        "source_url": "https://cooking.stackexchange.com/questions/2574/why-add-salt-to-the-water-when-cooking-pasta"
+      },
+      {
+        "line": 54,
+        "question": "Why is it dangerous to eat meat which has been left out and then cooked?",
+        "source_url": "https://cooking.stackexchange.com/questions/12992/why-is-it-dangerous-to-eat-meat-which-has-been-left-out-and-then-cooked"
+      },
+      {
+        "line": 600,
+        "question": "If a stock doesn't pay dividends, then why is the stock worth anything?",
+        "source_url": "https://money.stackexchange.com/questions/51976/if-a-stock-doesnt-pay-dividends-then-why-is-the-stock-worth-anything"
+      },
+      {
+        "line": 1397,
+        "question": "Why does running make you have to poop?",
+        "source_url": "https://fitness.stackexchange.com/questions/509/why-does-running-make-you-have-to-poop"
+      },
+      {
+        "line": 1535,
+        "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+        "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit"
+      },
+      {
+        "line": 1782,
+        "question": "Points are given in tennis 15-30-40. Why 40?",
+        "source_url": "https://sports.stackexchange.com/questions/203/points-are-given-in-tennis-15-30-40-why-40"
+      },
+      {
+        "line": 2431,
+        "question": "How does a computer restart itself?",
+        "source_url": "https://superuser.com/questions/294681/how-does-a-computer-restart-itself"
+      },
+      {
+        "line": 2783,
+        "question": "Why is there something instead of nothing?",
+        "source_url": "https://philosophy.stackexchange.com/questions/821/why-is-there-something-instead-of-nothing"
+      }
+    ],
+    "WHO/GENERAL": [
+      {
+        "line": 272,
+        "question": "Denied boarding although I have proper visa and documentation. To whom should I make a complaint?",
+        "source_url": "https://travel.stackexchange.com/questions/135751/denied-boarding-although-i-have-proper-visa-and-documentation-to-whom-should-i"
+      },
+      {
+        "line": 597,
+        "question": "Who can truly afford luxury cars?",
+        "source_url": "https://money.stackexchange.com/questions/43967/who-can-truly-afford-luxury-cars"
+      },
+      {
+        "line": 1859,
+        "question": "Who keeps the record of each international cricket match?",
+        "source_url": "https://sports.stackexchange.com/questions/463/who-keeps-the-record-of-each-international-cricket-match"
+      },
+      {
+        "line": 1926,
+        "question": "Who is this guy at the back of the grid with a green flag?",
+        "source_url": "https://sports.stackexchange.com/questions/30192/who-is-this-guy-at-the-back-of-the-grid-with-a-green-flag"
+      },
+      {
+        "line": 2004,
+        "question": "Who was the oldest actor to play a teenager?",
+        "source_url": "https://movies.stackexchange.com/questions/75534/who-was-the-oldest-actor-to-play-a-teenager"
+      },
+      {
+        "line": 2096,
+        "question": "Who was Yuri Zhivago chasing in his final moments?",
+        "source_url": "https://movies.stackexchange.com/questions/132416/who-was-yuri-zhivago-chasing-in-his-final-moments"
+      },
+      {
+        "line": 3343,
+        "question": "Who were the republicans that refused to show up to the public hearing on ICE victims?",
+        "source_url": "https://www.fluther.com/241291/who-were-the-republicans-that-refused-to-show-up-to-the/"
+      },
+      {
+        "line": 3432,
+        "question": "Who is a primary relief organization that will focus on aid to Jamaica after Melissa hits?",
+        "source_url": "https://www.fluther.com/240891/who-is-a-primary-relief-organization-that-will-focus-on-aid/"
+      }
+    ],
+    "EXPLAIN/LANGUAGE": [
+      {
+        "line": 3013,
+        "question": "Why are the vowels in Christ and Christmas different? (and other strange diphthong behaviour)",
+        "source_url": "https://english.stackexchange.com/questions/329151/why-are-the-vowels-in-christ-and-christmas-different-and-other-strange-diphtho"
+      },
+      {
+        "line": 3014,
+        "question": "Why is “cannot” spelled as one word?",
+        "source_url": "https://english.stackexchange.com/questions/4510/why-is-cannot-spelled-as-one-word"
+      },
+      {
+        "line": 3019,
+        "question": "Why do English writers avoid explicit numerals?",
+        "source_url": "https://english.stackexchange.com/questions/979/why-do-english-writers-avoid-explicit-numerals"
+      },
+      {
+        "line": 3021,
+        "question": "Why does \"quadratic\" describe second power when \"quad\" means \"four\"?",
+        "source_url": "https://english.stackexchange.com/questions/151217/why-does-quadratic-describe-second-power-when-quad-means-four"
+      },
+      {
+        "line": 3024,
+        "question": "Why is \"bicycle\" pronounced differently from other obviously related words?",
+        "source_url": "https://english.stackexchange.com/questions/26085/why-is-bicycle-pronounced-differently-from-other-obviously-related-words"
+      },
+      {
+        "line": 3028,
+        "question": "Why is \"Pokémon\" written with an accent?",
+        "source_url": "https://english.stackexchange.com/questions/336890/why-is-pok%c3%a9mon-written-with-an-accent"
+      },
+      {
+        "line": 3037,
+        "question": "Why should the first person pronoun 'I' always be capitalized?",
+        "source_url": "https://english.stackexchange.com/questions/7986/why-should-the-first-person-pronoun-i-always-be-capitalized"
+      },
+      {
+        "line": 3067,
+        "question": "Why does the multi-paragraph quotation rule exist?",
+        "source_url": "https://english.stackexchange.com/questions/96608/why-does-the-multi-paragraph-quotation-rule-exist"
+      }
+    ],
+    "ANY/GENERAL": [
+      {
+        "line": 68,
+        "question": "Should I refrigerate eggs?",
+        "source_url": "https://cooking.stackexchange.com/questions/1672/should-i-refrigerate-eggs"
+      },
+      {
+        "line": 3294,
+        "question": "At what times of the day should you take pills?",
+        "source_url": "https://www.fluther.com/241478/at-what-times-of-the-day-should-you-take-pills/"
+      },
+      {
+        "line": 1480,
+        "question": "For better muscle growth, how many hours' sleep are recommended after doing a workout?",
+        "source_url": "https://fitness.stackexchange.com/questions/366/for-better-muscle-growth-how-many-hours-sleep-are-recommended-after-doing-a-wo"
+      },
+      {
+        "line": 1535,
+        "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+        "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit"
+      },
+      {
+        "line": 593,
+        "question": "how to fix voltage in the soil and shocks when outside AC compressor unit(s) turns on",
+        "source_url": "https://diy.stackexchange.com/questions/332013/how-to-fix-voltage-in-the-soil-and-shocks-when-outside-ac-compressor-units-tur"
+      },
+      {
+        "line": 1859,
+        "question": "Who keeps the record of each international cricket match?",
+        "source_url": "https://sports.stackexchange.com/questions/463/who-keeps-the-record-of-each-international-cricket-match"
+      },
+      {
+        "line": 1258,
+        "question": "What is this fast growing plant with blue/black berries?",
+        "source_url": "https://gardening.stackexchange.com/questions/2609/what-is-this-fast-growing-plant-with-blue-black-berries"
+      },
+      {
+        "line": 607,
+        "question": "What happens to people without any retirement savings?",
+        "source_url": "https://money.stackexchange.com/questions/79065/what-happens-to-people-without-any-retirement-savings"
+      },
+      {
+        "line": 2145,
+        "question": "Where was the Mummers Parade scene in It's Always Sunny in Philadelphia filmed?",
+        "source_url": "https://movies.stackexchange.com/questions/132264/where-was-the-mummers-parade-scene-in-its-always-sunny-in-philadelphia-filmed"
+      },
+      {
+        "line": 3560,
+        "question": "How much should I put into a joint account twice a month?",
+        "source_url": "https://ask.metafilter.com/372405/How-much-should-I-put-into-a-joint-account-twice-a-month"
+      },
+      {
+        "line": 1462,
+        "question": "Persistent mild knee pain due to squats - push through or stop?",
+        "source_url": "https://fitness.stackexchange.com/questions/3660/persistent-mild-knee-pain-due-to-squats-push-through-or-stop"
+      },
+      {
+        "line": 3311,
+        "question": "Recommend a printer?",
+        "source_url": "https://www.fluther.com/241423/recommend-a-printer/"
+      },
+      {
+        "line": 1396,
+        "question": "What are the trade-offs of weight versus repetition?",
+        "source_url": "https://fitness.stackexchange.com/questions/8238/what-are-the-trade-offs-of-weight-versus-repetition"
+      },
+      {
+        "line": 3184,
+        "question": "I have a medical question about dizziness? ( Details inside)",
+        "source_url": "https://www.fluther.com/241998/i-have-a-medical-question-about-dizziness-details-inside/"
+      },
+      {
+        "line": 1446,
+        "question": "My legs still ache 3-4 days after legs day",
+        "source_url": "https://fitness.stackexchange.com/questions/11643/my-legs-still-ache-3-4-days-after-legs-day"
+      },
+      {
+        "line": 3557,
+        "question": "Discord",
+        "source_url": "https://ask.metafilter.com/359990/Discord"
+      },
+      {
+        "line": 3593,
+        "question": "It's time",
+        "source_url": "https://ask.metafilter.com/340967/Its-time"
+      },
+      {
+        "line": 3563,
+        "question": "I need personal cloud storage",
+        "source_url": "https://ask.metafilter.com/374375/I-need-personal-cloud-storage"
+      },
+      {
+        "line": 2407,
+        "question": "Reload a Linux user's group assignments without logging out",
+        "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out"
+      },
+      {
+        "line": 3191,
+        "question": "How do you feel about this?",
+        "source_url": "https://www.fluther.com/241960/how-do-you-feel-about-this/"
+      },
+      {
+        "line": 3281,
+        "question": "What could have caused this (details below)?",
+        "source_url": "https://www.fluther.com/241527/what-could-have-caused-this-details-below/"
+      },
+      {
+        "line": 324,
+        "question": "Will I be able to enter Latvia without a visa?",
+        "source_url": "https://travel.stackexchange.com/questions/204570/will-i-be-able-to-enter-latvia-without-a-visa"
+      },
+      {
+        "line": 1075,
+        "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+        "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why"
+      },
+      {
+        "line": 2783,
+        "question": "Why is there something instead of nothing?",
+        "source_url": "https://philosophy.stackexchange.com/questions/821/why-is-there-something-instead-of-nothing"
+      },
+      {
+        "line": 3487,
+        "question": "Does democracy work if majority of the population are uneducated?",
+        "source_url": "https://www.fluther.com/240651/does-democracy-work-if-majority-of-the-population-are-uneducated/"
+      },
+      {
+        "line": 3471,
+        "question": "How long will it take for the \"Head and Shoulders, plus Old Spice , shampoo and conditioner \" to get out of my eyes?",
+        "source_url": "https://www.fluther.com/240718/how-long-will-it-take-for-the-head-and-shoulders-plus/"
+      },
+      {
+        "line": 54,
+        "question": "Why is it dangerous to eat meat which has been left out and then cooked?",
+        "source_url": "https://cooking.stackexchange.com/questions/12992/why-is-it-dangerous-to-eat-meat-which-has-been-left-out-and-then-cooked"
+      },
+      {
+        "line": 618,
+        "question": "Should I buy my house in cash, or with a mortgage and invest the rest of my money?",
+        "source_url": "https://money.stackexchange.com/questions/89245/should-i-buy-my-house-in-cash-or-with-a-mortgage-and-invest-the-rest-of-my-mone"
+      },
+      {
+        "line": 3432,
+        "question": "Who is a primary relief organization that will focus on aid to Jamaica after Melissa hits?",
+        "source_url": "https://www.fluther.com/240891/who-is-a-primary-relief-organization-that-will-focus-on-aid/"
+      },
+      {
+        "line": 2177,
+        "question": "How can I tell if a corpse is safe to eat?",
+        "source_url": "https://gaming.stackexchange.com/questions/4999/how-can-i-tell-if-a-corpse-is-safe-to-eat"
+      },
+      {
+        "line": 915,
+        "question": "When should I disclose an upcoming vacation that overlaps with the start date of an internal job position?",
+        "source_url": "https://workplace.stackexchange.com/questions/203641/when-should-i-disclose-an-upcoming-vacation-that-overlaps-with-the-start-date-of"
+      },
+      {
+        "line": 2991,
+        "question": "What's the difference between \"requester\" and \"requestor\"?",
+        "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor"
+      }
+    ],
+    "DURATION/GENERAL": [
+      {
+        "line": 33,
+        "question": "How long can I store a food in the pantry, refrigerator, or freezer?",
+        "source_url": "https://cooking.stackexchange.com/questions/21068/how-long-can-i-store-a-food-in-the-pantry-refrigerator-or-freezer"
+      },
+      {
+        "line": 432,
+        "question": "How long should I wait before plugging in a new refrigerator?",
+        "source_url": "https://diy.stackexchange.com/questions/2959/how-long-should-i-wait-before-plugging-in-a-new-refrigerator"
+      },
+      {
+        "line": 1231,
+        "question": "How long does it take for the compost to ripen?",
+        "source_url": "https://gardening.stackexchange.com/questions/3176/how-long-does-it-take-for-the-compost-to-ripen"
+      },
+      {
+        "line": 1422,
+        "question": "How long should I rest in between sets?",
+        "source_url": "https://fitness.stackexchange.com/questions/300/how-long-should-i-rest-in-between-sets"
+      },
+      {
+        "line": 1480,
+        "question": "For better muscle growth, how many hours' sleep are recommended after doing a workout?",
+        "source_url": "https://fitness.stackexchange.com/questions/366/for-better-muscle-growth-how-many-hours-sleep-are-recommended-after-doing-a-wo"
+      },
+      {
+        "line": 1608,
+        "question": "How long does water need to be boiled for to kill all bacteria / viruses?",
+        "source_url": "https://outdoors.stackexchange.com/questions/1117/how-long-does-water-need-to-be-boiled-for-to-kill-all-bacteria-viruses"
+      },
+      {
+        "line": 3252,
+        "question": "How long will a wasp live in a car?",
+        "source_url": "https://www.fluther.com/241686/how-long-will-a-wasp-live-in-a-car/"
+      },
+      {
+        "line": 3471,
+        "question": "How long will it take for the \"Head and Shoulders, plus Old Spice , shampoo and conditioner \" to get out of my eyes?",
+        "source_url": "https://www.fluther.com/240718/how-long-will-it-take-for-the-head-and-shoulders-plus/"
+      }
+    ],
+    "RECOMMEND/GENERAL": [
+      {
+        "line": 3311,
+        "question": "Recommend a printer?",
+        "source_url": "https://www.fluther.com/241423/recommend-a-printer/"
+      },
+      {
+        "line": 3563,
+        "question": "I need personal cloud storage",
+        "source_url": "https://ask.metafilter.com/374375/I-need-personal-cloud-storage"
+      },
+      {
+        "line": 3215,
+        "question": "Please make a list of cleaning supplies that I should purchase to clean my apartment?",
+        "source_url": "https://www.fluther.com/241850/please-make-a-list-of-cleaning-supplies-that-i-should-purchase/"
+      },
+      {
+        "line": 3542,
+        "question": "Need a better shower filter",
+        "source_url": "https://ask.metafilter.com/390928/Need-a-better-shower-filter"
+      },
+      {
+        "line": 3331,
+        "question": "Suggest an insta-meal lunch-type frozen product?",
+        "source_url": "https://www.fluther.com/241329/suggest-an-insta-meal-lunch-type-frozen-product/"
+      },
+      {
+        "line": 3397,
+        "question": "Can anyone recommend a weighted blanket that isn't too hot?",
+        "source_url": "https://www.fluther.com/241051/can-anyone-recommend-a-weighted-blanket-that-isnt-too-hot/"
+      },
+      {
+        "line": 3513,
+        "question": "Can you recommend a solar charging phone power bank?",
+        "source_url": "https://www.fluther.com/240554/can-you-recommend-a-solar-charging-phone-power-bank/"
+      },
+      {
+        "line": 3587,
+        "question": "Find me an online fashion home!",
+        "source_url": "https://ask.metafilter.com/78554/Find-me-an-online-fashion-home"
+      }
+    ],
+    "WHERE/GENERAL": [
+      {
+        "line": 342,
+        "question": "Where is the Vandenberg Space and Missile Technology Center (SAMTEC) and is it open to foreigners?",
+        "source_url": "https://travel.stackexchange.com/questions/204438/where-is-the-vandenberg-space-and-missile-technology-center-samtec-and-is-it-o"
+      },
+      {
+        "line": 2145,
+        "question": "Where was the Mummers Parade scene in It's Always Sunny in Philadelphia filmed?",
+        "source_url": "https://movies.stackexchange.com/questions/132264/where-was-the-mummers-parade-scene-in-its-always-sunny-in-philadelphia-filmed"
+      },
+      {
+        "line": 2180,
+        "question": "Where is the \"impossible space\" in Portal 2?",
+        "source_url": "https://gaming.stackexchange.com/questions/20601/where-is-the-impossible-space-in-portal-2"
+      },
+      {
+        "line": 2314,
+        "question": "Where is the anvil in the Shattered Keep Cellars?",
+        "source_url": "https://gaming.stackexchange.com/questions/419572/where-is-the-anvil-in-the-shattered-keep-cellars"
+      },
+      {
+        "line": 3175,
+        "question": "Where are all these spam text messages coming from?",
+        "source_url": "https://www.fluther.com/242032/where-are-all-these-spam-text-messages-coming-from/"
+      },
+      {
+        "line": 3544,
+        "question": "Where can I get a real NASA onesie?",
+        "source_url": "https://ask.metafilter.com/390926/Where-can-I-get-a-real-NASA-onesie"
+      },
+      {
+        "line": 771,
+        "question": "Where can you *actually* sell silver near its price?",
+        "source_url": "https://money.stackexchange.com/questions/169654/where-can-you-actually-sell-silver-near-its-price"
+      },
+      {
+        "line": 3533,
+        "question": "Can you help me find stats on health problems temporary and permanent caused by pregnancy?",
+        "source_url": "https://www.fluther.com/240458/can-you-help-me-find-stats-on-health-problems-temporary-and/"
+      }
+    ],
+    "EXPLAIN/FOOD": [
+      {
+        "line": 3,
+        "question": "Why add salt to the water when cooking pasta?",
+        "source_url": "https://cooking.stackexchange.com/questions/2574/why-add-salt-to-the-water-when-cooking-pasta"
+      },
+      {
+        "line": 15,
+        "question": "Why do grape-flavored foods taste different than actual grapes?",
+        "source_url": "https://cooking.stackexchange.com/questions/81031/why-do-grape-flavored-foods-taste-different-than-actual-grapes"
+      },
+      {
+        "line": 35,
+        "question": "Why wooden sticks for ice cream bars?",
+        "source_url": "https://cooking.stackexchange.com/questions/59574/why-wooden-sticks-for-ice-cream-bars"
+      },
+      {
+        "line": 54,
+        "question": "Why is it dangerous to eat meat which has been left out and then cooked?",
+        "source_url": "https://cooking.stackexchange.com/questions/12992/why-is-it-dangerous-to-eat-meat-which-has-been-left-out-and-then-cooked"
+      },
+      {
+        "line": 71,
+        "question": "Why is some metal safe to use in a microwave, but others not?",
+        "source_url": "https://cooking.stackexchange.com/questions/7830/why-is-some-metal-safe-to-use-in-a-microwave-but-others-not"
+      },
+      {
+        "line": 108,
+        "question": "How does water affect the outcome of a gluten free pie crust recipe?",
+        "source_url": "https://cooking.stackexchange.com/questions/137247/how-does-water-affect-the-outcome-of-a-gluten-free-pie-crust-recipe"
+      },
+      {
+        "line": 149,
+        "question": "Why doesn't watermelon heat well?",
+        "source_url": "https://cooking.stackexchange.com/questions/137073/why-doesnt-watermelon-heat-well"
+      },
+      {
+        "line": 190,
+        "question": "Why did my last pot roast taste so much better?",
+        "source_url": "https://cooking.stackexchange.com/questions/136841/why-did-my-last-pot-roast-taste-so-much-better"
+      }
+    ],
+    "EXPLAIN/TRAVEL": [
+      {
+        "line": 204,
+        "question": "Why are airline passengers asked to lift up window shades during takeoff and landing?",
+        "source_url": "https://travel.stackexchange.com/questions/20207/why-are-airline-passengers-asked-to-lift-up-window-shades-during-takeoff-and-lan"
+      },
+      {
+        "line": 229,
+        "question": "Why would you wrap your luggage in plastic?",
+        "source_url": "https://travel.stackexchange.com/questions/3220/why-would-you-wrap-your-luggage-in-plastic"
+      },
+      {
+        "line": 246,
+        "question": "Why are there no seat belts on trains?",
+        "source_url": "https://travel.stackexchange.com/questions/117461/why-are-there-no-seat-belts-on-trains"
+      },
+      {
+        "line": 248,
+        "question": "Why do cars need to leave their windows half open whilst on the Eurotunnel?",
+        "source_url": "https://travel.stackexchange.com/questions/104174/why-do-cars-need-to-leave-their-windows-half-open-whilst-on-the-eurotunnel"
+      },
+      {
+        "line": 257,
+        "question": "Why are airlines against the transferring of tickets to other persons?",
+        "source_url": "https://travel.stackexchange.com/questions/37439/why-are-airlines-against-the-transferring-of-tickets-to-other-persons"
+      },
+      {
+        "line": 269,
+        "question": "Why is the departures level always above the arrivals level?",
+        "source_url": "https://travel.stackexchange.com/questions/49604/why-is-the-departures-level-always-above-the-arrivals-level"
+      },
+      {
+        "line": 352,
+        "question": "Why do many countries require visa applicants to apply from their country of residence?",
+        "source_url": "https://travel.stackexchange.com/questions/204290/why-do-many-countries-require-visa-applicants-to-apply-from-their-country-of-res"
+      },
+      {
+        "line": 1659,
+        "question": "How do people drown while wearing a life jacket?",
+        "source_url": "https://outdoors.stackexchange.com/questions/22760/how-do-people-drown-while-wearing-a-life-jacket"
+      }
+    ],
+    "EXPLAIN/HOME": [
+      {
+        "line": 403,
+        "question": "Why does my freezer get a little warmer every 14 hours?",
+        "source_url": "https://diy.stackexchange.com/questions/126697/why-does-my-freezer-get-a-little-warmer-every-14-hours"
+      },
+      {
+        "line": 408,
+        "question": "Why did my electrician put metal plates wherever the stud is drilled through?",
+        "source_url": "https://diy.stackexchange.com/questions/101066/why-did-my-electrician-put-metal-plates-wherever-the-stud-is-drilled-through"
+      },
+      {
+        "line": 433,
+        "question": "Why does this receptacle have the ground tied to the neutral?",
+        "source_url": "https://diy.stackexchange.com/questions/11275/why-does-this-receptacle-have-the-ground-tied-to-the-neutral"
+      },
+      {
+        "line": 438,
+        "question": "Why are there so many different types of screws (phillps/flat/hex/star/etc)?",
+        "source_url": "https://diy.stackexchange.com/questions/2701/why-are-there-so-many-different-types-of-screws-phillps-flat-hex-star-etc"
+      },
+      {
+        "line": 439,
+        "question": "Why Do 240V Circuits Not Require Neutral?",
+        "source_url": "https://diy.stackexchange.com/questions/33602/why-do-240v-circuits-not-require-neutral"
+      },
+      {
+        "line": 456,
+        "question": "Why do my LED lights stay on, even when the switch is off?",
+        "source_url": "https://diy.stackexchange.com/questions/30194/why-do-my-led-lights-stay-on-even-when-the-switch-is-off"
+      },
+      {
+        "line": 457,
+        "question": "Why is my voltage dropping with load and why is current flowing on my ground wire?",
+        "source_url": "https://diy.stackexchange.com/questions/185036/why-is-my-voltage-dropping-with-load-and-why-is-current-flowing-on-my-ground-wir"
+      },
+      {
+        "line": 3540,
+        "question": "Why does my panel have a breaker labeled \"low voltage outlet?\"",
+        "source_url": "https://ask.metafilter.com/390930/Why-does-my-panel-have-a-breaker-labeled-low-voltage-outlet"
+      }
+    ],
+    "EXPLAIN/MONEY": [
+      {
+        "line": 599,
+        "question": "Why isn't everybody rich?",
+        "source_url": "https://money.stackexchange.com/questions/94671/why-isnt-everybody-rich"
+      },
+      {
+        "line": 600,
+        "question": "If a stock doesn't pay dividends, then why is the stock worth anything?",
+        "source_url": "https://money.stackexchange.com/questions/51976/if-a-stock-doesnt-pay-dividends-then-why-is-the-stock-worth-anything"
+      },
+      {
+        "line": 601,
+        "question": "Why would a company care about the price of its own shares in the stock market?",
+        "source_url": "https://money.stackexchange.com/questions/7800/why-would-a-company-care-about-the-price-of-its-own-shares-in-the-stock-market"
+      },
+      {
+        "line": 615,
+        "question": "Why does gold have value?",
+        "source_url": "https://money.stackexchange.com/questions/1767/why-does-gold-have-value"
+      },
+      {
+        "line": 617,
+        "question": "Why buy insurance?",
+        "source_url": "https://money.stackexchange.com/questions/54561/why-buy-insurance"
+      },
+      {
+        "line": 626,
+        "question": "Why is the stock market closed on the weekend?",
+        "source_url": "https://money.stackexchange.com/questions/8950/why-is-the-stock-market-closed-on-the-weekend"
+      },
+      {
+        "line": 644,
+        "question": "Why do credit cards have their number and CVC code printed on them for all to see?",
+        "source_url": "https://money.stackexchange.com/questions/103079/why-do-credit-cards-have-their-number-and-cvc-code-printed-on-them-for-all-to-se"
+      },
+      {
+        "line": 699,
+        "question": "How does an applicant’s age affect final expense insurance premiums?",
+        "source_url": "https://money.stackexchange.com/questions/170060/how-does-an-applicant-s-age-affect-final-expense-insurance-premiums"
+      }
+    ],
+    "EXPLAIN/WORK_STUDY": [
+      {
+        "line": 920,
+        "question": "Why would a manager thank everyone publicly except one employee?",
+        "source_url": "https://workplace.stackexchange.com/questions/203616/why-would-a-manager-thank-everyone-publicly-except-one-employee"
+      },
+      {
+        "line": 928,
+        "question": "Why do recruiters often want a phone call before sending a job description?",
+        "source_url": "https://workplace.stackexchange.com/questions/203556/why-do-recruiters-often-want-a-phone-call-before-sending-a-job-description"
+      },
+      {
+        "line": 978,
+        "question": "Why do some employers have managers that oversee multiple non-collaborating teams?",
+        "source_url": "https://workplace.stackexchange.com/questions/203240/why-do-some-employers-have-managers-that-oversee-multiple-non-collaborating-team"
+      },
+      {
+        "line": 2585,
+        "question": "Why do American colleges and universities have sports teams?",
+        "source_url": "https://academia.stackexchange.com/questions/16367/why-do-american-colleges-and-universities-have-sports-teams"
+      },
+      {
+        "line": 2603,
+        "question": "Why would an academic write a textbook for free?",
+        "source_url": "https://academia.stackexchange.com/questions/91861/why-would-an-academic-write-a-textbook-for-free"
+      },
+      {
+        "line": 2612,
+        "question": "Why are papers without code but with results accepted?",
+        "source_url": "https://academia.stackexchange.com/questions/23237/why-are-papers-without-code-but-with-results-accepted"
+      },
+      {
+        "line": 2623,
+        "question": "Why don't researchers publish failed experiments?",
+        "source_url": "https://academia.stackexchange.com/questions/732/why-dont-researchers-publish-failed-experiments"
+      },
+      {
+        "line": 2631,
+        "question": "Why are most scientific articles locked behind a paywall?",
+        "source_url": "https://academia.stackexchange.com/questions/80472/why-are-most-scientific-articles-locked-behind-a-paywall"
+      }
+    ],
+    "EXPLAIN/RELATIONSHIPS": [
+      {
+        "line": 1012,
+        "question": "Why would you lie to your children about Santa?",
+        "source_url": "https://parenting.stackexchange.com/questions/19788/why-would-you-lie-to-your-children-about-santa"
+      },
+      {
+        "line": 1015,
+        "question": "Why don't children know why they do things?",
+        "source_url": "https://parenting.stackexchange.com/questions/34091/why-dont-children-know-why-they-do-things"
+      },
+      {
+        "line": 1064,
+        "question": "Why do toddlers hate getting their face cleaned off with a wet washcloth and is there a better way?",
+        "source_url": "https://parenting.stackexchange.com/questions/34420/why-do-toddlers-hate-getting-their-face-cleaned-off-with-a-wet-washcloth-and-is"
+      },
+      {
+        "line": 1066,
+        "question": "Why does my infant wake crying the instant we put him in his bed?",
+        "source_url": "https://parenting.stackexchange.com/questions/1500/why-does-my-infant-wake-crying-the-instant-we-put-him-in-his-bed"
+      },
+      {
+        "line": 1104,
+        "question": "Why does my step mom get mad at me for every little thing i do?",
+        "source_url": "https://parenting.stackexchange.com/questions/46941/why-does-my-step-mom-get-mad-at-me-for-every-little-thing-i-do"
+      },
+      {
+        "line": 1127,
+        "question": "Why does my 6 year old daughter act this way",
+        "source_url": "https://parenting.stackexchange.com/questions/45816/why-does-my-6-year-old-daughter-act-this-way"
+      },
+      {
+        "line": 1143,
+        "question": "Why kids are unbothered by one parent decision and not with upset with other?",
+        "source_url": "https://parenting.stackexchange.com/questions/44721/why-kids-are-unbothered-by-one-parent-decision-and-not-with-upset-with-other"
+      },
+      {
+        "line": 1178,
+        "question": "Why do grown-ups not taking kiddos seriously?",
+        "source_url": "https://parenting.stackexchange.com/questions/44520/why-do-grown-ups-not-taking-kiddos-seriously"
+      }
+    ],
+    "EXPLAIN/NATURE": [
+      {
+        "line": 1219,
+        "question": "Why did my carrots split in a way that looks like legs?",
+        "source_url": "https://gardening.stackexchange.com/questions/830/why-did-my-carrots-split-in-a-way-that-looks-like-legs"
+      },
+      {
+        "line": 1224,
+        "question": "Why do people paint some tree trunks white at the bottom?",
+        "source_url": "https://gardening.stackexchange.com/questions/4940/why-do-people-paint-some-tree-trunks-white-at-the-bottom"
+      },
+      {
+        "line": 1251,
+        "question": "How do cucumbers happen? What does \"very poorly pollinated cucumber\" mean exactly? How can pollination be \"uneven\"?",
+        "source_url": "https://gardening.stackexchange.com/questions/63362/how-do-cucumbers-happen-what-does-very-poorly-pollinated-cucumber-mean-exactl"
+      },
+      {
+        "line": 1252,
+        "question": "Why do my upside-down tomato plants curve up and break?",
+        "source_url": "https://gardening.stackexchange.com/questions/2/why-do-my-upside-down-tomato-plants-curve-up-and-break"
+      },
+      {
+        "line": 1268,
+        "question": "Why has my mint plant gone all woody/sparse/stringy?",
+        "source_url": "https://gardening.stackexchange.com/questions/1906/why-has-my-mint-plant-gone-all-woody-sparse-stringy"
+      },
+      {
+        "line": 1311,
+        "question": "Why is my lawn not germinating?",
+        "source_url": "https://gardening.stackexchange.com/questions/70902/why-is-my-lawn-not-germinating"
+      },
+      {
+        "line": 1631,
+        "question": "Why would a seal be flinging an octopus around above the water and then slapping a kayaker with it?",
+        "source_url": "https://outdoors.stackexchange.com/questions/20640/why-would-a-seal-be-flinging-an-octopus-around-above-the-water-and-then-slapping"
+      },
+      {
+        "line": 3381,
+        "question": "What is the biology that prevents intra, intro, species pregnancies?",
+        "source_url": "https://www.fluther.com/241145/what-is-the-biology-that-prevents-intra-intro-species-pregnancies/"
+      }
+    ],
+    "EXPLAIN/HEALTH": [
+      {
+        "line": 1397,
+        "question": "Why does running make you have to poop?",
+        "source_url": "https://fitness.stackexchange.com/questions/509/why-does-running-make-you-have-to-poop"
+      },
+      {
+        "line": 1409,
+        "question": "Why do sprinters have muscular arms?",
+        "source_url": "https://fitness.stackexchange.com/questions/7642/why-do-sprinters-have-muscular-arms"
+      },
+      {
+        "line": 1413,
+        "question": "Why is muscle size not proportional to strength?",
+        "source_url": "https://fitness.stackexchange.com/questions/2017/why-is-muscle-size-not-proportional-to-strength"
+      },
+      {
+        "line": 1427,
+        "question": "Why is exercise good for you?",
+        "source_url": "https://fitness.stackexchange.com/questions/42874/why-is-exercise-good-for-you"
+      },
+      {
+        "line": 1483,
+        "question": "How does our body dispose of excess calories (physiologically speaking)?",
+        "source_url": "https://fitness.stackexchange.com/questions/2028/how-does-our-body-dispose-of-excess-calories-physiologically-speaking"
+      },
+      {
+        "line": 1535,
+        "question": "Why has my weight loss plateaued despite a consistent calorie deficit?",
+        "source_url": "https://fitness.stackexchange.com/questions/48688/why-has-my-weight-loss-plateaued-despite-a-consistent-calorie-deficit"
+      },
+      {
+        "line": 3282,
+        "question": "How does Tylenol expire over time?",
+        "source_url": "https://www.fluther.com/241526/how-does-tylenol-expire-over-time/"
+      },
+      {
+        "line": 3286,
+        "question": "Why does grapefruit interfere with my medications, and not any other fruits?",
+        "source_url": "https://www.fluther.com/241514/why-does-grapefruit-interfere-with-my-medications-and-not-any-other/"
+      }
+    ],
+    "EXPLAIN/SPORTS": [
+      {
+        "line": 1782,
+        "question": "Points are given in tennis 15-30-40. Why 40?",
+        "source_url": "https://sports.stackexchange.com/questions/203/points-are-given-in-tennis-15-30-40-why-40"
+      },
+      {
+        "line": 1785,
+        "question": "Why are professional athletes allowed to compete in the Olympic games?",
+        "source_url": "https://sports.stackexchange.com/questions/14378/why-are-professional-athletes-allowed-to-compete-in-the-olympic-games"
+      },
+      {
+        "line": 1790,
+        "question": "Why do some swimmers wear two caps?",
+        "source_url": "https://sports.stackexchange.com/questions/1236/why-do-some-swimmers-wear-two-caps"
+      },
+      {
+        "line": 1800,
+        "question": "Why are substitutions commonly made right at the end of the game?",
+        "source_url": "https://sports.stackexchange.com/questions/103/why-are-substitutions-commonly-made-right-at-the-end-of-the-game"
+      },
+      {
+        "line": 1820,
+        "question": "How does a sport become an Olympic Sport?",
+        "source_url": "https://sports.stackexchange.com/questions/255/how-does-a-sport-become-an-olympic-sport"
+      },
+      {
+        "line": 1841,
+        "question": "Why does a marathon start need to be near its finish for a record to count",
+        "source_url": "https://sports.stackexchange.com/questions/354/why-does-a-marathon-start-need-to-be-near-its-finish-for-a-record-to-count"
+      },
+      {
+        "line": 1862,
+        "question": "Why was offside introduced, and are there reasons for keeping it?",
+        "source_url": "https://sports.stackexchange.com/questions/1448/why-was-offside-introduced-and-are-there-reasons-for-keeping-it"
+      },
+      {
+        "line": 1910,
+        "question": "Why do pickleballs and wiffleballs fly the way they do?",
+        "source_url": "https://sports.stackexchange.com/questions/30252/why-do-pickleballs-and-wiffleballs-fly-the-way-they-do"
+      }
+    ],
+    "EXPLAIN/ENTERTAINMENT": [
+      {
+        "line": 1980,
+        "question": "How do they film the mirror scenes in movies?",
+        "source_url": "https://movies.stackexchange.com/questions/2190/how-do-they-film-the-mirror-scenes-in-movies"
+      },
+      {
+        "line": 1984,
+        "question": "Why isn't Bruce Willis's character in the Sixth Sense self-aware?",
+        "source_url": "https://movies.stackexchange.com/questions/130/why-isnt-bruce-williss-character-in-the-sixth-sense-self-aware"
+      },
+      {
+        "line": 1993,
+        "question": "Why does the talk show host always sit on the right?",
+        "source_url": "https://movies.stackexchange.com/questions/84503/why-does-the-talk-show-host-always-sit-on-the-right"
+      },
+      {
+        "line": 2005,
+        "question": "Why are the Simpsons yellow?",
+        "source_url": "https://movies.stackexchange.com/questions/14664/why-are-the-simpsons-yellow"
+      },
+      {
+        "line": 2015,
+        "question": "Why are the railings in Rivendell so low?",
+        "source_url": "https://movies.stackexchange.com/questions/64068/why-are-the-railings-in-rivendell-so-low"
+      },
+      {
+        "line": 2185,
+        "question": "Why is 3333360 the maximum score in Pac-Man?",
+        "source_url": "https://gaming.stackexchange.com/questions/185772/why-is-3333360-the-maximum-score-in-pac-man"
+      },
+      {
+        "line": 2212,
+        "question": "How does Skyrim determine if a dungeon is \"cleared\"?",
+        "source_url": "https://gaming.stackexchange.com/questions/35015/how-does-skyrim-determine-if-a-dungeon-is-cleared"
+      },
+      {
+        "line": 2331,
+        "question": "How do plant fusions work in Plants vs. Zombies Fusion, and which combinations are worth using early?",
+        "source_url": "https://gaming.stackexchange.com/questions/419530/how-do-plant-fusions-work-in-plants-vs-zombies-fusion-and-which-combinations-a"
+      },
+      {
+        "line": 2010,
+        "question": "Why do movies still have credits?",
+        "source_url": "https://movies.stackexchange.com/questions/18062/why-do-movies-still-have-credits"
+      },
+      {
+        "line": 3196,
+        "question": "Why don't we hear much about Diana Ross?",
+        "source_url": "https://www.fluther.com/241940/why-dont-we-hear-much-about-diana-ross/"
+      }
+    ],
+    "METHOD/FOOD": [
+      {
+        "line": 1,
+        "question": "How can I chop onions without crying?",
+        "source_url": "https://cooking.stackexchange.com/questions/567/how-can-i-chop-onions-without-crying"
+      },
+      {
+        "line": 176,
+        "question": "How to convert chicken kabob cooking from grill to oven?",
+        "source_url": "https://cooking.stackexchange.com/questions/136940/how-to-convert-chicken-kabob-cooking-from-grill-to-oven"
+      },
+      {
+        "line": 14,
+        "question": "How do you peel garlic easily?",
+        "source_url": "https://cooking.stackexchange.com/questions/895/how-do-you-peel-garlic-easily"
+      },
+      {
+        "line": 49,
+        "question": "How do you funnel food off a cutting board?",
+        "source_url": "https://cooking.stackexchange.com/questions/96545/how-do-you-funnel-food-off-a-cutting-board"
+      },
+      {
+        "line": 83,
+        "question": "How to Store Fresh Herbs",
+        "source_url": "https://cooking.stackexchange.com/questions/139/how-to-store-fresh-herbs"
+      },
+      {
+        "line": 98,
+        "question": "How do I pick a watermelon at the supermarket?",
+        "source_url": "https://cooking.stackexchange.com/questions/914/how-do-i-pick-a-watermelon-at-the-supermarket"
+      },
+      {
+        "line": 183,
+        "question": "How do I test sauerkraut for pathogens?",
+        "source_url": "https://cooking.stackexchange.com/questions/136903/how-do-i-test-sauerkraut-for-pathogens"
+      },
+      {
+        "line": 196,
+        "question": "how to store marinated paneer tikka(cottage cheese) in fridge for 20 days?",
+        "source_url": "https://cooking.stackexchange.com/questions/136813/how-to-store-marinated-paneer-tikkacottage-cheese-in-fridge-for-20-days"
+      }
+    ],
+    "METHOD/HOME": [
+      {
+        "line": 399,
+        "question": "How to prevent heavy rainwater from jumping the gutter?",
+        "source_url": "https://diy.stackexchange.com/questions/71585/how-to-prevent-heavy-rainwater-from-jumping-the-gutter"
+      },
+      {
+        "line": 405,
+        "question": "How do I make a height adjustable desk?",
+        "source_url": "https://diy.stackexchange.com/questions/1928/how-do-i-make-a-height-adjustable-desk"
+      },
+      {
+        "line": 406,
+        "question": "How to remove screws with stripped heads?",
+        "source_url": "https://diy.stackexchange.com/questions/10451/how-to-remove-screws-with-stripped-heads"
+      },
+      {
+        "line": 431,
+        "question": "How can I remove a lemon from a toilet drain?",
+        "source_url": "https://diy.stackexchange.com/questions/189612/how-can-i-remove-a-lemon-from-a-toilet-drain"
+      },
+      {
+        "line": 461,
+        "question": "How to avoid wires when drilling into the wall?",
+        "source_url": "https://diy.stackexchange.com/questions/84603/how-to-avoid-wires-when-drilling-into-the-wall"
+      },
+      {
+        "line": 473,
+        "question": "How can I allow 911 first responders to access a locked residence?",
+        "source_url": "https://diy.stackexchange.com/questions/156719/how-can-i-allow-911-first-responders-to-access-a-locked-residence"
+      },
+      {
+        "line": 489,
+        "question": "How do I fix a \"water hammer\" problem?",
+        "source_url": "https://diy.stackexchange.com/questions/1749/how-do-i-fix-a-water-hammer-problem"
+      },
+      {
+        "line": 593,
+        "question": "how to fix voltage in the soil and shocks when outside AC compressor unit(s) turns on",
+        "source_url": "https://diy.stackexchange.com/questions/332013/how-to-fix-voltage-in-the-soil-and-shocks-when-outside-ac-compressor-units-tur"
+      }
+    ],
+    "METHOD/MONEY": [
+      {
+        "line": 648,
+        "question": "How to deal with the credit card debt from family member that has passed away?",
+        "source_url": "https://money.stackexchange.com/questions/84460/how-to-deal-with-the-credit-card-debt-from-family-member-that-has-passed-away"
+      },
+      {
+        "line": 657,
+        "question": "How to get rid of someone else's debt collector?",
+        "source_url": "https://money.stackexchange.com/questions/7137/how-to-get-rid-of-someone-elses-debt-collector"
+      },
+      {
+        "line": 686,
+        "question": "How to prevent myself from buying things I don't want",
+        "source_url": "https://money.stackexchange.com/questions/77319/how-to-prevent-myself-from-buying-things-i-dont-want"
+      },
+      {
+        "line": 698,
+        "question": "How can I access my 401k?",
+        "source_url": "https://money.stackexchange.com/questions/170065/how-can-i-access-my-401k"
+      },
+      {
+        "line": 709,
+        "question": "How do I budget effectively when income arrives at irregular intervals rather than a fixed monthly salary?",
+        "source_url": "https://money.stackexchange.com/questions/169983/how-do-i-budget-effectively-when-income-arrives-at-irregular-intervals-rather-th"
+      },
+      {
+        "line": 712,
+        "question": "How can I calculate how much life insurance coverage I actually need?",
+        "source_url": "https://money.stackexchange.com/questions/169970/how-can-i-calculate-how-much-life-insurance-coverage-i-actually-need"
+      },
+      {
+        "line": 720,
+        "question": "How to handle unavailable information for Tax Return",
+        "source_url": "https://money.stackexchange.com/questions/169913/how-to-handle-unavailable-information-for-tax-return"
+      },
+      {
+        "line": 783,
+        "question": "How can I sell old shares?",
+        "source_url": "https://money.stackexchange.com/questions/169587/how-can-i-sell-old-shares"
+      }
+    ],
+    "METHOD/WORK_STUDY": [
+      {
+        "line": 803,
+        "question": "How to convince HR to let my star employee work from home?",
+        "source_url": "https://workplace.stackexchange.com/questions/128981/how-to-convince-hr-to-let-my-star-employee-work-from-home"
+      },
+      {
+        "line": 818,
+        "question": "How to be diplomatic in refusing to write code that breaches the privacy of our users",
+        "source_url": "https://workplace.stackexchange.com/questions/132576/how-to-be-diplomatic-in-refusing-to-write-code-that-breaches-the-privacy-of-our"
+      },
+      {
+        "line": 843,
+        "question": "How can I respond to a CEO asking me to terminate an employee for reasons I disagree with?",
+        "source_url": "https://workplace.stackexchange.com/questions/41788/how-can-i-respond-to-a-ceo-asking-me-to-terminate-an-employee-for-reasons-i-disa"
+      },
+      {
+        "line": 861,
+        "question": "How can I stop harassment about my medical condition by the boss's friend?",
+        "source_url": "https://workplace.stackexchange.com/questions/107617/how-can-i-stop-harassment-about-my-medical-condition-by-the-bosss-friend"
+      },
+      {
+        "line": 2580,
+        "question": "How do you cite a Github repository?",
+        "source_url": "https://academia.stackexchange.com/questions/14010/how-do-you-cite-a-github-repository"
+      },
+      {
+        "line": 2584,
+        "question": "How to read papers without falling into a rabbit hole?",
+        "source_url": "https://academia.stackexchange.com/questions/68605/how-to-read-papers-without-falling-into-a-rabbit-hole"
+      },
+      {
+        "line": 2666,
+        "question": "How do I identify predatory and low quality journals? With Beall's List gone, how can I tell if a journal is spam?",
+        "source_url": "https://academia.stackexchange.com/questions/83764/how-do-i-identify-predatory-and-low-quality-journals-with-bealls-list-gone-ho"
+      },
+      {
+        "line": 2680,
+        "question": "How can I stay on task and be productive when writing a thesis?",
+        "source_url": "https://academia.stackexchange.com/questions/227809/how-can-i-stay-on-task-and-be-productive-when-writing-a-thesis"
+      }
+    ],
+    "METHOD/RELATIONSHIPS": [
+      {
+        "line": 1003,
+        "question": "How can you deal with tantrums without spanking?",
+        "source_url": "https://parenting.stackexchange.com/questions/1244/how-can-you-deal-with-tantrums-without-spanking"
+      },
+      {
+        "line": 1004,
+        "question": "How to comfort my dad after telling him that I don't like to do anything with him?",
+        "source_url": "https://parenting.stackexchange.com/questions/24107/how-to-comfort-my-dad-after-telling-him-that-i-dont-like-to-do-anything-with-hi"
+      },
+      {
+        "line": 1045,
+        "question": "How can I prevent my parents' divorce?",
+        "source_url": "https://parenting.stackexchange.com/questions/18470/how-can-i-prevent-my-parents-divorce"
+      },
+      {
+        "line": 1075,
+        "question": "How do you respond to a toddler who endlessly says \"why?\"?",
+        "source_url": "https://parenting.stackexchange.com/questions/7462/how-do-you-respond-to-a-toddler-who-endlessly-says-why"
+      },
+      {
+        "line": 1092,
+        "question": "How do I tell my mom and dad that I like a boy?",
+        "source_url": "https://parenting.stackexchange.com/questions/47009/how-do-i-tell-my-mom-and-dad-that-i-like-a-boy"
+      },
+      {
+        "line": 1135,
+        "question": "How to support bodily autonomy in 2 year old daughter during hard tasks",
+        "source_url": "https://parenting.stackexchange.com/questions/44754/how-to-support-bodily-autonomy-in-2-year-old-daughter-during-hard-tasks"
+      },
+      {
+        "line": 1141,
+        "question": "How do I handle my controlling, emotionally draining, and unpredictable mother at 17 years old?",
+        "source_url": "https://parenting.stackexchange.com/questions/44733/how-do-i-handle-my-controlling-emotionally-draining-and-unpredictable-mother-a"
+      },
+      {
+        "line": 3521,
+        "question": "How do I tell a good friend I don't want to travel with her?",
+        "source_url": "https://www.fluther.com/240520/how-do-i-tell-a-good-friend-i-dont-want-to/"
+      }
+    ],
+    "METHOD/NATURE": [
+      {
+        "line": 1186,
+        "question": "How do you identify a plant?",
+        "source_url": "https://gardening.stackexchange.com/questions/158/how-do-you-identify-a-plant"
+      },
+      {
+        "line": 1195,
+        "question": "How do you safely and effectively stop a cat from pooping in your yard?",
+        "source_url": "https://gardening.stackexchange.com/questions/125/how-do-you-safely-and-effectively-stop-a-cat-from-pooping-in-your-yard"
+      },
+      {
+        "line": 1208,
+        "question": "How do I work with soil that has a high clay content?",
+        "source_url": "https://gardening.stackexchange.com/questions/183/how-do-i-work-with-soil-that-has-a-high-clay-content"
+      },
+      {
+        "line": 1217,
+        "question": "How can I revive a tree that's been stripped of bark?",
+        "source_url": "https://gardening.stackexchange.com/questions/3/how-can-i-revive-a-tree-thats-been-stripped-of-bark"
+      },
+      {
+        "line": 1237,
+        "question": "How do you prune a rose bush?",
+        "source_url": "https://gardening.stackexchange.com/questions/43/how-do-you-prune-a-rose-bush"
+      },
+      {
+        "line": 1255,
+        "question": "How do I keep mosquitos out of my fountain?",
+        "source_url": "https://gardening.stackexchange.com/questions/1039/how-do-i-keep-mosquitos-out-of-my-fountain"
+      },
+      {
+        "line": 1274,
+        "question": "How can I prevent squirrels (or other small mammals) from eating my tomatoes?",
+        "source_url": "https://gardening.stackexchange.com/questions/1187/how-can-i-prevent-squirrels-or-other-small-mammals-from-eating-my-tomatoes"
+      },
+      {
+        "line": 1372,
+        "question": "How can I render my dog's waste safe for use in the garden?",
+        "source_url": "https://gardening.stackexchange.com/questions/70677/how-can-i-render-my-dogs-waste-safe-for-use-in-the-garden"
+      }
+    ],
+    "METHOD/HEALTH": [
+      {
+        "line": 1399,
+        "question": "How to run without damaging your feet, knees or hips.",
+        "source_url": "https://fitness.stackexchange.com/questions/938/how-to-run-without-damaging-your-feet-knees-or-hips"
+      },
+      {
+        "line": 1406,
+        "question": "How can I make myself get enough sleep?",
+        "source_url": "https://fitness.stackexchange.com/questions/3351/how-can-i-make-myself-get-enough-sleep"
+      },
+      {
+        "line": 1411,
+        "question": "How do I naturally boost my Testosterone levels?",
+        "source_url": "https://fitness.stackexchange.com/questions/1509/how-do-i-naturally-boost-my-testosterone-levels"
+      },
+      {
+        "line": 1437,
+        "question": "How to get enough Protein as a vegetarian?",
+        "source_url": "https://fitness.stackexchange.com/questions/320/how-to-get-enough-protein-as-a-vegetarian"
+      },
+      {
+        "line": 1448,
+        "question": "How can I calculate my body fat percentage?",
+        "source_url": "https://fitness.stackexchange.com/questions/262/how-can-i-calculate-my-body-fat-percentage"
+      },
+      {
+        "line": 1474,
+        "question": "How do I avoid straining neck muscles when doing pull ups?",
+        "source_url": "https://fitness.stackexchange.com/questions/1808/how-do-i-avoid-straining-neck-muscles-when-doing-pull-ups"
+      },
+      {
+        "line": 1485,
+        "question": "How can I safely program leg exercises for a student with flat feet, hypermobility, and hEDS-type joint restrictions?",
+        "source_url": "https://fitness.stackexchange.com/questions/48945/how-can-i-safely-program-leg-exercises-for-a-student-with-flat-feet-hypermobili"
+      },
+      {
+        "line": 1554,
+        "question": "How to protect Achilles tendon from damage?",
+        "source_url": "https://fitness.stackexchange.com/questions/48598/how-to-protect-achilles-tendon-from-damage"
+      }
+    ],
+    "METHOD/TRAVEL": [
+      {
+        "line": 205,
+        "question": "How to intentionally get denied entry to the US, without getting into trouble?",
+        "source_url": "https://travel.stackexchange.com/questions/24540/how-to-intentionally-get-denied-entry-to-the-us-without-getting-into-trouble"
+      },
+      {
+        "line": 217,
+        "question": "How can I deal with people asking to switch seats with me on a plane?",
+        "source_url": "https://travel.stackexchange.com/questions/48775/how-can-i-deal-with-people-asking-to-switch-seats-with-me-on-a-plane"
+      },
+      {
+        "line": 226,
+        "question": "How can I do a \"broad\" search for flights?",
+        "source_url": "https://travel.stackexchange.com/questions/730/how-can-i-do-a-broad-search-for-flights"
+      },
+      {
+        "line": 239,
+        "question": "How to convince airport security that I am not dangerous when having metallic parts in my body?",
+        "source_url": "https://travel.stackexchange.com/questions/16617/how-to-convince-airport-security-that-i-am-not-dangerous-when-having-metallic-pa"
+      },
+      {
+        "line": 259,
+        "question": "How can I visit Antarctica?",
+        "source_url": "https://travel.stackexchange.com/questions/6/how-can-i-visit-antarctica"
+      },
+      {
+        "line": 284,
+        "question": "How to book a flight if my passport doesn't state my gender?",
+        "source_url": "https://travel.stackexchange.com/questions/79701/how-to-book-a-flight-if-my-passport-doesnt-state-my-gender"
+      },
+      {
+        "line": 344,
+        "question": "How to book flights if I have a very long name?",
+        "source_url": "https://travel.stackexchange.com/questions/204424/how-to-book-flights-if-i-have-a-very-long-name"
+      },
+      {
+        "line": 1702,
+        "question": "How do I choose the right tent for different weather conditions?",
+        "source_url": "https://outdoors.stackexchange.com/questions/30441/how-do-i-choose-the-right-tent-for-different-weather-conditions"
+      }
+    ],
+    "METHOD/TECH": [
+      {
+        "line": 2376,
+        "question": "How do I make a POST request using curl?",
+        "source_url": "https://superuser.com/questions/149329/how-do-i-make-a-post-request-using-curl"
+      },
+      {
+        "line": 2383,
+        "question": "How to tell git which private key to use?",
+        "source_url": "https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use"
+      },
+      {
+        "line": 2394,
+        "question": "How do I convert a video to GIF using ffmpeg, with reasonable quality?",
+        "source_url": "https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality"
+      },
+      {
+        "line": 2407,
+        "question": "Reload a Linux user's group assignments without logging out",
+        "source_url": "https://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out"
+      },
+      {
+        "line": 2448,
+        "question": "How can I remove malicious spyware, malware, adware, viruses, trojans or rootkits from my PC?",
+        "source_url": "https://superuser.com/questions/100360/how-can-i-remove-malicious-spyware-malware-adware-viruses-trojans-or-rootkit"
+      },
+      {
+        "line": 2462,
+        "question": "How can I delete a symbolic link in Windows?",
+        "source_url": "https://superuser.com/questions/167076/how-can-i-delete-a-symbolic-link-in-windows"
+      },
+      {
+        "line": 2516,
+        "question": "How to turn off a PC desktop power while in hybrid sleep?",
+        "source_url": "https://superuser.com/questions/1940737/how-to-turn-off-a-pc-desktop-power-while-in-hybrid-sleep"
+      },
+      {
+        "line": 2561,
+        "question": "How to revoke Git Credential Manager on a compromised computer with GitHub?",
+        "source_url": "https://superuser.com/questions/1940511/how-to-revoke-git-credential-manager-on-a-compromised-computer-with-github"
+      }
+    ],
+    "METHOD/LANGUAGE": [
+      {
+        "line": 2975,
+        "question": "When should I use an em-dash, an en-dash, and a hyphen?",
+        "source_url": "https://english.stackexchange.com/questions/2116/when-should-i-use-an-em-dash-an-en-dash-and-a-hyphen"
+      },
+      {
+        "line": 2976,
+        "question": "What is the correct way to pluralize an acronym / initialism?",
+        "source_url": "https://english.stackexchange.com/questions/503/what-is-the-correct-way-to-pluralize-an-acronym-initialism"
+      },
+      {
+        "line": 2981,
+        "question": "How are \"i.e.\" and \"e.g.\" pronounced?",
+        "source_url": "https://english.stackexchange.com/questions/574/how-are-i-e-and-e-g-pronounced"
+      },
+      {
+        "line": 2986,
+        "question": "Which words in a title should be capitalized?",
+        "source_url": "https://english.stackexchange.com/questions/14/which-words-in-a-title-should-be-capitalized"
+      },
+      {
+        "line": 3000,
+        "question": "When to use \"If I was\" vs. \"If I were\"?",
+        "source_url": "https://english.stackexchange.com/questions/660/when-to-use-if-i-was-vs-if-i-were"
+      },
+      {
+        "line": 3004,
+        "question": "When is it appropriate to end a sentence in a preposition?",
+        "source_url": "https://english.stackexchange.com/questions/16/when-is-it-appropriate-to-end-a-sentence-in-a-preposition"
+      },
+      {
+        "line": 3011,
+        "question": "What’s the rule for using “who” and “whom” correctly?",
+        "source_url": "https://english.stackexchange.com/questions/56/what-s-the-rule-for-using-who-and-whom-correctly"
+      },
+      {
+        "line": 3038,
+        "question": "How to say \"It's not rocket science\" before rockets existed",
+        "source_url": "https://english.stackexchange.com/questions/278272/how-to-say-its-not-rocket-science-before-rockets-existed"
+      }
+    ],
+    "YES_NO/GENERAL": [
+      {
+        "line": 68,
+        "question": "Should I refrigerate eggs?",
+        "source_url": "https://cooking.stackexchange.com/questions/1672/should-i-refrigerate-eggs"
+      },
+      {
+        "line": 324,
+        "question": "Will I be able to enter Latvia without a visa?",
+        "source_url": "https://travel.stackexchange.com/questions/204570/will-i-be-able-to-enter-latvia-without-a-visa"
+      },
+      {
+        "line": 616,
+        "question": "Is it safe to give out one's bank account number?",
+        "source_url": "https://money.stackexchange.com/questions/15218/is-it-safe-to-give-out-ones-bank-account-number"
+      },
+      {
+        "line": 628,
+        "question": "Should I take out a loan to pay off a relative's credit card debt?",
+        "source_url": "https://money.stackexchange.com/questions/96564/should-i-take-out-a-loan-to-pay-off-a-relatives-credit-card-debt"
+      },
+      {
+        "line": 1048,
+        "question": "Should we circumcise our son?",
+        "source_url": "https://parenting.stackexchange.com/questions/1443/should-we-circumcise-our-son"
+      },
+      {
+        "line": 1232,
+        "question": "Is it safe to grow food plants near the road?",
+        "source_url": "https://gardening.stackexchange.com/questions/15/is-it-safe-to-grow-food-plants-near-the-road"
+      },
+      {
+        "line": 3243,
+        "question": "Should I worry about this gas smell (Read details.)",
+        "source_url": "https://www.fluther.com/241716/should-i-worry-about-this-gas-smell-read-details/"
+      },
+      {
+        "line": 3483,
+        "question": "Should I take Bonine proactively if I'm worried about sea-sickness? (Read details.)",
+        "source_url": "https://www.fluther.com/240665/should-i-take-bonine-proactively-if-im-worried-about-sea-sickness-read/"
+      }
+    ],
+    "IDENTIFY/GENERAL": [
+      {
+        "line": 1258,
+        "question": "What is this fast growing plant with blue/black berries?",
+        "source_url": "https://gardening.stackexchange.com/questions/2609/what-is-this-fast-growing-plant-with-blue-black-berries"
+      },
+      {
+        "line": 1301,
+        "question": "What is this grape-like globe with red bumps?",
+        "source_url": "https://gardening.stackexchange.com/questions/70929/what-is-this-grape-like-globe-with-red-bumps"
+      },
+      {
+        "line": 1360,
+        "question": "What is this possibly edible plant?",
+        "source_url": "https://gardening.stackexchange.com/questions/70715/what-is-this-possibly-edible-plant"
+      },
+      {
+        "line": 2784,
+        "question": "What is the fallacy “X is bad, Y is worse, therefore X is not bad” called?",
+        "source_url": "https://philosophy.stackexchange.com/questions/38375/what-is-the-fallacy-x-is-bad-y-is-worse-therefore-x-is-not-bad-called"
+      },
+      {
+        "line": 2980,
+        "question": "Is there a word or phrase for the feeling you get after looking at a word for too long?",
+        "source_url": "https://english.stackexchange.com/questions/6170/is-there-a-word-or-phrase-for-the-feeling-you-get-after-looking-at-a-word-for-to"
+      },
+      {
+        "line": 3083,
+        "question": "What word is this in this image?",
+        "source_url": "https://english.stackexchange.com/questions/640635/what-word-is-this-in-this-image"
+      },
+      {
+        "line": 3390,
+        "question": "What is this (NSFW) sports injury ?",
+        "source_url": "https://www.fluther.com/241108/what-is-this-nsfw-sports-injury/"
+      },
+      {
+        "line": 3541,
+        "question": "Book Identification: Chapter book about girls experiencing puberty",
+        "source_url": "https://ask.metafilter.com/390929/Book-Identification-Chapter-book-about-girls-experiencing-puberty"
+      }
+    ],
+    "DESCRIBE/GENERAL": [
+      {
+        "line": 150,
+        "question": "What is celery salt?",
+        "source_url": "https://cooking.stackexchange.com/questions/137071/what-is-celery-salt"
+      },
+      {
+        "line": 253,
+        "question": "What happens if you are refused entry between two countries?",
+        "source_url": "https://travel.stackexchange.com/questions/55755/what-happens-if-you-are-refused-entry-between-two-countries"
+      },
+      {
+        "line": 607,
+        "question": "What happens to people without any retirement savings?",
+        "source_url": "https://money.stackexchange.com/questions/79065/what-happens-to-people-without-any-retirement-savings"
+      },
+      {
+        "line": 1408,
+        "question": "What happens when you miss a workout?",
+        "source_url": "https://fitness.stackexchange.com/questions/4111/what-happens-when-you-miss-a-workout"
+      },
+      {
+        "line": 1869,
+        "question": "What happens if a suspended player is used in match and the referee didn't notice",
+        "source_url": "https://sports.stackexchange.com/questions/13535/what-happens-if-a-suspended-player-is-used-in-match-and-the-referee-didnt-notic"
+      },
+      {
+        "line": 2327,
+        "question": "What happens if I collect every Nefer's Intel in Nod Krai?",
+        "source_url": "https://gaming.stackexchange.com/questions/419540/what-happens-if-i-collect-every-nefers-intel-in-nod-krai"
+      },
+      {
+        "line": 3060,
+        "question": "What does \"something 101\" mean?",
+        "source_url": "https://english.stackexchange.com/questions/14265/what-does-something-101-mean"
+      },
+      {
+        "line": 3191,
+        "question": "How do you feel about this?",
+        "source_url": "https://www.fluther.com/241960/how-do-you-feel-about-this/"
+      }
+    ],
+    "QUANTITY/GENERAL": [
+      {
+        "line": 479,
+        "question": "How much weight can screws in drywall hold?",
+        "source_url": "https://diy.stackexchange.com/questions/943/how-much-weight-can-screws-in-drywall-hold"
+      },
+      {
+        "line": 535,
+        "question": "How many clamps is needed for a frameless shower glass?",
+        "source_url": "https://diy.stackexchange.com/questions/332269/how-many-clamps-is-needed-for-a-frameless-shower-glass"
+      },
+      {
+        "line": 1428,
+        "question": "How much water is too much?",
+        "source_url": "https://fitness.stackexchange.com/questions/760/how-much-water-is-too-much"
+      },
+      {
+        "line": 1671,
+        "question": "How much sea water can I safely drink?",
+        "source_url": "https://outdoors.stackexchange.com/questions/9920/how-much-sea-water-can-i-safely-drink"
+      },
+      {
+        "line": 2979,
+        "question": "How many spaces should come after a period/full stop?",
+        "source_url": "https://english.stackexchange.com/questions/2544/how-many-spaces-should-come-after-a-period-full-stop"
+      },
+      {
+        "line": 3198,
+        "question": "How long does my hair need to be to keep it off my face, and neck?",
+        "source_url": "https://www.fluther.com/241936/how-long-does-my-hair-need-to-be-to-keep-it/"
+      },
+      {
+        "line": 3445,
+        "question": "How much do people pay for healthcare premiums in other Western countries?",
+        "source_url": "https://www.fluther.com/240838/how-much-do-people-pay-for-healthcare-premiums-in-other-western/"
+      },
+      {
+        "line": 3560,
+        "question": "How much should I put into a joint account twice a month?",
+        "source_url": "https://ask.metafilter.com/372405/How-much-should-I-put-into-a-joint-account-twice-a-month"
+      }
+    ],
+    "COMPARE/GENERAL": [
+      {
+        "line": 28,
+        "question": "What is the difference between white and brown eggs?",
+        "source_url": "https://cooking.stackexchange.com/questions/3/what-is-the-difference-between-white-and-brown-eggs"
+      },
+      {
+        "line": 608,
+        "question": "Can someone explain a stock's \"bid\" vs. \"ask\" price relative to \"current\" price?",
+        "source_url": "https://money.stackexchange.com/questions/1063/can-someone-explain-a-stocks-bid-vs-ask-price-relative-to-current-price"
+      },
+      {
+        "line": 1396,
+        "question": "What are the trade-offs of weight versus repetition?",
+        "source_url": "https://fitness.stackexchange.com/questions/8238/what-are-the-trade-offs-of-weight-versus-repetition"
+      },
+      {
+        "line": 2785,
+        "question": "What is the difference between metaphysics and ontology?",
+        "source_url": "https://philosophy.stackexchange.com/questions/1534/what-is-the-difference-between-metaphysics-and-ontology"
+      },
+      {
+        "line": 2812,
+        "question": "What is the difference between free-will and randomness and or non-determinism?",
+        "source_url": "https://philosophy.stackexchange.com/questions/1012/what-is-the-difference-between-free-will-and-randomness-and-or-non-determinism"
+      },
+      {
+        "line": 2991,
+        "question": "What's the difference between \"requester\" and \"requestor\"?",
+        "source_url": "https://english.stackexchange.com/questions/29254/whats-the-difference-between-requester-and-requestor"
+      },
+      {
+        "line": 3138,
+        "question": "Differences between 'stand next to', 'stand with', and 'stand by'",
+        "source_url": "https://english.stackexchange.com/questions/640404/differences-between-stand-next-to-stand-with-and-stand-by"
+      },
+      {
+        "line": 3291,
+        "question": "What is the difference between hearing voices, and having an internal monolog?",
+        "source_url": "https://www.fluther.com/241492/what-is-the-difference-between-hearing-voices-and-having-an-internal/"
+      }
+    ]
+  },
+  "annotation_corrections": [
+    {
+      "pool": "METHOD/FOOD",
+      "removed_line": 7,
+      "added_line": 176,
+      "reason": "Rabbit/cat recognition method does not establish FOOD without source-community context. Re-screened all food methods on the explicit grill-to-oven conversion question; no new failures."
+    },
+    {
+      "pool": "EXPLAIN/ENTERTAINMENT",
+      "added_lines": [
+        2010,
+        3196
+      ],
+      "reason": "Broaden production/fiction probes with credits and real-performer visibility. L1980 has plausible METHOD disagreement; the remaining nine include enough EXPLAIN probes. Re-screened every entertainment explanation on both additions; four fiction-specific failures recorded."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # MVP technical plan
 
-Status: bootstrap, active [taxonomy v2](content/taxonomy-v2.md) and the scoped complete backend are implemented. The [24-answer preliminary seed](content/seed-v2/README.md) is imported into an isolated SQLite file; the [100-question live trial](evaluation/corpus-v2/README.md) is prepared but unexecuted. Catalog/migrations/import, selector, VERDICT persistence, POST and minimal permalink SSR are verified offline on SQLite. PostgreSQL, human content and launch evidence remain outstanding. The broader MVP UI remains a target: frontend is deferred with a confirmed **dark theme**. Current setup/contract: [backend guide](backend.md); actual checks: [verification](verification.md). Historical live baseline: [stage-1 results](evaluation/stage-1-results.md).
+Status: bootstrap, active [taxonomy v2](content/taxonomy-v2.md), the complete scoped backend and **dark-theme frontend** are implemented locally. The [canonical development seed](content/seed-v2/README.md) contains 1,055 author-screened answers; the [100-question live trial](evaluation/corpus-v2/README.md) is prepared but unexecuted. Catalog/migrations/import, selector, VERDICT persistence, POST and permalink SSR are verified offline on SQLite. Form/fetch, inline/saved results, copying, About/FAQ, data disclosure and styled errors have offline HTTP/browser evidence. PostgreSQL, human content, finalized privacy policy and launch evidence remain outstanding. Current setup/contract: [backend guide](backend.md); actual checks: [verification](verification.md). Historical live baseline: [stage-1 results](evaluation/stage-1-results.md).
 
 ## 1. Scope
 
@@ -22,7 +22,7 @@ One Symfony deployable, with internal responsibilities:
 | `Infrastructure/Persistence` | Doctrine DBAL repositories/migrations |
 | `templates/`, `public/` | SSR and a small form JS module |
 
-This is a structural guide, not a requirement to create every directory/interface in advance. Interfaces belong at external boundaries (`QuestionClassifier`, repositories, randomness/clock for reproducible tests). Internal classes do not need interfaces by default. Classification, evaluation, domain/catalog/persistence and backend HTTP exist today; the home skeleton remains static.
+This is a structural guide, not a requirement to create every directory/interface in advance. Interfaces belong at external boundaries (`QuestionClassifier`, repositories, randomness/clock for reproducible tests). Internal classes do not need interfaces by default. Classification, evaluation, domain/catalog/persistence, backend HTTP and the Twig/vanilla-JS UI are implemented locally.
 
 Symfony 7.4 LTS was chosen at bootstrap; the [official lifecycle](https://symfony.com/releases/7.4) explains the LTS choice. Development uses locally installed **PHP 8.4**, last/current verified runtime **8.4.10**, with a planned move to **8.5**. The intended minimum is **8.4**. Composer now requires >=8.4 and resolves against platform 8.4.0. The historical [audit finding](verification.md#documentation-audit-findings) is resolved; PHP 8.5 remains unverified.
 
@@ -39,7 +39,7 @@ HttpClient, DBAL + Migrations, RateLimiter and Lock are installed. Input uses a 
 7. Return JSON only after successful commit. JS displays text with `textContent` and links to a server page.
 8. `GET /a/{publicId}` reads only the stored result and returns HTML/OG; no Jev or random selection.
 
-The current UI has no submit. A functional form/fetch and dark-theme design belong to the next frontend task; backend routes can already be exercised independently.
+The current dark-theme UI implements this flow. It displays server-returned text with `textContent`, leaves the home URL unchanged and exposes the persisted permalink explicitly. Drafts and result history are not stored in the browser; failures preserve the current input and never automatically repeat POST.
 
 ## 4. Implemented initial backend HTTP contract
 
@@ -84,7 +84,7 @@ A Jev timeout/failure with an available universal pool is not a user HTTP failur
 
 `GET /a/{publicId}` → `200 text/html` with saved result, canonical URL, metadata. Unknown ID → 404. Implemented policy: anyone with the URL may access it, with `noindex` and no public feed; this is not private storage. Explain question storage/sharing before submit. Defer dynamic OG images; begin with textual OG and a generic image.
 
-`GET /about` → short satire/data explanation. Do not disguise infrastructure errors as fabricated successful verdicts. About is deferred; minimal permalink SSR is implemented.
+`GET /about` → short satire/data explanation and FAQ. `GET /privacy` → known data flow and explicit unresolved launch policy. Both are implemented. Infrastructure errors use controlled HTML states at the requested URL and never fabricated successful verdicts.
 
 ## 5. Jev and answer selection
 
@@ -122,7 +122,7 @@ Twig autoescape, JS `textContent`, parameterized SQL, no raw HTML in the library
 | 1. Historical content and Jev spike | [Taxonomy v1](content/taxonomy-v1.md), 54 development + 27 holdout, adapter/runner; offline implementation and historical development live baseline | One call with both Choice questions confirmed by mocks and 95 live successes in two batches. Model pin, accuracy, latency, technical failure rate recorded. Holdout/human quality and production latency unverified; empty-catalog fallback does not exist here |
 | 2. Domain and catalog | Implemented selector, explicit associations, DB migrations/import | Offline selector/import and real SQLite constraints/FKs pass; preliminary editorial seed with universal fallback, checked in an isolated database. PostgreSQL and human catalog acceptance outstanding |
 | 3. Vertical flow | Implemented POST, classifier boundary, immutable persistence, JSON | Offline status/origin/rate/body, fallback and insert/commit rollback tests pass; 201 only after commit |
-| 4. UI and sharing | Minimal stored-result SSR/textual OG implemented; dark-theme form/fetch/About deferred | Escaping and GET/HEAD without provider/random verified; browser UI acceptance remains future work |
+| 4. UI and sharing | Dark-theme Twig/vanilla-JS form, inline/saved results, copying, About/FAQ, data disclosure and HTML errors implemented | Offline HTTP/browser checks for validation, pending/error states, sharing, no-JS saved pages, narrow layout, keyboard and zoom; production/assistive-technology acceptance remains outstanding |
 | 5. Launch readiness | Deployment config, telemetry, backups, data policy | Future measured load targets, backup restore, production PostgreSQL integration matrix |
 
 Data-stage requirements: UUID PK and `created_at` everywhere; separate eligibility UUID with unique triple; no ANSWER.revision/VERDICT.answer_revision. Before production, edit development migrations in place/rebuild disposable dev/test databases. Shared/persistent data requires new incremental migrations and upgrade checks. The local initial migration is implemented. Schema finalization preserved all generated business rows and retained the prior local file; no deployment occurred.

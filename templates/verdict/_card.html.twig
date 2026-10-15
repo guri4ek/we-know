@@ -1,0 +1,16 @@
+<section class="verdict-section" data-verdict aria-labelledby="verdict-heading"{% if inline %} hidden{% endif %}>
+    <div class="verdict-card">
+        <div class="verdict-topline"><span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Final verdict</span><span class="verdict-seal" aria-hidden="true">✓</span></div>
+        <h2 class="result-question" id="verdict-heading" tabindex="-1" data-result-heading data-result-question>{{ question }}</h2>
+        <p class="result-answer" data-result-answer>{{ answer }}</p>
+        <p class="verdict-signoff">The matter is settled.<span aria-hidden="true"> — we know.</span></p>
+    </div>
+    <div class="verdict-actions">
+        <button class="button button-secondary" type="button" data-copy-link data-url="{{ share_url }}" hidden>Copy link <span aria-hidden="true">↗</span></button>
+        {% if inline %}<button class="button button-primary" type="button" data-ask-another>Ask another question <span aria-hidden="true">↗</span></button>
+        {% else %}<a class="button button-primary" href="/">Ask another question <span aria-hidden="true">↗</span></a>{% endif %}
+    </div>
+    <p class="share-status" data-share-status role="status" aria-live="polite"></p>
+    <div class="share-fallback" data-share-fallback hidden><label for="share-url">Copy this saved-answer link</label><input id="share-url" data-share-url type="url" readonly value="{{ share_url }}"></div>
+    {% if inline %}<a class="saved-answer-link" data-saved-link href="/">Open saved answer <span aria-hidden="true">↗</span></a>{% endif %}
+</section>

@@ -1,0 +1,118 @@
+# Author-screened completed candidates. Every line assessed against every question in its named shared pool.
+# mechanism | text | distinctive shift. P/C/L for each listed probe; author scores 2,2,2,2,1,1; human scores null.
+@EXPLAIN/GENERAL
+M|Because logic is wearing shoes designed by the conclusion.|Reasoning fitted by outcome
+R|Because the effect has been giving the cause private lessons.|Causal teaching reversed
+C|Because the evidence arrived alphabetically instead of chronologically.|Ordering mistaken for causation
+M|Because the explanation has a load-bearing shrug.|Architecture of unsupported reasoning
+H|Because simplicity requires seventeen connecting flights.|Complex route to simplicity
+R|Because the answer key has started setting the questions.|Assessment controls inquiry
+M|Because certainty travels light. It left the evidence at home.|Epistemic baggage allowance
+C|Because the diagram mistook its arrows for instructions.|Representation causes represented event
+M|Because common sense is a drawbridge operated from the other side.|Access to obviousness
+R|Because the conclusion won the argument before the premises arrived.|Conclusion outruns support
+M|Because logic took a shortcut through a revolving door.|Shortcut loops back
+C|Because the explanation borrowed its credentials from its own bibliography.|Self-issued evidential credentials
+H|Because every obvious reason contains a basement full of smaller reasons.|Nested causal architecture
+R|Because the rulebook is taking dictation from the exception.|Exception authors rule
+M|Because the facts and the narrative booked separate holidays.|Separated evidence and story
+C|Because the demonstration applauded itself and counted that as replication.|Applause replaces reproduction
+M|Because certainty is an inflatable structure with excellent lighting.|Confidence as staging
+R|Because the missing link is negotiating top billing.|Absence gains prominence
+M|Because the explanation has more scaffolding than building.|Support eclipses substance
+C|Because the question landed on the answer's lucky square.|Board game causation
+@METHOD/GENERAL
+M|Fold the problem along the dotted line. The dotted line is on the solution.|Circular origami
+R|Ask the shortcut to take the long way and report back.|Shortcut sent on reconnaissance
+M|Put the instructions on a leash. Walk them through their own steps.|Instructions become dependent animal
+H|Use a magnifying glass on the obvious. It has been shrinking to avoid work.|Obviousness evades labor
+R|Make the obstacle demonstrate its qualifications before allowing it to interfere.|Obstacle must justify authority
+M|Teach the plan to swim before launching it.|Plans require maritime competence
+C|Label the beginning as the end. The middle will rush to correct you.|Sequence provoked by mislabeling
+M|Untie the knot in the explanation, then return the spare explanation to the drawer.|Tangled reasoning produces surplus
+R|Interview the solution. Ask why it left its previous problem.|Solutions have employment histories
+M|Give the procedure a skeleton. It keeps borrowing yours.|Instructions depend on user structure
+B|Obtain a permit for the loophole before driving the plan through it.|Loophole as regulated tunnel
+R|Let the first step explain itself to the last one.|Endpoints accountable to each other
+M|Train the difficulty to fetch. Start with problems smaller than its ego.|Difficulty as trainable pet
+M|Turn the obstacle into a bookmark. Continue on the other side of it.|Obstruction becomes navigation aid
+H|Borrow enough perspective to see both ends of the instructions at once.|Instructions exceed horizon
+R|Ask the method to solve a simpler version of itself.|Procedure faces its own complexity
+M|Fit the plan with a handle. Abstract intentions are notoriously slippery.|Intention as ungrippable object
+C|Tell the complication it has been simplified. It will reveal its hiding place.|False simplification flushes complexity
+M|Sew the loose ends to the beginning. The procedure is now a cardigan.|Process becomes garment
+R|Have the checklist complete one person before assigning it another.|Task completion reversed
+@WHEN/GENERAL
+M|At the moment the calendar sheds its old skin.|Calendar molts
+R|When the minute hand catches the hour hand giving directions.|Clock authority caught interfering
+H|At the timestamp printed on the back of eternity.|Infinite time has product marking
+M|When the future arrives wearing the present's coat.|Temporal impersonation
+C|When the date on the forecast agrees to testify.|Prediction supplies its own witness
+R|At the instant tomorrow looks back and recognizes itself.|Future gains retrospective identity
+M|When the clock's shadow overtakes its hands.|Shadow breaks temporal order
+B|When the present obtains proof that it is currently happening.|Time needs certification
+M|At the hinge between two moments that open the wrong way.|Time as badly hung door
+H|When the calendar unfolds its secret thirteenth dimension.|Calendar exceeds spatial dimensions
+R|When the countdown starts asking what everyone is waiting for.|Countdown questions purpose
+M|At the moment the timeline slips out of its frame.|Time escapes representation
+C|When the prediction catches up with the event it is pulling.|Prediction pulls its own cause
+M|When the hourglass finds the beach it misplaced.|Timekeeping loses scale
+R|At the moment the schedule asks reality for an autograph.|Schedule becomes fan of reality
+M|When the present tense stops borrowing clothes from the future.|Grammar as temporal costume
+H|At the exact center of a second that has no edges.|Impossible temporal geometry
+M|When the calendar turns the page and discovers a window.|Calendar opens into reality
+R|When the stopwatch gets tired of being the only one counting.|Instrument protests asymmetry
+C|At the instant the forecast mistakes its reflection for confirmation.|Prediction validates reflection
+@WHO/GENERAL
+R|The understudy hired by the leading question.|Question casts authority
+M|The custodian of the key that opens all the wrong conclusions.|Knowledge as mismatched access
+B|The acting representative of an entirely hypothetical majority.|Authority from imaginary electorate
+R|The referee appointed by the argument's echo.|Echo selects arbiter
+M|The person holding the ladder while certainty climbs onto its high horse.|Certainty needs assistance
+C|The expert whose references all point to the same mirror.|Self-referential credentials
+R|The witness who taught the evidence how to pose.|Evidence directed by witness
+H|The sole graduate of a university that exists only in its prospectus.|Authority from nonexistent institution
+M|The cartographer who draws confidence where the roads should be.|Confidence substituted for navigation
+R|The apprentice currently supervising the idea of mastery.|Novice controls expertise
+M|The conductor of a very authoritative silence.|Authority without substance
+B|The temporary guardian of a permanently unclaimed responsibility.|Responsibility lacks owner
+R|The translator retained by the unspeakably obvious.|Obviousness needs interpretation
+M|The librarian who shelves guesses under Reference.|Speculation miscatalogued
+C|The person elected by a unanimous round of their own applause.|Self-election
+R|The magician's assistant who makes the magician disappear.|Supporting role takes control
+M|The shepherd of conclusions that escaped their premises.|Logic as livestock
+H|The last surviving founder of a theory that has not been invented.|Founder predates creation
+R|The guide hired by the destination to find some travelers.|Destination seeks visitors
+M|The mechanic servicing the machinery of apparent certainty.|Authority maintained mechanically
+@CHOICE/GENERAL
+R|Choose the option that can survive being interviewed by its own consequences.|Consequences interrogate options
+M|Choose whichever option casts a shadow shaped like an explanation.|Reasoning visible as shadow
+R|Pick the alternative that would return a trophy awarded by mistake.|Options have impossible ethics
+H|Choose the option small enough to fit inside its own excuse.|Impossible containment criterion
+M|Pick whichever option has taught its fine print to speak at normal volume.|Fine print gains voice
+R|Choose the option whose sales pitch would fail to impress its grandmother.|Pitch judged by fictional kin
+M|Choose whichever alternative can swim without an inflatable justification.|Reasoning as flotation
+B|Pick the option that has declared its imaginary benefits at customs.|Benefits undergo customs control
+R|Choose whichever option can take criticism from a houseplant without getting defensive.|Nonhuman critique
+M|Pick the alternative that doesn't need a second staircase to reach its own point.|Unnecessary argumentative architecture
+H|Choose the option whose shadow weighs less than its promises.|Promises and shadows weighed
+C|Pick whichever option can prove it existed before its slogan.|Advertising precedes existence
+M|Choose the alternative with a spare wheel for its train of thought.|Mixed transport made literal
+R|Pick whichever option would apologize to the coin before a toss.|Decision apologizes to randomizer
+M|Choose the option whose explanation can walk through a door without turning sideways.|Bulky explanation
+R|Choose whichever alternative can lose an argument to itself gracefully.|Self-debate criterion
+M|Pick the option that can carry its own asterisk.|Qualification becomes load
+H|Choose the alternative visible from outside its own publicity campaign.|Advertising engulfs option
+R|Pick whichever option would give the pedestal back after the ceremony.|Option relinquishes status
+M|Choose the option that can fold its grand ambitions into ordinary luggage.|Ambition as excess baggage
+@OTHER/GENERAL
+M|What would you like to know? The answer engine has horsepower but no steering wheel.|Power lacks direction
+R|Please name the question. The conclusion has mistaken the starting line for a podium.|Conclusion celebrates prematurely
+M|Tell us what needs answering. The spotlight has arrived without a stage.|Attention without subject
+M|What would you like clarified? Our telescope is currently aimed at its own lens cap.|Inquiry sees its own obstruction
+B|Please specify the request. This machine needs a destination before it can issue arrival announcements.|Premature arrival bureaucracy
+R|What should we answer? Our expertise has turned up dressed for the wrong occasion.|Expertise lacks assignment
+M|Please say what you want to know. The compass is pointing confidently at the word north.|Symbol mistaken for direction
+H|What needs answering? We have enough certainty for several questions and no way to address the parcels.|Surplus confidence lacks destination
+M|Please name the puzzle. The pieces are auditioning for different pictures.|Parts need common task
+R|What would you like explained? The explanatory voice has been practicing without any explanation.|Delivery lacks content

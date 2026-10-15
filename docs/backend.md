@@ -1,22 +1,40 @@
 # Backend setup and contract
 
-Active taxonomy/rubric **2.0.0**, catalog format **2**. The [isolated editorial seed](content/seed-v2/README.md) is locally imported and offline checked; it is not human-approved. The existing development database remains untouched and is not automatically upgraded.
+Active taxonomy/rubric **2.0.0**, catalog format **2**. The [canonical editorial seed](content/seed-v2/README.md) contains 1,055 author-screened development answers and is imported into the recreated default local database. It is not human-approved. Disposable development databases are recreated, not upgraded.
 
-Implemented locally on 2026-10-11 under the [backend task](handoff/backend-implementation-prompt.md). PHP 8.4 minimum, Symfony 7.4, Doctrine DBAL + Migrations without ORM. Verification and remaining gaps: [record](verification.md#backend-implementation-verification-event). Home/form/fetch/design are deferred; the next frontend must use a **dark theme**.
+Implemented locally on 2026-10-11 under the [backend task](handoff/backend-implementation-prompt.md). PHP 8.4 minimum, Symfony 7.4, Doctrine DBAL + Migrations without ORM. Verification and remaining gaps: [record](verification.md#backend-implementation-verification-event). The [dark-theme frontend](frontend-design.md) was implemented separately on 2026-10-15 using this HTTP contract.
 
 ## Development database and offline reproduction
 
-Nonsecret defaults are in `.env`; existing local credentials were not read or rewritten. `DATABASE_URL` defaults to `sqlite:///%kernel.project_dir%/var/we-know.sqlite`. The actual local file is `/Users/serhii/OwnProjects/we-know/var/we-know.sqlite`, ignored and outside the document root. Check the intended database before migrating; migration setup never deletes existing data.
+`DATABASE_URL` defaults to `sqlite:///%kernel.project_dir%/var/we-know.sqlite`. The actual local file is `/Users/serhii/OwnProjects/we-know/var/we-know.sqlite`, ignored and outside the document root. The 2026-10-15 rebuild replaced its obsolete schema and synthetic development data with the current schema and the complete editorial seed. Credentials were not inspected or rewritten.
 
 ```sh
+rtk proxy composer db:reset
+rtk proxy composer db:migrate
+rtk proxy composer db:seed
+# Complete sequence; Composer stops immediately if any step fails:
+rtk proxy composer db:fresh
+# Read-only default-database verification (no Dotenv or provider call):
+rtk proxy php tools/verify-local-database.php
 rtk proxy php vendor/bin/phpunit
-# Create a NEW isolated editorial demonstration using the existing migration/import path:
+```
+
+- `db:reset` closes lifecycle-owned connections and deletes only `var/we-know.sqlite` plus regular `-wal`, `-shm`, and `-journal` sidecars. This removes application data and migration state. An absent database succeeds; outdated development schemas need no upgrade logic.
+- `db:migrate` uses the existing `MigrationFactory` and current table-creation migration. No ORM, new dependency, competing schema or ALTER migration was introduced.
+- `db:seed` uses `CatalogImporter` with **`docs/content/seed-v2/catalog.json`**, never the synthetic fixture. It replaces the whole catalog and preserves IDs/timestamps on repeated imports. It does not erase existing verdicts; use fresh to recreate all disposable data.
+- `db:fresh` is Composer's ordered reset → migrate → seed chain. Failure prevents subsequent steps; the sequence as a whole is not a transaction (a seed failure leaves an empty migrated database).
+
+All four commands are development-only. Before any connection or deletion, the lifecycle requires `APP_ENV=dev` and the **exact default local SQLite URL**. Production/test environments, remote DSNs, alternate paths, URL query options, traversal, symlinked `var`/database/sidecars, nonregular files and multiply linked files are rejected. The entire file set is validated before removal. Do not run application processes or other database users while resetting; the helper closes its own connections, not arbitrary external processes. `var` must exist as a real directory; the normal application bootstrap creates runtime directories.
+
+After editing a table definition in the unreleased initial migration, run **`rtk proxy composer db:fresh`**. The existing migration ID will not reapply edited DDL to an already migrated file. This project has no production data; there is no compatibility adapter, incremental schema modification or data-upgrade script.
+
+Current [database evidence](content/seed-v2/batch-20261015/final-verification.json) establishes exact schema equivalence to fresh migrations, exact canonical rows, stable repeat import, zero verdicts, and SQLite integrity/foreign keys. Existing `var/answer-seed-v2-*` demonstration databases are excluded from reset. To create a separate demonstration, the historical helper still requires a **new** explicit path and adds five offline-double verdicts:
+
+```sh
 rtk proxy php tools/verify-seed-v2.php /Users/serhii/OwnProjects/we-know/var/answer-seed-v2-recheck.sqlite
 ```
 
-The helper refuses existing targets. The v2 task updated the unreleased initial migration directly; an old file already marked with that migration ID is not upgraded by rerunning it. Keep the preserved development file separate. For later application use, explicitly set DATABASE_URL to the intended v2 database; no default target was changed in this task.
-
-The fixture flag explicitly replaces the development catalog with five synthetic answers / six eligibility rows. It is rejected in `prod`; importing files from the fixture directory without that flag is rejected. The offline smoke does not load Dotenv or secrets, explicitly imports the same synthetic catalog, uses a fake timeout classifier, creates one durable verdict, and reads it through another connection. Each run adds one synthetic verdict. The old development file is not a v2 target; run synthetic smoke only after separately preparing a compatible disposable synthetic database. This task did not run it. It is not an editorial or production setup step.
+The fixture flag explicitly replaces the development catalog with five synthetic answers / six eligibility rows. It is rejected in `prod`; importing files from the fixture directory without that flag is rejected. The offline smoke does not load Dotenv or secrets, explicitly imports the same synthetic catalog, uses a fake timeout classifier, creates one durable verdict, and reads it through another connection. Each run adds one synthetic verdict. Run synthetic smoke only against a separately prepared disposable synthetic database, never the editorial default or preserved demonstration. The current expansion task did not run it. It is not an editorial or production setup step.
 
 PHPUnit forces a separate SQLite connection configuration in `test`, ignoring development/production database environment variables. Backend tests normally inject freshly migrated in-memory databases; the reboot test uses a uniquely named temporary file. The default test HttpClient denies unexpected outbound calls. No new live Jev calls are authorized or required.
 
@@ -94,4 +112,4 @@ Errors use `{"error":{"code":"...","message":"..."}}`, without exception details
 
 If more than one validation rule fails, origin is checked first, then media, size, JSON, question, and rate. The endpoint exposes no diagnostic JSON. POST retry is not automatic; a response lost after commit can lead to another result on resubmission.
 
-`GET`/`HEAD /a/{publicId}` returns a minimal escaped English Twig page with stored text, canonical URL and textual OG from trusted configuration. Invalid/non-v4/unknown IDs return 404. Pages have noindex/nofollow, no-store and no public feed; they are accessible to anyone with the URL. Unavailable persistence returns a plain controlled 503. No form/fetch, styling, dynamic OG image, About/FAQ, deployment or public-launch privacy policy was added.
+`GET`/`HEAD /a/{publicId}` returns an escaped English Twig page with stored text, canonical URL and textual OG from trusted configuration. Invalid/non-v4/unknown IDs return 404. Pages have noindex/nofollow, no-store and no public feed; they are accessible to anyone with the URL. The later frontend task added a shared dark verdict card and styled HTML 404/503 responses, preserving status/cache/robots behavior. `POST /answer` retains its JSON contract. `/` now has the fetch-enhanced form; `/about` and `/privacy` explain the product and known data flow. Dynamic OG images, deployment and the finalized public-launch privacy policy remain outstanding.

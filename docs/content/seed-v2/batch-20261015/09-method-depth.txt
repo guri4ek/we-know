@@ -1,0 +1,100 @@
+# All shared probe cells author-screened P/C/L; scores 2,2,2,2,1,1; human null. Later exclusions supersede.
+@METHOD/TECH
+M|Give the command a tiny lantern. It keeps walking into the dark parts of its own documentation.|Instruction explores undocumented behavior
+R|Ask the computer to provide a reference from a human it has successfully assisted.|Machine supplies service references
+B|File a bug against the assumption that the bug understands the filing system.|Defect reporting self-examined
+H|Bring a microscope to the settings. The useful switch is hiding inside the word Advanced.|Configuration obscures action
+M|Teach the interface to knock before entering the room of your intentions.|Interface respects intent boundary
+R|Make the machine solve the onboarding process before you agree to be onboarded.|Tool faces onboarding burden
+M|Tie a string to the request before sending it into the menu.|Menu navigated as labyrinth
+C|Tell the system the feature is deprecated. It may suddenly remember how to support it.|Threat of removal summons support
+R|Ask the notification to rank its importance in front of an actual emergency.|Alert faces proportionality
+M|Give the software a small fence between can do and should do.|Capability distinguished from judgment
+@METHOD/LANGUAGE
+M|Put the expression on a rotating stage. Look for the meaning hiding at the back.|Meaning depends on perspective
+R|Ask the words to explain why they arrived in that order.|Word order made accountable
+B|Have the phrase declare whether its confidence was imported or locally produced.|Linguistic authority provenance
+M|Give the rule a coat rack. It has been hanging every exception on the reader.|Rules offload exceptions
+H|Use an umbrella large enough for all the meanings raining from that expression.|Semantic multiplicity
+R|Let the context introduce the expression before the dictionary takes the microphone.|Context precedes reference authority
+M|Take the sentence for a walk outside its example. See what changes color.|Usage tested beyond example
+C|Tell the rule it has become a proverb. Watch its exceptions suddenly become wisdom.|Category relabel changes prestige
+M|Give the expression a balcony overlooking the conversation it belongs to.|Expression regains context
+R|Ask the language to repeat that in a version of itself that follows its own rules.|Language faces consistency demand
+@METHOD/WORK_STUDY
+M|Attach a kite string to the strategic objective. Find out who is actually holding it.|Purpose ownership traced
+R|Ask the performance review to identify one performance of its own worth reviewing.|Assessment self-tested
+B|Require the phrase At Scale to specify the planet it is planning to occupy.|Vague scale made explicit
+H|Borrow enough daylight to illuminate the gap between the title and the task.|Role hides actual work
+M|Give the scope a small bedroom. Stop letting it sleep across the entire project.|Scope contained
+R|Have the meeting earn its place on the calendar through an entrance examination.|Meeting must qualify
+M|Install a handrail between the ambitious abstract and the actual contribution.|Claim connected to evidence
+C|Tell the metric that it is no longer being measured. See whether it still wants to improve.|Incentive reveals purpose
+R|Ask the process to name its successor before allowing it to become permanent.|Process permanence challenged
+M|Put the grand strategy in a lunchbox. Identify which part is supposed to feed the work.|Strategy must nourish action
+@METHOD/FOOD
+M|Put the culinary claim under a glass cloche. Listen to how much confidence escapes when it opens.|Confidence as vapor
+R|Ask the recipe to distinguish a step from a personal opinion wearing an apron.|Opinion disguised as instruction
+B|Request an ingredient list for the explanation's certainty.|Knowledge requires provenance
+H|Use a ladle deep enough to reach the bottom of the culinary argument.|Debate as deep vessel
+M|Give the method a tasting spoon for its own instructions.|Procedure evaluates self
+R|Ask the culinary tradition to introduce the person who first said Obviously.|Custom traces unsupported origin
+M|Put wheels on the kitchen theory. Roll it past an actual meal.|Theory meets practice
+C|Announce that adjectives now count as ingredients. The recipe will have to justify its generous seasoning.|Description exposed as excess
+M|Fold the explanation like a napkin. Check whether the important part was decorative.|Reasoning vs presentation
+R|Have the cookbook describe the difference between a secret ingredient and a missing instruction.|Mystique conceals omission
+@METHOD/HOME
+M|Give the instruction sheet a tiny hard hat. Make it visit the assumptions it left on site.|Instructions face building reality
+R|Ask the room to review the blueprint's spatial awareness.|Object evaluates representation
+B|Apply for permission to demolish the word Easy in the explanation.|Ease claim removed
+H|Find a spirit level long enough to compare the promise with the finished explanation.|Promise measured against account
+M|Put a welcome mat under the problem. The solution keeps trying the wrong entrance.|Solution misidentifies access
+R|Ask the manual which of its illustrations has actually lived in a house.|Reference lacks experience
+M|Fit a drain to the grand plan. It is collecting too much confidence.|Plan disposes of excess certainty
+C|Tell the specification the measurements are watching. It may stop rounding its ambitions upward.|Spec faces data
+M|Give the explanation a coat of transparent paint. Inspect what it hoped to cover.|Explanatory concealment exposed
+R|Have the blueprint explain its understanding of depth without using a dotted line.|Model faces dimensional limitation
+@METHOD/MONEY
+M|Give the offer a glass bottom. Observe the assumptions swimming underneath.|Offer exposes hidden terms
+R|Ask the forecast how it would rate its own past performance without using the word unprecedented.|Prediction faces excuses
+B|Request an itemized invoice from the phrase Financial Freedom.|Slogan accountable for costs
+H|Bring a telescope to the fine print. The guarantee has retreated to the edge of the universe.|Promise hides in qualifications
+M|Put the valuation in a room without mirrors. See what it can use as a reference.|Value needs independent reference
+R|Ask the chart to explain its enthusiasm without pointing upward.|Graph separates direction from judgment
+M|Give the arithmetic a separate entrance from the promotional language.|Computation isolated from sales
+C|Tell the model that every assumption needs its own chair. Watch the room fill.|Assumptions become visible occupants
+M|Fit the financial promise with a zipper. Examine the stuffing called Potential.|Promise inflated with possibility
+R|Have the optimistic forecast interview its pessimistic understudy.|Prediction confronts alternative
+@METHOD/NATURE
+M|Give the field guide a blank page labeled Things That Have Not Read This Book.|Reference acknowledges unknown
+R|Ask the landscape to grade the observer's attention span.|Nature evaluates human observation
+B|Invite the weather to declare its objections to the plan in writing.|Uncontrollable condition becomes participant
+H|Use a frame large enough for the ecosystem to include whoever is holding the frame.|Observer within system
+M|Give the theory a root system. It has been surviving entirely on labels.|Model requires grounding
+R|Ask the classification system which category it uses for things that disagree with it.|Taxonomy faces exceptions
+M|Put a window in the specimen jar containing your certainty.|Knowledge container opens outward
+C|Tell the textbook nature has published a revised edition. Ask which one will be updating itself.|Reference confronts change
+M|Give the observation a perch above the theory. It needs a better view.|Evidence takes priority
+R|Have the field guide follow the specimen for a change.|Classification follows subject
+@METHOD/HEALTH
+M|Give the health graph a human-sized doorway. It keeps trying to squeeze people through its axes.|Measurement accommodates person
+R|Ask the universal advice to describe one actual person without using averages.|Generality faces individual
+B|Require the wellness promise to list its evidence separately from its enthusiasm.|Claim separates support and sales
+H|Use a telescope to find the human being omitted by the model's impressive overview.|Abstraction overlooks subject
+M|Fit the diagram with ears. Its arrows have been doing all the talking.|Model listens
+R|Ask the slogan to show its working without flexing its typography.|Presentation not evidence
+M|Put the imaginary ideal in a room with ordinary weather. Observe its surprise at needing a coat.|Ideal meets ordinary conditions
+C|Tell the health model that variability has arrived early and brought guests.|Variation disrupts generalization
+M|Give the progress chart a hinge. Human lives do not fold along straight grid lines.|Measure accommodates nonlinearity
+R|Ask the wellness claim what would make it change its mind. Do not accept a brighter logo.|Claim must be revisable
+@METHOD/TRAVEL
+M|Give the map a pair of knees. It has been describing every journey as flat.|Representation meets physical effort
+R|Ask the travel brochure to spend one night outside its own photograph.|Promotion tested against world
+B|Require the phrase Easy Access to produce a passport and explain its itinerary.|Vague convenience claim scrutinized
+H|Find a compass strong enough to point through the accumulated opinions of travel guides.|Guidance clutter
+M|Put a hinge in the schedule. It has been snapping whenever reality opens the door.|Plan flexibility
+R|Ask the route to introduce the detours it has been calling minor details.|Path exposes underestimated deviations
+M|Give the destination an eraser for the journey's promotional adjectives.|Reality edits promotion
+C|Tell the itinerary that the map is watching. It may confess to inventing a shortcut.|Plan faces evidence
+M|Fit the plan with pockets large enough for events that have not been invited.|Travel accommodates surprises
+R|Have the journey explain its version of the story before the itinerary publishes its memoirs.|Experience precedes narrative

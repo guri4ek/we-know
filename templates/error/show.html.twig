@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ heading }} — We Know{% endblock %}
+{% block main_class %}error-page{% endblock %}
+{% block body %}
+    <p class="eyebrow">{{ status }}</p>
+    <h1>{{ heading }}</h1>
+    <p class="reading-lead">{{ message }}</p>
+    <a class="button button-primary" href="/">Back to asking <span aria-hidden="true">↗</span></a>
+{% endblock %}

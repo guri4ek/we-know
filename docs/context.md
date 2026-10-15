@@ -18,6 +18,10 @@ Serhii confirmed DBAL + Migrations without ORM; VERDICT with UUID/text snapshots
 
 The next-session task was executed locally: Composer minimum/platform corrected to PHP 8.4; DBAL + Migrations without ORM; catalog/import, selector, immutable verdict persistence, POST and minimal stored-result SSR implemented. All new classification checks were offline with fakes/mocks. No new live budget, Git delivery or deployment was used. SQLite evidence and remaining PostgreSQL/content/production gaps are in the [verification event](verification.md#backend-implementation-verification-event); setup is in the [backend guide](backend.md). The frontend remains deferred with a confirmed dark theme. Later historical sections below preserve their checkpoint state.
 
+## Local frontend implementation — 2026-10-15
+
+The user requested “build frontend”. The local implementation follows the dark-theme proposal using the existing Symfony/Twig application and JSON endpoint: question form, inline and saved verdicts, copying/fallback, About/FAQ, a factual development data disclosure and styled page errors. The wordmark uses We Know while retaining Instant Answer in titles; no final domain choice is implied. Tests use isolated synthetic data and intercepted submissions, with no paid Jev calls or development-database changes. No Git delivery, deployment or personal configuration changes were performed. [Frontend behavior](frontend-design.md) and [current evidence](verification.md#frontend-implementation--2026-10-15) supersede earlier frontend-deferral checkpoints.
+
 ## Product
 
 The working public name is **Instant Answer**, the mentioned domain is `instant-answer.net`, and the local/repository name is **we-know**. Domain ownership and final branding have not been checked.
@@ -31,7 +35,7 @@ This is post-irony about AI certainty: a restrained, serious interface gives a s
 | Step | Content | Current status |
 | --- | --- | --- |
 | Initial idea | Prepared random answers, without real AI | Refined: AI may classify, but may not generate the text |
-| First Jev discussion | Pick the best answer among prepared candidates | Rejected by the user's subsequent clarification |
+| First Jev discussion | Pick the best answer among prepared candidates | Initially rejected; revisited on 2026-10-15 as a [deferred idea](#deferred-idea-jev-selects-among-prepared-answers--2026-10-15), not an accepted mechanism |
 | User clarification | Categorize questions and answers; simple random within a category | Accepted core mechanism |
 | Both kinds of absurdity | Chaos and Contextual as possible strategies | User subsequently chose **Contextual Absurdity only at launch** |
 | NLP / regex instead of AI | Assistant proposed a local MVP classifier | User chose **Jev first**, NLP later |
@@ -55,6 +59,16 @@ The active [taxonomy v2](content/taxonomy-v2.md) has 14 intents and 13 topics. I
 Target fallback: exact `intent + topic` → `intent + GENERAL` → `ANY + GENERAL`. A temporal question should receive an absurd date/temporal response rather than a random object. This distinguishes contextual absurdity from chaos. If classification is unavailable, the implemented backend policy goes directly to universal fallback: service degradation, not hidden Chaos activation.
 
 A saved permalink must not rerun random selection or Jev. Asking a new question again may yield another result; opening an existing URL must not.
+
+## Deferred idea: Jev selects among prepared answers — 2026-10-15
+
+**Status: idea only; may never be implemented.** Serhii asked to retain this possibility as a reminder. It does not replace the accepted classification + uniform random selection mechanism or authorize implementation or live evaluation.
+
+The proposal is to sample approximately 10 prepared answers randomly from the database, send them with the user's question to Jev, and select the best candidate. The original suggestion used the first 100–200 characters of the question; sending the full question is an alternative to evaluate because truncation can lose the actual request or important context. Whether candidates come from the entire catalog or an eligible pool remains undecided.
+
+The official API documentation checked on 2026-10-15 supports two possible approaches: [Choice](https://docs.typesafe.ai/primitives/choice) to return a candidate ID and relative probabilities, or one [Score](https://docs.typesafe.ai/primitives/score) task per candidate in a single request, using the same descriptive scale and selecting the highest score in PHP. These are technical possibilities, not evidence that Jev can judge our humor well. Choice probabilities are not absolute answer-quality scores.
+
+Before adopting this idea, define contextual fit and appropriate absurdity, allow for no suitable candidate, and compare human judgments of the results against the current random selector on the same questions and candidate sets. Open questions include humor quality, repetition, candidate coverage, latency, token cost, and whether ranking would supplement or replace classification. No ranking experiment or paid API call was performed for this discussion.
 
 ## Tone and UX: proposals supporting the concept
 

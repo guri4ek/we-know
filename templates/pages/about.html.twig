@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}About — We Know{% endblock %}
+{% block main_class %}reading-page{% endblock %}
+{% block body %}
+    <a class="back-link" href="/">← Back to asking</a>
+    <p class="eyebrow">An introduction, without the uncertainty</p>
+    <h1>Certainty is our specialty.</h1>
+    <p class="reading-lead">Accuracy? A separate department.</p>
+    <div class="prose">
+        <p>We Know is a small satirical answer service with an unreasonable amount of confidence. Bring a question. Leave with a verdict. Whether that verdict improves your life is entirely beside the point.</p>
+        <p>Every answer is prepared in advance. An AI classifier categorizes your question by intent and topic, then the application randomly selects an answer from the first matching eligible pool. If there is no match or classification is unavailable, it uses a general fallback pool.</p>
+        <p>The classifier does not write or rank the answers. The absurdity is already on file.</p>
+    </div>
+    <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">A few reasonable questions.</h2>
+        <details><summary>Is this AI?</summary><p>AI helps categorize your question. The answer itself comes from a prepared library, selected randomly from the first eligible pool.</p></details>
+        <details><summary>Why did I get this answer?</summary><p>Your question determines which pool is eligible. Chance handles the rest. No hidden score decides which answer is funniest or best.</p></details>
+        <details><summary>Can the same question get a different answer?</summary><p>Yes. Each new submission makes a new selection. A saved link always shows its original question and answer; opening it does not generate another verdict.</p></details>
+        <details><summary>Who can see my question?</summary><p>Anyone with its result link can read the question and answer. Keep personal or sensitive information out of your questions. Read <a href="/privacy">how your question is handled</a>.</p></details>
+        <details><summary>Should I take this seriously?</summary><p>Please don't. This is satirical entertainment, not factual, medical, legal, financial, or other professional advice.</p></details>
+    </section>
+    <a class="button button-primary reading-cta" href="/">Enough questions. Ask one. <span aria-hidden="true">↗</span></a>
+{% endblock %}
